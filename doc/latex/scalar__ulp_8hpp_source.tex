@@ -1,0 +1,41 @@
+\doxysection{scalar\+\_\+ulp.\+hpp}
+\hypertarget{scalar__ulp_8hpp_source}{}\label{scalar__ulp_8hpp_source}\index{dependencies/glm/include/glm/ext/scalar\_ulp.hpp@{dependencies/glm/include/glm/ext/scalar\_ulp.hpp}}
+\mbox{\hyperlink{scalar__ulp_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00018}00018\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scalar__int__sized_8hpp}{../ext/scalar\_int\_sized.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8hpp}{../common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}../detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_scalar\_ulp\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00038}\mbox{\hyperlink{group__ext__scalar__ulp_ga30bc0280e7cefd159867b1aa5050b94a}{00038}}\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__ext__scalar__ulp_ga30bc0280e7cefd159867b1aa5050b94a}{nextFloat}}(genType\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00046}\mbox{\hyperlink{group__ext__scalar__ulp_ga25320ace5b3e239405077912eb4e7bf9}{00046}}\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__ext__scalar__ulp_ga25320ace5b3e239405077912eb4e7bf9}{prevFloat}}(genType\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00054}\mbox{\hyperlink{group__ext__scalar__ulp_ga54eb5916c5250c8f0ad8224fb8e0d392}{00054}}\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__ext__scalar__ulp_ga30bc0280e7cefd159867b1aa5050b94a}{nextFloat}}(genType\ x,\ \textcolor{keywordtype}{int}\ ULPs);}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00062}\mbox{\hyperlink{group__ext__scalar__ulp_ga760b98a221f1f511edbcdf0b06c49841}{00062}}\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__ext__scalar__ulp_ga25320ace5b3e239405077912eb4e7bf9}{prevFloat}}(genType\ x,\ \textcolor{keywordtype}{int}\ ULPs);}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00067}00067\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ext__scalar__ulp_ga9f531d81a978cdffac7c8257d513f59b}{floatDistance}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00072}00072\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{group__ext__scalar__int__sized_ga435d75819cce297cc5fa21bd84ef89a5}{int64}}\ \mbox{\hyperlink{group__ext__scalar__ulp_ga9f531d81a978cdffac7c8257d513f59b}{floatDistance}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y);}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00075}00075\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{scalar__ulp_8hpp_source_l00077}00077\ \textcolor{preprocessor}{\#include\ "{}scalar\_ulp.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,49 @@
+\doxysection{cemetery.\+cpp}
+\hypertarget{cemetery_8cpp_source}{}\label{cemetery_8cpp_source}\index{client/cemetery.cpp@{client/cemetery.cpp}}
+\mbox{\hyperlink{cemetery_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cemetery_8h}{cemetery.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00030}\mbox{\hyperlink{class_cemetery_a967a69d77bff994b6b3b53730a3f159f}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_a967a69d77bff994b6b3b53730a3f159f}{Cemetery::addPieceToDeleted}}(\mbox{\hyperlink{class_piece}{Piece}}*\ piece)\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00031}00031\ \ \ \ \ deletedPieces.push\_back(piece);}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00041}\mbox{\hyperlink{class_cemetery_aef6ec50304491729274012d0e2c3f446}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_aef6ec50304491729274012d0e2c3f446}{Cemetery::removePieceFromDeleted}}(\mbox{\hyperlink{class_piece}{Piece}}*\ piece)\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ deletedPieces.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (deletedPieces[i]\ ==\ piece)\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ deletedPieces.erase(deletedPieces.begin()\ +\ i);}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00055}\mbox{\hyperlink{class_cemetery_a68b0dc9fbe9b1cab40cc75e9555a13ba}{00055}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cemetery_a68b0dc9fbe9b1cab40cc75e9555a13ba}{Cemetery::getBlackPiecesEliminated}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ blackPiecesEliminated;}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00064}\mbox{\hyperlink{class_cemetery_a653dbb3e1c07c35404bf303d33db3f36}{00064}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cemetery_a653dbb3e1c07c35404bf303d33db3f36}{Cemetery::getWhitePiecesEliminated}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{return}\ whitePiecesEliminated;}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00073}\mbox{\hyperlink{class_cemetery_a50e46d01d5c752f3dbb8583341d2dc24}{00073}}\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_cemetery_a50e46d01d5c752f3dbb8583341d2dc24}{Cemetery::getBlackCemeteryPos}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ blackCemeteryPos;}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00082}\mbox{\hyperlink{class_cemetery_a111f03d53b05b881b0c9baf2a016b44c}{00082}}\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_cemetery_a111f03d53b05b881b0c9baf2a016b44c}{Cemetery::getWhiteCemeteryPos}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ whiteCemeteryPos;}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00091}\mbox{\hyperlink{class_cemetery_a16c52e14f724e7517dbbb62521de1593}{00091}}\ std::vector<Piece*>\ \mbox{\hyperlink{class_cemetery_a16c52e14f724e7517dbbb62521de1593}{Cemetery::getDeletedPieces}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ deletedPieces;}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00100}\mbox{\hyperlink{class_cemetery_a28f3d025bde337f7bfd1d3bc0bab2057}{00100}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_a28f3d025bde337f7bfd1d3bc0bab2057}{Cemetery::setBlackPiecesEliminated}}(\textcolor{keywordtype}{int}\ newValue)\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00101}00101\ \ \ \ \ this-\/>blackPiecesEliminated\ =\ newValue;}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00109}\mbox{\hyperlink{class_cemetery_aa3b7133d446016c29bd990e65300e006}{00109}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_aa3b7133d446016c29bd990e65300e006}{Cemetery::setWhitePiecesEliminated}}(\textcolor{keywordtype}{int}\ newValue)\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00110}00110\ \ \ \ \ this-\/>whitePiecesEliminated\ =\ newValue;}
+\DoxyCodeLine{\Hypertarget{cemetery_8cpp_source_l00111}00111\ \}}
+
+\end{DoxyCode}

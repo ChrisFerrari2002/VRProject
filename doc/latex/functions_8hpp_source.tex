@@ -1,0 +1,40 @@
+\doxysection{functions.\+hpp}
+\hypertarget{functions_8hpp_source}{}\label{functions_8hpp_source}\index{dependencies/glm/include/glm/gtx/functions.hpp@{dependencies/glm/include/glm/gtx/functions.hpp}}
+\mbox{\hyperlink{functions_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00016}00016\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}../detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type__vec2_8hpp}{../detail/type\_vec2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_functions\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_functions\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00036}00036\ \ \ \ \ GLM\_FUNC\_DECL\ T\ \mbox{\hyperlink{group__gtx__functions_ga0b50b197ff74261a0fad90f4b8d24702}{gauss}}(}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ T\ x,}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ T\ ExpectedValue,}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ T\ StandardDeviation);}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00045}00045\ \ \ \ \ GLM\_FUNC\_DECL\ T\ \mbox{\hyperlink{group__gtx__functions_ga0b50b197ff74261a0fad90f4b8d24702}{gauss}}(}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ vec<2,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Coord,}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ vec<2,\ T,\ Q>\ \textcolor{keyword}{const}\&\ ExpectedValue,}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ vec<2,\ T,\ Q>\ \textcolor{keyword}{const}\&\ StandardDeviation);}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00051}00051\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00053}00053\ \textcolor{preprocessor}{\#include\ "{}functions.inl"{}}}
+\DoxyCodeLine{\Hypertarget{functions_8hpp_source_l00054}00054\ }
+
+\end{DoxyCode}

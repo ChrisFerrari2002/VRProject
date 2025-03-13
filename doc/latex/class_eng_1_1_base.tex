@@ -1,0 +1,762 @@
+\doxysection{Eng\+::Base Class Reference}
+\hypertarget{class_eng_1_1_base}{}\label{class_eng_1_1_base}\index{Eng::Base@{Eng::Base}}
+
+
+\doxylink{class_eng_1_1_base}{Base} engine main class. This class is a singleton.  
+
+
+
+
+{\ttfamily \#include $<$engine.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved}{Reserved}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_base}{Base} class reserved structure (using PIMPL/\+Bridge design pattern \href{https://en.wikipedia.org/wiki/Opaque_pointer}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Opaque\+\_\+pointer}}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eng_1_1_base_ac9bc36f2293d517cc6f1b2ab348d4f69}{Base}} (\mbox{\hyperlink{class_eng_1_1_base}{Base}} const \&)=delete
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eng_1_1_base_ae0700f06fa814dd024290dcd2b1a3157}{\texorpdfstring{$\sim$}{\string~}\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_ac4eb1f66179273abba59260a6b4c5cbd}{operator=}} (\mbox{\hyperlink{class_eng_1_1_base}{Base}} const \&)=delete
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_eng_1_1_base_a962ceb7a1c8f73e0dd01344fea410754}{init}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv, const char \texorpdfstring{$\ast$}{*}window\+Title, int window\+Width, int window\+Height)
+\begin{DoxyCompactList}\small\item\em Initialize the engine. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_eng_1_1_base_afd7e1923deb411907695c0b27114f62a}{free}} ()
+\begin{DoxyCompactList}\small\item\em Free the engine resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a134ea21e555922464497c88f63d5f66d}{set\+ZBuffer\+Usage}} (bool use\+ZBuffer)
+\begin{DoxyCompactList}\small\item\em Set Z-\/buffer usage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_acb6d8612415080db042947905a9c31c1}{set\+Background\+Color}} (float r, float g, float b, float a)
+\begin{DoxyCompactList}\small\item\em Set the background color of the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a79b89e39c92917ebc0017427a1505e30}{set\+Window\+Resize\+Handler}} (void(\texorpdfstring{$\ast$}{*}func)(int, int))
+\begin{DoxyCompactList}\small\item\em Set the window resize handler. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_eng_1_1_base_a9a5818b1d0a0190631115ee2b5fa36a6}{is\+Running}} ()
+\begin{DoxyCompactList}\small\item\em Check if the engine is running. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_aad15cd6c7c134bedb57f3a6438f14af3}{swap\+Buffers}} ()
+\begin{DoxyCompactList}\small\item\em Swap the buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a8ebf1e6cb3da56fc18640d160136536d}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start the engine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a926d11bf0da5398db5dcfec36d43049d}{reshape\+Callback}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Handle window reshape event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a3bb8e344a6ae349b1a8004dc96dfe8fa}{post\+Window\+Redisplay}} ()
+\begin{DoxyCompactList}\small\item\em Post a window redisplay event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_abf576aaed1567dca950265659304da81}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update the engine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a0bae43de6e7dea90feac7205a70f0076}{refresh\+And\+Swap\+Buffers}} ()
+\begin{DoxyCompactList}\small\item\em Refresh and swap the buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a99c9da48b32ffac8f6810b0274b1b03f}{set\+Keyboard\+Callback}} (void(\texorpdfstring{$\ast$}{*}func)(unsigned char, int, int))
+\begin{DoxyCompactList}\small\item\em Set the keyboard callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a1ee954d83cc23c77c1e7bf1a5560bee0}{set\+Special\+Callback}} (void(\texorpdfstring{$\ast$}{*}func)(int, int, int))
+\begin{DoxyCompactList}\small\item\em Set the special key callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a8e7a3c92af4a946e012dcf76b073c287}{remove\+Object\+Picked\+Callback}} ()
+\begin{DoxyCompactList}\small\item\em Remove the object picked callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a626e6a5a1243db09f40383306b318c5d}{set\+Object\+Picked\+Callback}} (void(\texorpdfstring{$\ast$}{*}func)(\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}, bool))
+\begin{DoxyCompactList}\small\item\em Set the object picked callback. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_eng_1_1_base_a1b08c1ccca8a272ee327958d625f7db2}{load\+Scene}} (std\+::string scene\+File)
+\begin{DoxyCompactList}\small\item\em Load a scene from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a66a01c40aa0c57bffc3f48cb280de2ee}{set\+Active\+Camera}} (int index)
+\begin{DoxyCompactList}\small\item\em Set the active camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a6d04cce0e8a065fd54b61f225407177b}{add\+Camera}} (\mbox{\hyperlink{class_eng_1_1_camera}{Eng\+::\+Camera}} \texorpdfstring{$\ast$}{*}camera)
+\begin{DoxyCompactList}\small\item\em Add a camera to the engine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \mbox{\hyperlink{class_eng_1_1_base_af9942db86a1d78d8a928717f5bd8d7dd}{load\+Node}} (std\+::string node\+File)
+\begin{DoxyCompactList}\small\item\em Load a node from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_aa07c0c7acb684dd7ddd5f47d8cc31760}{add\+Node}} (\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} node)
+\begin{DoxyCompactList}\small\item\em Add a node to the engine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a4d48d7d54ae7c1beaf47d0b2db55b1b2}{write\+On\+Screen}} (std\+::string text, \mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm\+::vec3}} color, \mbox{\hyperlink{group__core__vector_ga6ebf1ff1f152ff34c800b6997d5f311f}{glm\+::vec2}} coord, int text\+Type)
+\begin{DoxyCompactList}\small\item\em Write text on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_base_a88949acf85d254434b513ca8b48d5bfa}{start\+Timer}} (void(\texorpdfstring{$\ast$}{*}func)(int), int duration)
+\begin{DoxyCompactList}\small\item\em Start a timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eng_1_1_list}{Eng\+::\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_eng_1_1_base_af6dc5365bb8bdfe6c68dfb52ad175ca5}{get\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of objects in the engine. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_eng_1_1_base_a7511d3c02ed50ea4ac9b399360a7ca0b}{clear\+List}} ()
+\begin{DoxyCompactList}\small\item\em Clear the list of objects in the engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_eng_1_1_base}{Base}} \& \mbox{\hyperlink{class_eng_1_1_base_a3c21bcd7bace09d5913ced6de5b15518}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Get the singleton instance. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_eng_1_1_base_ad8d5485a8642815afca82af3bcc16507}{clear\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Clear the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_eng_1_1_base}{Base} engine main class. This class is a singleton. 
+
+The \doxylink{class_eng_1_1_base}{Base} class is the main class of the graphics engine and is implemented as a singleton. The responsibilities of the \doxylink{class_eng_1_1_base}{Base} class include initializing the engine, managing the scene, and handling user input. 
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00100}{100}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_eng_1_1_base_ac9bc36f2293d517cc6f1b2ab348d4f69}\index{Eng::Base@{Eng::Base}!Base@{Base}}
+\index{Base@{Base}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{Base()}{Base()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_ac9bc36f2293d517cc6f1b2ab348d4f69} 
+Eng\+::\+Base\+::\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_base}{Base}} const \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Constructor. 
+
+Initializes the \doxylink{class_eng_1_1_base}{Base} class. \Hypertarget{class_eng_1_1_base_ae0700f06fa814dd024290dcd2b1a3157}\index{Eng::Base@{Eng::Base}!````~Base@{\texorpdfstring{$\sim$}{\string~}Base}}
+\index{````~Base@{\texorpdfstring{$\sim$}{\string~}Base}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Base()}{\string~Base()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_ae0700f06fa814dd024290dcd2b1a3157} 
+ENG\+\_\+\+API Eng\+::\+Base\+::\texorpdfstring{$\sim$}{\string~}\+Base (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Destroys the \doxylink{class_eng_1_1_base}{Base} class. 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_eng_1_1_base_a6d04cce0e8a065fd54b61f225407177b}\index{Eng::Base@{Eng::Base}!addCamera@{addCamera}}
+\index{addCamera@{addCamera}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{addCamera()}{addCamera()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a6d04cce0e8a065fd54b61f225407177b} 
+void ENG\+\_\+\+API Eng\+::\+Base\+::add\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_camera}{Eng\+::\+Camera}} \texorpdfstring{$\ast$}{*}}]{camera}{}\end{DoxyParamCaption})}
+
+
+
+Add a camera to the engine. 
+
+Adds a camera to the engine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & Pointer to the camera to be added.\\
+\hline
+{\em camera} & Pointer to the camera to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_aa07c0c7acb684dd7ddd5f47d8cc31760}\index{Eng::Base@{Eng::Base}!addNode@{addNode}}
+\index{addNode@{addNode}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{addNode()}{addNode()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_aa07c0c7acb684dd7ddd5f47d8cc31760} 
+void ENG\+\_\+\+API Eng\+::\+Base\+::add\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Add a node to the engine. 
+
+Adds a node to the engine.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to be added.\\
+\hline
+{\em node} & The node to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00294}{294}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a7511d3c02ed50ea4ac9b399360a7ca0b}\index{Eng::Base@{Eng::Base}!clearList@{clearList}}
+\index{clearList@{clearList}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{clearList()}{clearList()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a7511d3c02ed50ea4ac9b399360a7ca0b} 
+bool Eng\+::\+Base\+::clear\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clear the list of objects in the engine. 
+
+Clears the list of objects in the engine.
+
+\begin{DoxyReturn}{Returns}
+True if the list was successfully cleared, false otherwise.
+
+True if the list was successfully cleared, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00372}{372}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_ad8d5485a8642815afca82af3bcc16507}\index{Eng::Base@{Eng::Base}!clearWindow@{clearWindow}}
+\index{clearWindow@{clearWindow}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{clearWindow()}{clearWindow()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_ad8d5485a8642815afca82af3bcc16507} 
+void Eng\+::\+Base\+::clear\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clear the window. 
+
+Clears the window. 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00482}{482}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_afd7e1923deb411907695c0b27114f62a}\index{Eng::Base@{Eng::Base}!free@{free}}
+\index{free@{free}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_afd7e1923deb411907695c0b27114f62a} 
+bool ENG\+\_\+\+API Eng\+::\+Base\+::free (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Free the engine resources. 
+
+Free internal components.
+
+Frees the resources used by the engine.
+
+\begin{DoxyReturn}{Returns}
+True if the resources were successfully freed, false otherwise.
+
+True if the resources were successfully freed, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a3c21bcd7bace09d5913ced6de5b15518}\index{Eng::Base@{Eng::Base}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a3c21bcd7bace09d5913ced6de5b15518} 
+\mbox{\hyperlink{class_eng_1_1_base}{Eng\+::\+Base}} ENG\+\_\+\+API \& Eng\+::\+Base\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the singleton instance. 
+
+Gets a reference to the (unique) singleton instance.
+
+\begin{DoxyReturn}{Returns}
+Reference to the singleton instance.
+
+Reference to singleton instance. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_af6dc5365bb8bdfe6c68dfb52ad175ca5}\index{Eng::Base@{Eng::Base}!getList@{getList}}
+\index{getList@{getList}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{getList()}{getList()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_af6dc5365bb8bdfe6c68dfb52ad175ca5} 
+\mbox{\hyperlink{class_eng_1_1_list}{Eng\+::\+List}} \texorpdfstring{$\ast$}{*} Eng\+::\+Base\+::get\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the list of objects in the engine. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the list of objects in the engine. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00363}{363}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a962ceb7a1c8f73e0dd01344fea410754}\index{Eng::Base@{Eng::Base}!init@{init}}
+\index{init@{init}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a962ceb7a1c8f73e0dd01344fea410754} 
+bool ENG\+\_\+\+API Eng\+::\+Base\+::init (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{window\+Title}{, }\item[{int}]{window\+Width}{, }\item[{int}]{window\+Height}{}\end{DoxyParamCaption})}
+
+
+
+Initialize the engine. 
+
+Init internal components of the base class.
+
+Initializes the engine with the given parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. \\
+\hline
+{\em argv} & Array of command-\/line arguments. \\
+\hline
+{\em window\+Title} & Title of the window. \\
+\hline
+{\em window\+Width} & Width of the window. \\
+\hline
+{\em window\+Height} & Height of the window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if initialization was successful, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. \\
+\hline
+{\em argv} & Array of command-\/line arguments. \\
+\hline
+{\em title} & Title of the window. \\
+\hline
+{\em width} & Width of the window. \\
+\hline
+{\em height} & Height of the window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if initialization was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a9a5818b1d0a0190631115ee2b5fa36a6}\index{Eng::Base@{Eng::Base}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{isRunning()}{isRunning()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a9a5818b1d0a0190631115ee2b5fa36a6} 
+bool Eng\+::\+Base\+::is\+Running (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the engine is running. 
+
+\begin{DoxyReturn}{Returns}
+True if the engine is running, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00475}{475}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_af9942db86a1d78d8a928717f5bd8d7dd}\index{Eng::Base@{Eng::Base}!loadNode@{loadNode}}
+\index{loadNode@{loadNode}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{loadNode()}{loadNode()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_af9942db86a1d78d8a928717f5bd8d7dd} 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} ENG\+\_\+\+API Eng\+::\+Base\+::load\+Node (\begin{DoxyParamCaption}\item[{std\+::string}]{path\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Load a node from a file. 
+
+Loads a node from the specified file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node\+File} & Path to the node file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The loaded node.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Name} & Path to the node file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The loaded node. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00283}{283}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a1b08c1ccca8a272ee327958d625f7db2}\index{Eng::Base@{Eng::Base}!loadScene@{loadScene}}
+\index{loadScene@{loadScene}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{loadScene()}{loadScene()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a1b08c1ccca8a272ee327958d625f7db2} 
+std\+::list$<$ \mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} $>$ ENG\+\_\+\+API Eng\+::\+Base\+::load\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{path\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Load a scene from a file. 
+
+Loads a scene from the specified file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+File} & Path to the scene file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of nodes representing the scene.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Name} & Path to the scene file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of nodes representing the scene. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00262}{262}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_ac4eb1f66179273abba59260a6b4c5cbd}\index{Eng::Base@{Eng::Base}!operator=@{operator=}}
+\index{operator=@{operator=}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_ac4eb1f66179273abba59260a6b4c5cbd} 
+void Eng\+::\+Base\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_base}{Base}} const \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Assignment operator. 
+
+Prevents assignment of the \doxylink{class_eng_1_1_base}{Base} class. \Hypertarget{class_eng_1_1_base_a3bb8e344a6ae349b1a8004dc96dfe8fa}\index{Eng::Base@{Eng::Base}!postWindowRedisplay@{postWindowRedisplay}}
+\index{postWindowRedisplay@{postWindowRedisplay}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{postWindowRedisplay()}{postWindowRedisplay()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a3bb8e344a6ae349b1a8004dc96dfe8fa} 
+void Eng\+::\+Base\+::post\+Window\+Redisplay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Post a window redisplay event. 
+
+Posts a window redisplay event. 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00518}{518}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a0bae43de6e7dea90feac7205a70f0076}\index{Eng::Base@{Eng::Base}!refreshAndSwapBuffers@{refreshAndSwapBuffers}}
+\index{refreshAndSwapBuffers@{refreshAndSwapBuffers}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{refreshAndSwapBuffers()}{refreshAndSwapBuffers()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a0bae43de6e7dea90feac7205a70f0076} 
+void Eng\+::\+Base\+::refresh\+And\+Swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Refresh and swap the buffers. 
+
+Refreshes the window and swaps the buffers. 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00544}{544}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a8e7a3c92af4a946e012dcf76b073c287}\index{Eng::Base@{Eng::Base}!removeObjectPickedCallback@{removeObjectPickedCallback}}
+\index{removeObjectPickedCallback@{removeObjectPickedCallback}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{removeObjectPickedCallback()}{removeObjectPickedCallback()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a8e7a3c92af4a946e012dcf76b073c287} 
+void Eng\+::\+Base\+::remove\+Object\+Picked\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Remove the object picked callback. 
+
+Removes the function to be called when an object is picked. 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00388}{388}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a926d11bf0da5398db5dcfec36d43049d}\index{Eng::Base@{Eng::Base}!reshapeCallback@{reshapeCallback}}
+\index{reshapeCallback@{reshapeCallback}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{reshapeCallback()}{reshapeCallback()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a926d11bf0da5398db5dcfec36d43049d} 
+void ENG\+\_\+\+API Eng\+::\+Base\+::reshape\+Callback (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Handle window reshape event. 
+
+Handles the window reshape event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & New width of the window. \\
+\hline
+{\em height} & New height of the window.\\
+\hline
+{\em width} & New width of the window. \\
+\hline
+{\em height} & New height of the window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00216}{216}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a66a01c40aa0c57bffc3f48cb280de2ee}\index{Eng::Base@{Eng::Base}!setActiveCamera@{setActiveCamera}}
+\index{setActiveCamera@{setActiveCamera}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{setActiveCamera()}{setActiveCamera()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a66a01c40aa0c57bffc3f48cb280de2ee} 
+void ENG\+\_\+\+API Eng\+::\+Base\+::set\+Active\+Camera (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})}
+
+
+
+Set the active camera. 
+
+Set the active camera by index.
+
+Sets the active camera selected by index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the camera to be set as active.\\
+\hline
+{\em num} & Index of the camera to be set as active. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_acb6d8612415080db042947905a9c31c1}\index{Eng::Base@{Eng::Base}!setBackgroundColor@{setBackgroundColor}}
+\index{setBackgroundColor@{setBackgroundColor}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{setBackgroundColor()}{setBackgroundColor()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_acb6d8612415080db042947905a9c31c1} 
+void Eng\+::\+Base\+::set\+Background\+Color (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})}
+
+
+
+Set the background color of the window. 
+
+Set the background color.
+
+Sets the background color of the window based on the given rgba params.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & Red component of the color. \\
+\hline
+{\em g} & Green component of the color. \\
+\hline
+{\em b} & Blue component of the color. \\
+\hline
+{\em a} & Alpha component of the color.\\
+\hline
+{\em r} & Red component of the color. \\
+\hline
+{\em g} & Green component of the color. \\
+\hline
+{\em b} & Blue component of the color. \\
+\hline
+{\em a} & Alpha component of the color. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00455}{455}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a99c9da48b32ffac8f6810b0274b1b03f}\index{Eng::Base@{Eng::Base}!setKeyboardCallback@{setKeyboardCallback}}
+\index{setKeyboardCallback@{setKeyboardCallback}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{setKeyboardCallback()}{setKeyboardCallback()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a99c9da48b32ffac8f6810b0274b1b03f} 
+void Eng\+::\+Base\+::set\+Keyboard\+Callback (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(unsigned char, int, int)}\end{DoxyParamCaption})}
+
+
+
+Set the keyboard callback. 
+
+Sets the function to be called when a key is pressed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the keyboard callback function.\\
+\hline
+{\em func} & Pointer to the keyboard callback function. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00381}{381}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a626e6a5a1243db09f40383306b318c5d}\index{Eng::Base@{Eng::Base}!setObjectPickedCallback@{setObjectPickedCallback}}
+\index{setObjectPickedCallback@{setObjectPickedCallback}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{setObjectPickedCallback()}{setObjectPickedCallback()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a626e6a5a1243db09f40383306b318c5d} 
+void Eng\+::\+Base\+::set\+Object\+Picked\+Callback (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}, bool)}\end{DoxyParamCaption})}
+
+
+
+Set the object picked callback. 
+
+Sets the function to be called when an object is picked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the object picked callback function.\\
+\hline
+{\em func} & Pointer to the object picked callback function. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a1ee954d83cc23c77c1e7bf1a5560bee0}\index{Eng::Base@{Eng::Base}!setSpecialCallback@{setSpecialCallback}}
+\index{setSpecialCallback@{setSpecialCallback}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{setSpecialCallback()}{setSpecialCallback()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a1ee954d83cc23c77c1e7bf1a5560bee0} 
+void Eng\+::\+Base\+::set\+Special\+Callback (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(int, int, int)}\end{DoxyParamCaption})}
+
+
+
+Set the special key callback. 
+
+Sets the function to be called when a special key is pressed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the special key callback function.\\
+\hline
+{\em func} & Pointer to the special key callback function. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00444}{444}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a79b89e39c92917ebc0017427a1505e30}\index{Eng::Base@{Eng::Base}!setWindowResizeHandler@{setWindowResizeHandler}}
+\index{setWindowResizeHandler@{setWindowResizeHandler}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{setWindowResizeHandler()}{setWindowResizeHandler()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a79b89e39c92917ebc0017427a1505e30} 
+void Eng\+::\+Base\+::set\+Window\+Resize\+Handler (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(int, int)}\end{DoxyParamCaption})}
+
+
+
+Set the window resize handler. 
+
+Sets the function to be called when the window is resized.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the resize handler function.\\
+\hline
+{\em func} & Pointer to the resize handler function. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00466}{466}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a134ea21e555922464497c88f63d5f66d}\index{Eng::Base@{Eng::Base}!setZBufferUsage@{setZBufferUsage}}
+\index{setZBufferUsage@{setZBufferUsage}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{setZBufferUsage()}{setZBufferUsage()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a134ea21e555922464497c88f63d5f66d} 
+void Eng\+::\+Base\+::set\+ZBuffer\+Usage (\begin{DoxyParamCaption}\item[{bool}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Set Z-\/buffer usage. 
+
+Sets whether the Z-\/buffer should be used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em use\+ZBuffer} & True to use the Z-\/buffer, false otherwise.\\
+\hline
+{\em status} & True to use the Z-\/buffer, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00504}{504}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a8ebf1e6cb3da56fc18640d160136536d}\index{Eng::Base@{Eng::Base}!start@{start}}
+\index{start@{start}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a8ebf1e6cb3da56fc18640d160136536d} 
+void Eng\+::\+Base\+::start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Start the engine. 
+
+Starts the engine. 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00511}{511}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a88949acf85d254434b513ca8b48d5bfa}\index{Eng::Base@{Eng::Base}!startTimer@{startTimer}}
+\index{startTimer@{startTimer}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{startTimer()}{startTimer()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a88949acf85d254434b513ca8b48d5bfa} 
+void ENG\+\_\+\+API Eng\+::\+Base\+::start\+Timer (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*}}]{func~}{)(int), }\item[{int}]{time}{}\end{DoxyParamCaption})}
+
+
+
+Start a timer. 
+
+Starts a timer with the specified duration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to the function to be called when the timer expires. \\
+\hline
+{\em duration} & Duration of the timer in milliseconds.\\
+\hline
+{\em func} & Pointer to the function to be called when the timer expires. \\
+\hline
+{\em time} & Duration of the timer in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00354}{354}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_aad15cd6c7c134bedb57f3a6438f14af3}\index{Eng::Base@{Eng::Base}!swapBuffers@{swapBuffers}}
+\index{swapBuffers@{swapBuffers}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{swapBuffers()}{swapBuffers()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_aad15cd6c7c134bedb57f3a6438f14af3} 
+void Eng\+::\+Base\+::swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Swap the buffers. 
+
+Swaps the buffers. 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00496}{496}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_abf576aaed1567dca950265659304da81}\index{Eng::Base@{Eng::Base}!update@{update}}
+\index{update@{update}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_abf576aaed1567dca950265659304da81} 
+void Eng\+::\+Base\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Update the engine. 
+
+This function calls the glut\+Main\+Loop\+Event (instead of using glut\+Main\+Loop that blocks the whole program).
+
+Updates the engine. This function calls the glut\+Main\+Loop\+Event (instead of using glut\+Main\+Loop that blocks the whole program). 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00537}{537}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_base_a4d48d7d54ae7c1beaf47d0b2db55b1b2}\index{Eng::Base@{Eng::Base}!writeOnScreen@{writeOnScreen}}
+\index{writeOnScreen@{writeOnScreen}!Eng::Base@{Eng::Base}}
+\doxysubsubsection{\texorpdfstring{writeOnScreen()}{writeOnScreen()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_base_a4d48d7d54ae7c1beaf47d0b2db55b1b2} 
+void ENG\+\_\+\+API Eng\+::\+Base\+::write\+On\+Screen (\begin{DoxyParamCaption}\item[{std\+::string}]{text}{, }\item[{\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm\+::vec3}}}]{color}{, }\item[{\mbox{\hyperlink{group__core__vector_ga6ebf1ff1f152ff34c800b6997d5f311f}{glm\+::vec2}}}]{coord}{, }\item[{int}]{text\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Write text on the screen. 
+
+Writes the specified text on the screen at the given coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to be written. \\
+\hline
+{\em color} & The color of the text. \\
+\hline
+{\em coord} & The coordinates where the text should be written. \\
+\hline
+{\em text\+Type} & The type of text to be written.\\
+\hline
+{\em text} & The text to be written. \\
+\hline
+{\em color} & The color of the text. \\
+\hline
+{\em coord} & The coordinates where the text should be written. \\
+\hline
+{\em text\+Type} & The type of text to be written. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+engine/\mbox{\hyperlink{engine_8h}{engine.\+h}}\item 
+engine/\mbox{\hyperlink{engine_8cpp}{engine.\+cpp}}\end{DoxyCompactItemize}

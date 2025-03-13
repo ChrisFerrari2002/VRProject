@@ -1,0 +1,68 @@
+\doxysection{matrix\+\_\+access.\+inl}
+\hypertarget{matrix__access_8inl_source}{}\label{matrix__access_8inl_source}\index{dependencies/glm/include/glm/gtc/matrix\_access.inl@{dependencies/glm/include/glm/gtc/matrix\_access.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00006}\mbox{\hyperlink{group__gtc__matrix__access_gaadcc64829aadf4103477679e48c7594f}{00006}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__gtc__matrix__access_ga259e5ebd0f31ec3f83440f8cae7f5dba}{row}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00007}00007\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ m,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00009}00009\ \ \ \ \ \ \ \ \ length\_t\ index,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ genType::row\_type\ \textcolor{keyword}{const}\&\ x}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00011}00011\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ assert(index\ >=\ 0\ \&\&\ index\ <\ m[0].length());}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00015}00015\ \ \ \ \ \ \ \ \ genType\ Result\ =\ m;}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ m.length();\ ++i)}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i][index]\ =\ x[i];}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00022}\mbox{\hyperlink{group__gtc__matrix__access_ga259e5ebd0f31ec3f83440f8cae7f5dba}{00022}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{typename}\ genType::row\_type\ \mbox{\hyperlink{group__gtc__matrix__access_ga259e5ebd0f31ec3f83440f8cae7f5dba}{row}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00023}00023\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ m,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00025}00025\ \ \ \ \ \ \ \ \ length\_t\ index}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00026}00026\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00028}00028\ \ \ \ \ \ \ \ \ assert(index\ >=\ 0\ \&\&\ index\ <\ m[0].length());}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ genType::row\_type\ Result(0);}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ m.length();\ ++i)}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ m[i][index];}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00037}\mbox{\hyperlink{group__gtc__matrix__access_ga9e757377523890e8b80c5843dbe4dd15}{00037}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__gtc__matrix__access_ga96022eb0d3fae39d89fc7a954e59b374}{column}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00038}00038\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00039}00039\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ m,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00040}00040\ \ \ \ \ \ \ \ \ length\_t\ index,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ genType::col\_type\ \textcolor{keyword}{const}\&\ x}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00042}00042\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00044}00044\ \ \ \ \ \ \ \ \ assert(index\ >=\ 0\ \&\&\ index\ <\ m.length());}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00046}00046\ \ \ \ \ \ \ \ \ genType\ Result\ =\ m;}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00047}00047\ \ \ \ \ \ \ \ \ Result[index]\ =\ x;}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00052}\mbox{\hyperlink{group__gtc__matrix__access_ga96022eb0d3fae39d89fc7a954e59b374}{00052}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{typename}\ genType::col\_type\ \mbox{\hyperlink{group__gtc__matrix__access_ga96022eb0d3fae39d89fc7a954e59b374}{column}}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00053}00053\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00054}00054\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ m,}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00055}00055\ \ \ \ \ \ \ \ \ length\_t\ index}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00056}00056\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00058}00058\ \ \ \ \ \ \ \ \ assert(index\ >=\ 0\ \&\&\ index\ <\ m.length());}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m[index];}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__access_8inl_source_l00062}00062\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

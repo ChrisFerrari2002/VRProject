@@ -1,0 +1,131 @@
+\doxysection{transform2.\+inl}
+\hypertarget{transform2_8inl_source}{}\label{transform2_8inl_source}\index{dependencies/glm/include/glm/gtx/transform2.inl@{dependencies/glm/include/glm/gtx/transform2.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00006}\mbox{\hyperlink{group__gtx__transform2_gaf2bdb7a551159848d643437766d8a201}{00006}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_gaf2bdb7a551159848d643437766d8a201}{shearX2D}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ s)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ r(1);}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00009}00009\ \ \ \ \ \ \ \ \ r[1][0]\ =\ s;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00011}00011\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00014}\mbox{\hyperlink{group__gtx__transform2_ga6fe5f159911a1a1d5d8e70ad387972ab}{00014}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_ga6fe5f159911a1a1d5d8e70ad387972ab}{shearY2D}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ s)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ r(1);}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00017}00017\ \ \ \ \ \ \ \ \ r[0][1]\ =\ s;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00022}\mbox{\hyperlink{group__gtx__transform2_gae6a501ee950a9c3437bb0364e4ff0ad6}{00022}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_gae6a501ee950a9c3437bb0364e4ff0ad6}{shearX3D}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ s,\ T\ t)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ r(1);}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00025}00025\ \ \ \ \ \ \ \ \ r[0][1]\ =\ s;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00026}00026\ \ \ \ \ \ \ \ \ r[0][2]\ =\ t;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00031}\mbox{\hyperlink{group__gtx__transform2_gab351594f265fabee8f6c12cdffef78dd}{00031}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_gab351594f265fabee8f6c12cdffef78dd}{shearY3D}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ s,\ T\ t)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ r(1);}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00034}00034\ \ \ \ \ \ \ \ \ r[1][0]\ =\ s;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00035}00035\ \ \ \ \ \ \ \ \ r[1][2]\ =\ t;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00040}\mbox{\hyperlink{group__gtx__transform2_gaa19d0f7560aa007fbeff5e515ba5c066}{00040}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_gaa19d0f7560aa007fbeff5e515ba5c066}{shearZ3D}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ s,\ T\ t)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ r(1);}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00043}00043\ \ \ \ \ \ \ \ \ r[2][0]\ =\ s;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00044}00044\ \ \ \ \ \ \ \ \ r[2][1]\ =\ t;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00049}00049\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ mat<3,\ 3,\ T,\ Q>\ reflect2D(mat<3,\ 3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m,\ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ normal)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00051}00051\ \ \ \ \ \ \ \ \ mat<3,\ 3,\ T,\ Q>\ r(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00052}00052\ \ \ \ \ \ \ \ \ r[0][0]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.x;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00053}00053\ \ \ \ \ \ \ \ \ r[0][1]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00054}00054\ \ \ \ \ \ \ \ \ r[1][0]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00055}00055\ \ \ \ \ \ \ \ \ r[1][1]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.y\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00060}00060\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ mat<4,\ 4,\ T,\ Q>\ reflect3D(mat<4,\ 4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m,\ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ normal)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00062}00062\ \ \ \ \ \ \ \ \ mat<4,\ 4,\ T,\ Q>\ r(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00063}00063\ \ \ \ \ \ \ \ \ r[0][0]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.x;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00064}00064\ \ \ \ \ \ \ \ \ r[0][1]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00065}00065\ \ \ \ \ \ \ \ \ r[0][2]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00067}00067\ \ \ \ \ \ \ \ \ r[1][0]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00068}00068\ \ \ \ \ \ \ \ \ r[1][1]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.y\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00069}00069\ \ \ \ \ \ \ \ \ r[1][2]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.y\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00071}00071\ \ \ \ \ \ \ \ \ r[2][0]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.x\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00072}00072\ \ \ \ \ \ \ \ \ r[2][1]\ =\ -\/\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.y\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00073}00073\ \ \ \ \ \ \ \ \ r[2][2]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ normal.z\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00078}\mbox{\hyperlink{group__gtx__transform2_ga468bd38fd8e3999a4c38f13f52712ada}{00078}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_ga468bd38fd8e3999a4c38f13f52712ada}{proj2D}}(}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\&\ m,}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\&\ normal)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ r(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00083}00083\ \ \ \ \ \ \ \ \ r[0][0]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ normal.x\ *\ normal.x;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00084}00084\ \ \ \ \ \ \ \ \ r[0][1]\ =\ -\/\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00085}00085\ \ \ \ \ \ \ \ \ r[1][0]\ =\ -\/\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00086}00086\ \ \ \ \ \ \ \ \ r[1][1]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ normal.y\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00091}\mbox{\hyperlink{group__gtx__transform2_ga54be8b39a58f85ff667fd9aaa881a1e6}{00091}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_ga54be8b39a58f85ff667fd9aaa881a1e6}{proj3D}}(}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\&\ m,}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\&\ normal)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ r(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00096}00096\ \ \ \ \ \ \ \ \ r[0][0]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ normal.x\ *\ normal.x;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00097}00097\ \ \ \ \ \ \ \ \ r[0][1]\ =\ -\/\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00098}00098\ \ \ \ \ \ \ \ \ r[0][2]\ =\ -\/\ normal.x\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00099}00099\ \ \ \ \ \ \ \ \ r[1][0]\ =\ -\/\ normal.x\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00100}00100\ \ \ \ \ \ \ \ \ r[1][1]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ normal.y\ *\ normal.y;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00101}00101\ \ \ \ \ \ \ \ \ r[1][2]\ =\ -\/\ normal.y\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00102}00102\ \ \ \ \ \ \ \ \ r[2][0]\ =\ -\/\ normal.x\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00103}00103\ \ \ \ \ \ \ \ \ r[2][1]\ =\ -\/\ normal.y\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00104}00104\ \ \ \ \ \ \ \ \ r[2][2]\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ -\/\ normal.z\ *\ normal.z;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ r;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00108}00108\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00109}\mbox{\hyperlink{group__gtx__transform2_gad9a3e611fee11d78e7d027f50288f0eb}{00109}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_gad9a3e611fee11d78e7d027f50288f0eb}{scaleBias}}(T\ scale,\ T\ bias)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00110}00110\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ result;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00112}00112\ \ \ \ \ \ \ \ \ result[3]\ =\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}(bias),\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00113}00113\ \ \ \ \ \ \ \ \ result[0][0]\ =\ \mbox{\hyperlink{group__ext__matrix__transform_gaae2f8b2080622b24b85e1096748599b6}{scale}};}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00114}00114\ \ \ \ \ \ \ \ \ result[1][1]\ =\ \mbox{\hyperlink{group__ext__matrix__transform_gaae2f8b2080622b24b85e1096748599b6}{scale}};}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00115}00115\ \ \ \ \ \ \ \ \ result[2][2]\ =\ \mbox{\hyperlink{group__ext__matrix__transform_gaae2f8b2080622b24b85e1096748599b6}{scale}};}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00119}00119\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00120}\mbox{\hyperlink{group__gtx__transform2_gaa0d9550d5ccb84fad05e91a9a0a3742a}{00120}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__transform2_gad9a3e611fee11d78e7d027f50288f0eb}{scaleBias}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ scale,\ T\ bias)}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00121}00121\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ m\ *\ \mbox{\hyperlink{group__gtx__transform2_gad9a3e611fee11d78e7d027f50288f0eb}{scaleBias<T,\ Q>}}(scale,\ bias);}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00123}00123\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00124}00124\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{transform2_8inl_source_l00125}00125\ }
+
+\end{DoxyCode}

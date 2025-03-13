@@ -1,0 +1,533 @@
+\doxysection{type\+\_\+aligned.\+hpp}
+\hypertarget{gtx_2type__aligned_8hpp_source}{}\label{gtx_2type__aligned_8hpp_source}\index{dependencies/glm/include/glm/gtx/type\_aligned.hpp@{dependencies/glm/include/glm/gtx/type\_aligned.hpp}}
+\mbox{\hyperlink{gtx_2type__aligned_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00016}00016\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type__precision_8hpp}{../gtc/type\_precision.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gtc_2quaternion_8hpp}{../gtc/quaternion.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_type\_aligned\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{})}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_type\_aligned\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00026}00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Signed\ int\ vector\ types}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00036}\mbox{\hyperlink{group__gtx__type__aligned_gab5cd5c5fad228b25c782084f1cc30114}{00036}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaf9e675b6392764242ae87eb179e9d3d6}{lowp\_int8}},\ aligned\_lowp\_int8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00040}\mbox{\hyperlink{group__gtx__type__aligned_ga5bb5dd895ef625c1b113f2cf400186b0}{00040}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga71fc0c399fa4780507748b643733f153}{lowp\_int16}},\ aligned\_lowp\_int16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00044}\mbox{\hyperlink{group__gtx__type__aligned_gac6efa54cf7c6c86f7158922abdb1a430}{00044}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gad9939c9d6fec1c6accc02a83c6500f08}{lowp\_int32}},\ aligned\_lowp\_int32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00048}\mbox{\hyperlink{group__gtx__type__aligned_ga6612eb77c8607048e7552279a11eeb5f}{00048}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gab8a8e75af347592406e41b3ae2c0712b}{lowp\_int64}},\ aligned\_lowp\_int64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00053}\mbox{\hyperlink{group__gtx__type__aligned_ga7ddc1848ff2223026db8968ce0c97497}{00053}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gae6092311f6970a305c2df19a372360a3}{lowp\_int8\_t}},\ aligned\_lowp\_int8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00057}\mbox{\hyperlink{group__gtx__type__aligned_ga22240dd9458b0f8c11fbcc4f48714f68}{00057}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gae34c3d53c4c1434fc9f26538b0185667}{lowp\_int16\_t}},\ aligned\_lowp\_int16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00061}\mbox{\hyperlink{group__gtx__type__aligned_ga8130ea381d76a2cc34a93ccbb6cf487d}{00061}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gad9567c806dc39f534174eef42663119d}{lowp\_int32\_t}},\ aligned\_lowp\_int32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00065}\mbox{\hyperlink{group__gtx__type__aligned_ga7ccb60f3215d293fd62b33b31ed0e7be}{00065}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga14d72e76d57c7f28eca8e933816c9fd6}{lowp\_int64\_t}},\ aligned\_lowp\_int64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00070}\mbox{\hyperlink{group__gtx__type__aligned_gac20d508d2ef5cc95ad3daf083c57ec2a}{00070}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaa2e13ee29c90f75658beed6082541097}{lowp\_i8}},\ aligned\_lowp\_i8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00074}\mbox{\hyperlink{group__gtx__type__aligned_ga50257b48069a31d0c8d9c1f644d267de}{00074}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaf7bbfd31bcec25a416ea94d09efb5451}{lowp\_i16}},\ aligned\_lowp\_i16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00078}\mbox{\hyperlink{group__gtx__type__aligned_gaa07e98e67b7a3435c0746018c7a2a839}{00078}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga70fd34e8b8cffc92739161284ed77328}{lowp\_i32}},\ aligned\_lowp\_i32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00082}\mbox{\hyperlink{group__gtx__type__aligned_ga62601fc6f8ca298b77285bedf03faffd}{00082}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga1f4ded25f71c0f3b4518936d50b54b6e}{lowp\_i64}},\ aligned\_lowp\_i64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00087}\mbox{\hyperlink{group__gtx__type__aligned_gac8cff825951aeb54dd846037113c72db}{00087}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga3ee8faab2278c44c5785af04b7b18a14}{mediump\_int8}},\ aligned\_mediump\_int8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00091}\mbox{\hyperlink{group__gtx__type__aligned_ga78f443d88f438575a62b5df497cdf66b}{00091}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga4611997edb6c61606daa11990cf08798}{mediump\_int16}},\ aligned\_mediump\_int16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00095}\mbox{\hyperlink{group__gtx__type__aligned_ga0680cd3b5d4e8006985fb41a4f9b57af}{00095}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga0660a752402702f420f13c686a7fff29}{mediump\_int32}},\ aligned\_mediump\_int32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00099}\mbox{\hyperlink{group__gtx__type__aligned_gad9e5babb1dd3e3531b42c37bf25dd951}{00099}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga603c695fe5cd677d3f72a81343e19a74}{mediump\_int64}},\ aligned\_mediump\_int64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00104}\mbox{\hyperlink{group__gtx__type__aligned_ga353fd9fa8a9ad952fcabd0d53ad9a6dd}{00104}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga626ac5f73d3538e62a879d6c56abfb36}{mediump\_int8\_t}},\ aligned\_mediump\_int8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00108}\mbox{\hyperlink{group__gtx__type__aligned_ga2196442c0e5c5e8c77842de388c42521}{00108}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga478fab608cf43040013d719a3e03b194}{mediump\_int16\_t}},\ aligned\_mediump\_int16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00112}\mbox{\hyperlink{group__gtx__type__aligned_ga1284488189daf897cf095c5eefad9744}{00112}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gafd9b4bd9e4465aec63351b59100692c4}{mediump\_int32\_t}},\ aligned\_mediump\_int32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00116}\mbox{\hyperlink{group__gtx__type__aligned_ga73fdc86a539808af58808b7c60a1c4d8}{00116}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga555a2f85641550c232db473a9bb981f7}{mediump\_int64\_t}},\ aligned\_mediump\_int64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00121}\mbox{\hyperlink{group__gtx__type__aligned_gafafeea923e1983262c972e2b83922d3b}{00121}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga28a8b5fd51072680bb55178c17cc7411}{mediump\_i8}},\ aligned\_mediump\_i8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00125}\mbox{\hyperlink{group__gtx__type__aligned_ga4b35ca5fe8f55c9d2fe54fdb8d8896f4}{00125}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga8454fc6a82c7bb787d0ac9663e08f63d}{mediump\_i16}},\ aligned\_mediump\_i16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00129}\mbox{\hyperlink{group__gtx__type__aligned_ga63b882e29170d428463d99c3d630acc6}{00129}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga5e00ec824eb55968a6b6496f294d8c07}{mediump\_i32}},\ aligned\_mediump\_i32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00133}\mbox{\hyperlink{group__gtx__type__aligned_ga8b20507bb048c1edea2d441cc953e6f0}{00133}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga90fedf6c701ffbe00535156715e50787}{mediump\_i64}},\ aligned\_mediump\_i64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00138}\mbox{\hyperlink{group__gtx__type__aligned_ga56c5ca60813027b603c7b61425a0479d}{00138}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga57c86999e666760c304453f9bfdc09d1}{highp\_int8}},\ aligned\_highp\_int8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00142}\mbox{\hyperlink{group__gtx__type__aligned_ga7a751b3aff24c0259f4a7357c2969089}{00142}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaf0430ed80e88c0d1dfbe47f359659c81}{highp\_int16}},\ aligned\_highp\_int16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00146}\mbox{\hyperlink{group__gtx__type__aligned_ga70cd2144351c556469ee6119e59971fc}{00146}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaa2045c92b9553d463191af6a20e997bb}{highp\_int32}},\ aligned\_highp\_int32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00150}\mbox{\hyperlink{group__gtx__type__aligned_ga46bbf08dc004d8c433041e0b5018a5d3}{00150}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga7ffb27943e9569800979081bc548621c}{highp\_int64}},\ aligned\_highp\_int64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00155}\mbox{\hyperlink{group__gtx__type__aligned_gab3e10c77a20d1abad2de1c561c7a5c18}{00155}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga417701b99e6e7992f35ab2ef694f88b2}{highp\_int8\_t}},\ aligned\_highp\_int8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00159}\mbox{\hyperlink{group__gtx__type__aligned_ga968f30319ebeaca9ebcd3a25a8e139fb}{00159}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga07d318d61472e75238e53b9642227672}{highp\_int16\_t}},\ aligned\_highp\_int16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00163}\mbox{\hyperlink{group__gtx__type__aligned_gaae773c28e6390c6aa76f5b678b7098a3}{00163}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga783d077a513c1f475f6cdb406b4238c3}{highp\_int32\_t}},\ aligned\_highp\_int32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00167}\mbox{\hyperlink{group__gtx__type__aligned_ga790cfff1ca39d0ed696ffed980809311}{00167}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga0f5186bde44471133b08057cae8a51ac}{highp\_int64\_t}},\ aligned\_highp\_int64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00172}\mbox{\hyperlink{group__gtx__type__aligned_ga8265b91eb23c120a9b0c3e381bc37b96}{00172}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga8b9eb0b24cce7f14478bfcacb53ce839}{highp\_i8}},\ aligned\_highp\_i8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00176}\mbox{\hyperlink{group__gtx__type__aligned_gae6d384de17588d8edb894fbe06e0d410}{00176}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaa04399853952dbce29cb62e2432f350a}{highp\_i16}},\ aligned\_highp\_i16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00180}\mbox{\hyperlink{group__gtx__type__aligned_ga9c8172b745ee03fc5b2b91c350c2922f}{00180}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga197d19b585222da57d70238a5cfc2be8}{highp\_i32}},\ aligned\_highp\_i32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00184}\mbox{\hyperlink{group__gtx__type__aligned_ga77e0dff12aa4020ddc3f8cabbea7b2e6}{00184}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gad3cb9a0ac0266ea2c51c6fac256345d1}{highp\_i64}},\ aligned\_highp\_i64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00189}\mbox{\hyperlink{group__gtx__type__aligned_gabd82b9faa9d4d618dbbe0fc8a1efee63}{00189}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__int__sized_gaf9d6ceaf8a36734c0a026f6f699ff60c}{int8}},\ aligned\_int8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00193}\mbox{\hyperlink{group__gtx__type__aligned_ga285649744560be21000cfd81bbb5d507}{00193}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__int__sized_ga22d9cd55823f7c4aeee13aceafd7238a}{int16}},\ aligned\_int16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00197}\mbox{\hyperlink{group__gtx__type__aligned_ga07732da630b2deda428ce95c0ecaf3ff}{00197}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__int__sized_gafc36c598ca57ab4a9286a53bf91a5fff}{int32}},\ aligned\_int32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00201}\mbox{\hyperlink{group__gtx__type__aligned_ga1a8da2a8c51f69c07a2e7f473aa420f4}{00201}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__int__sized_ga435d75819cce297cc5fa21bd84ef89a5}{int64}},\ aligned\_int64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00206}\mbox{\hyperlink{group__gtx__type__aligned_ga848aedf13e2d9738acf0bb482c590174}{00206}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga673898d450b2a91186f3c4f40c5f8633}{int8\_t}},\ aligned\_int8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00210}\mbox{\hyperlink{group__gtx__type__aligned_gafd2803d39049dd45a37a63931e25d943}{00210}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaf89ee61e0d34aa4a462104b7ae7f2da6}{int16\_t}},\ aligned\_int16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00214}\mbox{\hyperlink{group__gtx__type__aligned_gae553b33349d6da832cf0724f1e024094}{00214}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gab870c0eb6f525b0c8c4716762e0fc3a8}{int32\_t}},\ aligned\_int32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00218}\mbox{\hyperlink{group__gtx__type__aligned_ga16d223a2b3409e812e1d3bd87f0e9e5c}{00218}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga6abb23fbf4e39c50ec5341160b5da5ab}{int64\_t}},\ aligned\_int64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00223}\mbox{\hyperlink{group__gtx__type__aligned_ga2de065d2ddfdb366bcd0febca79ae2ad}{00223}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaae064be68b7d36cd7910c16e8ad18bba}{i8}},\ aligned\_i8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00227}\mbox{\hyperlink{group__gtx__type__aligned_gabd786bdc20a11c8cb05c92c8212e28d3}{00227}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga35e5542ca05b29cc256fdafb8503d1fd}{i16}},\ aligned\_i16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00231}\mbox{\hyperlink{group__gtx__type__aligned_gad4aefe56691cdb640c72f0d46d3fb532}{00231}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga1d8ed5c43e91ea7d4528389da4fa9524}{i32}},\ aligned\_i32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00235}\mbox{\hyperlink{group__gtx__type__aligned_ga8fe9745f7de24a8394518152ff9fccdc}{00235}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gac7a7eaad46064fc952b06df33689da23}{i64}},\ aligned\_i64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00240}\mbox{\hyperlink{group__gtx__type__aligned_gaaad735483450099f7f882d4e3a3569bd}{00240}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{ivec1}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_ivec1}},\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00244}\mbox{\hyperlink{group__gtx__type__aligned_gac7b6f823802edbd6edbaf70ea25bf068}{00244}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{ivec2}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_ivec2}},\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00248}\mbox{\hyperlink{group__gtx__type__aligned_ga3e235bcd2b8029613f25b8d40a2d3ef7}{00248}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{ivec3}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_ivec3}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00252}\mbox{\hyperlink{group__gtx__type__aligned_ga50d8a9523968c77f8325b4c9bfbff41e}{00252}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{ivec4}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_ivec4}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00257}\mbox{\hyperlink{group__gtx__type__aligned_ga9ec20fdfb729c702032da9378c79679f}{00257}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i8vec1}},\ aligned\_i8vec1,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00261}\mbox{\hyperlink{group__gtx__type__aligned_ga25b3fe1d9e8d0a5e86c1949c1acd8131}{00261}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i8vec2}},\ aligned\_i8vec2,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00265}\mbox{\hyperlink{group__gtx__type__aligned_ga2958f907719d94d8109b562540c910e2}{00265}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i8vec3}},\ aligned\_i8vec3,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00266}00266\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00269}\mbox{\hyperlink{group__gtx__type__aligned_ga1fe6fc032a978f1c845fac9aa0668714}{00269}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i8vec4}},\ aligned\_i8vec4,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00274}\mbox{\hyperlink{group__gtx__type__aligned_gaa4161e7a496dc96972254143fe873e55}{00274}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i16vec1}},\ aligned\_i16vec1,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00278}\mbox{\hyperlink{group__gtx__type__aligned_ga9d7cb211ccda69b1c22ddeeb0f3e7aba}{00278}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i16vec2}},\ aligned\_i16vec2,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00282}\mbox{\hyperlink{group__gtx__type__aligned_gaaee91dd2ab34423bcc11072ef6bd0f02}{00282}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i16vec3}},\ aligned\_i16vec3,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00286}\mbox{\hyperlink{group__gtx__type__aligned_ga49f047ccaa8b31fad9f26c67bf9b3510}{00286}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i16vec4}},\ aligned\_i16vec4,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00288}00288\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00291}\mbox{\hyperlink{group__gtx__type__aligned_ga904e9c2436bb099397c0823506a0771f}{00291}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i32vec1}},\ aligned\_i32vec1,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00292}00292\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00295}\mbox{\hyperlink{group__gtx__type__aligned_gaf90651cf2f5e7ee2b11cfdc5a6749534}{00295}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i32vec2}},\ aligned\_i32vec2,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00299}\mbox{\hyperlink{group__gtx__type__aligned_ga7354a4ead8cb17868aec36b9c30d6010}{00299}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i32vec3}},\ aligned\_i32vec3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00303}\mbox{\hyperlink{group__gtx__type__aligned_gad2ecbdea18732163e2636e27b37981ee}{00303}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i32vec4}},\ aligned\_i32vec4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00308}\mbox{\hyperlink{group__gtx__type__aligned_ga965b1c9aa1800e93d4abc2eb2b5afcbf}{00308}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i64vec1}},\ aligned\_i64vec1,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00312}\mbox{\hyperlink{group__gtx__type__aligned_ga1f9e9c2ea2768675dff9bae5cde2d829}{00312}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i64vec2}},\ aligned\_i64vec2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00316}\mbox{\hyperlink{group__gtx__type__aligned_gad77c317b7d942322cd5be4c8127b3187}{00316}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i64vec3}},\ aligned\_i64vec3,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00320}\mbox{\hyperlink{group__gtx__type__aligned_ga716f8ea809bdb11b5b542d8b71aeb04f}{00320}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{i64vec4}},\ aligned\_i64vec4,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00324}00324\ \ \ \ \ \textcolor{comment}{//\ Unsigned\ int\ vector\ types}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00328}\mbox{\hyperlink{group__gtx__type__aligned_gad46f8e9082d5878b1bc04f9c1471cdaa}{00328}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga4d9dc08b7b248a386dfe9afd00fc6b1e}{lowp\_uint8}},\ aligned\_lowp\_uint8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00332}\mbox{\hyperlink{group__gtx__type__aligned_ga1246094581af624aca6c7499aaabf801}{00332}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga9b8409887319f62f06e664f6ca121b9d}{lowp\_uint16}},\ aligned\_lowp\_uint16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00336}\mbox{\hyperlink{group__gtx__type__aligned_ga7a5009a1d0196bbf21dd7518f61f0249}{00336}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaf11e85af414720b4cd12bd57b3a81e68}{lowp\_uint32}},\ aligned\_lowp\_uint32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00340}\mbox{\hyperlink{group__gtx__type__aligned_ga45213fd18b3bb1df391671afefe4d1e7}{00340}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gacf666a9d9b309c4615c7a4f2ab0be289}{lowp\_uint64}},\ aligned\_lowp\_uint64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00341}00341\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00342}00342\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00345}\mbox{\hyperlink{group__gtx__type__aligned_ga0ba26b4e3fd9ecbc25358efd68d8a4ca}{00345}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga0910ef24195d1b8b26e34d73148c0c45}{lowp\_uint8\_t}},\ aligned\_lowp\_uint8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00346}00346\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00349}\mbox{\hyperlink{group__gtx__type__aligned_gaf2b58f5fb6d4ec8ce7b76221d3af43e1}{00349}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga9a71176a4e5bc61951f9e9197d9c80e1}{lowp\_uint16\_t}},\ aligned\_lowp\_uint16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00353}\mbox{\hyperlink{group__gtx__type__aligned_gadc246401847dcba155f0699425e49dcd}{00353}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga9f8cb602a358e1f48bda2682cf051f0c}{lowp\_uint32\_t}},\ aligned\_lowp\_uint32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00354}00354\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00357}\mbox{\hyperlink{group__gtx__type__aligned_gaace64bddf51a9def01498da9a94fb01c}{00357}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gabf3069d4f188557a87b1d7f35eb0a270}{lowp\_uint64\_t}},\ aligned\_lowp\_uint64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00362}\mbox{\hyperlink{group__gtx__type__aligned_gad7bb97c29d664bd86ffb1bed4abc5534}{00362}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gae63f942c49a30dbf266b2f13f3efe257}{lowp\_u8}},\ aligned\_lowp\_u8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00366}\mbox{\hyperlink{group__gtx__type__aligned_ga404bba7785130e0b1384d695a9450b28}{00366}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga22c5364f27caa0a6eb0627cbc21e46be}{lowp\_u16}},\ aligned\_lowp\_u16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00370}\mbox{\hyperlink{group__gtx__type__aligned_ga31ba41fd896257536958ec6080203d2a}{00370}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaba06fae1dd98ca50c017e68345df0365}{lowp\_u32}},\ aligned\_lowp\_u32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00374}\mbox{\hyperlink{group__gtx__type__aligned_gacca5f13627f57b3505676e40a6e43e5e}{00374}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga61ed4c68a4cffb77cd63cc107119123a}{lowp\_u64}},\ aligned\_lowp\_u64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00375}00375\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00379}\mbox{\hyperlink{group__gtx__type__aligned_ga5faf1d3e70bf33174dd7f3d01d5b883b}{00379}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gac4b849eaac0543a10f97f4bdda4850a8}{mediump\_uint8}},\ aligned\_mediump\_uint8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00383}\mbox{\hyperlink{group__gtx__type__aligned_ga727e2bf2c433bb3b0182605860a48363}{00383}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga2cef3a0d7b0fce75c9885f64656d8933}{mediump\_uint16}},\ aligned\_mediump\_uint16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00387}\mbox{\hyperlink{group__gtx__type__aligned_ga12566ca66d5962dadb4a5eb4c74e891e}{00387}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga861dbd1051f488e425b3966001b568e5}{mediump\_uint32}},\ aligned\_mediump\_uint32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00391}\mbox{\hyperlink{group__gtx__type__aligned_ga7b66a97a8acaa35c5a377b947318c6bc}{00391}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga6685788d15d0a973ee7c2460d0456dc1}{mediump\_uint64}},\ aligned\_mediump\_uint64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00396}\mbox{\hyperlink{group__gtx__type__aligned_gaa9cde002439b74fa66120a16a9f55fcc}{00396}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gadfa38f3c245d371c4b2079f1fd68928b}{mediump\_uint8\_t}},\ aligned\_mediump\_uint8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00400}\mbox{\hyperlink{group__gtx__type__aligned_ga1ca98c67f7d1e975f7c5202f1da1df1f}{00400}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga0b385466deac5ac96061ef2cdd6db20f}{mediump\_uint16\_t}},\ aligned\_mediump\_uint16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00404}\mbox{\hyperlink{group__gtx__type__aligned_ga1dc8bc6199d785f235576948d80a597c}{00404}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gac7782c1e393f9ad47e41a177a685f287}{mediump\_uint32\_t}},\ aligned\_mediump\_uint32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00408}\mbox{\hyperlink{group__gtx__type__aligned_gad14a0f2ec93519682b73d70b8e401d81}{00408}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gaa97354d3120a6dc029a5e9563723de18}{mediump\_uint64\_t}},\ aligned\_mediump\_uint64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00413}\mbox{\hyperlink{group__gtx__type__aligned_gada8b996eb6526dc1ead813bd49539d1b}{00413}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gac04b372784392e82bd557f300c4de097}{mediump\_u8}},\ aligned\_mediump\_u8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00414}00414\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00417}\mbox{\hyperlink{group__gtx__type__aligned_ga28948f6bfb52b42deb9d73ae1ea8d8b0}{00417}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga6745262ef6a6fdb8637b2387ef924828}{mediump\_u16}},\ aligned\_mediump\_u16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00421}\mbox{\hyperlink{group__gtx__type__aligned_gad6a7c0b5630f89d3f1c5b4ef2919bb4c}{00421}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gad0c27a525045c299a92306eb4cd7c13a}{mediump\_u32}},\ aligned\_mediump\_u32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00425}\mbox{\hyperlink{group__gtx__type__aligned_gaa0fc531cbaa972ac3a0b86d21ef4a7fa}{00425}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga00c51a16fa190b0a90205d50d6d8a44a}{mediump\_u64}},\ aligned\_mediump\_u64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00430}\mbox{\hyperlink{group__gtx__type__aligned_ga0ee829f7b754b262bbfe6317c0d678ac}{00430}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga2c27c6dd26e893786f04b10f99c1ee95}{highp\_uint8}},\ aligned\_highp\_uint8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00434}\mbox{\hyperlink{group__gtx__type__aligned_ga447848a817a626cae08cedc9778b331c}{00434}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga4d32967d45ba8365e2a05eaaac85e978}{highp\_uint16}},\ aligned\_highp\_uint16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00438}\mbox{\hyperlink{group__gtx__type__aligned_ga6027ae13b2734f542a6e7beee11b8820}{00438}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga3145e44c73e2df7dfe4f3cb65974bf22}{highp\_uint32}},\ aligned\_highp\_uint32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00439}00439\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00442}\mbox{\hyperlink{group__gtx__type__aligned_ga2aca46c8608c95ef991ee4c332acde5f}{00442}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga8079c653e20cda03d34b99de629a7b09}{highp\_uint64}},\ aligned\_highp\_uint64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00447}\mbox{\hyperlink{group__gtx__type__aligned_gaff50b10dd1c48be324fdaffd18e2c7ea}{00447}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga9ba529fcc75b82d23da979f0ce6e4518}{highp\_uint8\_t}},\ aligned\_highp\_uint8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00451}\mbox{\hyperlink{group__gtx__type__aligned_ga9fc4421dbb833d5461e6d4e59dcfde55}{00451}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga3145bc0ee80432c165e985a188a722b3}{highp\_uint16\_t}},\ aligned\_highp\_uint16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00455}\mbox{\hyperlink{group__gtx__type__aligned_ga329f1e2b94b33ba5e3918197030bcf03}{00455}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga8eb85ad460079c63b68866ae34637bda}{highp\_uint32\_t}},\ aligned\_highp\_uint32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00459}\mbox{\hyperlink{group__gtx__type__aligned_ga71e646f7e301aa422328194162c9c998}{00459}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga6e66f40c5909bfc872b068187fa6029e}{highp\_uint64\_t}},\ aligned\_highp\_uint64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00460}00460\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00464}\mbox{\hyperlink{group__gtx__type__aligned_ga8942e09f479489441a7a5004c6d8cb66}{00464}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga8a60abe782749c504fb5ae51eb8b49cc}{highp\_u8}},\ aligned\_highp\_u8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00465}00465\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00468}\mbox{\hyperlink{group__gtx__type__aligned_gaab32497d6e4db16ee439dbedd64c5865}{00468}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga9da2178d7501d9c0f225fa1a7b70cb45}{highp\_u16}},\ aligned\_highp\_u16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00472}\mbox{\hyperlink{group__gtx__type__aligned_gaaadbb34952eca8e3d7fe122c3e167742}{00472}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gae8e8a2c712653891a03c171795286ac5}{highp\_u32}},\ aligned\_highp\_u32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00473}00473\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00476}\mbox{\hyperlink{group__gtx__type__aligned_ga92024d27c74a3650afb55ec8e024ed25}{00476}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga6006ea883d3c0491791650b2fb84de39}{highp\_u64}},\ aligned\_highp\_u64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00477}00477\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00481}\mbox{\hyperlink{group__gtx__type__aligned_gabde1d0b4072df35453db76075ab896a6}{00481}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__uint__sized_ga536143d82147bb78849bfccffece8bff}{uint8}},\ aligned\_uint8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00485}\mbox{\hyperlink{group__gtx__type__aligned_ga06c296c9e398b294c8c9dd2a7693dcbb}{00485}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__uint__sized_ga6201f5c504a50620708b19bae303c32a}{uint16}},\ aligned\_uint16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00486}00486\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00489}\mbox{\hyperlink{group__gtx__type__aligned_gacf1744488c96ebd33c9f36ad33b2010a}{00489}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__uint__sized_ga22033ef3f73efe1da8e437410adda3be}{uint32}},\ aligned\_uint32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00490}00490\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00493}\mbox{\hyperlink{group__gtx__type__aligned_ga3328061a64c20ba59d5f9da24c2cd059}{00493}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__ext__scalar__uint__sized_gae3632bf9b37da66233d78930dd06378a}{uint64}},\ aligned\_uint64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00494}00494\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00498}\mbox{\hyperlink{group__gtx__type__aligned_gaf6ced36f13bae57f377bafa6f5fcc299}{00498}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga93adf6dd9803408f3e3aaf9dedda352b}{uint8\_t}},\ aligned\_uint8\_t,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00499}00499\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00502}\mbox{\hyperlink{group__gtx__type__aligned_gafbc7fb7847bfc78a339d1d371c915c73}{00502}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gac4eb4f43cae8129b00086dc234d3b8fc}{uint16\_t}},\ aligned\_uint16\_t,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00506}\mbox{\hyperlink{group__gtx__type__aligned_gaa86bc56a73fd8120b1121b5f5e6245ae}{00506}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga822ca53a9ad412504532838906276a99}{uint32\_t}},\ aligned\_uint32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00507}00507\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00510}\mbox{\hyperlink{group__gtx__type__aligned_ga68c0b9e669060d0eb5ab8c3ddeb483d8}{00510}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga058f57c19e1befdcf12498944bd73e69}{uint64\_t}},\ aligned\_uint64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00511}00511\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00515}\mbox{\hyperlink{group__gtx__type__aligned_ga4f3bab577daf3343e99cc005134bce86}{00515}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga5e3dc67373d5068997d2d9f41c9024d2}{u8}},\ aligned\_u8,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00516}00516\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00519}\mbox{\hyperlink{group__gtx__type__aligned_ga13a2391339d0790d43b76d00a7611c4f}{00519}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gae7a1571503f83d2264ddfa705a6b082a}{u16}},\ aligned\_u16,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00523}\mbox{\hyperlink{group__gtx__type__aligned_ga197570e03acbc3d18ab698e342971e8f}{00523}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga54e837745059fd29017bed71cfa0a8db}{u32}},\ aligned\_u32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00527}\mbox{\hyperlink{group__gtx__type__aligned_ga0f033b21e145a1faa32c62ede5878993}{00527}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga71cedd4972f9cb1a5e14dfe5ab83ecd7}{u64}},\ aligned\_u64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00529}00529\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00532}\mbox{\hyperlink{group__gtx__type__aligned_ga509af83527f5cd512e9a7873590663aa}{00532}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{uvec1}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_uvec1}},\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00533}00533\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00536}\mbox{\hyperlink{group__gtx__type__aligned_ga94e86186978c502c6dc0c0d9c4a30679}{00536}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{uvec2}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_uvec2}},\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00540}\mbox{\hyperlink{group__gtx__type__aligned_ga5cec574686a7f3c8ed24bb195c5e2d0a}{00540}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{uvec3}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_uvec3}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00541}00541\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00544}\mbox{\hyperlink{group__gtx__type__aligned_ga47edfdcee9c89b1ebdaf20450323b1d4}{00544}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{uvec4}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_uvec4}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00545}00545\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00546}00546\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00549}\mbox{\hyperlink{group__gtx__type__aligned_ga5611d6718e3a00096918a64192e73a45}{00549}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u8vec1}},\ aligned\_u8vec1,\ 1);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00550}00550\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00553}\mbox{\hyperlink{group__gtx__type__aligned_ga19837e6f72b60d994a805ef564c6c326}{00553}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u8vec2}},\ aligned\_u8vec2,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00554}00554\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00557}\mbox{\hyperlink{group__gtx__type__aligned_ga9740cf8e34f068049b42a2753f9601c2}{00557}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u8vec3}},\ aligned\_u8vec3,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00561}\mbox{\hyperlink{group__gtx__type__aligned_ga8b8588bb221448f5541a858903822a57}{00561}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u8vec4}},\ aligned\_u8vec4,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00562}00562\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00563}00563\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00566}\mbox{\hyperlink{group__gtx__type__aligned_ga991abe990c16de26b2129d6bc2f4c051}{00566}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u16vec1}},\ aligned\_u16vec1,\ 2);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00567}00567\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00570}\mbox{\hyperlink{group__gtx__type__aligned_gac01bb9fc32a1cd76c2b80d030f71df4c}{00570}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u16vec2}},\ aligned\_u16vec2,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00571}00571\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00574}\mbox{\hyperlink{group__gtx__type__aligned_ga09540dbca093793a36a8997e0d4bee77}{00574}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u16vec3}},\ aligned\_u16vec3,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00575}00575\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00578}\mbox{\hyperlink{group__gtx__type__aligned_gaecafb5996f5a44f57e34d29c8670741e}{00578}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u16vec4}},\ aligned\_u16vec4,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00579}00579\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00580}00580\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00583}\mbox{\hyperlink{group__gtx__type__aligned_gac6b161a04d2f8408fe1c9d857e8daac0}{00583}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u32vec1}},\ aligned\_u32vec1,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00584}00584\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00587}\mbox{\hyperlink{group__gtx__type__aligned_ga1fa0dfc8feb0fa17dab2acd43e05342b}{00587}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u32vec2}},\ aligned\_u32vec2,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00588}00588\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00591}\mbox{\hyperlink{group__gtx__type__aligned_ga0019500abbfa9c66eff61ca75eaaed94}{00591}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u32vec3}},\ aligned\_u32vec3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00592}00592\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00595}\mbox{\hyperlink{group__gtx__type__aligned_ga14fd29d01dae7b08a04e9facbcc18824}{00595}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u32vec4}},\ aligned\_u32vec4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00596}00596\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00597}00597\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00600}\mbox{\hyperlink{group__gtx__type__aligned_gab253845f534a67136f9619843cade903}{00600}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u64vec1}},\ aligned\_u64vec1,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00601}00601\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00604}\mbox{\hyperlink{group__gtx__type__aligned_ga929427a7627940cdf3304f9c050b677d}{00604}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u64vec2}},\ aligned\_u64vec2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00608}\mbox{\hyperlink{group__gtx__type__aligned_gae373b6c04fdf9879f33d63e6949c037e}{00608}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u64vec3}},\ aligned\_u64vec3,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00612}\mbox{\hyperlink{group__gtx__type__aligned_ga53a8a03dca2015baec4584f45b8e9cdc}{00612}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{u64vec4}},\ aligned\_u64vec4,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00614}00614\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00616}00616\ \ \ \ \ \textcolor{comment}{//\ Float\ vector\ types}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00617}00617\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00620}\mbox{\hyperlink{group__gtx__type__aligned_gab3301bae94ef5bf59fbdd9a24e7d2a01}{00620}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga5f992cce6c26963aa71e3f3279507696}{float32}},\ aligned\_float32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00621}00621\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00624}\mbox{\hyperlink{group__gtx__type__aligned_gada9b0bea273d3ae0286f891533b9568f}{00624}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga614bd40a3bdce9a03ddbc49820bb9283}{float32\_t}},\ aligned\_float32\_t,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00625}00625\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00628}\mbox{\hyperlink{group__gtx__type__aligned_gadbce23b9f23d77bb3884e289a574ebd5}{00628}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga5f992cce6c26963aa71e3f3279507696}{float32}},\ aligned\_f32,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00629}00629\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00630}00630\ \textcolor{preprocessor}{\#\ \ \ ifndef\ GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00631}00631\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00634}\mbox{\hyperlink{group__gtx__type__aligned_ga75930684ff2233171c573e603f216162}{00634}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga997f58b6fc0a7ae5835476bb3e475aab}{float64}},\ aligned\_float64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00635}00635\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00638}\mbox{\hyperlink{group__gtx__type__aligned_ga6e3a2d83b131336219a0f4c7cbba2a48}{00638}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_gabbf06d1ff7f57da7519a93234f77d439}{float64\_t}},\ aligned\_float64\_t,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00639}00639\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00642}\mbox{\hyperlink{group__gtx__type__aligned_gaa4deaa0dea930c393d55e7a4352b0a20}{00642}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{group__gtc__type__precision_ga997f58b6fc0a7ae5835476bb3e475aab}{float64}},\ aligned\_f64,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00643}00643\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00644}00644\ \textcolor{preprocessor}{\#\ \ \ endif}\textcolor{comment}{//GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00645}00645\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00646}00646\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00649}\mbox{\hyperlink{group__gtx__type__aligned_ga81bc497b2bfc6f80bab690c6ee28f0f9}{00649}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{vec1}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_vec1}},\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00650}00650\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00653}\mbox{\hyperlink{group__gtx__type__aligned_gada3e8f783e9d4b90006695a16c39d4d4}{00653}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{vec2}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_vec2}},\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00654}00654\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00657}\mbox{\hyperlink{group__gtx__type__aligned_gab8d081fac3a38d6f55fa552f32168d32}{00657}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{vec3}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_vec3}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00658}00658\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00661}\mbox{\hyperlink{group__gtx__type__aligned_ga12fe7b9769c964c5b48dcfd8b7f40198}{00661}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{vec4}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_vec4}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00662}00662\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00663}00663\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00666}\mbox{\hyperlink{group__gtx__type__aligned_gaefab04611c7f8fe1fd9be3071efea6cc}{00666}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{fvec1}},\ aligned\_fvec1,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00667}00667\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00670}\mbox{\hyperlink{group__gtx__type__aligned_ga2543c05ba19b3bd19d45b1227390c5b4}{00670}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{fvec2}},\ aligned\_fvec2,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00671}00671\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00674}\mbox{\hyperlink{group__gtx__type__aligned_ga009afd727fd657ef33a18754d6d28f60}{00674}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{fvec3}},\ aligned\_fvec3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00675}00675\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00678}\mbox{\hyperlink{group__gtx__type__aligned_ga2f26177e74bfb301a3d0e02ec3c3ef53}{00678}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{fvec4}},\ aligned\_fvec4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00679}00679\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00680}00680\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00683}\mbox{\hyperlink{group__gtx__type__aligned_ga309f495a1d6b75ddf195b674b65cb1e4}{00683}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f32vec1}},\ aligned\_f32vec1,\ 4);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00684}00684\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00687}\mbox{\hyperlink{group__gtx__type__aligned_ga5e185865a2217d0cd47187644683a8c3}{00687}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f32vec2}},\ aligned\_f32vec2,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00688}00688\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00691}\mbox{\hyperlink{group__gtx__type__aligned_gade4458b27b039b9ca34f8ec049f3115a}{00691}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f32vec3}},\ aligned\_f32vec3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00692}00692\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00695}\mbox{\hyperlink{group__gtx__type__aligned_ga2e8a12c5e6a9c4ae4ddaeda1d1cffe3b}{00695}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f32vec4}},\ aligned\_f32vec4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00696}00696\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00697}00697\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00700}\mbox{\hyperlink{group__gtx__type__aligned_ga3e0f35fa0c626285a8bad41707e7316c}{00700}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{dvec1}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_dvec1}},\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00701}00701\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00704}\mbox{\hyperlink{group__gtx__type__aligned_ga78bfec2f185d1d365ea0a9ef1e3d45b8}{00704}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{dvec2}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_dvec2}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00705}00705\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00708}\mbox{\hyperlink{group__gtx__type__aligned_ga01fe6fee6db5df580b6724a7e681f069}{00708}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{dvec3}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_dvec3}},\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00709}00709\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00712}\mbox{\hyperlink{group__gtx__type__aligned_ga687d5b8f551d5af32425c0b2fba15e99}{00712}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{dvec4}},\ \mbox{\hyperlink{structglm_1_1vec}{aligned\_dvec4}},\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00713}00713\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00714}00714\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00715}00715\ \textcolor{preprocessor}{\#\ \ \ ifndef\ GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00716}00716\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00719}\mbox{\hyperlink{group__gtx__type__aligned_ga8e842371d46842ff8f1813419ba49d0f}{00719}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f64vec1}},\ aligned\_f64vec1,\ 8);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00720}00720\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00723}\mbox{\hyperlink{group__gtx__type__aligned_ga32814aa0f19316b43134fc25f2aad2b9}{00723}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f64vec2}},\ aligned\_f64vec2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00724}00724\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00727}\mbox{\hyperlink{group__gtx__type__aligned_gaf3d3bbc1e93909b689123b085e177a14}{00727}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f64vec3}},\ aligned\_f64vec3,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00728}00728\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00731}\mbox{\hyperlink{group__gtx__type__aligned_ga804c654cead1139bd250f90f9bb01fad}{00731}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1vec}{f64vec4}},\ aligned\_f64vec4,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00732}00732\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00733}00733\ \textcolor{preprocessor}{\#\ \ \ endif}\textcolor{comment}{//GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00734}00734\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00736}00736\ \ \ \ \ \textcolor{comment}{//\ Float\ matrix\ types}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00737}00737\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00740}00740\ \ \ \ \ \textcolor{comment}{//typedef\ detail::tmat1<f32>\ mat1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00741}00741\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00744}\mbox{\hyperlink{group__gtx__type__aligned_gafed7d010235a3aa7ea2f88646858f2ae}{00744}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{mat2}},\ \mbox{\hyperlink{structglm_1_1mat}{aligned\_mat2}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00745}00745\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00748}\mbox{\hyperlink{group__gtx__type__aligned_ga17f911ee7b78ca6d1b91c4ab51ddb73c}{00748}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{mat3}},\ \mbox{\hyperlink{structglm_1_1mat}{aligned\_mat3}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00749}00749\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00752}\mbox{\hyperlink{group__gtx__type__aligned_ga31940e6012b72110e26fdb0f54805033}{00752}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{mat4}},\ \mbox{\hyperlink{structglm_1_1mat}{aligned\_mat4}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00753}00753\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00754}00754\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00757}00757\ \ \ \ \ \textcolor{comment}{//typedef\ detail::tmat1x1<f32>\ mat1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00758}00758\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00761}00761\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{mat2x2}},\ \mbox{\hyperlink{structglm_1_1mat}{aligned\_mat2x2}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00762}00762\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00765}00765\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{mat3x3}},\ \mbox{\hyperlink{structglm_1_1mat}{aligned\_mat3x3}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00766}00766\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00769}00769\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{mat4x4}},\ \mbox{\hyperlink{structglm_1_1mat}{aligned\_mat4x4}},\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00770}00770\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00771}00771\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00774}00774\ \ \ \ \ \textcolor{comment}{//typedef\ detail::tmat1x1<f32>\ fmat1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00775}00775\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00778}\mbox{\hyperlink{group__gtx__type__aligned_ga719da577361541a4c43a2dd1d0e361e1}{00778}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat2x2}},\ aligned\_fmat2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00779}00779\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00782}\mbox{\hyperlink{group__gtx__type__aligned_ga6e7ee4f541e1d7db66cd1a224caacafb}{00782}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat3x3}},\ aligned\_fmat3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00783}00783\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00786}\mbox{\hyperlink{group__gtx__type__aligned_gae5d672d359f2a39f63f98c7975057486}{00786}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat4x4}},\ aligned\_fmat4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00787}00787\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00788}00788\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00791}00791\ \ \ \ \ \textcolor{comment}{//typedef\ f32\ fmat1x1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00792}00792\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00795}\mbox{\hyperlink{group__gtx__type__aligned_ga6fa2df037dbfc5fe8c8e0b4db8a34953}{00795}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat2x2}},\ aligned\_fmat2x2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00796}00796\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00799}\mbox{\hyperlink{group__gtx__type__aligned_ga0743b4f4f69a3227b82ff58f6abbad62}{00799}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat2x3}},\ aligned\_fmat2x3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00800}00800\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00803}\mbox{\hyperlink{group__gtx__type__aligned_ga1a76b325fdf70f961d835edd182c63dd}{00803}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat2x4}},\ aligned\_fmat2x4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00804}00804\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00807}\mbox{\hyperlink{group__gtx__type__aligned_ga4b4e181cd041ba28c3163e7b8074aef0}{00807}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat3x2}},\ aligned\_fmat3x2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00808}00808\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00811}\mbox{\hyperlink{group__gtx__type__aligned_ga27b13f465abc8a40705698145e222c3f}{00811}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat3x3}},\ aligned\_fmat3x3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00812}00812\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00815}\mbox{\hyperlink{group__gtx__type__aligned_ga2608d19cc275830a6f8c0b6405625a4f}{00815}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat3x4}},\ aligned\_fmat3x4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00816}00816\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00819}\mbox{\hyperlink{group__gtx__type__aligned_ga93f09768241358a287c4cca538f1f7e7}{00819}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat4x2}},\ aligned\_fmat4x2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00820}00820\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00823}\mbox{\hyperlink{group__gtx__type__aligned_ga7c117e3ecca089e10247b1d41d88aff9}{00823}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat4x3}},\ aligned\_fmat4x3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00824}00824\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00827}\mbox{\hyperlink{group__gtx__type__aligned_ga07c75cd04ba42dc37fa3e105f89455c5}{00827}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{fmat4x4}},\ aligned\_fmat4x4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00828}00828\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00829}00829\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00832}00832\ \ \ \ \ \textcolor{comment}{//typedef\ detail::tmat1x1<f32,\ defaultp>\ f32mat1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00833}00833\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00836}\mbox{\hyperlink{group__gtx__type__aligned_ga65ff0d690a34a4d7f46f9b2eb51525ee}{00836}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat2x2}},\ aligned\_f32mat2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00837}00837\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00840}\mbox{\hyperlink{group__gtx__type__aligned_gadd8ddbe2bf65ccede865ba2f510176dc}{00840}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat3x3}},\ aligned\_f32mat3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00841}00841\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00844}\mbox{\hyperlink{group__gtx__type__aligned_gaf18dbff14bf13d3ff540c517659ec045}{00844}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat4x4}},\ aligned\_f32mat4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00845}00845\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00846}00846\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00849}00849\ \ \ \ \ \textcolor{comment}{//typedef\ f32\ f32mat1x1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00850}00850\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00853}\mbox{\hyperlink{group__gtx__type__aligned_ga66339f6139bf7ff19e245beb33f61cc8}{00853}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat2x2}},\ aligned\_f32mat2x2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00854}00854\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00857}\mbox{\hyperlink{group__gtx__type__aligned_ga1558a48b3934011b52612809f443e46d}{00857}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat2x3}},\ aligned\_f32mat2x3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00858}00858\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00861}\mbox{\hyperlink{group__gtx__type__aligned_gaa52e5732daa62851627021ad551c7680}{00861}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat2x4}},\ aligned\_f32mat2x4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00862}00862\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00865}\mbox{\hyperlink{group__gtx__type__aligned_gac09663c42566bcb58d23c6781ac4e85a}{00865}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat3x2}},\ aligned\_f32mat3x2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00866}00866\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00869}\mbox{\hyperlink{group__gtx__type__aligned_ga3f510999e59e1b309113e1d561162b29}{00869}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat3x3}},\ aligned\_f32mat3x3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00870}00870\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00873}\mbox{\hyperlink{group__gtx__type__aligned_ga2c9c94f0c89cd71ce56551db6cf4aaec}{00873}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat3x4}},\ aligned\_f32mat3x4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00874}00874\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00877}\mbox{\hyperlink{group__gtx__type__aligned_ga99ce8274c750fbfdf0e70c95946a2875}{00877}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat4x2}},\ aligned\_f32mat4x2,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00878}00878\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00881}\mbox{\hyperlink{group__gtx__type__aligned_ga9476ef66790239df53dbe66f3989c3b5}{00881}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat4x3}},\ aligned\_f32mat4x3,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00882}00882\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00885}\mbox{\hyperlink{group__gtx__type__aligned_gacc429b3b0b49921e12713b6d31e14e1d}{00885}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f32mat4x4}},\ aligned\_f32mat4x4,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00886}00886\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00887}00887\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00888}00888\ \textcolor{preprocessor}{\#\ \ \ ifndef\ GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00889}00889\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00892}00892\ \ \ \ \ \textcolor{comment}{//typedef\ detail::tmat1x1<f64,\ defaultp>\ f64mat1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00893}00893\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00896}\mbox{\hyperlink{group__gtx__type__aligned_ga88f6c6fa06e6e64479763e69444669cf}{00896}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat2x2}},\ aligned\_f64mat2,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00897}00897\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00900}\mbox{\hyperlink{group__gtx__type__aligned_gaae8e4639c991e64754145ab8e4c32083}{00900}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat3x3}},\ aligned\_f64mat3,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00901}00901\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00904}\mbox{\hyperlink{group__gtx__type__aligned_ga6e9094f3feb3b5b49d0f83683a101fde}{00904}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat4x4}},\ aligned\_f64mat4,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00905}00905\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00906}00906\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00909}00909\ \ \ \ \ \textcolor{comment}{//typedef\ f64\ f64mat1x1;}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00910}00910\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00913}\mbox{\hyperlink{group__gtx__type__aligned_gadbd2c639c03de1c3e9591b5a39f65559}{00913}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat2x2}},\ aligned\_f64mat2x2,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00914}00914\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00917}\mbox{\hyperlink{group__gtx__type__aligned_gab059d7b9fe2094acc563b7223987499f}{00917}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat2x3}},\ aligned\_f64mat2x3,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00918}00918\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00921}\mbox{\hyperlink{group__gtx__type__aligned_gabbc811d1c52ed2b8cfcaff1378f75c69}{00921}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat2x4}},\ aligned\_f64mat2x4,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00922}00922\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00925}\mbox{\hyperlink{group__gtx__type__aligned_ga9ddf5212777734d2fd841a84439f3bdf}{00925}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat3x2}},\ aligned\_f64mat3x2,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00926}00926\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00929}\mbox{\hyperlink{group__gtx__type__aligned_gad1dda32ed09f94bfcf0a7d8edfb6cf13}{00929}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat3x3}},\ aligned\_f64mat3x3,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00930}00930\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00933}\mbox{\hyperlink{group__gtx__type__aligned_ga5875e0fa72f07e271e7931811cbbf31a}{00933}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat3x4}},\ aligned\_f64mat3x4,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00934}00934\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00937}\mbox{\hyperlink{group__gtx__type__aligned_ga41e82cd6ac07f912ba2a2d45799dcf0d}{00937}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat4x2}},\ aligned\_f64mat4x2,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00938}00938\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00941}\mbox{\hyperlink{group__gtx__type__aligned_ga0892638d6ba773043b3d63d1d092622e}{00941}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat4x3}},\ aligned\_f64mat4x3,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00942}00942\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00945}\mbox{\hyperlink{group__gtx__type__aligned_ga912a16432608b822f1e13607529934c1}{00945}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1mat}{f64mat4x4}},\ aligned\_f64mat4x4,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00946}00946\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00947}00947\ \textcolor{preprocessor}{\#\ \ \ endif}\textcolor{comment}{//GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00948}00948\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00949}00949\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00951}00951\ \ \ \ \ \textcolor{comment}{//\ Quaternion\ types}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00952}00952\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00955}\mbox{\hyperlink{group__gtx__type__aligned_gafd945a8ea86b042aba410e0560df9a3d}{00955}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1qua}{quat}},\ aligned\_quat,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00956}00956\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00959}\mbox{\hyperlink{group__gtx__type__aligned_ga19c2ba545d1f2f36bcb7b60c9a228622}{00959}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1qua}{quat}},\ aligned\_fquat,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00960}00960\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00963}\mbox{\hyperlink{group__gtx__type__aligned_gaabc28c84a3288b697605d4688686f9a9}{00963}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1qua}{dquat}},\ aligned\_dquat,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00964}00964\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00967}\mbox{\hyperlink{group__gtx__type__aligned_ga1ed8aeb5ca67fade269a46105f1bf273}{00967}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1qua}{f32quat}},\ aligned\_f32quat,\ 16);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00968}00968\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00969}00969\ \textcolor{preprocessor}{\#\ \ \ ifndef\ GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00970}00970\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00973}\mbox{\hyperlink{group__gtx__type__aligned_ga95cc03b8b475993fa50e05e38e203303}{00973}}\ \ \ \ \ GLM\_ALIGNED\_TYPEDEF(\mbox{\hyperlink{structglm_1_1qua}{f64quat}},\ aligned\_f64quat,\ 32);}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00974}00974\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00975}00975\ \textcolor{preprocessor}{\#\ \ \ endif}\textcolor{comment}{//GLM\_FORCE\_SINGLE\_ONLY}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00976}00976\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00978}00978\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00979}00979\ }
+\DoxyCodeLine{\Hypertarget{gtx_2type__aligned_8hpp_source_l00980}00980\ \textcolor{preprocessor}{\#include\ "{}type\_aligned.inl"{}}}
+
+\end{DoxyCode}

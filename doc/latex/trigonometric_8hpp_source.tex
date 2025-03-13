@@ -1,0 +1,64 @@
+\doxysection{trigonometric.\+hpp}
+\hypertarget{trigonometric_8hpp_source}{}\label{trigonometric_8hpp_source}\index{dependencies/glm/include/glm/trigonometric.hpp@{dependencies/glm/include/glm/trigonometric.hpp}}
+\mbox{\hyperlink{trigonometric_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00024}00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00038}00038\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<L,\ T,\ Q>\ radians(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ degrees);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00049}00049\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<L,\ T,\ Q>\ degrees(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ radians);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00061}00061\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_ga3fcdcfa2d2ac38de9ba1885cd1c79414}{sin}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00073}00073\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_ga54745147add8b4fa05642f5c71f6833e}{cos}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00084}00084\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_gae5727eacf7692c197af6298b6d4ad922}{tan}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00097}00097\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_gad3628b879437a75d1941f965b2893db7}{asin}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00109}00109\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00110}00110\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_gaf621a212fa21c1009344895a52e9c82c}{acos}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00125}00125\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ atan(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00137}00137\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ atan(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y\_over\_x);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00147}00147\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00148}00148\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_ga6fa8d0d5565c424ca5149aeed90368e9}{sinh}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00159}00159\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_gadc7baaf1f2e79f0883c7ead8abb3040e}{cosh}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00169}00169\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00170}00170\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__trigonometric_ga3397af92f069bf3a5bb9ff3f9205c6c5}{tanh}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00180}00180\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00181}00181\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ asinh(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00192}00192\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00193}00193\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ acosh(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00194}00194\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00204}00204\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00205}00205\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ atanh(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00208}00208\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{trigonometric_8hpp_source_l00210}00210\ \textcolor{preprocessor}{\#include\ "{}detail/func\_trigonometric.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\doxysection{vector\+\_\+angle.\+inl}
+\hypertarget{vector__angle_8inl_source}{}\label{vector__angle_8inl_source}\index{dependencies/glm/include/glm/gtx/vector\_angle.inl@{dependencies/glm/include/glm/gtx/vector\_angle.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00006}00006\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__quaternion__trigonometric_ga8aa248b31d5ade470c87304df5eb7bd8}{angle}}}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00007}00007\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00009}00009\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ y}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00010}00010\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00012}00012\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559,\ \textcolor{stringliteral}{"{}'angle'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__trigonometric_gaf621a212fa21c1009344895a52e9c82c}{acos}}(\mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(dot(x,\ y),\ genType(-\/1),\ genType(1)));}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00017}\mbox{\hyperlink{group__gtx__vector__angle_ga2e2917b4cb75ca3d043ac15ff88f14e1}{00017}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ T\ \mbox{\hyperlink{group__ext__quaternion__trigonometric_ga8aa248b31d5ade470c87304df5eb7bd8}{angle}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00019}00019\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'angle'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__trigonometric_gaf621a212fa21c1009344895a52e9c82c}{acos}}(\mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(dot(x,\ y),\ T(-\/1),\ T(1)));}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00024}\mbox{\hyperlink{group__gtx__vector__angle_ga9556a803dce87fe0f42fdabe4ebba1d5}{00024}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ T\ \mbox{\hyperlink{group__gtx__vector__angle_ga9556a803dce87fe0f42fdabe4ebba1d5}{orientedAngle}}(\mbox{\hyperlink{structglm_1_1vec}{vec<2,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<2,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00026}00026\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'orientedAngle'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00027}00027\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ Angle(\mbox{\hyperlink{group__core__func__trigonometric_gaf621a212fa21c1009344895a52e9c82c}{acos}}(\mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(dot(x,\ y),\ T(-\/1),\ T(1))));}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00029}00029\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ partialCross\ =\ x.x\ *\ y.y\ -\/\ y.x\ *\ x.y;}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (partialCross\ >\ T(0))}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Angle;}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/Angle;}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00038}\mbox{\hyperlink{group__gtx__vector__angle_ga706fce3d111f485839756a64f5a48553}{00038}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ T\ \mbox{\hyperlink{group__gtx__vector__angle_ga9556a803dce87fe0f42fdabe4ebba1d5}{orientedAngle}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y,\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ ref)}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00040}00040\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'orientedAngle'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00042}00042\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ Angle(\mbox{\hyperlink{group__core__func__trigonometric_gaf621a212fa21c1009344895a52e9c82c}{acos}}(\mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(dot(x,\ y),\ T(-\/1),\ T(1))));}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__common_ga6b6e0c7ecb4a5b78f929566355bb7416}{mix}}(Angle,\ -\/Angle,\ dot(ref,\ \mbox{\hyperlink{group__core__func__geometric_ga1882f52ee88a161ed86dea9905a6da91}{cross}}(x,\ y))\ <\ T(0));}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__angle_8inl_source_l00045}00045\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

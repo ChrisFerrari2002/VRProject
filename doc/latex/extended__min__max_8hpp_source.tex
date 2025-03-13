@@ -1,0 +1,104 @@
+\doxysection{extended\+\_\+min\+\_\+max.\+hpp}
+\hypertarget{extended__min__max_8hpp_source}{}\label{extended__min__max_8hpp_source}\index{dependencies/glm/include/glm/gtx/extended\_min\_max.hpp@{dependencies/glm/include/glm/gtx/extended\_min\_max.hpp}}
+\mbox{\hyperlink{extended__min__max_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00015}00015\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{glm_8hpp}{../glm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__common_8hpp}{../ext/vector\_common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_extended\_min\_max\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_extended\_min\_max\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00025}00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00033}00033\ \ \ \ \ GLM\_FUNC\_DECL\ T\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ z);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00041}00041\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ z);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00049}00049\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ z);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00057}00057\ \ \ \ \ GLM\_FUNC\_DECL\ T\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ z,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ w);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00066}00066\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ z,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ w);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00074}00074\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00075}00075\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00077}00077\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ z,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ w);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00084}00084\ \ \ \ \ GLM\_FUNC\_DECL\ T\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00085}00085\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ z);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00092}00092\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ z);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00100}00100\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00102}00102\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00103}00103\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ z);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00108}00108\ \ \ \ \ GLM\_FUNC\_DECL\ T\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ z,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ w);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00116}00116\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00117}00117\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ z,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typename}\ C<T>::T\ \textcolor{keyword}{const}\&\ w);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}>\ \textcolor{keyword}{class\ }C>}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00126}00126\ \ \ \ \ GLM\_FUNC\_DECL\ C<T>\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00129}00129\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ z,}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ C<T>\ \textcolor{keyword}{const}\&\ w);}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00133}00133\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{extended__min__max_8hpp_source_l00135}00135\ \textcolor{preprocessor}{\#include\ "{}extended\_min\_max.inl"{}}}
+
+\end{DoxyCode}

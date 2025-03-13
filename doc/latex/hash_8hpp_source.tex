@@ -1,0 +1,142 @@
+\doxysection{hash.\+hpp}
+\hypertarget{hash_8hpp_source}{}\label{hash_8hpp_source}\index{dependencies/glm/include/glm/gtx/hash.hpp@{dependencies/glm/include/glm/gtx/hash.hpp}}
+\mbox{\hyperlink{hash_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#if\ defined(GLM\_FORCE\_MESSAGES)\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#\ \ \ ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_hash\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{})}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#\ \ \ else}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_hash\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec2_8hpp}{../vec2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8hpp}{../vec3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec4_8hpp}{../vec4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec1_8hpp}{../gtc/vec1.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gtc_2quaternion_8hpp}{../gtc/quaternion.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dual__quaternion_8hpp}{../gtx/dual\_quaternion.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat2x2_8hpp}{../mat2x2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat2x3_8hpp}{../mat2x3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat2x4_8hpp}{../mat2x4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat3x2_8hpp}{../mat3x2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat3x3_8hpp}{../mat3x3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat3x4_8hpp}{../mat3x4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat4x2_8hpp}{../mat4x2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat4x3_8hpp}{../mat4x3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat4x4_8hpp}{../mat4x4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00043}00043\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ <\ 201103L}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00044}00044\ \textcolor{preprocessor}{\#pragma\ message("{}GLM\_GTX\_hash\ requires\ C++11\ standard\ library\ support"{})}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00045}00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00047}00047\ \textcolor{preprocessor}{\#if\ GLM\_LANG\ \&\ GLM\_LANG\_CXX11}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00048}00048\ \textcolor{preprocessor}{\#define\ GLM\_GTX\_hash\ 1}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00049}00049\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00051}00051\ \textcolor{keyword}{namespace\ }std}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::vec<1,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1vec}{glm::vec<1,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00057}00057\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::vec<2,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00062}00062\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1vec}{glm::vec<2,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00063}00063\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::vec<3,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1vec}{glm::vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00069}00069\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00072}00072\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::vec<4,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00074}00074\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1vec}{glm::vec<4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00075}00075\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::qua<T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1qua}{glm::qua<T,\ Q>}}\ \textcolor{keyword}{const}\&\ q)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00081}00081\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::tdualquat<T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1tdualquat}{glm::tdualquat<T,Q>}}\ \textcolor{keyword}{const}\&\ q)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00087}00087\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<2,\ 2,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<2,\ 2,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00093}00093\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00095}00095\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<2,\ 3,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<2,\ 3,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00099}00099\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<2,\ 4,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<2,\ 4,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00105}00105\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00108}00108\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<3,\ 2,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00109}00109\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<3,\ 2,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00111}00111\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00113}00113\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<3,\ 3,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<3,\ 3,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00117}00117\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00119}00119\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00120}00120\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<3,\ 4,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00121}00121\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<3,\ 4,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00123}00123\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00125}00125\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<4,\ 2,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<4,\ 2,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00129}00129\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00131}00131\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00132}00132\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<4,\ 3,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00133}00133\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<4,\ 3,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00135}00135\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ glm::qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00138}00138\ \ \ \ \ \textcolor{keyword}{struct\ }hash<\mbox{\hyperlink{namespaceglm}{glm}}::mat<4,\ 4,\ T,\ Q>\ >}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00139}00139\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{size\_t}\ operator()(\mbox{\hyperlink{structglm_1_1mat}{glm::mat<4,\ 4,\ T,Q>}}\ \textcolor{keyword}{const}\&\ m)\ \textcolor{keyword}{const}\ GLM\_NOEXCEPT;}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00141}00141\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00142}00142\ \}\ \textcolor{comment}{//\ namespace\ std}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00144}00144\ \textcolor{preprocessor}{\#include\ "{}hash.inl"{}}}
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{hash_8hpp_source_l00146}00146\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//GLM\_LANG\ \&\ GLM\_LANG\_CXX11}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\doxysection{integer.\+hpp}
+\hypertarget{gtx_2integer_8hpp_source}{}\label{gtx_2integer_8hpp_source}\index{dependencies/glm/include/glm/gtx/integer.hpp@{dependencies/glm/include/glm/gtx/integer.hpp}}
+\mbox{\hyperlink{gtx_2integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00015}00015\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{glm_8hpp}{../glm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gtc_2integer_8hpp}{../gtc/integer.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_integer\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_integer\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00025}00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00032}00032\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__core__func__exponential_ga717a43207fffc8b5e8e66cf56ded5ace}{pow}}(\textcolor{keywordtype}{int}\ x,\ uint\ y);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00036}00036\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__core__func__exponential_ga1f904e09827e939a56e4158f45ca8ede}{sqrt}}(\textcolor{keywordtype}{int}\ x);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00040}\mbox{\hyperlink{group__gtx__integer_ga7011b4e1c1e1ed492149b028feacc00e}{00040}}\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__gtx__integer_ga7011b4e1c1e1ed492149b028feacc00e}{floor\_log2}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ x);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00044}00044\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ mod(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00049}00049\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__gtx__integer_ga8cbd3120905f398ec321b5d1836e08fb}{factorial}}(genType\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00053}\mbox{\hyperlink{group__gtx__integer_ga73643e09d8c6d362418aec541fdb987d}{00053}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__integer_ga73643e09d8c6d362418aec541fdb987d}{sint}};}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00057}00057\ \ \ \ \ GLM\_FUNC\_DECL\ uint\ \mbox{\hyperlink{group__core__func__exponential_ga717a43207fffc8b5e8e66cf56ded5ace}{pow}}(uint\ x,\ uint\ y);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00061}00061\ \ \ \ \ GLM\_FUNC\_DECL\ uint\ \mbox{\hyperlink{group__core__func__exponential_ga1f904e09827e939a56e4158f45ca8ede}{sqrt}}(uint\ x);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00065}00065\ \ \ \ \ GLM\_FUNC\_DECL\ uint\ mod(uint\ x,\ uint\ y);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00069}00069\ \ \ \ \ GLM\_FUNC\_DECL\ uint\ \mbox{\hyperlink{group__gtx__integer_gacbe62fd2384464c16ea30ecc4defc11c}{nlz}}(uint\ x);}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00072}00072\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{gtx_2integer_8hpp_source_l00074}00074\ \textcolor{preprocessor}{\#include\ "{}integer.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,70 @@
+\doxysection{shadow.\+cpp}
+\hypertarget{shadow_8cpp_source}{}\label{shadow_8cpp_source}\index{engine/shadow.cpp@{engine/shadow.cpp}}
+\mbox{\hyperlink{shadow_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00020}00020\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00032}\mbox{\hyperlink{class_eng_1_1_shadow_a009d76b6027918ce1a023342e9d2f79d}{00032}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_shadow_a009d76b6027918ce1a023342e9d2f79d}{Eng::Shadow::Shadow}}(\mbox{\hyperlink{class_eng_1_1_mesh}{Mesh}}*\ mesh)\ :\ \mbox{\hyperlink{class_eng_1_1_node}{Node}}(\textcolor{stringliteral}{"{}ShadowOf"{}}\ +\ mesh-\/>getName())}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00034}00034\ \ \ \ \ meshToShadow\ =\ mesh;}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}*\ v\ :\ mesh-\/>\mbox{\hyperlink{class_eng_1_1_mesh_a8bf90e773f1ec3e45fb905404f9bc313}{getVertices}}(0))\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ addVertex(v);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00045}\mbox{\hyperlink{class_eng_1_1_shadow_afb06e87803b6d31882ce8df64b0aa3ce}{00045}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_shadow_afb06e87803b6d31882ce8df64b0aa3ce}{Eng::Shadow::\string~Shadow}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00053}\mbox{\hyperlink{class_eng_1_1_shadow_a5ee66b95dac03176b9a454530d25ed7e}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_shadow_a5ee66b95dac03176b9a454530d25ed7e}{Eng::Shadow::addVertex}}(\mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}*\ v)}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00054}00054\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{float}\ deepestPoint\ =\ getDeepestPoint();}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ position\ =\ v-\/>\mbox{\hyperlink{class_eng_1_1_vertex_abe6761a712c0ed9cbb629d594abc2e17}{getPosition}}();}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00057}00057\ \ \ \ \ position.y\ =\ deepestPoint\ +\ 1.0f;}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}*\ projectedVertex\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}(position,\ v-\/>\mbox{\hyperlink{class_eng_1_1_vertex_a892a20775f44bdc00088da0f81d40fd0}{getNormal}}());}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00059}00059\ \ \ \ \ vertices.push\_back(projectedVertex);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00067}\mbox{\hyperlink{class_eng_1_1_shadow_a76b5c87cf4d525741da0a327c21c6afd}{00067}}\ std::vector<Eng::Vertex*>\ \mbox{\hyperlink{class_eng_1_1_shadow_a76b5c87cf4d525741da0a327c21c6afd}{Eng::Shadow::getVertices}}()}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ vertices;}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00080}\mbox{\hyperlink{class_eng_1_1_shadow_a3b9988d1e5862073fa46f163f56daa01}{00080}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_shadow_a3b9988d1e5862073fa46f163f56daa01}{Eng::Shadow::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}},\ \textcolor{keywordtype}{void}*)}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00081}00081\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//create\ a\ shadow\ material}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00083}00083\ \ \ \ \ glEnable(GL\_BLEND);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00084}00084\ \ \ \ \ glBlendFunc(GL\_SRC\_ALPHA,\ GL\_ONE\_MINUS\_SRC\_ALPHA);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00085}00085\ \ \ \ \ glDisable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00086}00086\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_AMBIENT,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0f,\ 0.0f,\ 0.0f,\ 0.1f)));}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00087}00087\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_DIFFUSE,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0f,\ 0.0f,\ 0.0f,\ 0.1f)));}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00088}00088\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_SPECULAR,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0f,\ 0.0f,\ 0.0f,\ 0.1f)));}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00089}00089\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_EMISSION,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0f,\ 0.0f,\ 0.0f,\ 0.1f)));}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00090}00090\ \ \ \ \ glMaterialf(GL\_FRONT\_AND\_BACK,\ GL\_SHININESS,\ 0.0f);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00093}00093\ \ \ \ \ glBegin(GL\_TRIANGLES);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}*\ v\ :\ vertices)\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ glNormal3fv(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(v-\/>getNormal()));}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ glVertex3fv(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(v-\/>getPosition()));}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00098}00098\ \ \ \ \ glEnd();}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00100}00100\ \ \ \ \ glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00101}00101\ \ \ \ \ glDisable(GL\_BLEND);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00110}00110\ \textcolor{keywordtype}{float}\ Eng::Shadow::getDeepestPoint()}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00111}00111\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00112}00112\ \ \ \ \ std::vector<Vertex*>\ vertices\ =\ meshToShadow-\/>getVertices(0);}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{float}\ deepestPoint\ =\ vertices.at(0)-\/>getPosition().y;}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}*\ v\ :\ vertices)\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v-\/>getPosition().y\ <\ deepestPoint)}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ deepestPoint\ =\ v-\/>getPosition().y;}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{return}\ deepestPoint;}
+\DoxyCodeLine{\Hypertarget{shadow_8cpp_source_l00119}00119\ \}}
+
+\end{DoxyCode}

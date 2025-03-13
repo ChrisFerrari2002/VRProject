@@ -1,0 +1,251 @@
+\doxysection{Cemetery Class Reference}
+\hypertarget{class_cemetery}{}\label{class_cemetery}\index{Cemetery@{Cemetery}}
+
+
+\doxylink{class_cemetery}{Cemetery} class.  
+
+
+
+
+{\ttfamily \#include $<$cemetery.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cemetery_ae8cafdf523c983ee8b9ab647f507d0e4}{Cemetery}} (\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} black\+Cemetery\+Pos, \mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} white\+Cemetery\+Pos)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cemetery_a967a69d77bff994b6b3b53730a3f159f}{add\+Piece\+To\+Deleted}} (\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}piece)
+\begin{DoxyCompactList}\small\item\em Add a piece to the cemetery. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cemetery_aef6ec50304491729274012d0e2c3f446}{remove\+Piece\+From\+Deleted}} (\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}piece)
+\begin{DoxyCompactList}\small\item\em Remove a piece from the cemetery. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_cemetery_a68b0dc9fbe9b1cab40cc75e9555a13ba}{get\+Black\+Pieces\+Eliminated}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of black pieces eliminated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_cemetery_a653dbb3e1c07c35404bf303d33db3f36}{get\+White\+Pieces\+Eliminated}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of white pieces eliminated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_cemetery_a50e46d01d5c752f3dbb8583341d2dc24}{get\+Black\+Cemetery\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Get the position of the black cemetery. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_cemetery_a111f03d53b05b881b0c9baf2a016b44c}{get\+White\+Cemetery\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Get the position of the white cemetery. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_cemetery_a16c52e14f724e7517dbbb62521de1593}{get\+Deleted\+Pieces}} () const
+\begin{DoxyCompactList}\small\item\em Get the list of deleted pieces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cemetery_a28f3d025bde337f7bfd1d3bc0bab2057}{set\+Black\+Pieces\+Eliminated}} (int new\+Value)
+\begin{DoxyCompactList}\small\item\em Set the number of black pieces eliminated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cemetery_aa3b7133d446016c29bd990e65300e006}{set\+White\+Pieces\+Eliminated}} (int new\+Value)
+\begin{DoxyCompactList}\small\item\em Set the number of white pieces eliminated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_cemetery}{Cemetery} class. 
+
+The \doxylink{class_cemetery}{Cemetery} class manages the captured pieces, keeping track of their positions and the number of pieces eliminated for each color. 
+
+Definition at line \mbox{\hyperlink{cemetery_8h_source_l00029}{29}} of file \mbox{\hyperlink{cemetery_8h_source}{cemetery.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_cemetery_ae8cafdf523c983ee8b9ab647f507d0e4}\index{Cemetery@{Cemetery}!Cemetery@{Cemetery}}
+\index{Cemetery@{Cemetery}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{Cemetery()}{Cemetery()}}
+{\footnotesize\ttfamily \label{class_cemetery_ae8cafdf523c983ee8b9ab647f507d0e4} 
+Cemetery\+::\+Cemetery (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{black\+Cemetery\+Pos}{, }\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{white\+Cemetery\+Pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Initializes the cemetery with the positions for black and white pieces cemeteries.
+
+
+\begin{DoxyParams}{Parameters}
+{\em black\+Cemetery\+Pos} & The position of the black cemetery. \\
+\hline
+{\em white\+Cemetery\+Pos} & The position of the white cemetery. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8h_source_l00039}{39}} of file \mbox{\hyperlink{cemetery_8h_source}{cemetery.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cemetery_a967a69d77bff994b6b3b53730a3f159f}\index{Cemetery@{Cemetery}!addPieceToDeleted@{addPieceToDeleted}}
+\index{addPieceToDeleted@{addPieceToDeleted}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{addPieceToDeleted()}{addPieceToDeleted()}}
+{\footnotesize\ttfamily \label{class_cemetery_a967a69d77bff994b6b3b53730a3f159f} 
+void Cemetery\+::add\+Piece\+To\+Deleted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}}]{piece}{}\end{DoxyParamCaption})}
+
+
+
+Add a piece to the cemetery. 
+
+Adds a captured piece to the cemetery.
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & The piece to be added to the cemetery. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_a50e46d01d5c752f3dbb8583341d2dc24}\index{Cemetery@{Cemetery}!getBlackCemeteryPos@{getBlackCemeteryPos}}
+\index{getBlackCemeteryPos@{getBlackCemeteryPos}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{getBlackCemeteryPos()}{getBlackCemeteryPos()}}
+{\footnotesize\ttfamily \label{class_cemetery_a50e46d01d5c752f3dbb8583341d2dc24} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} Cemetery\+::get\+Black\+Cemetery\+Pos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the position of the black cemetery. 
+
+\begin{DoxyReturn}{Returns}
+The position of the black cemetery. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_a68b0dc9fbe9b1cab40cc75e9555a13ba}\index{Cemetery@{Cemetery}!getBlackPiecesEliminated@{getBlackPiecesEliminated}}
+\index{getBlackPiecesEliminated@{getBlackPiecesEliminated}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{getBlackPiecesEliminated()}{getBlackPiecesEliminated()}}
+{\footnotesize\ttfamily \label{class_cemetery_a68b0dc9fbe9b1cab40cc75e9555a13ba} 
+int Cemetery\+::get\+Black\+Pieces\+Eliminated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the number of black pieces eliminated. 
+
+\begin{DoxyReturn}{Returns}
+The number of black pieces eliminated. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_a16c52e14f724e7517dbbb62521de1593}\index{Cemetery@{Cemetery}!getDeletedPieces@{getDeletedPieces}}
+\index{getDeletedPieces@{getDeletedPieces}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{getDeletedPieces()}{getDeletedPieces()}}
+{\footnotesize\ttfamily \label{class_cemetery_a16c52e14f724e7517dbbb62521de1593} 
+std\+::vector$<$ \mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*} $>$ Cemetery\+::get\+Deleted\+Pieces (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the list of deleted pieces. 
+
+\begin{DoxyReturn}{Returns}
+A vector containing the deleted pieces. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_a111f03d53b05b881b0c9baf2a016b44c}\index{Cemetery@{Cemetery}!getWhiteCemeteryPos@{getWhiteCemeteryPos}}
+\index{getWhiteCemeteryPos@{getWhiteCemeteryPos}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{getWhiteCemeteryPos()}{getWhiteCemeteryPos()}}
+{\footnotesize\ttfamily \label{class_cemetery_a111f03d53b05b881b0c9baf2a016b44c} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} Cemetery\+::get\+White\+Cemetery\+Pos (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the position of the white cemetery. 
+
+\begin{DoxyReturn}{Returns}
+The position of the white cemetery. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_a653dbb3e1c07c35404bf303d33db3f36}\index{Cemetery@{Cemetery}!getWhitePiecesEliminated@{getWhitePiecesEliminated}}
+\index{getWhitePiecesEliminated@{getWhitePiecesEliminated}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{getWhitePiecesEliminated()}{getWhitePiecesEliminated()}}
+{\footnotesize\ttfamily \label{class_cemetery_a653dbb3e1c07c35404bf303d33db3f36} 
+int Cemetery\+::get\+White\+Pieces\+Eliminated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the number of white pieces eliminated. 
+
+\begin{DoxyReturn}{Returns}
+The number of white pieces eliminated. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_aef6ec50304491729274012d0e2c3f446}\index{Cemetery@{Cemetery}!removePieceFromDeleted@{removePieceFromDeleted}}
+\index{removePieceFromDeleted@{removePieceFromDeleted}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{removePieceFromDeleted()}{removePieceFromDeleted()}}
+{\footnotesize\ttfamily \label{class_cemetery_aef6ec50304491729274012d0e2c3f446} 
+void Cemetery\+::remove\+Piece\+From\+Deleted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}}]{piece}{}\end{DoxyParamCaption})}
+
+
+
+Remove a piece from the cemetery. 
+
+Removes a piece from the cemetery.
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & The piece to be removed from the cemetery. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_a28f3d025bde337f7bfd1d3bc0bab2057}\index{Cemetery@{Cemetery}!setBlackPiecesEliminated@{setBlackPiecesEliminated}}
+\index{setBlackPiecesEliminated@{setBlackPiecesEliminated}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{setBlackPiecesEliminated()}{setBlackPiecesEliminated()}}
+{\footnotesize\ttfamily \label{class_cemetery_a28f3d025bde337f7bfd1d3bc0bab2057} 
+void Cemetery\+::set\+Black\+Pieces\+Eliminated (\begin{DoxyParamCaption}\item[{int}]{new\+Value}{}\end{DoxyParamCaption})}
+
+
+
+Set the number of black pieces eliminated. 
+
+Set the number of the eliminated black pieces.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & The new number of black pieces eliminated.\\
+\hline
+{\em new\+Value} & The new number of the eliminated black pieces. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+\Hypertarget{class_cemetery_aa3b7133d446016c29bd990e65300e006}\index{Cemetery@{Cemetery}!setWhitePiecesEliminated@{setWhitePiecesEliminated}}
+\index{setWhitePiecesEliminated@{setWhitePiecesEliminated}!Cemetery@{Cemetery}}
+\doxysubsubsection{\texorpdfstring{setWhitePiecesEliminated()}{setWhitePiecesEliminated()}}
+{\footnotesize\ttfamily \label{class_cemetery_aa3b7133d446016c29bd990e65300e006} 
+void Cemetery\+::set\+White\+Pieces\+Eliminated (\begin{DoxyParamCaption}\item[{int}]{new\+Value}{}\end{DoxyParamCaption})}
+
+
+
+Set the number of white pieces eliminated. 
+
+Set the number of the eliminated white pieces.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Value} & The new number of white pieces eliminated.\\
+\hline
+{\em new\+Value} & The new number of the eliminated white pieces. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{cemetery_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{cemetery_8cpp_source}{cemetery.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+client/\mbox{\hyperlink{cemetery_8h}{cemetery.\+h}}\item 
+client/\mbox{\hyperlink{cemetery_8cpp}{cemetery.\+cpp}}\end{DoxyCompactItemize}

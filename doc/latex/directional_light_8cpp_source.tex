@@ -1,0 +1,22 @@
+\doxysection{directional\+Light.\+cpp}
+\hypertarget{directional_light_8cpp_source}{}\label{directional_light_8cpp_source}\index{engine/directionalLight.cpp@{engine/directionalLight.cpp}}
+\mbox{\hyperlink{directional_light_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00034}\mbox{\hyperlink{class_eng_1_1_directional_light_a8bf43ee03541481869947c87ae4e6cbe}{00034}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_directional_light_a8bf43ee03541481869947c87ae4e6cbe}{Eng::DirectionalLight::DirectionalLight}}(\textcolor{keyword}{const}\ std::string\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ lightNumber,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ambient,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ diffuse,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ specular)\ :}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_light}{Light}}\{\ name,\ lightNumber,\ ambient,\ diffuse,\ specular\ \}\ \{}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00048}\mbox{\hyperlink{class_eng_1_1_directional_light_a03e3dc224eee7b6c0b7941f6c9c84f80}{00048}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_directional_light_a03e3dc224eee7b6c0b7941f6c9c84f80}{Eng::DirectionalLight::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ matrix,\ \textcolor{keywordtype}{void}*\ ptr)\ \{}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_light_a538a0971c7a5e7bd5253892f74b8b1ef}{Light::render}}(matrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00060}\mbox{\hyperlink{class_eng_1_1_directional_light_a74f3a5dd9bfe20aa6e8ed8620a0b261c}{00060}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_directional_light_a74f3a5dd9bfe20aa6e8ed8620a0b261c}{Eng::DirectionalLight::setTransform}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform)\ \{}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_light_a3bebe6d4a236e88b52721a7e896bd938}{Light::setTransform}}(transform);}
+\DoxyCodeLine{\Hypertarget{directional_light_8cpp_source_l00062}00062\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,111 @@
+\doxysection{vector\+\_\+reciprocal.\+inl}
+\hypertarget{vector__reciprocal_8inl_source}{}\label{vector__reciprocal_8inl_source}\index{dependencies/glm/include/glm/ext/vector\_reciprocal.inl@{dependencies/glm/include/glm/ext/vector\_reciprocal.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{trigonometric_8hpp}{../trigonometric.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ sec}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00010}00010\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gae4bcbebee670c5ea155f0777b3acbd84}{sec}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00012}00012\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'sec'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(cos,\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ csc}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00018}00018\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga59dd0005b6474eea48af743b4f14ebbb}{csc}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00020}00020\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'csc'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(sin,\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ cot}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00026}00026\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga3a7b517a95bbd3ad74da3aea87a66314}{cot}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00028}00028\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'cot'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00029}00029\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ pi\_over\_2\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(3.1415926535897932384626433832795\ /\ 2.0);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(tan,\ pi\_over\_2\ -\/\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//\ asec}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00035}00035\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga2c5b7f962c2c9ff684e6d2de48db1f10}{asec}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00037}00037\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'asec'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(acos,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ acsc}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00043}00043\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga1b4bed91476b9b915e76b4a30236d330}{acsc}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00045}00045\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acsc'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(asin,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ acot}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00051}00051\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gaeadfb9c9d71093f7865b2ba2ca8d104d}{acot}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00052}00052\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00053}00053\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acot'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00054}00054\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ pi\_over\_2\ =\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(3.1415926535897932384626433832795\ /\ 2.0);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pi\_over\_2\ -\/\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(atan,\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ sech}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00060}00060\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga9a5cfd1e7170104a7b33863b1b75e5ae}{sech}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00062}00062\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'sech'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(cosh,\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ csch}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00068}00068\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga6d95843ff3ca6472ab399ba171d290a0}{csch}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00070}00070\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'csch'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(sinh,\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00072}00072\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//\ coth}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00076}00076\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga6b8b770eb7198e4dea59d52e6db81442}{coth}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00078}00078\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'coth'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__trigonometric_gadc7baaf1f2e79f0883c7ead8abb3040e}{glm::cosh}}(x)\ /\ \mbox{\hyperlink{group__core__func__trigonometric_ga6fa8d0d5565c424ca5149aeed90368e9}{glm::sinh}}(x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//\ asech}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00084}00084\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gaec7586dccfe431f850d006f3824b8ca6}{asech}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00086}00086\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'asech'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(acosh,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00090}00090\ \ \ \ \ \textcolor{comment}{//\ acsch}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00092}00092\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga4b50aa5e5afc7e19ec113ab91596c576}{acsch}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00094}00094\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acsch'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(asinh,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ acoth}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00100}00100\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gafaca98a7100170db8841f446282debfa}{acoth}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00101}00101\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00102}00102\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acoth'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(atanh,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vector__reciprocal_8inl_source_l00105}00105\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

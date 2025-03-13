@@ -1,0 +1,25 @@
+var class_piece =
+[
+    [ "Piece", "class_piece.html#a2f61e771c8cce6e9062646fc0c4bc604", null ],
+    [ "getCol", "class_piece.html#a1c8b8d9e1fb77ea0d40ce42c7912317b", null ],
+    [ "getColor", "class_piece.html#a6ca92b8a08b47849c5ac1c921a285bfe", null ],
+    [ "getInitialTransform", "class_piece.html#ac8d6a9bdff21c6a1e13925725e378303", null ],
+    [ "getNode", "class_piece.html#ab2cdb49ddca957ab727b4a3a0bf770de", null ],
+    [ "getPieceTransform", "class_piece.html#a2f1e3a0a046a092ba2be4b2c97b462f3", null ],
+    [ "getRow", "class_piece.html#a0f53bbca2552fb2f6ea5307d9b4734fe", null ],
+    [ "getStartCol", "class_piece.html#ad252b15b1e4038e5c4c7fc1654429164", null ],
+    [ "getStartRow", "class_piece.html#a189340d8b018c0fc14c6d4fbde62f042", null ],
+    [ "getTempCol", "class_piece.html#adbcbb9dcbc0aa44af50345b1d1eabf79", null ],
+    [ "getTempRow", "class_piece.html#a7b1f05fc0bb51231023b2950ec38dd65", null ],
+    [ "isEliminated", "class_piece.html#a80e1cc3435307d8a71eac02260393478", null ],
+    [ "moveDown", "class_piece.html#ac5b9ca1161164766674cf7f9ab25b849", null ],
+    [ "moveLeft", "class_piece.html#a686e43e7dd6de32eca123461db4cde7e", null ],
+    [ "moveRight", "class_piece.html#a56e30591ed76581f17f0cd6f07e161a7", null ],
+    [ "moveUp", "class_piece.html#a902089a92770dfb6440781defa69cd35", null ],
+    [ "remove", "class_piece.html#a467a10756400eb0a46037b40dcb8a8c6", null ],
+    [ "replace", "class_piece.html#ae545ba1a45a0cc9d88c9e7aca9c48531", null ],
+    [ "reset", "class_piece.html#a5608c68b3809247e8c327519c742b08b", null ],
+    [ "resetPosition", "class_piece.html#a0474aae6e44d52d2310b38f695b601b2", null ],
+    [ "setNewPosition", "class_piece.html#ae0d391ff68fe4e42349749266af8ce56", null ],
+    [ "setNewTransform", "class_piece.html#a20a91b6a0c4402d866e764050c86239b", null ]
+];

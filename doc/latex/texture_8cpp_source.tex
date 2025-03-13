@@ -1,0 +1,90 @@
+\doxysection{texture.\+cpp}
+\hypertarget{texture_8cpp_source}{}\label{texture_8cpp_source}\index{engine/texture.cpp@{engine/texture.cpp}}
+\mbox{\hyperlink{texture_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00020}00020\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ <FreeImage.h>}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00033}\mbox{\hyperlink{class_eng_1_1_texture_ad844373238930d60747526db8df6d20e}{00033}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_texture_ad844373238930d60747526db8df6d20e}{Eng::Texture::Texture}}(\textcolor{keyword}{const}\ std::string\&\ name)\ :\ width(0),\ height(0)\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00034}00034\ \ \ \ \mbox{\hyperlink{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}{Object::setId}}(\mbox{\hyperlink{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}{Object::getNextId}}());}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00035}00035\ \ \ \ \mbox{\hyperlink{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}{Object::setName}}(name);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00043}\mbox{\hyperlink{class_eng_1_1_texture_aa6c34e4b77dcbd6cdd888a4431133116}{00043}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_texture_aa6c34e4b77dcbd6cdd888a4431133116}{Eng::Texture::\string~Texture}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00053}\mbox{\hyperlink{class_eng_1_1_texture_a6854080f76390b30376ee232149e0cf5}{00053}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_texture_a6854080f76390b30376ee232149e0cf5}{Eng::Texture::loadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filePath)\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00055}00055\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Loading\ texture\ from\ file:\ "{}}\ <<\ filePath\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00057}00057\ \ \ \ \textcolor{keywordflow}{if}\ (texId)}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00058}00058\ \ \ \ \ \ \ glDeleteTextures(1,\ \&texId);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00059}00059\ \ \ \ glGenTextures(1,\ \&texId);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00060}00060\ \ \ \ glBindTexture(GL\_TEXTURE\_2D,\ texId);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00061}00061\ \ \ \ glPixelStorei(GL\_UNPACK\_ALIGNMENT,\ 1);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00063}00063\ \ \ \ FIBITMAP*\ bitmap\ =\ FreeImage\_Load(FreeImage\_GetFileType(filePath.c\_str(),\ 0),\ filePath.c\_str());}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00065}00065\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}BPP:\ "{}}\ <<\ FreeImage\_GetBPP(bitmap)\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00067}00067\ \ \ \ \textcolor{comment}{//\ Flip\ texture}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00068}00068\ \ \ \ FreeImage\_FlipVertical(bitmap);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00070}00070\ \ \ \ \textcolor{keywordflow}{if}\ (FreeImage\_GetBPP(bitmap)\ ==\ 32)\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00071}00071\ \ \ \ \ \ \ \textcolor{comment}{//\ 32\ bits\ -\/>\ RGBA\ colors}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00072}00072\ \ \ \ \ \ \ gluBuild2DMipmaps(GL\_TEXTURE\_2D,\ GL\_RGBA,}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ FreeImage\_GetWidth(bitmap),\ FreeImage\_GetHeight(bitmap),}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ GL\_BGRA\_EXT,\ GL\_UNSIGNED\_BYTE,}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}*)FreeImage\_GetBits(bitmap));}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00076}00076\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00077}00077\ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (FreeImage\_GetBPP(bitmap)\ ==\ 24)\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00078}00078\ \ \ \ \ \ \ \textcolor{comment}{//\ 24\ bits\ -\/>\ RGB\ colors}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00079}00079\ \ \ \ \ \ \ gluBuild2DMipmaps(GL\_TEXTURE\_2D,\ GL\_RGB,}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ FreeImage\_GetWidth(bitmap),\ FreeImage\_GetHeight(bitmap),}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ GL\_BGR\_EXT,\ GL\_UNSIGNED\_BYTE,}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}*)FreeImage\_GetBits(bitmap));}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00083}00083\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00085}00085\ \ \ \ \textcolor{comment}{//\ Release\ bitmap}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00086}00086\ \ \ \ FreeImage\_Unload(bitmap);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00087}00087\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00095}\mbox{\hyperlink{class_eng_1_1_texture_a30eeb985bf2d1a0b1b119e09f374fe3e}{00095}}\ \textcolor{keywordtype}{int}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_texture_a30eeb985bf2d1a0b1b119e09f374fe3e}{Eng::Texture::getWidth}}()\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00096}00096\ \ \ \ \textcolor{keywordflow}{return}\ width;}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00104}\mbox{\hyperlink{class_eng_1_1_texture_a80e143905655b173df5994300088ce35}{00104}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_eng_1_1_texture_a80e143905655b173df5994300088ce35}{Eng::Texture::getHeight}}()\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00105}00105\ \ \ \ \textcolor{keywordflow}{return}\ width;}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00114}\mbox{\hyperlink{class_eng_1_1_texture_ac7e1e3408c0ce70ed7f7aff9490b232e}{00114}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_texture_ac7e1e3408c0ce70ed7f7aff9490b232e}{Eng::Texture::setTextureSettings}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00115}00115\ \ \ \ this-\/>width\ =\ width;}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00116}00116\ \ \ \ this-\/>height\ =\ height;}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00117}00117\ \ \ \ \textcolor{comment}{//\ Add\ any\ other\ texture\ settings\ as\ needed}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00125}\mbox{\hyperlink{class_eng_1_1_texture_a1fa87fff97b049f9d391889334af87d1}{00125}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_texture_a1fa87fff97b049f9d391889334af87d1}{Eng::Texture::setTextureId}}(std::string\ filepath)\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00126}00126\ \ \ \ loadFromFile(filepath);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00127}00127\ \}}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00137}\mbox{\hyperlink{class_eng_1_1_texture_af1776808936b3cedcc016d9a81d8a695}{00137}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_texture_af1776808936b3cedcc016d9a81d8a695}{Eng::Texture::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ matrix,\ \textcolor{keywordtype}{void}*\ ptr)\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00140}00140\ \ \ \ glBindTexture(GL\_TEXTURE\_2D,\ texId);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00142}00142\ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_WRAP\_S,\ GL\_REPEAT);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00143}00143\ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_WRAP\_T,\ GL\_REPEAT);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00145}00145\ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_MAX\_ANISOTROPY\_EXT,\ 1);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00147}00147\ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_MAG\_FILTER,\ GL\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00148}00148\ \ \ \ glTexParameteri(GL\_TEXTURE\_2D,\ GL\_TEXTURE\_MIN\_FILTER,\ GL\_LINEAR\_MIPMAP\_LINEAR);}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00150}00150\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{texture_8cpp_source_l00151}00151\ \}}
+
+\end{DoxyCode}

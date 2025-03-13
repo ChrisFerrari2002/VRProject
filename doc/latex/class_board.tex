@@ -1,0 +1,249 @@
+\doxysection{Board Class Reference}
+\hypertarget{class_board}{}\label{class_board}\index{Board@{Board}}
+
+
+\doxylink{class_board}{Board} class.  
+
+
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_af0bad4e174aa55d9c8f615cb4585f86d}{fill\+Chessboard}} (const std\+::list$<$ \mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&nodes)
+\begin{DoxyCompactList}\small\item\em Fill the chessboard with the pieces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_af8a7cb947828b4fed6e83e3d657b30fd}{set\+Selected\+Piece}} (\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}piece)
+\begin{DoxyCompactList}\small\item\em Set the selected piece. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_board_a71f36903a66b67c0cd8b3223d54e88f6}{get\+Selected\+Piece}} () const
+\begin{DoxyCompactList}\small\item\em Get the selected piece. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_adf5af849d82c67044e1d70e1384f1f8d}{print\+Chessboard}} ()
+\begin{DoxyCompactList}\small\item\em Print the entire chessboard in the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a7cef7a9ca499d64c71cb170d67f76ad0}{reset\+Board}} ()
+\begin{DoxyCompactList}\small\item\em Reset the board to the initial state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a3fd1834a8218bdd039656ca9e9d338a3}{confirm\+Movement}} ()
+\begin{DoxyCompactList}\small\item\em Save the current position of the selected piece. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a394dff2cfbbd2bbf89cee65e8114cd5f}{add\+Move}} (\mbox{\hyperlink{class_move}{Move}} \texorpdfstring{$\ast$}{*}move)
+\begin{DoxyCompactList}\small\item\em Add the move to the list of moves. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_afd28c174e7c04185bd93a936f12cf7f4}{undo}} ()
+\begin{DoxyCompactList}\small\item\em Undo the last move. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_abb12f50ae6a08a6ff5545fa3cd9b8ea0}{redo}} ()
+\begin{DoxyCompactList}\small\item\em Redo the undone move. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a650ed79703548f46a0b4c18acb283216}{capture\+Piece}} (\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}captured\+Piece)
+\begin{DoxyCompactList}\small\item\em Capture a piece sending it to the cemetery. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_board}{Board} class. 
+
+The chessboard is a 8x8 matrix of chess pieces that includes also a cemetery for the captured pieces. 
+
+Definition at line \mbox{\hyperlink{board_8h_source_l00037}{37}} of file \mbox{\hyperlink{board_8h_source}{board.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_board_a9ee491d4fea680cf69b033374a9fdfcb}\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{Board()}{Board()}}
+{\footnotesize\ttfamily \label{class_board_a9ee491d4fea680cf69b033374a9fdfcb} 
+Board\+::\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Initializes an empty chessboard and sets up the cemetery. 
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_board_a394dff2cfbbd2bbf89cee65e8114cd5f}\index{Board@{Board}!addMove@{addMove}}
+\index{addMove@{addMove}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{addMove()}{addMove()}}
+{\footnotesize\ttfamily \label{class_board_a394dff2cfbbd2bbf89cee65e8114cd5f} 
+void Board\+::add\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_move}{Move}} \texorpdfstring{$\ast$}{*}}]{move}{}\end{DoxyParamCaption})}
+
+
+
+Add the move to the list of moves. 
+
+Adds a move to the list of moves for undo/redo functionality.
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The move to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_a650ed79703548f46a0b4c18acb283216}\index{Board@{Board}!capturePiece@{capturePiece}}
+\index{capturePiece@{capturePiece}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{capturePiece()}{capturePiece()}}
+{\footnotesize\ttfamily \label{class_board_a650ed79703548f46a0b4c18acb283216} 
+void Board\+::capture\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}}]{captured\+Piece}{}\end{DoxyParamCaption})}
+
+
+
+Capture a piece sending it to the cemetery. 
+
+Moves a captured piece to the cemetery.
+
+
+\begin{DoxyParams}{Parameters}
+{\em captured\+Piece} & The piece to be captured. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00220}{220}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_a3fd1834a8218bdd039656ca9e9d338a3}\index{Board@{Board}!confirmMovement@{confirmMovement}}
+\index{confirmMovement@{confirmMovement}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{confirmMovement()}{confirmMovement()}}
+{\footnotesize\ttfamily \label{class_board_a3fd1834a8218bdd039656ca9e9d338a3} 
+void Board\+::confirm\+Movement (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Save the current position of the selected piece. 
+
+Confirms the movement of the selected piece and updates its position on the board. 
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_af0bad4e174aa55d9c8f615cb4585f86d}\index{Board@{Board}!fillChessboard@{fillChessboard}}
+\index{fillChessboard@{fillChessboard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{fillChessboard()}{fillChessboard()}}
+{\footnotesize\ttfamily \label{class_board_af0bad4e174aa55d9c8f615cb4585f86d} 
+void Board\+::fill\+Chessboard (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} $>$ \&}]{nodes}{}\end{DoxyParamCaption})}
+
+
+
+Fill the chessboard with the pieces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodes} & A list of nodes representing the pieces to be placed on the board. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_a71f36903a66b67c0cd8b3223d54e88f6}\index{Board@{Board}!getSelectedPiece@{getSelectedPiece}}
+\index{getSelectedPiece@{getSelectedPiece}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{getSelectedPiece()}{getSelectedPiece()}}
+{\footnotesize\ttfamily \label{class_board_a71f36903a66b67c0cd8b3223d54e88f6} 
+\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*} Board\+::get\+Selected\+Piece (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the selected piece. 
+
+\begin{DoxyReturn}{Returns}
+The currently selected piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_adf5af849d82c67044e1d70e1384f1f8d}\index{Board@{Board}!printChessboard@{printChessboard}}
+\index{printChessboard@{printChessboard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{printChessboard()}{printChessboard()}}
+{\footnotesize\ttfamily \label{class_board_adf5af849d82c67044e1d70e1384f1f8d} 
+void Board\+::print\+Chessboard (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Print the entire chessboard in the current state. 
+
+Prints the current state of the chessboard to the console. 
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_abb12f50ae6a08a6ff5545fa3cd9b8ea0}\index{Board@{Board}!redo@{redo}}
+\index{redo@{redo}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily \label{class_board_abb12f50ae6a08a6ff5545fa3cd9b8ea0} 
+void Board\+::redo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Redo the undone move. 
+
+Reapplies the last move that was undone. 
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00335}{335}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_a7cef7a9ca499d64c71cb170d67f76ad0}\index{Board@{Board}!resetBoard@{resetBoard}}
+\index{resetBoard@{resetBoard}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{resetBoard()}{resetBoard()}}
+{\footnotesize\ttfamily \label{class_board_a7cef7a9ca499d64c71cb170d67f76ad0} 
+void Board\+::reset\+Board (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the board to the initial state. 
+
+Resets the chessboard to its initial state, with all pieces in their starting positions. Resets also the cemetery and the list of moves.
+
+Resets the chessboard to its initial state, with all pieces in their starting positions. 
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_af8a7cb947828b4fed6e83e3d657b30fd}\index{Board@{Board}!setSelectedPiece@{setSelectedPiece}}
+\index{setSelectedPiece@{setSelectedPiece}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{setSelectedPiece()}{setSelectedPiece()}}
+{\footnotesize\ttfamily \label{class_board_af8a7cb947828b4fed6e83e3d657b30fd} 
+void Board\+::set\+Selected\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Set the selected piece. 
+
+Sets the piece that the player wants to move.
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & The piece to be selected.\\
+\hline
+\end{DoxyParams}
+Sets the piece that the player wants to move.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node representing the piece to be selected. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00135}{135}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{class_board_afd28c174e7c04185bd93a936f12cf7f4}\index{Board@{Board}!undo@{undo}}
+\index{undo@{undo}!Board@{Board}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily \label{class_board_afd28c174e7c04185bd93a936f12cf7f4} 
+void Board\+::undo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Undo the last move. 
+
+Reverts the last move made on the chessboard. 
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00289}{289}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+client/\mbox{\hyperlink{board_8h}{board.\+h}}\item 
+client/\mbox{\hyperlink{board_8cpp}{board.\+cpp}}\end{DoxyCompactItemize}

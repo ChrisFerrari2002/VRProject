@@ -1,0 +1,476 @@
+\doxysection{Piece Class Reference}
+\hypertarget{class_piece}{}\label{class_piece}\index{Piece@{Piece}}
+
+
+\doxylink{class_piece}{Piece} class.  
+
+
+
+
+{\ttfamily \#include $<$piece.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_piece_a2f61e771c8cce6e9062646fc0c4bc604}{Piece}} (\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}node, int color, int row, int col)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_piece_ab2cdb49ddca957ab727b4a3a0bf770de}{get\+Node}} () const
+\begin{DoxyCompactList}\small\item\em Get the node representing the piece. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_a686e43e7dd6de32eca123461db4cde7e}{move\+Left}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_move}{Move} the piece to the left. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_a56e30591ed76581f17f0cd6f07e161a7}{move\+Right}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_move}{Move} the piece to the right. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_a902089a92770dfb6440781defa69cd35}{move\+Up}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_move}{Move} the piece up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_ac5b9ca1161164766674cf7f9ab25b849}{move\+Down}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_move}{Move} the piece down. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_a467a10756400eb0a46037b40dcb8a8c6}{remove}} (\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} cemetery\+Position, int eliminated\+Pieces)
+\begin{DoxyCompactList}\small\item\em Remove the piece to the cemetery. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_ae545ba1a45a0cc9d88c9e7aca9c48531}{replace}} ()
+\begin{DoxyCompactList}\small\item\em Replace the piece on the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_a5608c68b3809247e8c327519c742b08b}{reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the piece to its initial state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_a0474aae6e44d52d2310b38f695b601b2}{reset\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Reset the piece to its initial position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_ae0d391ff68fe4e42349749266af8ce56}{set\+New\+Position}} (int new\+Row, int new\+Col)
+\begin{DoxyCompactList}\small\item\em Set a new position for the piece. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_piece_a20a91b6a0c4402d866e764050c86239b}{set\+New\+Transform}} (\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} new\+Transform)
+\begin{DoxyCompactList}\small\item\em Set a new transform for the piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_piece_a6ca92b8a08b47849c5ac1c921a285bfe}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the color of the piece. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_piece_a80e1cc3435307d8a71eac02260393478}{is\+Eliminated}} () const
+\begin{DoxyCompactList}\small\item\em Check if the piece is eliminated/has been captured. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_piece_a0f53bbca2552fb2f6ea5307d9b4734fe}{get\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Get the current row of the piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_piece_a1c8b8d9e1fb77ea0d40ce42c7912317b}{get\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Get the current column of the piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_piece_a7b1f05fc0bb51231023b2950ec38dd65}{get\+Temp\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Get the temporary row of the piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_piece_adbcbb9dcbc0aa44af50345b1d1eabf79}{get\+Temp\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Get the temporary column of the piece. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_piece_a2f1e3a0a046a092ba2be4b2c97b462f3}{get\+Piece\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the current transform of the piece. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_piece_ac8d6a9bdff21c6a1e13925725e378303}{get\+Initial\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Get the initial transform of the piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_piece_a189340d8b018c0fc14c6d4fbde62f042}{get\+Start\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Get the starting row of the piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_piece_ad252b15b1e4038e5c4c7fc1654429164}{get\+Start\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Get the starting column of the piece. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_piece}{Piece} class. 
+
+The \doxylink{class_piece}{Piece} class represents a chess piece, managing its state and behavior. 
+
+Definition at line \mbox{\hyperlink{piece_8h_source_l00030}{30}} of file \mbox{\hyperlink{piece_8h_source}{piece.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_piece_a2f61e771c8cce6e9062646fc0c4bc604}\index{Piece@{Piece}!Piece@{Piece}}
+\index{Piece@{Piece}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{Piece()}{Piece()}}
+{\footnotesize\ttfamily \label{class_piece_a2f61e771c8cce6e9062646fc0c4bc604} 
+Piece\+::\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}}]{node}{, }\item[{int}]{color}{, }\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Initializes a piece with the given node, color, and position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node representing the piece. \\
+\hline
+{\em color} & The color of the piece (0 for black, 1 for white). \\
+\hline
+{\em row} & The starting row of the piece. \\
+\hline
+{\em col} & The starting column of the piece. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_piece_a1c8b8d9e1fb77ea0d40ce42c7912317b}\index{Piece@{Piece}!getCol@{getCol}}
+\index{getCol@{getCol}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getCol()}{getCol()}}
+{\footnotesize\ttfamily \label{class_piece_a1c8b8d9e1fb77ea0d40ce42c7912317b} 
+int Piece\+::get\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the current column of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The current column of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00225}{225}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a6ca92b8a08b47849c5ac1c921a285bfe}\index{Piece@{Piece}!getColor@{getColor}}
+\index{getColor@{getColor}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \label{class_piece_a6ca92b8a08b47849c5ac1c921a285bfe} 
+int Piece\+::get\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the color of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The color of the piece (0 for black, 1 for white). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00207}{207}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_ac8d6a9bdff21c6a1e13925725e378303}\index{Piece@{Piece}!getInitialTransform@{getInitialTransform}}
+\index{getInitialTransform@{getInitialTransform}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getInitialTransform()}{getInitialTransform()}}
+{\footnotesize\ttfamily \label{class_piece_ac8d6a9bdff21c6a1e13925725e378303} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} Piece\+::get\+Initial\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the initial transform of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The initial transform matrix of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00234}{234}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_ab2cdb49ddca957ab727b4a3a0bf770de}\index{Piece@{Piece}!getNode@{getNode}}
+\index{getNode@{getNode}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getNode()}{getNode()}}
+{\footnotesize\ttfamily \label{class_piece_ab2cdb49ddca957ab727b4a3a0bf770de} 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} Piece\+::get\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the node representing the piece. 
+
+\begin{DoxyReturn}{Returns}
+The node representing the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a2f1e3a0a046a092ba2be4b2c97b462f3}\index{Piece@{Piece}!getPieceTransform@{getPieceTransform}}
+\index{getPieceTransform@{getPieceTransform}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getPieceTransform()}{getPieceTransform()}}
+{\footnotesize\ttfamily \label{class_piece_a2f1e3a0a046a092ba2be4b2c97b462f3} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} Piece\+::get\+Piece\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the current transform of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The current transform matrix of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a0f53bbca2552fb2f6ea5307d9b4734fe}\index{Piece@{Piece}!getRow@{getRow}}
+\index{getRow@{getRow}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getRow()}{getRow()}}
+{\footnotesize\ttfamily \label{class_piece_a0f53bbca2552fb2f6ea5307d9b4734fe} 
+int Piece\+::get\+Row (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the current row of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The current row of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00216}{216}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_ad252b15b1e4038e5c4c7fc1654429164}\index{Piece@{Piece}!getStartCol@{getStartCol}}
+\index{getStartCol@{getStartCol}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getStartCol()}{getStartCol()}}
+{\footnotesize\ttfamily \label{class_piece_ad252b15b1e4038e5c4c7fc1654429164} 
+int Piece\+::get\+Start\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the starting column of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The starting column of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a189340d8b018c0fc14c6d4fbde62f042}\index{Piece@{Piece}!getStartRow@{getStartRow}}
+\index{getStartRow@{getStartRow}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getStartRow()}{getStartRow()}}
+{\footnotesize\ttfamily \label{class_piece_a189340d8b018c0fc14c6d4fbde62f042} 
+int Piece\+::get\+Start\+Row (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the starting row of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The starting row of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00243}{243}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_adbcbb9dcbc0aa44af50345b1d1eabf79}\index{Piece@{Piece}!getTempCol@{getTempCol}}
+\index{getTempCol@{getTempCol}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getTempCol()}{getTempCol()}}
+{\footnotesize\ttfamily \label{class_piece_adbcbb9dcbc0aa44af50345b1d1eabf79} 
+int Piece\+::get\+Temp\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the temporary column of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The temporary column of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a7b1f05fc0bb51231023b2950ec38dd65}\index{Piece@{Piece}!getTempRow@{getTempRow}}
+\index{getTempRow@{getTempRow}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{getTempRow()}{getTempRow()}}
+{\footnotesize\ttfamily \label{class_piece_a7b1f05fc0bb51231023b2950ec38dd65} 
+int Piece\+::get\+Temp\+Row (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the temporary row of the piece. 
+
+\begin{DoxyReturn}{Returns}
+The temporary row of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00189}{189}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a80e1cc3435307d8a71eac02260393478}\index{Piece@{Piece}!isEliminated@{isEliminated}}
+\index{isEliminated@{isEliminated}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{isEliminated()}{isEliminated()}}
+{\footnotesize\ttfamily \label{class_piece_a80e1cc3435307d8a71eac02260393478} 
+bool Piece\+::is\+Eliminated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Check if the piece is eliminated/has been captured. 
+
+Check if the piece is eliminated.
+
+\begin{DoxyReturn}{Returns}
+True if the piece is eliminated, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00261}{261}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_ac5b9ca1161164766674cf7f9ab25b849}\index{Piece@{Piece}!moveDown@{moveDown}}
+\index{moveDown@{moveDown}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{moveDown()}{moveDown()}}
+{\footnotesize\ttfamily \label{class_piece_ac5b9ca1161164766674cf7f9ab25b849} 
+void Piece\+::move\+Down (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_move}{Move} the piece down. 
+
+Moves the piece one block down if possible. 
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a686e43e7dd6de32eca123461db4cde7e}\index{Piece@{Piece}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily \label{class_piece_a686e43e7dd6de32eca123461db4cde7e} 
+void Piece\+::move\+Left (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_move}{Move} the piece to the left. 
+
+Moves the piece one block to the left if possible. 
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a56e30591ed76581f17f0cd6f07e161a7}\index{Piece@{Piece}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily \label{class_piece_a56e30591ed76581f17f0cd6f07e161a7} 
+void Piece\+::move\+Right (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_move}{Move} the piece to the right. 
+
+Moves the piece one block to the right if possible. 
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a902089a92770dfb6440781defa69cd35}\index{Piece@{Piece}!moveUp@{moveUp}}
+\index{moveUp@{moveUp}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{moveUp()}{moveUp()}}
+{\footnotesize\ttfamily \label{class_piece_a902089a92770dfb6440781defa69cd35} 
+void Piece\+::move\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_move}{Move} the piece up. 
+
+Moves the piece one block up if possible. 
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a467a10756400eb0a46037b40dcb8a8c6}\index{Piece@{Piece}!remove@{remove}}
+\index{remove@{remove}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \label{class_piece_a467a10756400eb0a46037b40dcb8a8c6} 
+void Piece\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{cemetery\+Position}{, }\item[{int}]{eliminated\+Pieces}{}\end{DoxyParamCaption})}
+
+
+
+Remove the piece to the cemetery. 
+
+Moves the piece to the cemetery and updates its position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cemetery\+Position} & The position of the cemetery. \\
+\hline
+{\em eliminated\+Pieces} & The number of pieces eliminated. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_ae545ba1a45a0cc9d88c9e7aca9c48531}\index{Piece@{Piece}!replace@{replace}}
+\index{replace@{replace}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily \label{class_piece_ae545ba1a45a0cc9d88c9e7aca9c48531} 
+void Piece\+::replace (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Replace the piece on the board. 
+
+Replaces the piece on the board from the cemetery. 
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a5608c68b3809247e8c327519c742b08b}\index{Piece@{Piece}!reset@{reset}}
+\index{reset@{reset}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily \label{class_piece_a5608c68b3809247e8c327519c742b08b} 
+void Piece\+::reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the piece to its initial state. 
+
+Resets the piece to its initial position and transform. 
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a0474aae6e44d52d2310b38f695b601b2}\index{Piece@{Piece}!resetPosition@{resetPosition}}
+\index{resetPosition@{resetPosition}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{resetPosition()}{resetPosition()}}
+{\footnotesize\ttfamily \label{class_piece_a0474aae6e44d52d2310b38f695b601b2} 
+void Piece\+::reset\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reset the piece to its initial position. 
+
+Reset the piece to its current position.
+
+Resets the piece to its current position and transform. 
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_ae0d391ff68fe4e42349749266af8ce56}\index{Piece@{Piece}!setNewPosition@{setNewPosition}}
+\index{setNewPosition@{setNewPosition}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{setNewPosition()}{setNewPosition()}}
+{\footnotesize\ttfamily \label{class_piece_ae0d391ff68fe4e42349749266af8ce56} 
+void Piece\+::set\+New\+Position (\begin{DoxyParamCaption}\item[{int}]{new\+Row}{, }\item[{int}]{new\+Col}{}\end{DoxyParamCaption})}
+
+
+
+Set a new position for the piece. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Row} & The new row of the piece. \\
+\hline
+{\em new\+Col} & The new column of the piece.\\
+\hline
+\end{DoxyParams}
+Sets the new position of the piece and updates its transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Row} & The new row of the piece. \\
+\hline
+{\em new\+Col} & The new column of the piece. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+\Hypertarget{class_piece_a20a91b6a0c4402d866e764050c86239b}\index{Piece@{Piece}!setNewTransform@{setNewTransform}}
+\index{setNewTransform@{setNewTransform}!Piece@{Piece}}
+\doxysubsubsection{\texorpdfstring{setNewTransform()}{setNewTransform()}}
+{\footnotesize\ttfamily \label{class_piece_a20a91b6a0c4402d866e764050c86239b} 
+void Piece\+::set\+New\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{new\+Transform}{}\end{DoxyParamCaption})}
+
+
+
+Set a new transform for the piece. 
+
+Set a new transformation matrix for the piece.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Transform} & The new transform matrix of the piece.\\
+\hline
+\end{DoxyParams}
+Sets the new transformation matrix of the piece.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Transform} & The new transform matrix of the piece. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{piece_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{piece_8cpp_source}{piece.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+client/\mbox{\hyperlink{piece_8h}{piece.\+h}}\item 
+client/\mbox{\hyperlink{piece_8cpp}{piece.\+cpp}}\end{DoxyCompactItemize}

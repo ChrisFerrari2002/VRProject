@@ -1,0 +1,71 @@
+\doxysection{engine/engine.cpp File Reference}
+\hypertarget{engine_8cpp}{}\label{engine_8cpp}\index{engine/engine.cpp@{engine/engine.cpp}}
+
+
+Graphics engine main file.  
+
+
+{\ttfamily \#include "{}engine.\+h"{}}\newline
+{\ttfamily \#include $<$GL/freeglut.\+h$>$}\newline
+{\ttfamily \#include $<$Free\+Image.\+h$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved}{Eng\+::\+Base\+::\+Reserved}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_base}{Base} class reserved structure (using PIMPL/\+Bridge design pattern \href{https://en.wikipedia.org/wiki/Opaque_pointer}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Opaque\+\_\+pointer}}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{engine_8cpp_a5e91aba899c5faf5b91dea68698a21d7}{perspective}}
+\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{engine_8cpp_a69f9adf691a71dc1c725b083481c63f5}{ortho}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Graphics engine main file. 
+
+This file contains the implementation of the Base class methods for the graphics engine.
+
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+The Base class is the main class of the graphics engine and is implemented as a singleton. \begin{DoxySeeAlso}{See also}
+\doxylink{class_eng_1_1_base}{Eng\+::\+Base}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Sara Bressan \mbox{[}\href{mailto:sara.bressan@student.supsi.ch}{\texttt{ sara.\+bressan@student.\+supsi.\+ch}}\mbox{]}
+\item Chris Ferrari \mbox{[}\href{mailto:chris.ferrari@student.supsi.ch}{\texttt{ chris.\+ferrari@student.\+supsi.\+ch}}\mbox{]}
+\item Alessandro Formato \mbox{[}\href{mailto:alessandro.formato@student.supsi.ch}{\texttt{ alessandro.\+formato@student.\+supsi.\+ch}}\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{engine_8cpp_a69f9adf691a71dc1c725b083481c63f5}\index{engine.cpp@{engine.cpp}!ortho@{ortho}}
+\index{ortho@{ortho}!engine.cpp@{engine.cpp}}
+\doxysubsubsection{\texorpdfstring{ortho}{ortho}}
+{\footnotesize\ttfamily \label{engine_8cpp_a69f9adf691a71dc1c725b083481c63f5} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} ortho}
+
+Orthographic projection matrix 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+
+\Hypertarget{engine_8cpp_a5e91aba899c5faf5b91dea68698a21d7}\index{engine.cpp@{engine.cpp}!perspective@{perspective}}
+\index{perspective@{perspective}!engine.cpp@{engine.cpp}}
+\doxysubsubsection{\texorpdfstring{perspective}{perspective}}
+{\footnotesize\ttfamily \label{engine_8cpp_a5e91aba899c5faf5b91dea68698a21d7} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} perspective}
+
+Perspective projection matrix 
+
+Definition at line \mbox{\hyperlink{engine_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{engine_8cpp_source}{engine.\+cpp}}.
+

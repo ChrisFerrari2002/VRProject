@@ -1,0 +1,52 @@
+\doxysection{quaternion\+\_\+common.\+hpp}
+\hypertarget{quaternion__common_8hpp_source}{}\label{quaternion__common_8hpp_source}\index{dependencies/glm/include/glm/ext/quaternion\_common.hpp@{dependencies/glm/include/glm/ext/quaternion\_common.hpp}}
+\mbox{\hyperlink{quaternion__common_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00023}00023\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scalar__constants_8hpp}{../ext/scalar\_constants.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{quaternion__geometric_8hpp}{../ext/quaternion\_geometric.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8hpp}{../common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{trigonometric_8hpp}{../trigonometric.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{exponential_8hpp}{../exponential.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00031}00031\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_quaternion\_common\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00033}00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00035}00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00053}00053\ \ \ \ \ GLM\_FUNC\_DECL\ qua<T,\ Q>\ \mbox{\hyperlink{group__core__func__common_ga6b6e0c7ecb4a5b78f929566355bb7416}{mix}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ qua<T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ T\ a);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00065}00065\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ qua<T,\ Q>\ \mbox{\hyperlink{group__ext__quaternion__common_ga0c68ffc0d006bd3300865215dcf744c5}{lerp}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ qua<T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ T\ a);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00077}00077\ \ \ \ \ GLM\_FUNC\_DECL\ qua<T,\ Q>\ \mbox{\hyperlink{group__ext__quaternion__common_gac536fe0ef911df8ecea579d86ee50b08}{slerp}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ qua<T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ T\ a);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ S,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00092}00092\ \ \ \ \ GLM\_FUNC\_DECL\ qua<T,\ Q>\ \mbox{\hyperlink{group__ext__quaternion__common_gac536fe0ef911df8ecea579d86ee50b08}{slerp}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ qua<T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ T\ a,\ S\ k);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00099}00099\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ qua<T,\ Q>\ \mbox{\hyperlink{group__ext__quaternion__common_ga7aed59d2ff2512afc860b65c80b5a8e0}{conjugate}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ q);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00106}00106\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ qua<T,\ Q>\ \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{inverse}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ q);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00118}00118\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00119}00119\ \ \ \ \ GLM\_FUNC\_DECL\ vec<4,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__common_ga81f85e3c56f1f559034422b357c37e21}{isnan}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00130}00130\ \ \ \ \ GLM\_FUNC\_DECL\ vec<4,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__common_ga6dfda49bcedffb43ffe5d85307d732fa}{isinf}}(qua<T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00133}00133\ \}\ \textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{quaternion__common_8hpp_source_l00135}00135\ \textcolor{preprocessor}{\#include\ "{}quaternion\_common.inl"{}}}
+
+\end{DoxyCode}

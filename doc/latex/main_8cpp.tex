@@ -1,0 +1,586 @@
+\doxysection{client/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{client/main.cpp@{client/main.cpp}}
+
+
+Client application (that uses the graphics engine)  
+
+
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include "{}engine.\+h"{}}\newline
+{\ttfamily \#include "{}board.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ab27464d9cd97b8cdfe08cce64077dd79}{CHESSBOARD\+\_\+\+SIZE}}~8
+\item 
+\#define \mbox{\hyperlink{main_8cpp_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}~0.\+0835f
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{main_8cpp_a11c9ebd6c61919361f74a10863c83f4a}{get\+Separator}} ()
+\begin{DoxyCompactList}\small\item\em Get the right separator depending on the OS this program runs on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a977bbb0eff2893b20fb72523dd7c3385}{make\+Object\+Blink}} (\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}obj)
+\begin{DoxyCompactList}\small\item\em Make an object blink (the selected piece will blink) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a17ba1f023464e5900f74c3ea25ba847a}{update\+Blinking}} (int value)
+\begin{DoxyCompactList}\small\item\em Update the blinking state of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_adad4addcdf386897fe250a09c2bd4cc0}{rotate\+Camera}} (int value)
+\begin{DoxyCompactList}\small\item\em Rotate the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a0d735056d121f9f143611df52cdcc098}{get\+Picked\+Object}} (\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}n, bool mouse\+Pressed)
+\begin{DoxyCompactList}\small\item\em Get the picked object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a4192c96fda10e6227a6ed0cb403648b8}{handle\+Window\+Resize}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Handle window resize event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ae65c58da9004dab19acf5351515ecc02}{update\+FPS}} (int value)
+\begin{DoxyCompactList}\small\item\em Update the FPS counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a69e5798583ce62fcf35b4fb53d19e7c7}{load\+Scene}} (std\+::string path\+Name)
+\begin{DoxyCompactList}\small\item\em Load the scene from a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_af3ca118147dd34032bc5dad040f73c3d}{blink\+Light}} ()
+\begin{DoxyCompactList}\small\item\em Makes the light blinking. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_a98b6108d51860c7bb7fd19202551aadc}{load\+Cameras}} ()
+\begin{DoxyCompactList}\small\item\em Load the cameras. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_ac83cd8167196272436d156f148654095}{special\+Callback}} (int key, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handle special key events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_aabe40237e86373b52cf2a259f7c8ce89}{keyboard\+Callback}} (unsigned char key, int x, int y)
+\begin{DoxyCompactList}\small\item\em Handle keyboard events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8cpp_affd62fa776a4c348f499ce73ecf397c3}{init}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Initialize the application. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Application entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eng_1_1_base}{Eng\+::\+Base}} \& \mbox{\hyperlink{main_8cpp_ab81ffc9cc136c9e7ac32dac2ad97cbab}{eng}} = \mbox{\hyperlink{class_eng_1_1_base_a3c21bcd7bace09d5913ced6de5b15518}{Eng\+::\+Base\+::get\+Instance}}()
+\item 
+int \mbox{\hyperlink{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}{width}} = 640
+\item 
+int \mbox{\hyperlink{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}} = 480
+\item 
+int \mbox{\hyperlink{main_8cpp_a78ccac598d091a161e6c2cb79411d8a2}{fc}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a45b67662d620a977a2cfe519f7ab6273}{fps}}
+\item 
+std\+::pair$<$ int, unsigned int $>$ \mbox{\hyperlink{main_8cpp_ac8a401dc0296950ec16ff4fc40cd60a4}{matrix}} \mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}\mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}
+\item 
+bool \mbox{\hyperlink{main_8cpp_acdc6ea1837f24e67b9a9ff5105d7e3ca}{positioning\+Matrix}} \mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}\mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}
+\item 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a602ef1e30d51a2364ff2ec5e63a97ea6}{picked\+Object}} = nullptr
+\item 
+\mbox{\hyperlink{group__core__vector_ga233f0e8f1aecf686e67c5c39316c4da8}{glm\+::vec4}} \mbox{\hyperlink{main_8cpp_ad7eb9adfce498e2f7c9262d6c6f803ff}{last\+Object\+Emission}}
+\item 
+bool \mbox{\hyperlink{main_8cpp_a399ff0c757d88aeaa2439212f073f380}{blink}} = false
+\item 
+bool \mbox{\hyperlink{main_8cpp_a8ca07da7c111ad6b932ec5b80bd2d8c8}{blinker\+Timer\+Started}} = false
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{main_8cpp_ad9f5874752e728ddf797d299ee69d083}{list}}
+\item 
+\mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{main_8cpp_aff4b97d795b83f2800e3d752dafc8c4a}{chessboard}}
+\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{main_8cpp_a985115a9cf60e601017dbf17b36f95a1}{initial\+Transform}}
+\item 
+bool \mbox{\hyperlink{main_8cpp_a971e9882ae7bbbbcc28eebfd0841c75f}{move\+Confirmed}} = false
+\item 
+\mbox{\hyperlink{class_eng_1_1_camera}{Eng\+::\+Camera}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8cpp_a8afd776bd2ca4918b21cddf4d3d303f8}{cameras}} \mbox{[}3\mbox{]}
+\item 
+bool \mbox{\hyperlink{main_8cpp_af1367d423d2f1845fee7eb09c72e3349}{light\+On}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Client application (that uses the graphics engine) 
+
+This file contains the main function and related functions for the client application that uses the graphics engine. The client application initializes the graphics engine, loads the scene, and handles user input to interact with the chessboard. The app is in fact a chessboard where the user can move the pieces by selecting them and then moving them around the board.
+
+The client application initializes the graphics engine, loads the scene, and handles user input to interact with the chessboard.
+
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_eng_1_1_base}{Eng\+::\+Base}, \doxylink{class_board}{Board}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Sara Bressan \mbox{[}\href{mailto:sara.bressan@student.supsi.ch}{\texttt{ sara.\+bressan@student.\+supsi.\+ch}}\mbox{]}
+\item Chris Ferrari \mbox{[}\href{mailto:chris.ferrari@student.supsi.ch}{\texttt{ chris.\+ferrari@student.\+supsi.\+ch}}\mbox{]}
+\item Alessandro Formato \mbox{[}\href{mailto:alessandro.formato@student.supsi.ch}{\texttt{ alessandro.\+formato@student.\+supsi.\+ch}}\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8cpp_ad51ded0bbd705f02f73fc60c0b721ced}\index{main.cpp@{main.cpp}!BLOCK\_SIZE@{BLOCK\_SIZE}}
+\index{BLOCK\_SIZE@{BLOCK\_SIZE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_SIZE}{BLOCK\_SIZE}}
+{\footnotesize\ttfamily \label{main_8cpp_ad51ded0bbd705f02f73fc60c0b721ced} 
+\#define BLOCK\+\_\+\+SIZE~0.\+0835f}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ab27464d9cd97b8cdfe08cce64077dd79}\index{main.cpp@{main.cpp}!CHESSBOARD\_SIZE@{CHESSBOARD\_SIZE}}
+\index{CHESSBOARD\_SIZE@{CHESSBOARD\_SIZE}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{CHESSBOARD\_SIZE}{CHESSBOARD\_SIZE}}
+{\footnotesize\ttfamily \label{main_8cpp_ab27464d9cd97b8cdfe08cce64077dd79} 
+\#define CHESSBOARD\+\_\+\+SIZE~8}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_af3ca118147dd34032bc5dad040f73c3d}\index{main.cpp@{main.cpp}!blinkLight@{blinkLight}}
+\index{blinkLight@{blinkLight}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{blinkLight()}{blinkLight()}}
+{\footnotesize\ttfamily \label{main_8cpp_af3ca118147dd34032bc5dad040f73c3d} 
+void blink\+Light (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Makes the light blinking. 
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00201}{201}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a0d735056d121f9f143611df52cdcc098}\index{main.cpp@{main.cpp}!getPickedObject@{getPickedObject}}
+\index{getPickedObject@{getPickedObject}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{getPickedObject()}{getPickedObject()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0d735056d121f9f143611df52cdcc098} 
+void get\+Picked\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}}]{n}{, }\item[{bool}]{mouse\+Pressed}{}\end{DoxyParamCaption})}
+
+
+
+Get the picked object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The node representing the picked object. \\
+\hline
+{\em mouse\+Pressed} & Whether the mouse button is pressed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a11c9ebd6c61919361f74a10863c83f4a}\index{main.cpp@{main.cpp}!getSeparator@{getSeparator}}
+\index{getSeparator@{getSeparator}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{getSeparator()}{getSeparator()}}
+{\footnotesize\ttfamily \label{main_8cpp_a11c9ebd6c61919361f74a10863c83f4a} 
+std\+::string get\+Separator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the right separator depending on the OS this program runs on. 
+
+\begin{DoxyReturn}{Returns}
+The file path separator for the current OS. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a4192c96fda10e6227a6ed0cb403648b8}\index{main.cpp@{main.cpp}!handleWindowResize@{handleWindowResize}}
+\index{handleWindowResize@{handleWindowResize}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{handleWindowResize()}{handleWindowResize()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4192c96fda10e6227a6ed0cb403648b8} 
+void handle\+Window\+Resize (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Handle window resize event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The new width of the window. \\
+\hline
+{\em h} & The new height of the window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_affd62fa776a4c348f499ce73ecf397c3}\index{main.cpp@{main.cpp}!init@{init}}
+\index{init@{init}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{main_8cpp_affd62fa776a4c348f499ce73ecf397c3} 
+void init (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Initialize the application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments. \\
+\hline
+{\em argv} & Array of command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_aabe40237e86373b52cf2a259f7c8ce89}\index{main.cpp@{main.cpp}!keyboardCallback@{keyboardCallback}}
+\index{keyboardCallback@{keyboardCallback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{keyboardCallback()}{keyboardCallback()}}
+{\footnotesize\ttfamily \label{main_8cpp_aabe40237e86373b52cf2a259f7c8ce89} 
+void keyboard\+Callback (\begin{DoxyParamCaption}\item[{unsigned char}]{key}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handle keyboard events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key code. \\
+\hline
+{\em x} & The x-\/coordinate of the mouse. \\
+\hline
+{\em y} & The y-\/coordinate of the mouse. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00270}{270}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a98b6108d51860c7bb7fd19202551aadc}\index{main.cpp@{main.cpp}!loadCameras@{loadCameras}}
+\index{loadCameras@{loadCameras}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loadCameras()}{loadCameras()}}
+{\footnotesize\ttfamily \label{main_8cpp_a98b6108d51860c7bb7fd19202551aadc} 
+void load\+Cameras (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Load the cameras. 
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a69e5798583ce62fcf35b4fb53d19e7c7}\index{main.cpp@{main.cpp}!loadScene@{loadScene}}
+\index{loadScene@{loadScene}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{loadScene()}{loadScene()}}
+{\footnotesize\ttfamily \label{main_8cpp_a69e5798583ce62fcf35b4fb53d19e7c7} 
+void load\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{path\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Load the scene from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Name} & The path to the scene file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Application entry point. 
+
+The main function initializes the engine, loads the scene, and starts the main loop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command-\/line arguments passed. \\
+\hline
+{\em argv} & Array containing up to argc passed arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code (0 on success, error code otherwise). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00335}{335}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a977bbb0eff2893b20fb72523dd7c3385}\index{main.cpp@{main.cpp}!makeObjectBlink@{makeObjectBlink}}
+\index{makeObjectBlink@{makeObjectBlink}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{makeObjectBlink()}{makeObjectBlink()}}
+{\footnotesize\ttfamily \label{main_8cpp_a977bbb0eff2893b20fb72523dd7c3385} 
+void make\+Object\+Blink (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*}}]{obj}{}\end{DoxyParamCaption})}
+
+
+
+Make an object blink (the selected piece will blink) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & The object to make blink. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_adad4addcdf386897fe250a09c2bd4cc0}\index{main.cpp@{main.cpp}!rotateCamera@{rotateCamera}}
+\index{rotateCamera@{rotateCamera}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{rotateCamera()}{rotateCamera()}}
+{\footnotesize\ttfamily \label{main_8cpp_adad4addcdf386897fe250a09c2bd4cc0} 
+void rotate\+Camera (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Rotate the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Timer value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00117}{117}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ac83cd8167196272436d156f148654095}\index{main.cpp@{main.cpp}!specialCallback@{specialCallback}}
+\index{specialCallback@{specialCallback}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{specialCallback()}{specialCallback()}}
+{\footnotesize\ttfamily \label{main_8cpp_ac83cd8167196272436d156f148654095} 
+void special\+Callback (\begin{DoxyParamCaption}\item[{int}]{key}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Handle special key events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key code. \\
+\hline
+{\em x} & The x-\/coordinate of the mouse. \\
+\hline
+{\em y} & The y-\/coordinate of the mouse. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00240}{240}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a17ba1f023464e5900f74c3ea25ba847a}\index{main.cpp@{main.cpp}!updateBlinking@{updateBlinking}}
+\index{updateBlinking@{updateBlinking}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{updateBlinking()}{updateBlinking()}}
+{\footnotesize\ttfamily \label{main_8cpp_a17ba1f023464e5900f74c3ea25ba847a} 
+void update\+Blinking (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Update the blinking state of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Timer value (state) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ae65c58da9004dab19acf5351515ecc02}\index{main.cpp@{main.cpp}!updateFPS@{updateFPS}}
+\index{updateFPS@{updateFPS}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{updateFPS()}{updateFPS()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae65c58da9004dab19acf5351515ecc02} 
+void update\+FPS (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Update the FPS counter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Timer value (not used). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00181}{181}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a399ff0c757d88aeaa2439212f073f380}\index{main.cpp@{main.cpp}!blink@{blink}}
+\index{blink@{blink}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{blink}{blink}}
+{\footnotesize\ttfamily \label{main_8cpp_a399ff0c757d88aeaa2439212f073f380} 
+bool blink = false}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a8ca07da7c111ad6b932ec5b80bd2d8c8}\index{main.cpp@{main.cpp}!blinkerTimerStarted@{blinkerTimerStarted}}
+\index{blinkerTimerStarted@{blinkerTimerStarted}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{blinkerTimerStarted}{blinkerTimerStarted}}
+{\footnotesize\ttfamily \label{main_8cpp_a8ca07da7c111ad6b932ec5b80bd2d8c8} 
+bool blinker\+Timer\+Started = false}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a8afd776bd2ca4918b21cddf4d3d303f8}\index{main.cpp@{main.cpp}!cameras@{cameras}}
+\index{cameras@{cameras}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{cameras}{cameras}}
+{\footnotesize\ttfamily \label{main_8cpp_a8afd776bd2ca4918b21cddf4d3d303f8} 
+\mbox{\hyperlink{class_eng_1_1_camera}{Eng\+::\+Camera}}\texorpdfstring{$\ast$}{*} cameras\mbox{[}3\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_aff4b97d795b83f2800e3d752dafc8c4a}\index{main.cpp@{main.cpp}!chessboard@{chessboard}}
+\index{chessboard@{chessboard}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{chessboard}{chessboard}}
+{\footnotesize\ttfamily \label{main_8cpp_aff4b97d795b83f2800e3d752dafc8c4a} 
+\mbox{\hyperlink{class_board}{Board}} chessboard}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ab81ffc9cc136c9e7ac32dac2ad97cbab}\index{main.cpp@{main.cpp}!eng@{eng}}
+\index{eng@{eng}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{eng}{eng}}
+{\footnotesize\ttfamily \label{main_8cpp_ab81ffc9cc136c9e7ac32dac2ad97cbab} 
+\mbox{\hyperlink{class_eng_1_1_base}{Eng\+::\+Base}}\& eng = \mbox{\hyperlink{class_eng_1_1_base_a3c21bcd7bace09d5913ced6de5b15518}{Eng\+::\+Base\+::get\+Instance}}()}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a78ccac598d091a161e6c2cb79411d8a2}\index{main.cpp@{main.cpp}!fc@{fc}}
+\index{fc@{fc}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{fc}{fc}}
+{\footnotesize\ttfamily \label{main_8cpp_a78ccac598d091a161e6c2cb79411d8a2} 
+int fc}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a45b67662d620a977a2cfe519f7ab6273}\index{main.cpp@{main.cpp}!fps@{fps}}
+\index{fps@{fps}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{fps}{fps}}
+{\footnotesize\ttfamily \label{main_8cpp_a45b67662d620a977a2cfe519f7ab6273} 
+int fps}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534}\index{main.cpp@{main.cpp}!height@{height}}
+\index{height@{height}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \label{main_8cpp_ad12fc34ce789bce6c8a05d8a17138534} 
+int height = 480}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a985115a9cf60e601017dbf17b36f95a1}\index{main.cpp@{main.cpp}!initialTransform@{initialTransform}}
+\index{initialTransform@{initialTransform}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{initialTransform}{initialTransform}}
+{\footnotesize\ttfamily \label{main_8cpp_a985115a9cf60e601017dbf17b36f95a1} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} initial\+Transform}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ad7eb9adfce498e2f7c9262d6c6f803ff}\index{main.cpp@{main.cpp}!lastObjectEmission@{lastObjectEmission}}
+\index{lastObjectEmission@{lastObjectEmission}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lastObjectEmission}{lastObjectEmission}}
+{\footnotesize\ttfamily \label{main_8cpp_ad7eb9adfce498e2f7c9262d6c6f803ff} 
+\mbox{\hyperlink{group__core__vector_ga233f0e8f1aecf686e67c5c39316c4da8}{glm\+::vec4}} last\+Object\+Emission}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_af1367d423d2f1845fee7eb09c72e3349}\index{main.cpp@{main.cpp}!lightOn@{lightOn}}
+\index{lightOn@{lightOn}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{lightOn}{lightOn}}
+{\footnotesize\ttfamily \label{main_8cpp_af1367d423d2f1845fee7eb09c72e3349} 
+bool light\+On = true}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ad9f5874752e728ddf797d299ee69d083}\index{main.cpp@{main.cpp}!list@{list}}
+\index{list@{list}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{list}{list}}
+{\footnotesize\ttfamily \label{main_8cpp_ad9f5874752e728ddf797d299ee69d083} 
+std\+::list$<$\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}}\texorpdfstring{$\ast$}{*}$>$ list}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_ac8a401dc0296950ec16ff4fc40cd60a4}\index{main.cpp@{main.cpp}!matrix@{matrix}}
+\index{matrix@{matrix}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{matrix}{matrix}}
+{\footnotesize\ttfamily \label{main_8cpp_ac8a401dc0296950ec16ff4fc40cd60a4} 
+std\+::pair$<$int, unsigned int$>$ matrix\mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}\mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a971e9882ae7bbbbcc28eebfd0841c75f}\index{main.cpp@{main.cpp}!moveConfirmed@{moveConfirmed}}
+\index{moveConfirmed@{moveConfirmed}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{moveConfirmed}{moveConfirmed}}
+{\footnotesize\ttfamily \label{main_8cpp_a971e9882ae7bbbbcc28eebfd0841c75f} 
+bool move\+Confirmed = false}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a602ef1e30d51a2364ff2ec5e63a97ea6}\index{main.cpp@{main.cpp}!pickedObject@{pickedObject}}
+\index{pickedObject@{pickedObject}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{pickedObject}{pickedObject}}
+{\footnotesize\ttfamily \label{main_8cpp_a602ef1e30d51a2364ff2ec5e63a97ea6} 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}}\texorpdfstring{$\ast$}{*} picked\+Object = nullptr}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_acdc6ea1837f24e67b9a9ff5105d7e3ca}\index{main.cpp@{main.cpp}!positioningMatrix@{positioningMatrix}}
+\index{positioningMatrix@{positioningMatrix}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{positioningMatrix}{positioningMatrix}}
+{\footnotesize\ttfamily \label{main_8cpp_acdc6ea1837f24e67b9a9ff5105d7e3ca} 
+bool positioning\+Matrix\mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}\mbox{[}CHESSBOARD\+\_\+\+SIZE\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a2474a5474cbff19523a51eb1de01cda4}\index{main.cpp@{main.cpp}!width@{width}}
+\index{width@{width}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{main_8cpp_a2474a5474cbff19523a51eb1de01cda4} 
+int width = 640}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

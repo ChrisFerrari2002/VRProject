@@ -1,0 +1,59 @@
+\doxysection{move.\+cpp}
+\hypertarget{move_8cpp_source}{}\label{move_8cpp_source}\index{client/move.cpp@{client/move.cpp}}
+\mbox{\hyperlink{move_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{move_8h}{move.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00027}\mbox{\hyperlink{class_move_aa4007170f27a5ebd9752d5d29430974d}{00027}}\ \mbox{\hyperlink{class_move_aa4007170f27a5ebd9752d5d29430974d}{Move::Move}}(\mbox{\hyperlink{class_piece}{Piece}}*\ movedPiece)\ :\ movedPiece(movedPiece)\ \{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00028}00028\ \ \ \ \ startRow\ =\ movedPiece-\/>\mbox{\hyperlink{class_piece_a0f53bbca2552fb2f6ea5307d9b4734fe}{getRow}}();}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00029}00029\ \ \ \ \ startCol\ =\ movedPiece-\/>\mbox{\hyperlink{class_piece_a1c8b8d9e1fb77ea0d40ce42c7912317b}{getCol}}();}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00030}00030\ \ \ \ \ endRow\ =\ movedPiece-\/>\mbox{\hyperlink{class_piece_a7b1f05fc0bb51231023b2950ec38dd65}{getTempRow}}();}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00031}00031\ \ \ \ \ endCol\ =\ movedPiece-\/>\mbox{\hyperlink{class_piece_adbcbb9dcbc0aa44af50345b1d1eabf79}{getTempCol}}();}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00032}00032\ \ \ \ \ isEliminated\ =\ movedPiece-\/>\mbox{\hyperlink{class_piece_a80e1cc3435307d8a71eac02260393478}{isEliminated}}();}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00033}00033\ \ \ \ \ startTransform\ =\ movedPiece-\/>\mbox{\hyperlink{class_piece_a2f1e3a0a046a092ba2be4b2c97b462f3}{getPieceTransform}}();}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00034}00034\ \ \ \ \ endTransform\ =\ movedPiece-\/>\mbox{\hyperlink{class_piece_ab2cdb49ddca957ab727b4a3a0bf770de}{getNode}}()-\/>getTransform();}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00042}\mbox{\hyperlink{class_move_a4b130addcb63c2c56b88d8d4bf17cc44}{00042}}\ \mbox{\hyperlink{class_piece}{Piece}}*\ \mbox{\hyperlink{class_move_a4b130addcb63c2c56b88d8d4bf17cc44}{Move::getMovedPiece}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ movedPiece;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00051}\mbox{\hyperlink{class_move_ac91390159c85c4973e718a93ee2e5045}{00051}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_ac91390159c85c4973e718a93ee2e5045}{Move::getStartRow}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ startRow;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00060}\mbox{\hyperlink{class_move_ae47faf83bfacb75daee960097b744937}{00060}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_ae47faf83bfacb75daee960097b744937}{Move::getStartCol}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{return}\ startCol;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00069}\mbox{\hyperlink{class_move_a80c98aae55b879a0223243cb4e298502}{00069}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_a80c98aae55b879a0223243cb4e298502}{Move::getEndRow}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ endRow;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00078}\mbox{\hyperlink{class_move_a84e0f30a0a97586821e2ad2e10d65fad}{00078}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_a84e0f30a0a97586821e2ad2e10d65fad}{Move::getEndCol}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{return}\ endCol;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00090}\mbox{\hyperlink{class_move_a163c8e71de2fbc6b0b940cab2ef6a07b}{00090}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_move_a163c8e71de2fbc6b0b940cab2ef6a07b}{Move::setEndPosition}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col)\ \{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00091}00091\ \ \ \ \ endRow\ =\ row;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00092}00092\ \ \ \ \ endCol\ =\ col;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00100}\mbox{\hyperlink{class_move_a4fc2453623b698a56acb10112d1e5a0c}{00100}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_move_a4fc2453623b698a56acb10112d1e5a0c}{Move::getIsEliminated}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{return}\ isEliminated;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00111}\mbox{\hyperlink{class_move_a3df62af72715ec01c05411addace9413}{00111}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_move_a3df62af72715ec01c05411addace9413}{Move::setEliminated}}(\textcolor{keywordtype}{bool}\ eliminated)\ \{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00112}00112\ \ \ \ \ isEliminated\ =\ eliminated;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00120}\mbox{\hyperlink{class_move_a53b0039c8275470f3ec96a2fa85569b0}{00120}}\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_move_a53b0039c8275470f3ec96a2fa85569b0}{Move::getStartTransform}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{return}\ startTransform;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00129}\mbox{\hyperlink{class_move_a0efcae59abb620af134d1c95986ded49}{00129}}\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_move_a0efcae59abb620af134d1c95986ded49}{Move::getEndTransform}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{return}\ endTransform;}
+\DoxyCodeLine{\Hypertarget{move_8cpp_source_l00131}00131\ \}}
+
+\end{DoxyCode}

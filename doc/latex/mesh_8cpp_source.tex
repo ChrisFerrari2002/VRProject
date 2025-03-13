@@ -1,0 +1,61 @@
+\doxysection{mesh.\+cpp}
+\hypertarget{mesh_8cpp_source}{}\label{mesh_8cpp_source}\index{engine/mesh.cpp@{engine/mesh.cpp}}
+\mbox{\hyperlink{mesh_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00031}\mbox{\hyperlink{class_eng_1_1_mesh_ab0ac37fe0509517c9044ec400766256a}{00031}}\ \mbox{\hyperlink{class_eng_1_1_mesh_ab0ac37fe0509517c9044ec400766256a}{Eng::Mesh::Mesh}}(std::string\ name,\ \mbox{\hyperlink{class_eng_1_1_material}{Material}}\ material)\ :\ \mbox{\hyperlink{class_eng_1_1_node}{Node}}(name)\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00032}00032\ \ \ \ this-\/>material\ =\ material;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00033}00033\ \ \ \ this-\/>vertices;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00041}\mbox{\hyperlink{class_eng_1_1_mesh_a5efe4da1a4c0971cfb037bd70304c303}{00041}}\ \mbox{\hyperlink{class_eng_1_1_mesh_a5efe4da1a4c0971cfb037bd70304c303}{Eng::Mesh::\string~Mesh}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00051}\mbox{\hyperlink{class_eng_1_1_mesh_a3aaf7561254214e0a3dce91bcd715a80}{00051}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_mesh_a3aaf7561254214e0a3dce91bcd715a80}{Eng::Mesh::addVertex}}(\mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}*\ v,\ \textcolor{keywordtype}{int}\ lod)\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00052}00052\ \ \ \ \textcolor{keywordflow}{if}\ (vertices.size()\ <=\ lod)\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00053}00053\ \ \ \ \ \ \ std::vector<Vertex*>\ tempVec;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00054}00054\ \ \ \ \ \ \ tempVec.push\_back(v);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00055}00055\ \ \ \ \ \ \ vertices.push\_back(tempVec);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00056}00056\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00057}00057\ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00058}00058\ \ \ \ \ \ \ vertices.at(lod).push\_back(v);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00069}\mbox{\hyperlink{class_eng_1_1_mesh_a8bf90e773f1ec3e45fb905404f9bc313}{00069}}\ std::vector<Eng::Vertex*>\ \mbox{\hyperlink{class_eng_1_1_mesh_a8bf90e773f1ec3e45fb905404f9bc313}{Eng::Mesh::getVertices}}(\textcolor{keywordtype}{int}\ lod)\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00070}00070\ \ \ \ \textcolor{keywordflow}{return}\ vertices.at(lod);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00082}\mbox{\hyperlink{class_eng_1_1_mesh_acd9713b31b6dc6ed29f3526e81cdd2ea}{00082}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_mesh_acd9713b31b6dc6ed29f3526e81cdd2ea}{Eng::Mesh::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ matrix,\ \textcolor{keywordtype}{void}*\ ptr)\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00084}00084\ \ \ \ material.render(matrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00085}00085\ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(matrix\ *\ getFinalMatrix()));}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00086}00086\ \ \ \ glFrontFace(GL\_CCW);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00087}00087\ \ \ \ glBegin(GL\_TRIANGLES);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00088}00088\ \ \ \ \textcolor{comment}{//render\ with\ the\ scale}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00089}00089\ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_eng_1_1_vertex}{Vertex}}*\ v\ :\ vertices.at(lod))\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00090}00090\ \ \ \ \ \ \ glColor4fv(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(getColorBasedOnId(getId())));}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00091}00091\ \ \ \ \ \ \ glNormal3fv(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(v-\/>getNormal()\ *\ getScale()));}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00092}00092\ \ \ \ \ \ \ glTexCoord2fv(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(v-\/>getTextureCoordinates()\ *\ getScale()));}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00093}00093\ \ \ \ \ \ \ glVertex3fv(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(v-\/>getPosition()\ *\ getScale()));}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00094}00094\ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00095}00095\ \ \ \ glEnd();}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00096}00096\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00104}\mbox{\hyperlink{class_eng_1_1_mesh_aa2b2c79ee4f1db04f0b97844eec1038f}{00104}}\ \mbox{\hyperlink{class_eng_1_1_material}{Eng::Material}}*\ \mbox{\hyperlink{class_eng_1_1_mesh_aa2b2c79ee4f1db04f0b97844eec1038f}{Eng::Mesh::getMaterial}}()\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00105}00105\ \ \ \ \textcolor{keywordflow}{return}\ \&material;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00116}\mbox{\hyperlink{class_eng_1_1_mesh_a9d5a608537bc3867d28ba3b6b1dff312}{00116}}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ \mbox{\hyperlink{class_eng_1_1_mesh_a9d5a608537bc3867d28ba3b6b1dff312}{Eng::Mesh::getColorBasedOnId}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00117}00117\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00118}00118\ \ \ \ \textcolor{keywordtype}{float}\ r\ =\ (float)((\textcolor{keywordtype}{id}\ >>\ 16)\ \&\ 0xFF)\ /\ 255.0f;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00119}00119\ \ \ \ \textcolor{keywordtype}{float}\ g\ =\ (float)((\textcolor{keywordtype}{id}\ >>\ 8)\ \&\ 0xFF)\ /\ 255.0f;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00120}00120\ \ \ \ \textcolor{keywordtype}{float}\ b\ =\ (float)((\textcolor{keywordtype}{id}\ >>\ 0)\ \&\ 0xFF)\ /\ 255.0f;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00121}00121\ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ color\ =\ \mbox{\hyperlink{group__core__vector_ga233f0e8f1aecf686e67c5c39316c4da8}{glm::vec4}}(r,\ g,\ b,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00122}00122\ \ \ \ \textcolor{keywordflow}{return}\ color;}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{mesh_8cpp_source_l00124}00124\ }
+
+\end{DoxyCode}

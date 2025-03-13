@@ -1,0 +1,106 @@
+\doxysection{matrix.\+hpp}
+\hypertarget{matrix_8hpp_source}{}\label{matrix_8hpp_source}\index{dependencies/glm/include/glm/matrix.hpp@{dependencies/glm/include/glm/matrix.hpp}}
+\mbox{\hyperlink{matrix_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00015}00015\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec2_8hpp}{vec2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8hpp}{vec3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec4_8hpp}{vec4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat2x2_8hpp}{mat2x2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat2x3_8hpp}{mat2x3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat2x4_8hpp}{mat2x4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat3x2_8hpp}{mat3x2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat3x3_8hpp}{mat3x3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat3x4_8hpp}{mat3x4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat4x2_8hpp}{mat4x2.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat4x3_8hpp}{mat4x3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat4x4_8hpp}{mat4x4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00031}00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}\ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00032}00032\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00035}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{00035}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}\{\};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00038}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_012_00_012_00_01_t_00_01_q_01_4}{00038}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<2,\ 2,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<2,\ 2,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_012_00_012_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00041}00041\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00044}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_012_00_013_00_01_t_00_01_q_01_4}{00044}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<2,\ 3,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 2,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_013_00_012_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00047}00047\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00050}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_012_00_014_00_01_t_00_01_q_01_4}{00050}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<2,\ 4,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 2,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_014_00_012_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00053}00053\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00056}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_013_00_012_00_01_t_00_01_q_01_4}{00056}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<3,\ 2,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<2,\ 3,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_012_00_013_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00059}00059\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00062}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_013_00_013_00_01_t_00_01_q_01_4}{00062}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<3,\ 3,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_013_00_013_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00065}00065\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00068}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_013_00_014_00_01_t_00_01_q_01_4}{00068}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<3,\ 4,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00069}00069\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 3,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_014_00_013_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00071}00071\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00074}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_014_00_012_00_01_t_00_01_q_01_4}{00074}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<4,\ 2,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<2,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_012_00_014_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00077}00077\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00080}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_014_00_013_00_01_t_00_01_q_01_4}{00080}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<4,\ 3,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_013_00_014_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00083}00083\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00086}\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait_3_014_00_014_00_01_t_00_01_q_01_4}{00086}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{outerProduct\_trait}}<4,\ 4,\ T,\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{structglm_1_1mat_3_014_00_014_00_01_t_00_01_q_01_4}{type}};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00089}00089\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00090}00090\ \}\textcolor{comment}{//namespace\ detail}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00106}00106\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__integer_ga24628d844879cc9d0a77ede181e5925e}{matrixCompMult}}(\mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00119}00119\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00120}00120\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structglm_1_1detail_1_1outer_product__trait}{detail::outerProduct\_trait<C,\ R,\ T,\ Q>::type}}\ outerProduct(\mbox{\hyperlink{structglm_1_1vec}{vec<C,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ c,\ \mbox{\hyperlink{structglm_1_1vec}{vec<R,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ r);}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00131}00131\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00132}00132\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keyword}{typename}\ \mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>::transpose\_type}}\ \mbox{\hyperlink{group__ext__matrix__integer_ga4d251df5957b62996391bccb61cc9974}{transpose}}(\mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00144}00144\ \ \ \ \ GLM\_FUNC\_DECL\ T\ \mbox{\hyperlink{group__ext__matrix__integer_gad7928795124768e058f99dce270f5c8d}{determinant}}(\mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m);}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00156}00156\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{inverse}}(\mbox{\hyperlink{structglm_1_1mat}{mat<C,\ R,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m);}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00159}00159\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{matrix_8hpp_source_l00161}00161\ \textcolor{preprocessor}{\#include\ "{}detail/func\_matrix.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,58 @@
+\doxysection{node.\+h}
+\hypertarget{node_8h_source}{}\label{node_8h_source}\index{engine/node.h@{engine/node.h}}
+\mbox{\hyperlink{node_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ NODE\_H}}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00020}00020\ \textcolor{preprocessor}{\#define\ NODE\_H}}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00028}\mbox{\hyperlink{class_node}{00028}}\ \textcolor{keyword}{class\ }ENG\_API\ \mbox{\hyperlink{class_node}{Node}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_eng_1_1_object}{Eng::Object}}\ \{}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00029}00029\ \textcolor{comment}{//\ Public\ methods}}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00038}\mbox{\hyperlink{class_node_a7841d77ae58a6cc471c74bcd75a6543c}{00038}}\ \ \ \ \mbox{\hyperlink{class_node_a7841d77ae58a6cc471c74bcd75a6543c}{Node}}(\textcolor{keyword}{const}\ std::string\ name);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00045}\mbox{\hyperlink{class_node_aa0840c3cb5c7159be6d992adecd2097c}{00045}}\ \ \ \ \mbox{\hyperlink{class_node_aa0840c3cb5c7159be6d992adecd2097c}{\string~Node}}();}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00052}\mbox{\hyperlink{class_node_a31f8763ea8659b0485ded3cfb0821e05}{00052}}\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_node_a31f8763ea8659b0485ded3cfb0821e05}{getTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00059}\mbox{\hyperlink{class_node_a30facf17244e507ea0431a381ddcef73}{00059}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_a30facf17244e507ea0431a381ddcef73}{setTransform}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00066}\mbox{\hyperlink{class_node_a89f137ff4d4853bdc509397063bdfbec}{00066}}\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_node_a89f137ff4d4853bdc509397063bdfbec}{getFinalMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00075}\mbox{\hyperlink{class_node_aada1397339f3a5de376daf5570357ae2}{00075}}\ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ \mbox{\hyperlink{class_node_aada1397339f3a5de376daf5570357ae2}{getChildAt}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00082}\mbox{\hyperlink{class_node_ae230a13798f81414406d3a3e1c2a6bad}{00082}}\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ \mbox{\hyperlink{class_node_ae230a13798f81414406d3a3e1c2a6bad}{getWorldPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00089}\mbox{\hyperlink{class_node_ad79cd313e1dc7029054bdefcd4409530}{00089}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_ad79cd313e1dc7029054bdefcd4409530}{setWorldPosition}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ position);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00098}\mbox{\hyperlink{class_node_abf6d5a02f2f901c46d78a75a102ab553}{00098}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_node_abf6d5a02f2f901c46d78a75a102ab553}{addChild}}(\mbox{\hyperlink{class_node}{Node}}*\ child);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00107}\mbox{\hyperlink{class_node_ab30a3877f3421084ad5cbf4244864924}{00107}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_node_ab30a3877f3421084ad5cbf4244864924}{removeChild}}(\mbox{\hyperlink{class_node}{Node}}*\ child);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00115}\mbox{\hyperlink{class_node_a17e90a43495d1a0347bb90c06c4c55b1}{00115}}\ \ \ \ \ std::vector<Node*>\ \mbox{\hyperlink{class_node_a17e90a43495d1a0347bb90c06c4c55b1}{getChildren}}();}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00122}\mbox{\hyperlink{class_node_a6e5d2afd0f27dc8f5b42e05c9f56954e}{00122}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_a6e5d2afd0f27dc8f5b42e05c9f56954e}{setChildren}}(std::vector<Node*>\ children);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00130}\mbox{\hyperlink{class_node_a802b2f8f4685f5ae0bae5d104e5592de}{00130}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_node_a802b2f8f4685f5ae0bae5d104e5592de}{getNumberOfChildren}}();}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00138}\mbox{\hyperlink{class_node_a220a8d64cb0df1cce083ed38c1260615}{00138}}\ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ \mbox{\hyperlink{class_node_a220a8d64cb0df1cce083ed38c1260615}{getParent}}();}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00146}\mbox{\hyperlink{class_node_ab5f0786bcb59591c528efb0b776797fc}{00146}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_ab5f0786bcb59591c528efb0b776797fc}{setParent}}(\mbox{\hyperlink{class_node}{Node}}*\ parent);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00156}\mbox{\hyperlink{class_node_a07f298783b02e2b55d506d3e9e52126b}{00156}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_node_a07f298783b02e2b55d506d3e9e52126b}{render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform,\ \textcolor{keywordtype}{void}*\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00164}\mbox{\hyperlink{class_node_acf0955a52f51a9d6c8b0c9267b1e8668}{00164}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_node_acf0955a52f51a9d6c8b0c9267b1e8668}{setScale}}(\textcolor{keywordtype}{float}\ scale);}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00172}\mbox{\hyperlink{class_node_ac9926440d4edab1020d348a2b950307c}{00172}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_node_ac9926440d4edab1020d348a2b950307c}{getScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00174}00174\ \textcolor{comment}{//\ Private\ methods\ and\ fields}}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00175}00175\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00176}00176\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform\ =\ \mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm::mat4}}(1.0f);\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00177}00177\ \ \ \ \ std::vector<Node*>\ children;\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00178}00178\ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ parent;\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00179}00179\ \ \ \ \ \textcolor{keywordtype}{float}\ scale;\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00180}00180\ \};}
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{node_8h_source_l00182}00182\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ NODE\_H}}
+
+\end{DoxyCode}

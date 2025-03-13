@@ -1,0 +1,52 @@
+\doxysection{board.\+h}
+\hypertarget{board_8h_source}{}\label{board_8h_source}\index{client/board.h@{client/board.h}}
+\mbox{\hyperlink{board_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00020}00020\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00023}00023\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{piece_8h}{piece.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cemetery_8h}{cemetery.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{move_8h}{move.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00037}\mbox{\hyperlink{class_board}{00037}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_board}{Board}}\ \{}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ Public\ methods}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00039}00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board}}();}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_af0bad4e174aa55d9c8f615cb4585f86d}{fillChessboard}}(\textcolor{keyword}{const}\ std::list<Eng::Node*>\&\ nodes);}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_af8a7cb947828b4fed6e83e3d657b30fd}{setSelectedPiece}}(\mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}*\ piece);}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00068}00068\ \ \ \ \ \mbox{\hyperlink{class_piece}{Piece}}*\ \mbox{\hyperlink{class_board_a71f36903a66b67c0cd8b3223d54e88f6}{getSelectedPiece}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_adf5af849d82c67044e1d70e1384f1f8d}{printChessboard}}();}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a7cef7a9ca499d64c71cb170d67f76ad0}{resetBoard}}();}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a3fd1834a8218bdd039656ca9e9d338a3}{confirmMovement}}();}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a394dff2cfbbd2bbf89cee65e8114cd5f}{addMove}}(\mbox{\hyperlink{class_move}{Move}}*\ move);}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00106}00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_afd28c174e7c04185bd93a936f12cf7f4}{undo}}();}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_abb12f50ae6a08a6ff5545fa3cd9b8ea0}{redo}}();}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00122}00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_board_a650ed79703548f46a0b4c18acb283216}{capturePiece}}(\mbox{\hyperlink{class_piece}{Piece}}*\ capturedPiece);}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00124}00124\ \textcolor{comment}{//\ Private\ methods\ and\ fields}}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00125}00125\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{class_cemetery}{Cemetery}}*\ cemetery\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00127}00127\ \ \ \ \ \mbox{\hyperlink{class_piece}{Piece}}*\ selectedPiece\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00128}00128\ \ \ \ \ std::vector<std::vector<Piece*>>\ table;\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00129}00129\ \ \ \ \ std::vector<Piece*>\ pieces;\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00130}00130\ \ \ \ \ std::vector<Move*>\ moves;\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{int}\ currentMove\ =\ -\/1;\ }
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00139}00139\ \ \ \ \ std::pair<int,\ int>\ getPosition(\textcolor{keyword}{const}\ std::string\&\ nodeName);}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00140}00140\ \};}
+\DoxyCodeLine{\Hypertarget{board_8h_source_l00141}00141\ }
+
+\end{DoxyCode}

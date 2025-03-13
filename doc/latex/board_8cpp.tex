@@ -1,0 +1,73 @@
+\doxysection{client/board.cpp File Reference}
+\hypertarget{board_8cpp}{}\label{board_8cpp}\index{client/board.cpp@{client/board.cpp}}
+
+
+Implementation of the \doxylink{class_board}{Board} class.  
+
+
+{\ttfamily \#include "{}board.\+h"{}}\newline
+{\ttfamily \#include "{}move.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{board_8cpp_ab27464d9cd97b8cdfe08cce64077dd79}{CHESSBOARD\+\_\+\+SIZE}}~8
+\item 
+\#define \mbox{\hyperlink{board_8cpp_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}~0.\+0835f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \doxylink{class_board}{Board} class. 
+
+This file contains the implementation of the \doxylink{class_board}{Board} class methods.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_board}{Board} 
+
+\doxylink{board_8h}{board.\+h}
+\end{DoxySeeAlso}
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+The \doxylink{class_board}{Board} class represents the chessboard, managing the state of the pieces, the cemetery for captured pieces, and the history of moves for undo/redo functionality.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_piece}{Piece}, \doxylink{class_move}{Move}, \doxylink{class_cemetery}{Cemetery}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Sara Bressan \mbox{[}\href{mailto:sara.bressan@student.supsi.ch}{\texttt{ sara.\+bressan@student.\+supsi.\+ch}}\mbox{]}
+\item Chris Ferrari \mbox{[}\href{mailto:chris.ferrari@student.supsi.ch}{\texttt{ chris.\+ferrari@student.\+supsi.\+ch}}\mbox{]}
+\item Alessandro Formato \mbox{[}\href{mailto:alessandro.formato@student.supsi.ch}{\texttt{ alessandro.\+formato@student.\+supsi.\+ch}}\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{board_8cpp_ad51ded0bbd705f02f73fc60c0b721ced}\index{board.cpp@{board.cpp}!BLOCK\_SIZE@{BLOCK\_SIZE}}
+\index{BLOCK\_SIZE@{BLOCK\_SIZE}!board.cpp@{board.cpp}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_SIZE}{BLOCK\_SIZE}}
+{\footnotesize\ttfamily \label{board_8cpp_ad51ded0bbd705f02f73fc60c0b721ced} 
+\#define BLOCK\+\_\+\+SIZE~0.\+0835f}
+
+
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+
+\Hypertarget{board_8cpp_ab27464d9cd97b8cdfe08cce64077dd79}\index{board.cpp@{board.cpp}!CHESSBOARD\_SIZE@{CHESSBOARD\_SIZE}}
+\index{CHESSBOARD\_SIZE@{CHESSBOARD\_SIZE}!board.cpp@{board.cpp}}
+\doxysubsubsection{\texorpdfstring{CHESSBOARD\_SIZE}{CHESSBOARD\_SIZE}}
+{\footnotesize\ttfamily \label{board_8cpp_ab27464d9cd97b8cdfe08cce64077dd79} 
+\#define CHESSBOARD\+\_\+\+SIZE~8}
+
+
+
+Definition at line \mbox{\hyperlink{board_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{board_8cpp_source}{board.\+cpp}}.
+

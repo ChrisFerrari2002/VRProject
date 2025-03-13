@@ -1,0 +1,32 @@
+\doxysection{handed\+\_\+coordinate\+\_\+space.\+inl}
+\hypertarget{handed__coordinate__space_8inl_source}{}\label{handed__coordinate__space_8inl_source}\index{dependencies/glm/include/glm/gtx/handed\_coordinate\_space.inl@{dependencies/glm/include/glm/gtx/handed\_coordinate\_space.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00006}\mbox{\hyperlink{group__gtx__handed__coordinate__space_ga99386a5ab5491871b947076e21699cc8}{00006}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__handed__coordinate__space_ga99386a5ab5491871b947076e21699cc8}{rightHanded}}}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00007}00007\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ tangent,}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00009}00009\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ binormal,}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ normal}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00011}00011\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dot(\mbox{\hyperlink{group__core__func__geometric_ga1882f52ee88a161ed86dea9905a6da91}{cross}}(normal,\ tangent),\ binormal)\ >\ T(0);}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00017}\mbox{\hyperlink{group__gtx__handed__coordinate__space_ga6f1bad193b9a3b048543d1935cf04dd3}{00017}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__handed__coordinate__space_ga6f1bad193b9a3b048543d1935cf04dd3}{leftHanded}}}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00018}00018\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ tangent,}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ binormal,}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ normal}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00022}00022\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dot(\mbox{\hyperlink{group__core__func__geometric_ga1882f52ee88a161ed86dea9905a6da91}{cross}}(normal,\ tangent),\ binormal)\ <\ T(0);}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{handed__coordinate__space_8inl_source_l00026}00026\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

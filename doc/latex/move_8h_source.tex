@@ -1,0 +1,44 @@
+\doxysection{move.\+h}
+\hypertarget{move_8h_source}{}\label{move_8h_source}\index{client/move.h@{client/move.h}}
+\mbox{\hyperlink{move_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00018}00018\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00021}00021\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{piece_8h}{piece.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00030}\mbox{\hyperlink{class_move}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_move}{Move}}\ \{}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00031}00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_move_aa4007170f27a5ebd9752d5d29430974d}{Move}}(\mbox{\hyperlink{class_piece}{Piece}}*\ movedPiece);}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{class_piece}{Piece}}*\ \mbox{\hyperlink{class_move_a4b130addcb63c2c56b88d8d4bf17cc44}{getMovedPiece}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_ac91390159c85c4973e718a93ee2e5045}{getStartRow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_ae47faf83bfacb75daee960097b744937}{getStartCol}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_a80c98aae55b879a0223243cb4e298502}{getEndRow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_move_a84e0f30a0a97586821e2ad2e10d65fad}{getEndCol}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00081}00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_move_a4fc2453623b698a56acb10112d1e5a0c}{getIsEliminated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_move_a53b0039c8275470f3ec96a2fa85569b0}{getStartTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_move_a0efcae59abb620af134d1c95986ded49}{getEndTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_move_a163c8e71de2fbc6b0b940cab2ef6a07b}{setEndPosition}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col);}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_move_a3df62af72715ec01c05411addace9413}{setEliminated}}(\textcolor{keywordtype}{bool}\ eliminated);}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00116}00116\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{class_piece}{Piece}}*\ movedPiece;\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00119}00119\ \ \ \ \ \textcolor{keywordtype}{int}\ startRow,\ startCol;\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{int}\ endRow,\ endCol;\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ isEliminated;\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ startTransform;\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ endTransform;\ }
+\DoxyCodeLine{\Hypertarget{move_8h_source_l00125}00125\ \};}
+
+\end{DoxyCode}

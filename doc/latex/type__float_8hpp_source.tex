@@ -1,0 +1,74 @@
+\doxysection{type\+\_\+float.\+hpp}
+\hypertarget{type__float_8hpp_source}{}\label{type__float_8hpp_source}\index{dependencies/glm/include/glm/detail/type\_float.hpp@{dependencies/glm/include/glm/detail/type\_float.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#if\ GLM\_COMPILER\ ==\ GLM\_COMPILER\_VC12}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#\ \ \ pragma\ warning(push)}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00007}00007\ \textcolor{preprocessor}{\#\ \ \ pragma\ warning(disable:\ 4512)\ }\textcolor{comment}{//\ assignment\ operator\ could\ not\ be\ generated}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00011}00011\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00014}\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{00014}}\ \ \ \ \ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00015}00015\ \ \ \ \ \{\};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ https://randomascii.wordpress.com/2012/02/25/comparing-\/floating-\/point-\/numbers-\/2012-\/edition/}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00019}\mbox{\hyperlink{unionglm_1_1detail_1_1float__t_3_01float_01_4}{00019}}\ \ \ \ \ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}<float>}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ int\_type;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{float}\ float\_type;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}(float\_type\ Num\ =\ 0.0f)\ :\ f(Num)\ \{\}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}\&\ operator=(\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ f\ =\ x.f;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Portable\ extraction\ of\ components.}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ \textcolor{keywordtype}{bool}\ negative()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ i\ <\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ int\_type\ mantissa()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ i\ \&\ ((1\ <<\ 23)\ -\/\ 1);\ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ int\_type\ exponent()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (i\ >>\ 23)\ \&\ ((1\ <<\ 8)\ -\/\ 1);\ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ int\_type\ i;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ float\_type\ f;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00039}00039\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00042}\mbox{\hyperlink{unionglm_1_1detail_1_1float__t_3_01double_01_4}{00042}}\ \ \ \ \ \textcolor{keyword}{union\ }\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}<double>}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ detail::int64\ int\_type;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ float\_type;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}(float\_type\ Num\ =\ \textcolor{keyword}{static\_cast<}float\_type\textcolor{keyword}{>}(0))\ :\ f(Num)\ \{\}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ \mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}\&\ operator=(\mbox{\hyperlink{unionglm_1_1detail_1_1float__t}{float\_t}}\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ f\ =\ x.f;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Portable\ extraction\ of\ components.}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ \textcolor{keywordtype}{bool}\ negative()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ i\ <\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00057}00057\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ int\_type\ mantissa()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ i\ \&\ ((int\_type(1)\ <<\ 52)\ -\/\ 1);\ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ GLM\_CONSTEXPR\ int\_type\ exponent()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (i\ >>\ 52)\ \&\ ((int\_type(1)\ <<\ 11)\ -\/\ 1);\ \}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ int\_type\ i;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ float\_type\ f;}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00062}00062\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00063}00063\ \}\textcolor{comment}{//namespace\ detail}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00064}00064\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00066}00066\ \textcolor{preprocessor}{\#if\ GLM\_COMPILER\ ==\ GLM\_COMPILER\_VC12}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00067}00067\ \textcolor{preprocessor}{\#\ \ \ pragma\ warning(pop)}}
+\DoxyCodeLine{\Hypertarget{type__float_8hpp_source_l00068}00068\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

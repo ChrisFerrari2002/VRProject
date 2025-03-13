@@ -1,0 +1,450 @@
+\doxysection{ovo\+Reader.\+cpp}
+\hypertarget{ovo_reader_8cpp_source}{}\label{ovo_reader_8cpp_source}\index{engine/ovoReader.cpp@{engine/ovoReader.cpp}}
+\mbox{\hyperlink{ovo_reader_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00020}00020\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{gtc_2packing_8hpp}{glm/gtc/packing.hpp}}>}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}ovoLight.h"{}}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ "{}ovoObject.h"{}}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}ovoMesh.h"{}}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 4996)}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00037}\mbox{\hyperlink{ovo_reader_8cpp_a11c9ebd6c61919361f74a10863c83f4a}{00037}}\ std::string\ \mbox{\hyperlink{ovo_reader_8cpp_a11c9ebd6c61919361f74a10863c83f4a}{getSeparator}}()\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00038}00038\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00040}00040\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}/"{}};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00042}00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00050}\mbox{\hyperlink{class_eng_1_1_ovo_reader_abf3ea18f6be76d3cd371c92c0f5adde9}{00050}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_ovo_reader_abf3ea18f6be76d3cd371c92c0f5adde9}{Eng::OvoReader::OvoReader}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00057}\mbox{\hyperlink{class_eng_1_1_ovo_reader_a5f9e1ec7c30f2a2fff07c678d8b3fcd4}{00057}}\ \mbox{\hyperlink{class_eng_1_1_ovo_reader_a5f9e1ec7c30f2a2fff07c678d8b3fcd4}{Eng::OvoReader::\string~OvoReader}}()\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00058}00058\ \ \ \ \ materials.clear();}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00059}00059\ \ \ \ \ tempVertices.clear();}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00062}\mbox{\hyperlink{ovo_reader_8cpp_a18564f99a748f8daffbf8f5ffaa2a0cb}{00062}}\ std::string\ \mbox{\hyperlink{ovo_reader_8cpp_a18564f99a748f8daffbf8f5ffaa2a0cb}{\_path}};\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00071}\mbox{\hyperlink{class_eng_1_1_ovo_reader_a6eb4872f57cf4ebb9d7f3644d5eb410c}{00071}}\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}*\ \mbox{\hyperlink{class_eng_1_1_ovo_reader_a6eb4872f57cf4ebb9d7f3644d5eb410c}{Eng::OvoReader::readFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ path)\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//\ Open\ file:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00073}00073\ \ \ \ \ FILE*\ dat\ =\ fopen(path,\ \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (dat\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ unable\ to\ open\ file\ '"{}}\ <<\ path\ <<\ \textcolor{stringliteral}{"{}'"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{ovo_reader_8cpp_a18564f99a748f8daffbf8f5ffaa2a0cb}{\_path}}\ =\ path;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ root\ =\ recursiveLoad(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00083}00083\ \ \ \ \ fclose(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00095}00095\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}*\ Eng::OvoReader::recursiveLoad(FILE*\ dat)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00096}00096\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{comment}{//\ Parse\ the\ chunk\ starting\ at\ buffer\ +\ position:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ chunkId,\ chunkSize,\ position\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00100}00100\ \ \ \ \ fread(\&chunkId,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}),\ 1,\ dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00101}00101\ \ \ \ \ fread(\&chunkSize,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}),\ 1,\ dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//\ Load\ whole\ chunk\ into\ memory:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{char}*\ data\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[chunkSize];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{if}\ (fread(data,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}),\ chunkSize,\ dat)\ !=\ chunkSize)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00106}00106\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ unable\ to\ read\ from\ file"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ fclose(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ data;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//First\ Object}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4}{OvObject::Type}})chunkId\ ==\ \mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4a11f58e04c745cc93515b08afd8e93af2}{OvObject::Type::O\_OBJECT}})\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ versionId;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ memcpy(\&versionId,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recursiveLoad(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{comment}{//Material}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4}{OvObject::Type}})chunkId\ ==\ \mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4a2e7baf30ba53ad159ef58e6d966386b0}{OvObject::Type::O\_MATERIAL}})\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Material\ name:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ materialName[FILENAME\_MAX];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ strcpy(materialName,\ data\ +\ position);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ position\ +=\ (\textcolor{keywordtype}{unsigned}\ int)strlen(materialName)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ std::string\ materialName\_str(materialName);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Material\ term\ colors,\ starting\ with\ emissive:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ emission,\ albedo;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ memcpy(\&emission,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Albedo:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ memcpy(\&albedo,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Roughness\ factor:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ roughness;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ memcpy(\&roughness,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Skipped\ values:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Metalness\ factor:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transparency\ factor:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Albedo\ texture\ filename,\ or\ [none]\ if\ not\ used:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ textureName[FILENAME\_MAX];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ strcpy(textureName,\ data\ +\ position);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ position\ +=\ (\textcolor{keywordtype}{unsigned}\ int)strlen(textureName)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ std::string\ textureName\_str\ =\ std::string(textureName);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Save\ material\ on\ data\ structure}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material}{Material}}*\ material\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_material}{Material}}(materialName\_str,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(emission,\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(albedo\ *\ 0.2f,\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(albedo\ *\ 0.6f,\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(albedo\ *\ 0.4f,\ 1.0f),\ (1\ -\/\ sqrt(roughness))\ *\ 128);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ materials.insert(std::pair<std::string,\ Material*>(material-\/>\mbox{\hyperlink{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0}{getName}}(),\ material));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}*\ texture\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_texture}{Texture}}(textureName\_str);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ material-\/>\mbox{\hyperlink{class_material_a488caecdfd1e8fbcfed31bfc8c7c1c00}{setTexture}}(texture);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (textureName\_str\ !=\ \textcolor{stringliteral}{"{}[none]"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ texture-\/>\mbox{\hyperlink{class_texture_a6d0f8f5ac4889c9bee8c7493f7a98cbb}{setTextureId}}(\mbox{\hyperlink{ovo_reader_8cpp_a18564f99a748f8daffbf8f5ffaa2a0cb}{\_path}}.substr(0,\ \mbox{\hyperlink{ovo_reader_8cpp_a18564f99a748f8daffbf8f5ffaa2a0cb}{\_path}}.find\_last\_of(\mbox{\hyperlink{main_8cpp_a11c9ebd6c61919361f74a10863c83f4a}{getSeparator}}()))\ +\ \mbox{\hyperlink{main_8cpp_a11c9ebd6c61919361f74a10863c83f4a}{getSeparator}}()\ +\ textureName\_str);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ recursiveLoad(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{comment}{//\ Node\ name:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{char}\ nodeName[FILENAME\_MAX];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00170}00170\ \ \ \ \ strcpy(nodeName,\ data\ +\ position);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00171}00171\ \ \ \ \ position\ +=\ (\textcolor{keywordtype}{unsigned}\ int)strlen(nodeName)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00172}00172\ \ \ \ \ std::string\ nodeName\_str(nodeName);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{comment}{//\ Node\ matrix:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00175}00175\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ matrix;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00176}00176\ \ \ \ \ memcpy(\&matrix,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00177}00177\ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm::mat4}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{comment}{//\ Nr.\ of\ children\ nodes:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nrOfChildren\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00181}00181\ \ \ \ \ memcpy(\&nrOfChildren,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00182}00182\ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{comment}{//\ Parse\ chunk\ information\ according\ to\ its\ type:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{switch}\ ((\mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4}{OvObject::Type}})chunkId)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00186}00186\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4a225c226150e902d224c96c9683aa781a}{OvObject::Type::O\_NODE}}:}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00188}00188\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ thisNode\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_node}{Node}}(nodeName\_str);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ thisNode-\/>\mbox{\hyperlink{class_node_a30facf17244e507ea0431a381ddcef73}{setTransform}}(matrix);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Go\ recursive\ when\ child\ nodes\ are\ avaialble:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nrOfChildren)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (thisNode-\/>\mbox{\hyperlink{class_node_a802b2f8f4685f5ae0bae5d104e5592de}{getNumberOfChildren}}()\ <\ nrOfChildren)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ childNode\ =\ recursiveLoad(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisNode-\/>\mbox{\hyperlink{class_node_abf6d5a02f2f901c46d78a75a102ab553}{addChild}}(childNode);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Done:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ thisNode;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00202}00202\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4a1053dc19dc9af8fd7959c4e94bd3804a}{OvObject::Type::O\_MESH}}:}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00205}00205\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Optional\ target\ node,\ or\ [none]\ if\ not\ used:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ targetName[FILENAME\_MAX];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ strcpy(targetName,\ data\ +\ position);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ position\ +=\ (\textcolor{keywordtype}{unsigned}\ int)strlen(targetName)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Target\ name:\ "{}}\ <<\ nodeName\_str\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mesh\ subtype\ (see\ OvMesh\ SUBTYPE\ enum):}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ char);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Material\ name,\ or\ [none]\ if\ not\ used:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ materialName[FILENAME\_MAX];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ strcpy(materialName,\ data\ +\ position);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tMaterial\ name:\ "{}}\ <<\ materialName\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ position\ +=\ (\textcolor{keywordtype}{unsigned}\ int)strlen(materialName)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ std::string\ materialName\_str(materialName);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mesh}{Mesh}}*\ thisMesh;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (materialName\_str\ !=\ \textcolor{stringliteral}{"{}[none]"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_material}{Material}}\ material\ =\ *(materials.find(materialName\_str)-\/>second);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ thisMesh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mesh}{Mesh}}(nodeName\_str,\ material);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ thisMesh-\/>\mbox{\hyperlink{class_eng_1_1_node_a0046f89439ceffffae05ab6144827337}{setTransform}}(matrix);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ thisMesh\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mesh}{Mesh}}(nodeName\_str,\ \mbox{\hyperlink{class_material}{Material}}());}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ thisMesh-\/>\mbox{\hyperlink{class_eng_1_1_node_a0046f89439ceffffae05ab6144827337}{setTransform}}(matrix);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mesh\ bounding\ sphere\ radius:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ memcpy(\&radius,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mesh\ bounding\ box\ minimum\ corner:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ bBoxMin;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ memcpy(\&bBoxMin,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mesh\ bounding\ box\ maximum\ corner:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Optional\ physics\ properties:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ hasPhysics;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ memcpy(\&hasPhysics,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ char);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hasPhysics)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }PhysProps}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pay\ attention\ to\ 16\ byte\ alignement\ (use\ padding):}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ type;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ contCollisionDetection;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ collideWithRBodies;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ hullType;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vector\ data:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ massCenter;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mesh\ properties:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mass;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ staticFriction;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ dynamicFriction;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ bounciness;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ linearDamping;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ angularDamping;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nrOfHulls;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \_pad;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pointers:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ physObj;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ hull;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ PhysProps\ mp;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&mp,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(PhysProps));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(PhysProps);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Custom\ hull(s)\ used?}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mp.nrOfHulls)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ mp.nrOfHulls;\ c++)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hull\ number\ of\ vertices:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nrOfVertices;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&nrOfVertices,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hull\ number\ of\ faces:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ nrOfFaces;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&nrOfFaces,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hull\ centroid:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iterate\ through\ hull\ vertices:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ nrOfVertices;\ c++)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Iterate\ through\ hull\ faces:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ nrOfFaces;\ c++)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int)\ *\ 3;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nr.\ of\ LODs:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ LODs;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ memcpy(\&LODs,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tLODs:\ "{}}\ <<\ LODs\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ l\ =\ 0;\ l\ <\ LODs;\ l++)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Nr.\ of\ vertices:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vertices,\ faces;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&vertices,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tNr.\ of\ vertices:\ "{}}\ <<\ vertices\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ...and\ faces:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&faces,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00335}00335\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tNr.\ of\ faces:\ "{}}\ <<\ faces\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Interleaved\ and\ compressed\ vertex/normal/UV/tangent\ data:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ vertices;\ c++)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vertex\ coords:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ vertex;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&vertex,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vertex\ normal:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ normalData;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&normalData,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Texture\ coordinates:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ textureData;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&textureData,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Tangent\ vector:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ tangentData;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(\&tangentData,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ normal\ =\ \mbox{\hyperlink{group__gtc__packing_ga8b8bb827a3743ca553d8702d3e337101}{glm::unpackSnorm3x10\_1x2}}(normalData);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vertex}{Vertex}}*\ newVertex\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_vertex}{Vertex}}(vertex,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(normal.x,\ normal.y,\ normal.z));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec2}}\ uv\ =\ \mbox{\hyperlink{group__core__func__packing_gaf59b52e6b28da9335322c4ae19b5d745}{glm::unpackHalf2x16}}(textureData);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newVertex-\/>\mbox{\hyperlink{class_vertex_a90623fb2b7a9fae0b98a6a972ac5559e}{setTextureCoordinates}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec2}}(uv));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tempVertices.push\_back(newVertex);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00369}00369\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Faces:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ c\ =\ 0;\ c\ <\ faces;\ c++)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Face\ indexes:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ face[3];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ memcpy(face,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})\ *\ 3);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ int)\ *\ 3;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisMesh-\/>\mbox{\hyperlink{class_mesh_a3aaf7561254214e0a3dce91bcd715a80}{addVertex}}(tempVertices.at(face[i]),\ l);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (thisMesh-\/>\mbox{\hyperlink{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0}{getName}}().substr(0,\ 1)\ ==\ \textcolor{stringliteral}{"{}p"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Shadow\ of\ piece"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_shadow}{Shadow}}*\ shadow\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_shadow}{Shadow}}(thisMesh);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisMesh-\/>\mbox{\hyperlink{class_eng_1_1_node_ac07caba908e76ccc2bc8b99e117b1838}{addChild}}(shadow);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ tempVertices.clear();}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Go\ recursive\ when\ child\ nodes\ are\ avaialble:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nrOfChildren)\ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (thisMesh-\/>\mbox{\hyperlink{class_eng_1_1_node_ae5aae3b373c1770c8de8bc35e6cf6713}{getNumberOfChildren}}()\ <\ nrOfChildren)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ childNode\ =\ recursiveLoad(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisMesh-\/>\mbox{\hyperlink{class_eng_1_1_node_ac07caba908e76ccc2bc8b99e117b1838}{addChild}}(childNode);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Done:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ thisMesh;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00405}00405\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00407}00407\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_object_a43751fbd68ebd5f7f02cb452b11e01c4abe3a214a14a09dc091288aa5abf73a7a}{OvObject::Type::O\_LIGHT}}:}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00408}00408\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Optional\ target\ node\ name,\ or\ [none]\ if\ not\ used:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ targetName[FILENAME\_MAX];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ strcpy(targetName,\ data\ +\ position);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ position\ +=\ (\textcolor{keywordtype}{unsigned}\ int)strlen(targetName)\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Light\ subtype\ (see\ OvLight\ SUBTYPE\ enum):}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ subtype;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ memcpy(\&subtype,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ subtypeName[FILENAME\_MAX];}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ ((\mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016}{OvLight::Subtype}})subtype)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016ab6f2249394a4def60a78b342dcc925b9}{OvLight::Subtype::DIRECTIONAL}}:\ strcpy(subtypeName,\ \textcolor{stringliteral}{"{}directional"{}});\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016a63389071b9b8e84b1c40330b2eeecac0}{OvLight::Subtype::OMNI}}:\ strcpy(subtypeName,\ \textcolor{stringliteral}{"{}omni"{}});\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016a5bac85a0c611ddef64ab0dfb383056f4}{OvLight::Subtype::SPOT}}:\ strcpy(subtypeName,\ \textcolor{stringliteral}{"{}spot"{}});\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ strcpy(subtypeName,\ \textcolor{stringliteral}{"{}UNDEFINED"{}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ char);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00427}00427\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Light\ color:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ color;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ memcpy(\&color,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Influence\ radius:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ memcpy(\&radius,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00436}00436\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00437}00437\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Direction:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ direction;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ memcpy(\&direction,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm::vec3}});}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00441}00441\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00442}00442\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cutoff:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00443}00443\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ cutoff;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00444}00444\ \ \ \ \ \ \ \ \ memcpy(\&cutoff,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Exponent:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ spotExponent;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ memcpy(\&spotExponent,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(float);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00451}00451\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00452}00452\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Cast\ shadow\ flag:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ castShadows;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ memcpy(\&castShadows,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ char);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Volumetric\ lighting\ flag:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ isVolumetric;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00459}00459\ \ \ \ \ \ \ \ \ memcpy(\&isVolumetric,\ data\ +\ position,\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ position\ +=\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ char);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_light}{Light}}*\ thisLight\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextLightPointer\ =\ \mbox{\hyperlink{class_eng_1_1_light_aa4140a85ffb1f9827bd4e3a9c65eeb49}{Light::getNextLightNumber}}();}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ ((\mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016}{OvLight::Subtype}})subtype)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00466}00466\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016ab6f2249394a4def60a78b342dcc925b9}{OvLight::Subtype::DIRECTIONAL}}:}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ thisLight\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_directional_light}{DirectionalLight}}(nodeName\_str,\ nextLightPointer,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.x),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.y),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.z),\ 1.0f));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016a63389071b9b8e84b1c40330b2eeecac0}{OvLight::Subtype::OMNI}}:}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00471}00471\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ thisLight\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_point_light}{PointLight}}(nodeName\_str,\ nextLightPointer,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.x),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.y),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.z),\ 1.0f),\ cutoff);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00473}00473\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00474}00474\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{class_ov_light_a1019edb0540a20be7581a2b38d439016a5bac85a0c611ddef64ab0dfb383056f4}{OvLight::Subtype::SPOT}}:}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00475}00475\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ thisLight\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_spot_light}{SpotLight}}(nodeName\_str,\ nextLightPointer,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.x),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.y),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.z),\ 1.0f),\ cutoff,\ direction);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00478}00478\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ thisLight\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_light}{Light}}(nodeName\_str,\ nextLightPointer,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.x),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.y),\ 1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(color.z),\ 1.0f));}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00480}00480\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ thisLight-\/>\mbox{\hyperlink{class_light_ad19d60d490c1aae195a263ea1fbed577}{setTransform}}(matrix);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00484}00484\ }
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Go\ recursive\ when\ child\ nodes\ are\ avaialble:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nrOfChildren)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (thisLight-\/>\mbox{\hyperlink{class_eng_1_1_node_ae5aae3b373c1770c8de8bc35e6cf6713}{getNumberOfChildren}}()\ <\ nrOfChildren)}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_node}{Node}}*\ childNode\ =\ recursiveLoad(dat);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ thisLight-\/>\mbox{\hyperlink{class_eng_1_1_node_ac07caba908e76ccc2bc8b99e117b1838}{addChild}}(childNode);}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00492}00492\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Done:}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ thisLight;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00494}00494\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00495}00495\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00496}00496\ \ \ \ \ \textcolor{keyword}{delete}[]\ data;}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00497}00497\ \}}
+\DoxyCodeLine{\Hypertarget{ovo_reader_8cpp_source_l00498}00498\ }
+
+\end{DoxyCode}

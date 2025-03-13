@@ -1,0 +1,51 @@
+\doxysection{matrix\+\_\+query.\+hpp}
+\hypertarget{matrix__query_8hpp_source}{}\label{matrix__query_8hpp_source}\index{dependencies/glm/include/glm/gtx/matrix\_query.hpp@{dependencies/glm/include/glm/gtx/matrix\_query.hpp}}
+\mbox{\hyperlink{matrix__query_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00016}00016\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{glm_8hpp}{../glm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__query_8hpp}{../gtx/vector\_query.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_matrix\_query\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_matrix\_query\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00035}00035\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_ga9790ec222ce948c0ff0d8ce927340dba}{isNull}}(mat<2,\ 2,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00040}00040\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_ga9790ec222ce948c0ff0d8ce927340dba}{isNull}}(mat<3,\ 3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00045}00045\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_ga9790ec222ce948c0ff0d8ce927340dba}{isNull}}(mat<4,\ 4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q,\ \textcolor{keyword}{template}<length\_t,\ length\_t,\ \textcolor{keyword}{typename},\ qualifier>\ \textcolor{keyword}{class\ }matType>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00050}\mbox{\hyperlink{group__gtx__matrix__query_gaee935d145581c82e82b154ccfd78ad91}{00050}}\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_gaee935d145581c82e82b154ccfd78ad91}{isIdentity}}(matType<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00055}00055\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_gae785af56f47ce220a1609f7f84aa077a}{isNormalized}}(\mbox{\hyperlink{structglm_1_1mat}{mat<2,\ 2,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00060}00060\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_gae785af56f47ce220a1609f7f84aa077a}{isNormalized}}(\mbox{\hyperlink{structglm_1_1mat}{mat<3,\ 3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00065}00065\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_gae785af56f47ce220a1609f7f84aa077a}{isNormalized}}(\mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q,\ \textcolor{keyword}{template}<length\_t,\ length\_t,\ \textcolor{keyword}{typename},\ qualifier>\ \textcolor{keyword}{class\ }matType>}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00070}\mbox{\hyperlink{group__gtx__matrix__query_ga58f3289f74dcab653387dd78ad93ca40}{00070}}\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_ga58f3289f74dcab653387dd78ad93ca40}{isOrthogonal}}(matType<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00073}00073\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{matrix__query_8hpp_source_l00075}00075\ \textcolor{preprocessor}{\#include\ "{}matrix\_query.inl"{}}}
+
+\end{DoxyCode}

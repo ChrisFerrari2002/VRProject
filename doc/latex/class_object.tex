@@ -1,0 +1,150 @@
+\doxysection{Object Class Reference}
+\hypertarget{class_object}{}\label{class_object}\index{Object@{Object}}
+
+
+\doxylink{class_object}{Object} class.  
+
+
+
+
+{\ttfamily \#include $<$object.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_object_a18bd04a6f1024040a6477fe8517095e6}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the object Id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_ada156b53e7362783f31205616fc8efd9}{set\+Id}} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em Set the object Id. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_object_ae2e7f745c015b67a580c735609cba5b8}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the object name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_ae30fea75683c2d149b6b6d17c09ecd0c}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the object name. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_object_a1204b43ddce80707db1d6721e6cf8004}{render}} (\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} transform, void \texorpdfstring{$\ast$}{*}data)=0
+\begin{DoxyCompactList}\small\item\em Virtual render method. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_object_a3a5b3a4ae646a3cb2d9090deb36f5e44}{get\+Next\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the next available Id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{class_object_aef73d4aae8379ab0accf5f9077f1b9ff}{id\+Counter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_object}{Object} class. 
+
+The class define an object. 
+
+Definition at line \mbox{\hyperlink{object_8h_source_l00027}{27}} of file \mbox{\hyperlink{object_8h_source}{object.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_object_a18bd04a6f1024040a6477fe8517095e6}\index{Object@{Object}!getId@{getId}}
+\index{getId@{getId}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_object_a18bd04a6f1024040a6477fe8517095e6} 
+unsigned int Object\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the object Id. 
+
+\begin{DoxyReturn}{Returns}
+The object Id. 
+\end{DoxyReturn}
+\Hypertarget{class_object_ae2e7f745c015b67a580c735609cba5b8}\index{Object@{Object}!getName@{getName}}
+\index{getName@{getName}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_object_ae2e7f745c015b67a580c735609cba5b8} 
+std\+::string Object\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the object name. 
+
+\begin{DoxyReturn}{Returns}
+The object name. 
+\end{DoxyReturn}
+\Hypertarget{class_object_a3a5b3a4ae646a3cb2d9090deb36f5e44}\index{Object@{Object}!getNextId@{getNextId}}
+\index{getNextId@{getNextId}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getNextId()}{getNextId()}}
+{\footnotesize\ttfamily \label{class_object_a3a5b3a4ae646a3cb2d9090deb36f5e44} 
+unsigned int Object\+::get\+Next\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the next available Id. 
+
+\begin{DoxyReturn}{Returns}
+The next Id. 
+\end{DoxyReturn}
+\Hypertarget{class_object_a1204b43ddce80707db1d6721e6cf8004}\index{Object@{Object}!render@{render}}
+\index{render@{render}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_object_a1204b43ddce80707db1d6721e6cf8004} 
+virtual bool Object\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{transform}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual render method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & The transform matrix. \\
+\hline
+{\em data} & Other data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the render is succesful. 
+\end{DoxyReturn}
+\Hypertarget{class_object_ada156b53e7362783f31205616fc8efd9}\index{Object@{Object}!setId@{setId}}
+\index{setId@{setId}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{class_object_ada156b53e7362783f31205616fc8efd9} 
+void Object\+::set\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Set the object Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id to assign. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_object_ae30fea75683c2d149b6b6d17c09ecd0c}\index{Object@{Object}!setName@{setName}}
+\index{setName@{setName}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_object_ae30fea75683c2d149b6b6d17c09ecd0c} 
+void Object\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Set the object name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to assign. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_object_aef73d4aae8379ab0accf5f9077f1b9ff}\index{Object@{Object}!idCounter@{idCounter}}
+\index{idCounter@{idCounter}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{idCounter}{idCounter}}
+{\footnotesize\ttfamily \label{class_object_aef73d4aae8379ab0accf5f9077f1b9ff} 
+unsigned int Object\+::id\+Counter\hspace{0.3cm}{\ttfamily [static]}}
+
+The objects Id counter 
+
+Definition at line \mbox{\hyperlink{object_8h_source_l00030}{30}} of file \mbox{\hyperlink{object_8h_source}{object.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+engine/\mbox{\hyperlink{object_8h}{object.\+h}}\end{DoxyCompactItemize}

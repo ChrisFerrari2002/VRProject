@@ -1,0 +1,22 @@
+\doxysection{point\+Light.\+cpp}
+\hypertarget{point_light_8cpp_source}{}\label{point_light_8cpp_source}\index{engine/pointLight.cpp@{engine/pointLight.cpp}}
+\mbox{\hyperlink{point_light_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00020}00020\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00037}\mbox{\hyperlink{class_eng_1_1_point_light_a4a6c2966cd949e8e8c6efdbe49c80a30}{00037}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_point_light_a4a6c2966cd949e8e8c6efdbe49c80a30}{Eng::PointLight::PointLight}}(\textcolor{keyword}{const}\ std::string\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ lightNumber,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ambient,}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ diffuse,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ specular,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ cutOff)\ :}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_light}{Light}}\{\ name,\ lightNumber,\ ambient,\ diffuse,\ specular\ \},\ cutOff(cutOff)\ \{\};}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00049}\mbox{\hyperlink{class_eng_1_1_point_light_a0117837585c67719c198a4624258616e}{00049}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_point_light_a0117837585c67719c198a4624258616e}{Eng::PointLight::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ matrix,\ \textcolor{keywordtype}{void}*\ ptr)\ \{}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00050}00050\ \ \ \ \ glLightfv(getLightNumber(),\ GL\_SPOT\_CUTOFF,\ \&cutOff);}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_light_a538a0971c7a5e7bd5253892f74b8b1ef}{Light::render}}(matrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{point_light_8cpp_source_l00055}00055\ \}}
+
+\end{DoxyCode}

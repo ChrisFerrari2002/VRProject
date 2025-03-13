@@ -1,0 +1,40 @@
+\doxysection{color\+\_\+encoding.\+hpp}
+\hypertarget{color__encoding_8hpp_source}{}\label{color__encoding_8hpp_source}\index{dependencies/glm/include/glm/gtx/color\_encoding.hpp@{dependencies/glm/include/glm/gtx/color\_encoding.hpp}}
+\mbox{\hyperlink{color__encoding_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00016}00016\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}../detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8hpp}{../vec3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTC\_color\_encoding\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTC\_color\_encoding\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00028}00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00035}00035\ \ \ \ \ GLM\_FUNC\_DECL\ vec<3,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__color__encoding_ga37f5eaaeb128648b478cf24c93762c69}{convertLinearSRGBToD65XYZ}}(vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ ColorLinearSRGB);}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00039}00039\ \ \ \ \ GLM\_FUNC\_DECL\ vec<3,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__color__encoding_ga2d19075cf7dea4ad9bc00a5b43641503}{convertLinearSRGBToD50XYZ}}(vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ ColorLinearSRGB);}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00043}00043\ \ \ \ \ GLM\_FUNC\_DECL\ vec<3,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__color__encoding_ga9b380a35eb3c23e894f871aa7b0e7de3}{convertD65XYZToLinearSRGB}}(vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ ColorD65XYZ);}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00047}00047\ \ \ \ \ GLM\_FUNC\_DECL\ vec<3,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__color__encoding_ga54cdc6987cf38aa229568d10ccacca98}{convertD65XYZToD50XYZ}}(vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ ColorD65XYZ);}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00050}00050\ \}\ \textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{color__encoding_8hpp_source_l00052}00052\ \textcolor{preprocessor}{\#include\ "{}color\_encoding.inl"{}}}
+
+\end{DoxyCode}

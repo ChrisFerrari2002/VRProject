@@ -1,0 +1,54 @@
+\doxysection{extend.\+inl}
+\hypertarget{extend_8inl_source}{}\label{extend_8inl_source}\index{dependencies/glm/include/glm/gtx/extend.inl@{dependencies/glm/include/glm/gtx/extend.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00006}00006\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__gtx__extend_ga8140caae613b0f847ab0d7175dc03a37}{extend}}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00007}00007\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ Origin,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00009}00009\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ Source,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00010}00010\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ Distance}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00011}00011\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Origin\ +\ (Source\ -\/\ Origin)\ *\ Distance;}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00017}00017\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<2,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__extend_ga8140caae613b0f847ab0d7175dc03a37}{extend}}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00018}00018\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00019}00019\ \ \ \ \ \ \ \ \ vec<2,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Origin,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00020}00020\ \ \ \ \ \ \ \ \ vec<2,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Source,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00021}00021\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ Distance}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00022}00022\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Origin\ +\ (Source\ -\/\ Origin)\ *\ Distance;}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00028}00028\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<3,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__extend_ga8140caae613b0f847ab0d7175dc03a37}{extend}}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00029}00029\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00030}00030\ \ \ \ \ \ \ \ \ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Origin,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00031}00031\ \ \ \ \ \ \ \ \ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Source,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00032}00032\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ Distance}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00033}00033\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Origin\ +\ (Source\ -\/\ Origin)\ *\ Distance;}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00039}00039\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<4,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__extend_ga8140caae613b0f847ab0d7175dc03a37}{extend}}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00040}00040\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00041}00041\ \ \ \ \ \ \ \ \ vec<4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Origin,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00042}00042\ \ \ \ \ \ \ \ \ vec<4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Source,}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00043}00043\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ Distance}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00044}00044\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Origin\ +\ (Source\ -\/\ Origin)\ *\ Distance;}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{extend_8inl_source_l00048}00048\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

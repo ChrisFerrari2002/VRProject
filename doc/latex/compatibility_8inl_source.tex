@@ -1,0 +1,68 @@
+\doxysection{compatibility.\+inl}
+\hypertarget{compatibility_8inl_source}{}\label{compatibility_8inl_source}\index{dependencies/glm/include/glm/gtx/compatibility.inl@{dependencies/glm/include/glm/gtx/compatibility.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00005}00005\ \ \ \ \ \textcolor{comment}{//\ isfinite}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00006}00006\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00007}\mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{00007}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00010}00010\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ GLM\_HAS\_CXX11\_STL}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::isfinite(x)\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00012}00012\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ elif\ GLM\_COMPILER\ \&\ GLM\_COMPILER\_VC}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_finite(x)\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00014}00014\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ elif\ GLM\_COMPILER\ \&\ GLM\_COMPILER\_GCC\ \&\&\ GLM\_PLATFORM\ \&\ GLM\_PLATFORM\_ANDROID}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_isfinite(x)\ !=\ 0;}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00016}00016\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::numeric\_limits<genType>::is\_integer\ ||\ std::denorm\_absent\ ==\ std::numeric\_limits<genType>::has\_denorm)}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::numeric\_limits<genType>::min()\ <=\ x\ \&\&\ std::numeric\_limits<genType>::max()\ >=\ x;}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/std::numeric\_limits<genType>::max()\ <=\ x\ \&\&\ std::numeric\_limits<genType>::max()\ >=\ x;}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00021}00021\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00025}\mbox{\hyperlink{group__gtx__compatibility_ga8cf0b192821187588cae9cb40f93fe05}{00025}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<1,\ bool,\ Q>}}\ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<1,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<1,\ bool,\ Q>}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(x.x));}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00033}\mbox{\hyperlink{group__gtx__compatibility_ga1870a1f6872bfd5aa82f2281ea9e547c}{00033}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<2,\ bool,\ Q>}}\ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<2,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<2,\ bool,\ Q>}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(x.x),}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ isfinite(x.y));}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00042}\mbox{\hyperlink{group__gtx__compatibility_ga5d1dfa1645b4eec47627b69f30594998}{00042}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ bool,\ Q>}}\ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ bool,\ Q>}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(x.x),}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ isfinite(x.y),}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ isfinite(x.z));}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00052}\mbox{\hyperlink{group__gtx__compatibility_gafbee9c67dd32e68491786ae085927b48}{00052}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ bool,\ Q>}}\ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ bool,\ Q>}}(}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__compatibility_gaf4b04dcd3526996d68c1bfe17bfc8657}{isfinite}}(x.x),}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ isfinite(x.y),}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ isfinite(x.z),}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ isfinite(x.w));}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{compatibility_8inl_source_l00062}00062\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

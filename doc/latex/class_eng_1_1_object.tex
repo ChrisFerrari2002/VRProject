@@ -1,0 +1,183 @@
+\doxysection{Eng\+::Object Class Reference}
+\hypertarget{class_eng_1_1_object}{}\label{class_eng_1_1_object}\index{Eng::Object@{Eng::Object}}
+
+
+\doxylink{class_eng_1_1_object}{Object} class.  
+
+
+
+
+{\ttfamily \#include $<$engine.\+h$>$}
+
+Inheritance diagram for Eng\+::Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{class_eng_1_1_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_eng_1_1_object_a18bd04a6f1024040a6477fe8517095e6}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the object Id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}{set\+Id}} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em Set the object Id. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the object name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the object name. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_eng_1_1_object_a422f511a6e43a3e9fa064705d64f5a91}{render}} (\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} transform, void \texorpdfstring{$\ast$}{*}data)=0
+\begin{DoxyCompactList}\small\item\em Virtual render method. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}{get\+Next\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the next available Id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{class_eng_1_1_object_aef73d4aae8379ab0accf5f9077f1b9ff}{id\+Counter}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_eng_1_1_object}{Object} class. 
+
+The class define an object. 
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00028}{28}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_eng_1_1_object_a18bd04a6f1024040a6477fe8517095e6}\index{Eng::Object@{Eng::Object}!getId@{getId}}
+\index{getId@{getId}!Eng::Object@{Eng::Object}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_object_a18bd04a6f1024040a6477fe8517095e6} 
+unsigned int Object\+::get\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the object Id. 
+
+\begin{DoxyReturn}{Returns}
+The object Id. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{object_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{object_8cpp_source}{object.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0}\index{Eng::Object@{Eng::Object}!getName@{getName}}
+\index{getName@{getName}!Eng::Object@{Eng::Object}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0} 
+std\+::string ENG\+\_\+\+API Object\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the object name. 
+
+\begin{DoxyReturn}{Returns}
+The object name. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{object_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{object_8cpp_source}{object.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}\index{Eng::Object@{Eng::Object}!getNextId@{getNextId}}
+\index{getNextId@{getNextId}!Eng::Object@{Eng::Object}}
+\doxysubsubsection{\texorpdfstring{getNextId()}{getNextId()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d} 
+unsigned int ENG\+\_\+\+API Object\+::get\+Next\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the next available Id. 
+
+\begin{DoxyReturn}{Returns}
+The next Id. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{object_8cpp_source_l00067}{67}} of file \mbox{\hyperlink{object_8cpp_source}{object.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_object_a422f511a6e43a3e9fa064705d64f5a91}\index{Eng::Object@{Eng::Object}!render@{render}}
+\index{render@{render}!Eng::Object@{Eng::Object}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_object_a422f511a6e43a3e9fa064705d64f5a91} 
+virtual bool Eng\+::\+Object\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{transform}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual render method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & The transform matrix. \\
+\hline
+{\em data} & Other data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the render is succesful. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_directional_light_a46e8417d08732113d55f075d1e95416c}{Directional\+Light}}, \mbox{\hyperlink{class_eng_1_1_directional_light_a03e3dc224eee7b6c0b7941f6c9c84f80}{Eng\+::\+Directional\+Light}}, \mbox{\hyperlink{class_eng_1_1_light_a538a0971c7a5e7bd5253892f74b8b1ef}{Eng\+::\+Light}}, \mbox{\hyperlink{class_eng_1_1_list_a509b5cf5b88f6c85a2cafaf2a19588f7}{Eng\+::\+List}}, \mbox{\hyperlink{class_eng_1_1_material_a0bf08f7b458b6164f1f9bae85996e92c}{Eng\+::\+Material}}, \mbox{\hyperlink{class_eng_1_1_mesh_acd9713b31b6dc6ed29f3526e81cdd2ea}{Eng\+::\+Mesh}}, \mbox{\hyperlink{class_eng_1_1_node_a2a24a6399a5a54a81b0cc90320a8fe6d}{Eng\+::\+Node}}, \mbox{\hyperlink{class_eng_1_1_point_light_a0117837585c67719c198a4624258616e}{Eng\+::\+Point\+Light}}, \mbox{\hyperlink{class_eng_1_1_shadow_a3b9988d1e5862073fa46f163f56daa01}{Eng\+::\+Shadow}}, \mbox{\hyperlink{class_eng_1_1_spot_light_adb4c3fe4b49e6332bfd6a2c398f77e29}{Eng\+::\+Spot\+Light}}, \mbox{\hyperlink{class_eng_1_1_texture_af1776808936b3cedcc016d9a81d8a695}{Eng\+::\+Texture}}, \mbox{\hyperlink{class_light_a75f6308ba94b57fd94d384284c2d60cb}{Light}}, \mbox{\hyperlink{class_list_a509b5cf5b88f6c85a2cafaf2a19588f7}{List}}, \mbox{\hyperlink{class_material_a9a7a4f898f7a00d6ad4c728d25360ce5}{Material}}, \mbox{\hyperlink{class_mesh_a9b2f280cbfa2a8145419e451b850b368}{Mesh}}, \mbox{\hyperlink{class_node_a07f298783b02e2b55d506d3e9e52126b}{Node}}, \mbox{\hyperlink{class_point_light_a7fdbaeb73026cd0aea7b5410b97b7cea}{Point\+Light}}, \mbox{\hyperlink{class_shadow_a3a3274a75af594c9a63420bcae932462}{Shadow}}, \mbox{\hyperlink{class_spot_light_a6eddc0b17ce9dc76dd9543d48eaa04b5}{Spot\+Light}}, and \mbox{\hyperlink{class_texture_ada123cbfe1012199090fb0abeb62e362}{Texture}}.
+
+\Hypertarget{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}\index{Eng::Object@{Eng::Object}!setId@{setId}}
+\index{setId@{setId}!Eng::Object@{Eng::Object}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9} 
+void Object\+::set\+Id (\begin{DoxyParamCaption}\item[{unsigned int}]{new\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Set the object Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The id to assign. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{object_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{object_8cpp_source}{object.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}\index{Eng::Object@{Eng::Object}!setName@{setName}}
+\index{setName@{setName}!Eng::Object@{Eng::Object}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346} 
+void ENG\+\_\+\+API Object\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{new\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Set the object name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to assign. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{object_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{object_8cpp_source}{object.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_eng_1_1_object_aef73d4aae8379ab0accf5f9077f1b9ff}\index{Eng::Object@{Eng::Object}!idCounter@{idCounter}}
+\index{idCounter@{idCounter}!Eng::Object@{Eng::Object}}
+\doxysubsubsection{\texorpdfstring{idCounter}{idCounter}}
+{\footnotesize\ttfamily \label{class_eng_1_1_object_aef73d4aae8379ab0accf5f9077f1b9ff} 
+unsigned int Object\+::id\+Counter = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+The objects Id counter
+
+The id counter 
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00031}{31}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+engine/\mbox{\hyperlink{engine_8h}{engine.\+h}}\item 
+engine/\mbox{\hyperlink{object_8cpp}{object.\+cpp}}\end{DoxyCompactItemize}

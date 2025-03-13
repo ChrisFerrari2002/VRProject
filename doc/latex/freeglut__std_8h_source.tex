@@ -1,0 +1,663 @@
+\doxysection{freeglut\+\_\+std.\+h}
+\hypertarget{freeglut__std_8h_source}{}\label{freeglut__std_8h_source}\index{dependencies/freeglut/include/GL/freeglut\_std.h@{dependencies/freeglut/include/GL/freeglut\_std.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ \ \_\_FREEGLUT\_STD\_H\_\_}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ \ \_\_FREEGLUT\_STD\_H\_\_}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00004}00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00005}00005\ \textcolor{comment}{\ *\ freeglut\_std.h}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00007}00007\ \textcolor{comment}{\ *\ The\ GLUT-\/compatible\ part\ of\ the\ freeglut\ library\ include\ file}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00009}00009\ \textcolor{comment}{\ *\ Copyright\ (c)\ 1999-\/2000\ Pawel\ W.\ Olszta.\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00010}00010\ \textcolor{comment}{\ *\ Written\ by\ Pawel\ W.\ Olszta,\ <olszta@sourceforge.net>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00011}00011\ \textcolor{comment}{\ *\ Creation\ date:\ Thu\ Dec\ 2\ 1999}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00012}00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00013}00013\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00014}00014\ \textcolor{comment}{\ *\ copy\ of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00015}00015\ \textcolor{comment}{\ *\ to\ deal\ in\ the\ Software\ without\ restriction,\ including\ without\ limitation}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00016}00016\ \textcolor{comment}{\ *\ the\ rights\ to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00017}00017\ \textcolor{comment}{\ *\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00018}00018\ \textcolor{comment}{\ *\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00019}00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00020}00020\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00021}00021\ \textcolor{comment}{\ *\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00022}00022\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00023}00023\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00024}00024\ \textcolor{comment}{\ *\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00025}00025\ \textcolor{comment}{\ *\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ \ IN\ NO\ EVENT\ SHALL}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00026}00026\ \textcolor{comment}{\ *\ PAWEL\ W.\ OLSZTA\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00027}00027\ \textcolor{comment}{\ *\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00028}00028\ \textcolor{comment}{\ *\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00029}00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00031}00031\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00033}00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00035}00035\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00036}00036\ \textcolor{comment}{\ *\ Under\ windows,\ we\ have\ to\ differentiate\ between\ static\ and\ dynamic\ libraries}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00037}00037\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00038}00038\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00039}00039\ \textcolor{comment}{/*\ \#pragma\ may\ not\ be\ supported\ by\ some\ compilers.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00040}00040\ \textcolor{comment}{\ *\ Discussion\ by\ FreeGLUT\ developers\ suggests\ that}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00041}00041\ \textcolor{comment}{\ *\ Visual\ C++\ specific\ code\ involving\ pragmas\ may}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00042}00042\ \textcolor{comment}{\ *\ need\ to\ move\ to\ a\ separate\ header.\ \ 24th\ Dec\ 2003}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00043}00043\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00045}00045\ \textcolor{comment}{/*\ Define\ FREEGLUT\_LIB\_PRAGMAS\ to\ 1\ to\ include\ library}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00046}00046\ \textcolor{comment}{\ *\ pragmas\ or\ to\ 0\ to\ exclude\ library\ pragmas.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00047}00047\ \textcolor{comment}{\ *\ The\ default\ behavior\ depends\ on\ the\ compiler/platform.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00048}00048\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00049}00049\ \textcolor{preprocessor}{\#\ \ \ ifndef\ FREEGLUT\_LIB\_PRAGMAS}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00050}00050\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ (\ defined(\_MSC\_VER)\ ||\ defined(\_\_WATCOMC\_\_)\ )\ \&\&\ !defined(\_WIN32\_WCE)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00051}00051\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ define\ FREEGLUT\_LIB\_PRAGMAS\ 1}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00052}00052\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00053}00053\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ define\ FREEGLUT\_LIB\_PRAGMAS\ 0}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00054}00054\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00055}00055\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00057}00057\ \textcolor{preprocessor}{\#\ \ ifndef\ WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00058}00058\ \textcolor{preprocessor}{\#\ \ \ \ define\ WIN32\_LEAN\_AND\_MEAN\ 1}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00059}00059\ \textcolor{preprocessor}{\#\ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00060}00060\ \textcolor{preprocessor}{\#\ \ ifndef\ NOMINMAX}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00061}00061\ \textcolor{preprocessor}{\#\ \ \ \ define\ NOMINMAX}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00062}00062\ \textcolor{preprocessor}{\#\ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00063}00063\ \textcolor{preprocessor}{\#\ \ \ include\ <windows.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00065}00065\ \textcolor{comment}{/*\ Windows\ static\ library\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00066}00066\ \textcolor{preprocessor}{\#\ \ \ ifdef\ FREEGLUT\_STATIC}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00068}00068\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ define\ FGAPI}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00069}00069\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ define\ FGAPIENTRY}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Link\ with\ Win32\ static\ freeglut\ lib\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00072}00072\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ FREEGLUT\_LIB\_PRAGMAS}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00073}00073\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ ifdef\ NDEBUG}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00074}00074\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}freeglut\_static.lib"{})}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00075}00075\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00076}00076\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}freeglut\_staticd.lib"{})}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00077}00077\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00078}00078\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00080}00080\ \textcolor{comment}{/*\ Windows\ shared\ library\ (DLL)\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00081}00081\ \textcolor{preprocessor}{\#\ \ \ else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00083}00083\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ define\ FGAPIENTRY\ \_\_stdcall}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00084}00084\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ defined(FREEGLUT\_EXPORTS)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00085}00085\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ define\ FGAPI\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00086}00086\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00087}00087\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ define\ FGAPI\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Link\ with\ Win32\ shared\ freeglut\ lib\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00090}00090\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ if\ FREEGLUT\_LIB\_PRAGMAS}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00091}00091\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ifdef\ NDEBUG}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00092}00092\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}freeglut.lib"{})}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00093}00093\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00094}00094\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}freeglutd.lib"{})}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00095}00095\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00096}00096\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00098}00098\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00100}00100\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00102}00102\ \textcolor{comment}{/*\ Drag\ in\ other\ Windows\ libraries\ as\ required\ by\ FreeGLUT\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00103}00103\ \textcolor{preprocessor}{\#\ \ \ if\ FREEGLUT\_LIB\_PRAGMAS}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00104}00104\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}glu32.lib"{})\ \ \ \ }\textcolor{comment}{/*\ link\ OpenGL\ Utility\ lib\ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00105}00105\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}opengl32.lib"{})\ }\textcolor{comment}{/*\ link\ Microsoft\ OpenGL\ lib\ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00106}00106\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}gdi32.lib"{})\ \ \ \ }\textcolor{comment}{/*\ link\ Windows\ GDI\ lib\ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00107}00107\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}winmm.lib"{})\ \ \ \ }\textcolor{comment}{/*\ link\ Windows\ MultiMedia\ lib\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00108}00108\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ pragma\ comment\ (lib,\ "{}user32.lib"{})\ \ \ }\textcolor{comment}{/*\ link\ Windows\ user\ lib\ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00109}00109\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00111}00111\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00113}00113\ \textcolor{comment}{/*\ Non-\/Windows\ definition\ of\ FGAPI\ and\ FGAPIENTRY\ \ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00114}00114\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ define\ FGAPI}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00115}00115\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ \ define\ FGAPIENTRY}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00117}00117\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00119}00119\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00120}00120\ \textcolor{comment}{\ *\ The\ freeglut\ and\ GLUT\ API\ versions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00121}00121\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00122}00122\ \textcolor{preprocessor}{\#define\ \ FREEGLUT\ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00123}00123\ \textcolor{preprocessor}{\#define\ \ GLUT\_API\_VERSION\ \ \ \ \ 4}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00124}00124\ \textcolor{preprocessor}{\#define\ \ GLUT\_XLIB\_IMPLEMENTATION\ 13}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00125}00125\ \textcolor{comment}{/*\ Deprecated:}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00126}00126\ \textcolor{comment}{\ \ \ cf.\ http://sourceforge.net/mailarchive/forum.php?thread\_name=CABcAi1hw7cr4xtigckaGXB5X8wddLfMcbA\_rZ3NAuwMrX\_zmsw\%40mail.gmail.com\&forum\_name=freeglut-\/developer\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00127}00127\ \textcolor{preprocessor}{\#define\ \ FREEGLUT\_VERSION\_2\_0\ 1}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00129}00129\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00130}00130\ \textcolor{comment}{\ *\ Always\ include\ OpenGL\ and\ GLU\ headers}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00131}00131\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00132}00132\ \textcolor{comment}{/*\ Note:\ FREEGLUT\_GLES\ is\ only\ used\ to\ cleanly\ bootstrap\ headers}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00133}00133\ \textcolor{comment}{\ \ \ inclusion\ here;\ use\ GLES\ constants\ directly}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00134}00134\ \textcolor{comment}{\ \ \ (e.g.\ GL\_ES\_VERSION\_2\_0)\ for\ all\ other\ needs\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00135}00135\ \textcolor{preprocessor}{\#ifdef\ FREEGLUT\_GLES}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00136}00136\ \textcolor{preprocessor}{\#\ \ \ include\ <EGL/egl.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00137}00137\ \textcolor{preprocessor}{\#\ \ \ include\ <GLES/gl.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00138}00138\ \textcolor{preprocessor}{\#\ \ \ include\ <GLES2/gl2.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00139}00139\ \textcolor{preprocessor}{\#elif\ \_\_APPLE\_\_}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00140}00140\ \textcolor{comment}{/*\ stop\ MacOSX\ GL\ headers\ for\ complaining\ that\ OpenGL\ is\ deprecated\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00141}00141\ \textcolor{preprocessor}{\#\ \ \ ifndef\ GL\_SILENCE\_DEPRECATION}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00142}00142\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ define\ GL\_SILENCE\_DEPRECATION}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00143}00143\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00144}00144\ \textcolor{preprocessor}{\#\ \ \ include\ <OpenGL/gl.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00145}00145\ \textcolor{preprocessor}{\#\ \ \ include\ <OpenGL/glu.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00146}00146\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00147}00147\ \textcolor{preprocessor}{\#\ \ \ include\ <GL/gl.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00148}00148\ \textcolor{preprocessor}{\#\ \ \ include\ <GL/glu.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00149}00149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00151}00151\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00152}00152\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ special\ key\ codes:}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00153}00153\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00154}00154\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00155}00155\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00156}00156\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0003}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00157}00157\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00158}00158\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0005}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00159}00159\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0006}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00160}00160\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0007}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00161}00161\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0008}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00162}00162\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0009}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00163}00163\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000A}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00164}00164\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000B}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00165}00165\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_F12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000C}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00166}00166\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0064}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00167}00167\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0065}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00168}00168\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0066}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00169}00169\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0067}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00170}00170\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_PAGE\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0068}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00171}00171\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_PAGE\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0069}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00172}00172\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_HOME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x006A}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00173}00173\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x006B}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00174}00174\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_INSERT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x006C}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00176}00176\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00177}00177\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ mouse\ state\ definitions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00178}00178\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00179}00179\ \textcolor{preprocessor}{\#define\ \ GLUT\_LEFT\_BUTTON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00180}00180\ \textcolor{preprocessor}{\#define\ \ GLUT\_MIDDLE\_BUTTON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00181}00181\ \textcolor{preprocessor}{\#define\ \ GLUT\_RIGHT\_BUTTON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00182}00182\ \textcolor{preprocessor}{\#define\ \ GLUT\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00183}00183\ \textcolor{preprocessor}{\#define\ \ GLUT\_UP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00184}00184\ \textcolor{preprocessor}{\#define\ \ GLUT\_LEFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00185}00185\ \textcolor{preprocessor}{\#define\ \ GLUT\_ENTERED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00187}00187\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00188}00188\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ display\ mode\ definitions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00189}00189\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00190}00190\ \textcolor{preprocessor}{\#define\ \ GLUT\_RGB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00191}00191\ \textcolor{preprocessor}{\#define\ \ GLUT\_RGBA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00192}00192\ \textcolor{preprocessor}{\#define\ \ GLUT\_INDEX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00193}00193\ \textcolor{preprocessor}{\#define\ \ GLUT\_SINGLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00194}00194\ \textcolor{preprocessor}{\#define\ \ GLUT\_DOUBLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00195}00195\ \textcolor{preprocessor}{\#define\ \ GLUT\_ACCUM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00196}00196\ \textcolor{preprocessor}{\#define\ \ GLUT\_ALPHA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0008}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00197}00197\ \textcolor{preprocessor}{\#define\ \ GLUT\_DEPTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0010}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00198}00198\ \textcolor{preprocessor}{\#define\ \ GLUT\_STENCIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0020}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00199}00199\ \textcolor{preprocessor}{\#define\ \ GLUT\_MULTISAMPLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0080}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00200}00200\ \textcolor{preprocessor}{\#define\ \ GLUT\_STEREO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0100}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00201}00201\ \textcolor{preprocessor}{\#define\ \ GLUT\_LUMINANCE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0200}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00203}00203\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00204}00204\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ windows\ and\ menu\ related\ definitions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00205}00205\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00206}00206\ \textcolor{preprocessor}{\#define\ \ GLUT\_MENU\_NOT\_IN\_USE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00207}00207\ \textcolor{preprocessor}{\#define\ \ GLUT\_MENU\_IN\_USE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00208}00208\ \textcolor{preprocessor}{\#define\ \ GLUT\_NOT\_VISIBLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00209}00209\ \textcolor{preprocessor}{\#define\ \ GLUT\_VISIBLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00210}00210\ \textcolor{preprocessor}{\#define\ \ GLUT\_HIDDEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00211}00211\ \textcolor{preprocessor}{\#define\ \ GLUT\_FULLY\_RETAINED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00212}00212\ \textcolor{preprocessor}{\#define\ \ GLUT\_PARTIALLY\_RETAINED\ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00213}00213\ \textcolor{preprocessor}{\#define\ \ GLUT\_FULLY\_COVERED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0003}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00215}00215\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00216}00216\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ fonts\ definitions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00217}00217\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00218}00218\ \textcolor{comment}{\ *\ Steve\ Baker\ suggested\ to\ make\ it\ binary\ compatible\ with\ GLUT:}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00219}00219\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00220}00220\ \textcolor{preprocessor}{\#if\ defined(\_MSC\_VER)\ ||\ defined(\_\_CYGWIN\_\_)\ ||\ defined(\_\_MINGW32\_\_)\ ||\ defined(\_\_WATCOMC\_\_)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00221}00221\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_STROKE\_ROMAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((void\ *)0x0000)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00222}00222\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_STROKE\_MONO\_ROMAN\ \ \ \ \ \ \ \ \ \ ((void\ *)0x0001)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00223}00223\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_9\_BY\_15\ \ \ \ \ \ \ \ \ \ \ \ \ ((void\ *)0x0002)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00224}00224\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_8\_BY\_13\ \ \ \ \ \ \ \ \ \ \ \ \ ((void\ *)0x0003)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00225}00225\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_TIMES\_ROMAN\_10\ \ \ \ \ \ ((void\ *)0x0004)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00226}00226\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_TIMES\_ROMAN\_24\ \ \ \ \ \ ((void\ *)0x0005)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00227}00227\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_HELVETICA\_10\ \ \ \ \ \ \ \ ((void\ *)0x0006)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00228}00228\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_HELVETICA\_12\ \ \ \ \ \ \ \ ((void\ *)0x0007)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00229}00229\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_HELVETICA\_18\ \ \ \ \ \ \ \ ((void\ *)0x0008)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00230}00230\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00231}00231\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00232}00232\ \textcolor{comment}{\ \ \ \ \ *\ I\ don't\ really\ know\ if\ it's\ a\ good\ idea...\ But\ here\ it\ goes:}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00233}00233\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00234}00234\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutStrokeRoman;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00235}00235\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutStrokeMonoRoman;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00236}00236\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutBitmap9By15;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00237}00237\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutBitmap8By13;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00238}00238\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutBitmapTimesRoman10;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00239}00239\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutBitmapTimesRoman24;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00240}00240\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutBitmapHelvetica10;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00241}00241\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutBitmapHelvetica12;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00242}00242\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}*\ glutBitmapHelvetica18;}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00244}00244\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00245}00245\ \textcolor{comment}{\ \ \ \ \ *\ Those\ pointers\ will\ be\ used\ by\ following\ definitions:}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00246}00246\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00247}00247\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_STROKE\_ROMAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((void\ *)\ \&glutStrokeRoman)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00248}00248\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_STROKE\_MONO\_ROMAN\ \ \ \ \ \ \ \ \ \ ((void\ *)\ \&glutStrokeMonoRoman)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00249}00249\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_9\_BY\_15\ \ \ \ \ \ \ \ \ \ \ \ \ ((void\ *)\ \&glutBitmap9By15)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00250}00250\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_8\_BY\_13\ \ \ \ \ \ \ \ \ \ \ \ \ ((void\ *)\ \&glutBitmap8By13)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00251}00251\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_TIMES\_ROMAN\_10\ \ \ \ \ \ ((void\ *)\ \&glutBitmapTimesRoman10)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00252}00252\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_TIMES\_ROMAN\_24\ \ \ \ \ \ ((void\ *)\ \&glutBitmapTimesRoman24)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00253}00253\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_HELVETICA\_10\ \ \ \ \ \ \ \ ((void\ *)\ \&glutBitmapHelvetica10)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00254}00254\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_HELVETICA\_12\ \ \ \ \ \ \ \ ((void\ *)\ \&glutBitmapHelvetica12)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00255}00255\ \textcolor{preprocessor}{\#\ \ \ define\ \ GLUT\_BITMAP\_HELVETICA\_18\ \ \ \ \ \ \ \ ((void\ *)\ \&glutBitmapHelvetica18)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00256}00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00258}00258\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00259}00259\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ glutGet\ parameters}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00260}00260\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00261}00261\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0064}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00262}00262\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_Y\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0065}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00263}00263\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_WIDTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0066}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00264}00264\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_HEIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0067}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00265}00265\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_BUFFER\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ 0x0068}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00266}00266\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_STENCIL\_SIZE\ \ \ \ \ \ \ \ \ \ \ 0x0069}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00267}00267\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_DEPTH\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x006A}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00268}00268\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_RED\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x006B}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00269}00269\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_GREEN\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x006C}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00270}00270\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_BLUE\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x006D}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00271}00271\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_ALPHA\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x006E}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00272}00272\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_ACCUM\_RED\_SIZE\ \ \ \ \ \ \ \ \ 0x006F}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00273}00273\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_ACCUM\_GREEN\_SIZE\ \ \ \ \ \ \ 0x0070}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00274}00274\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_ACCUM\_BLUE\_SIZE\ \ \ \ \ \ \ \ 0x0071}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00275}00275\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_ACCUM\_ALPHA\_SIZE\ \ \ \ \ \ \ 0x0072}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00276}00276\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_DOUBLEBUFFER\ \ \ \ \ \ \ \ \ \ \ 0x0073}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00277}00277\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_RGBA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0074}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00278}00278\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_PARENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0075}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00279}00279\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_NUM\_CHILDREN\ \ \ \ \ \ \ \ \ \ \ 0x0076}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00280}00280\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_COLORMAP\_SIZE\ \ \ \ \ \ \ \ \ \ 0x0077}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00281}00281\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_NUM\_SAMPLES\ \ \ \ \ \ \ \ \ \ \ \ 0x0078}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00282}00282\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_STEREO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0079}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00283}00283\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_CURSOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x007A}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00285}00285\ \textcolor{preprocessor}{\#define\ \ GLUT\_SCREEN\_WIDTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00C8}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00286}00286\ \textcolor{preprocessor}{\#define\ \ GLUT\_SCREEN\_HEIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00C9}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00287}00287\ \textcolor{preprocessor}{\#define\ \ GLUT\_SCREEN\_WIDTH\_MM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00CA}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00288}00288\ \textcolor{preprocessor}{\#define\ \ GLUT\_SCREEN\_HEIGHT\_MM\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00CB}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00289}00289\ \textcolor{preprocessor}{\#define\ \ GLUT\_MENU\_NUM\_ITEMS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x012C}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00290}00290\ \textcolor{preprocessor}{\#define\ \ GLUT\_DISPLAY\_MODE\_POSSIBLE\ \ \ \ \ \ \ \ \ 0x0190}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00291}00291\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_WINDOW\_X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01F4}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00292}00292\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_WINDOW\_Y\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01F5}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00293}00293\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_WINDOW\_WIDTH\ \ \ \ \ \ \ \ \ \ \ \ \ 0x01F6}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00294}00294\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_WINDOW\_HEIGHT\ \ \ \ \ \ \ \ \ \ \ \ 0x01F7}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00295}00295\ \textcolor{preprocessor}{\#define\ \ GLUT\_INIT\_DISPLAY\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x01F8}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00296}00296\ \textcolor{preprocessor}{\#define\ \ GLUT\_ELAPSED\_TIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02BC}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00297}00297\ \textcolor{preprocessor}{\#define\ \ GLUT\_WINDOW\_FORMAT\_ID\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x007B}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00299}00299\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00300}00300\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ glutDeviceGet\ parameters}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00301}00301\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00302}00302\ \textcolor{preprocessor}{\#define\ \ GLUT\_HAS\_KEYBOARD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0258}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00303}00303\ \textcolor{preprocessor}{\#define\ \ GLUT\_HAS\_MOUSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0259}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00304}00304\ \textcolor{preprocessor}{\#define\ \ GLUT\_HAS\_SPACEBALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x025A}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00305}00305\ \textcolor{preprocessor}{\#define\ \ GLUT\_HAS\_DIAL\_AND\_BUTTON\_BOX\ \ \ \ \ \ \ 0x025B}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00306}00306\ \textcolor{preprocessor}{\#define\ \ GLUT\_HAS\_TABLET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x025C}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00307}00307\ \textcolor{preprocessor}{\#define\ \ GLUT\_NUM\_MOUSE\_BUTTONS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x025D}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00308}00308\ \textcolor{preprocessor}{\#define\ \ GLUT\_NUM\_SPACEBALL\_BUTTONS\ \ \ \ \ \ \ \ \ 0x025E}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00309}00309\ \textcolor{preprocessor}{\#define\ \ GLUT\_NUM\_BUTTON\_BOX\_BUTTONS\ \ \ \ \ \ \ \ 0x025F}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00310}00310\ \textcolor{preprocessor}{\#define\ \ GLUT\_NUM\_DIALS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0260}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00311}00311\ \textcolor{preprocessor}{\#define\ \ GLUT\_NUM\_TABLET\_BUTTONS\ \ \ \ \ \ \ \ \ \ \ \ 0x0261}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00312}00312\ \textcolor{preprocessor}{\#define\ \ GLUT\_DEVICE\_IGNORE\_KEY\_REPEAT\ \ \ \ \ \ 0x0262}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00313}00313\ \textcolor{preprocessor}{\#define\ \ GLUT\_DEVICE\_KEY\_REPEAT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0263}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00314}00314\ \textcolor{preprocessor}{\#define\ \ GLUT\_HAS\_JOYSTICK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0264}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00315}00315\ \textcolor{preprocessor}{\#define\ \ GLUT\_OWNS\_JOYSTICK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0265}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00316}00316\ \textcolor{preprocessor}{\#define\ \ GLUT\_JOYSTICK\_BUTTONS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0266}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00317}00317\ \textcolor{preprocessor}{\#define\ \ GLUT\_JOYSTICK\_AXES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0267}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00318}00318\ \textcolor{preprocessor}{\#define\ \ GLUT\_JOYSTICK\_POLL\_RATE\ \ \ \ \ \ \ \ \ \ \ \ 0x0268}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00320}00320\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00321}00321\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ glutLayerGet\ parameters}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00322}00322\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00323}00323\ \textcolor{preprocessor}{\#define\ \ GLUT\_OVERLAY\_POSSIBLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0320}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00324}00324\ \textcolor{preprocessor}{\#define\ \ GLUT\_LAYER\_IN\_USE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0321}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00325}00325\ \textcolor{preprocessor}{\#define\ \ GLUT\_HAS\_OVERLAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0322}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00326}00326\ \textcolor{preprocessor}{\#define\ \ GLUT\_TRANSPARENT\_INDEX\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0323}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00327}00327\ \textcolor{preprocessor}{\#define\ \ GLUT\_NORMAL\_DAMAGED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0324}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00328}00328\ \textcolor{preprocessor}{\#define\ \ GLUT\_OVERLAY\_DAMAGED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0325}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00330}00330\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00331}00331\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ glutVideoResizeGet\ parameters}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00332}00332\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00333}00333\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_POSSIBLE\ \ \ \ \ \ \ \ \ 0x0384}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00334}00334\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_IN\_USE\ \ \ \ \ \ \ \ \ \ \ 0x0385}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00335}00335\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_X\_DELTA\ \ \ \ \ \ \ \ \ \ 0x0386}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00336}00336\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_Y\_DELTA\ \ \ \ \ \ \ \ \ \ 0x0387}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00337}00337\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_WIDTH\_DELTA\ \ \ \ \ \ 0x0388}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00338}00338\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_HEIGHT\_DELTA\ \ \ \ \ 0x0389}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00339}00339\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x038A}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00340}00340\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_Y\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x038B}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00341}00341\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_WIDTH\ \ \ \ \ \ \ \ \ \ \ \ 0x038C}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00342}00342\ \textcolor{preprocessor}{\#define\ \ GLUT\_VIDEO\_RESIZE\_HEIGHT\ \ \ \ \ \ \ \ \ \ \ 0x038D}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00344}00344\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00345}00345\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ glutUseLayer\ parameters}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00346}00346\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00347}00347\ \textcolor{preprocessor}{\#define\ \ GLUT\_NORMAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00348}00348\ \textcolor{preprocessor}{\#define\ \ GLUT\_OVERLAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00350}00350\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00351}00351\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ glutGetModifiers\ parameters}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00352}00352\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00353}00353\ \textcolor{preprocessor}{\#define\ \ GLUT\_ACTIVE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00354}00354\ \textcolor{preprocessor}{\#define\ \ GLUT\_ACTIVE\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00355}00355\ \textcolor{preprocessor}{\#define\ \ GLUT\_ACTIVE\_ALT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00357}00357\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00358}00358\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ the\ glutSetCursor\ parameters}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00359}00359\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00360}00360\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_RIGHT\_ARROW\ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00361}00361\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_LEFT\_ARROW\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00362}00362\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_INFO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00363}00363\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_DESTROY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0003}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00364}00364\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_HELP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00365}00365\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_CYCLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0005}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00366}00366\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_SPRAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0006}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00367}00367\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_WAIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0007}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00368}00368\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_TEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0008}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00369}00369\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_CROSSHAIR\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0009}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00370}00370\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_UP\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000A}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00371}00371\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_LEFT\_RIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x000B}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00372}00372\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_TOP\_SIDE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000C}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00373}00373\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_BOTTOM\_SIDE\ \ \ \ \ \ \ \ \ \ \ \ 0x000D}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00374}00374\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_LEFT\_SIDE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000E}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00375}00375\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_RIGHT\_SIDE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x000F}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00376}00376\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_TOP\_LEFT\_CORNER\ \ \ \ \ \ \ \ 0x0010}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00377}00377\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_TOP\_RIGHT\_CORNER\ \ \ \ \ \ \ 0x0011}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00378}00378\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_BOTTOM\_RIGHT\_CORNER\ \ \ \ 0x0012}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00379}00379\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_BOTTOM\_LEFT\_CORNER\ \ \ \ \ 0x0013}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00380}00380\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_INHERIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0064}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00381}00381\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0065}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00382}00382\ \textcolor{preprocessor}{\#define\ \ GLUT\_CURSOR\_FULL\_CROSSHAIR\ \ \ \ \ \ \ \ \ 0x0066}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00384}00384\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00385}00385\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ RGB\ color\ component\ specification\ definitions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00386}00386\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00387}00387\ \textcolor{preprocessor}{\#define\ \ GLUT\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00388}00388\ \textcolor{preprocessor}{\#define\ \ GLUT\_GREEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00389}00389\ \textcolor{preprocessor}{\#define\ \ GLUT\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00391}00391\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00392}00392\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ additional\ keyboard\ and\ joystick\ definitions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00393}00393\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00394}00394\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_REPEAT\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00395}00395\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_REPEAT\_ON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00396}00396\ \textcolor{preprocessor}{\#define\ \ GLUT\_KEY\_REPEAT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00398}00398\ \textcolor{preprocessor}{\#define\ \ GLUT\_JOYSTICK\_BUTTON\_A\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00399}00399\ \textcolor{preprocessor}{\#define\ \ GLUT\_JOYSTICK\_BUTTON\_B\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00400}00400\ \textcolor{preprocessor}{\#define\ \ GLUT\_JOYSTICK\_BUTTON\_C\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00401}00401\ \textcolor{preprocessor}{\#define\ \ GLUT\_JOYSTICK\_BUTTON\_D\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0008}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00402}00402\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00403}00403\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00404}00404\ \textcolor{comment}{\ *\ GLUT\ API\ macro\ definitions\ -\/-\/\ game\ mode\ definitions}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00405}00405\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00406}00406\ \textcolor{preprocessor}{\#define\ \ GLUT\_GAME\_MODE\_ACTIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00407}00407\ \textcolor{preprocessor}{\#define\ \ GLUT\_GAME\_MODE\_POSSIBLE\ \ \ \ \ \ \ \ \ \ \ \ 0x0001}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00408}00408\ \textcolor{preprocessor}{\#define\ \ GLUT\_GAME\_MODE\_WIDTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0002}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00409}00409\ \textcolor{preprocessor}{\#define\ \ GLUT\_GAME\_MODE\_HEIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0003}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00410}00410\ \textcolor{preprocessor}{\#define\ \ GLUT\_GAME\_MODE\_PIXEL\_DEPTH\ \ \ \ \ \ \ \ \ 0x0004}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00411}00411\ \textcolor{preprocessor}{\#define\ \ GLUT\_GAME\_MODE\_REFRESH\_RATE\ \ \ \ \ \ \ \ 0x0005}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00412}00412\ \textcolor{preprocessor}{\#define\ \ GLUT\_GAME\_MODE\_DISPLAY\_CHANGED\ \ \ \ \ 0x0006}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00414}00414\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00415}00415\ \textcolor{comment}{\ *\ Initialization\ functions,\ see\ fglut\_init.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00416}00416\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00417}00417\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutInit(\ \textcolor{keywordtype}{int}*\ pargc,\ \textcolor{keywordtype}{char}**\ argv\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00418}00418\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutInitWindowPosition(\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00419}00419\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutInitWindowSize(\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00420}00420\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutInitDisplayMode(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ displayMode\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00421}00421\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutInitDisplayString(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ displayMode\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00423}00423\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00424}00424\ \textcolor{comment}{\ *\ Process\ loop\ function,\ see\ fg\_main.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00425}00425\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00426}00426\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutMainLoop(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00428}00428\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00429}00429\ \textcolor{comment}{\ *\ Window\ management\ functions,\ see\ fg\_window.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00430}00430\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00431}00431\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutCreateWindow(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00432}00432\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutCreateSubWindow(\ \textcolor{keywordtype}{int}\ window,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00433}00433\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutDestroyWindow(\ \textcolor{keywordtype}{int}\ window\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00434}00434\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetWindow(\ \textcolor{keywordtype}{int}\ window\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00435}00435\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutGetWindow(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00436}00436\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetWindowTitle(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00437}00437\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetIconTitle(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00438}00438\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutReshapeWindow(\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00439}00439\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPositionWindow(\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00440}00440\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutShowWindow(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00441}00441\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutHideWindow(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00442}00442\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutIconifyWindow(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00443}00443\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPushWindow(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00444}00444\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPopWindow(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00445}00445\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutFullScreen(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00446}00446\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00447}00447\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00448}00448\ \textcolor{comment}{\ *\ Display-\/related\ functions,\ see\ fg\_display.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00449}00449\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00450}00450\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPostWindowRedisplay(\ \textcolor{keywordtype}{int}\ window\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00451}00451\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPostRedisplay(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00452}00452\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSwapBuffers(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00454}00454\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00455}00455\ \textcolor{comment}{\ *\ Mouse\ cursor\ functions,\ see\ fg\_cursor.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00456}00456\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00457}00457\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWarpPointer(\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00458}00458\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetCursor(\ \textcolor{keywordtype}{int}\ cursor\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00460}00460\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00461}00461\ \textcolor{comment}{\ *\ Overlay\ stuff,\ see\ fg\_overlay.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00462}00462\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00463}00463\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutEstablishOverlay(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00464}00464\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutRemoveOverlay(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00465}00465\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutUseLayer(\ GLenum\ layer\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00466}00466\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPostOverlayRedisplay(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00467}00467\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPostWindowOverlayRedisplay(\ \textcolor{keywordtype}{int}\ window\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00468}00468\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutShowOverlay(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00469}00469\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutHideOverlay(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00470}00470\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00471}00471\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00472}00472\ \textcolor{comment}{\ *\ Menu\ stuff,\ see\ fg\_menu.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00473}00473\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00474}00474\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutCreateMenu(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int}\ menu\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00475}00475\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutDestroyMenu(\ \textcolor{keywordtype}{int}\ menu\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00476}00476\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutGetMenu(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00477}00477\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetMenu(\ \textcolor{keywordtype}{int}\ menu\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00478}00478\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutAddMenuEntry(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \textcolor{keywordtype}{int}\ value\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00479}00479\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutAddSubMenu(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \textcolor{keywordtype}{int}\ subMenu\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00480}00480\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutChangeToMenuEntry(\ \textcolor{keywordtype}{int}\ item,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \textcolor{keywordtype}{int}\ value\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00481}00481\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutChangeToSubMenu(\ \textcolor{keywordtype}{int}\ item,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \textcolor{keywordtype}{int}\ value\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00482}00482\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutRemoveMenuItem(\ \textcolor{keywordtype}{int}\ item\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00483}00483\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutAttachMenu(\ \textcolor{keywordtype}{int}\ button\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00484}00484\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutDetachMenu(\ \textcolor{keywordtype}{int}\ button\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00486}00486\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00487}00487\ \textcolor{comment}{\ *\ Global\ callback\ functions,\ see\ fg\_callbacks.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00488}00488\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00489}00489\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutTimerFunc(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ time,\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int}\ ),\ \textcolor{keywordtype}{int}\ value\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00490}00490\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutIdleFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00492}00492\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00493}00493\ \textcolor{comment}{\ *\ Window-\/specific\ callback\ functions,\ see\ fg\_callbacks.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00494}00494\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00495}00495\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutKeyboardFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00496}00496\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSpecialFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00497}00497\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutReshapeFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00498}00498\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutVisibilityFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00499}00499\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutDisplayFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00500}00500\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutMouseFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00501}00501\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutMotionFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00502}00502\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutPassiveMotionFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00503}00503\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutEntryFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00505}00505\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutKeyboardUpFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00506}00506\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSpecialUpFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00507}00507\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutJoystickFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ ),\ \textcolor{keywordtype}{int}\ pollInterval\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00508}00508\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutMenuStateFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00509}00509\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutMenuStatusFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00510}00510\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutOverlayDisplayFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00511}00511\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWindowStatusFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00513}00513\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSpaceballMotionFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00514}00514\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSpaceballRotateFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00515}00515\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSpaceballButtonFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00516}00516\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutButtonBoxFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00517}00517\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutDialsFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00518}00518\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutTabletMotionFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00519}00519\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutTabletButtonFunc(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}\ )\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00521}00521\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00522}00522\ \textcolor{comment}{\ *\ State\ setting\ and\ retrieval\ functions,\ see\ fg\_state.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00523}00523\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00524}00524\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutGet(\ GLenum\ query\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00525}00525\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutDeviceGet(\ GLenum\ query\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00526}00526\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutGetModifiers(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00527}00527\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutLayerGet(\ GLenum\ query\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00529}00529\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00530}00530\ \textcolor{comment}{\ *\ Font\ stuff,\ see\ fg\_font.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00531}00531\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00532}00532\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutBitmapCharacter(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keywordtype}{int}\ character\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00533}00533\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutBitmapWidth(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keywordtype}{int}\ character\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00534}00534\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutStrokeCharacter(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keywordtype}{int}\ character\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00535}00535\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutStrokeWidth(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keywordtype}{int}\ character\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00536}00536\ FGAPI\ GLfloat\ FGAPIENTRY\ glutStrokeWidthf(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keywordtype}{int}\ character\ );\ \textcolor{comment}{/*\ GLUT\ 3.8\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00537}00537\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutBitmapLength(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00538}00538\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutStrokeLength(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00539}00539\ FGAPI\ GLfloat\ FGAPIENTRY\ glutStrokeLengthf(\ \textcolor{keywordtype}{void}*\ font,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string}\ );\ \textcolor{comment}{/*\ GLUT\ 3.8\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00541}00541\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00542}00542\ \textcolor{comment}{\ *\ Geometry\ functions,\ see\ fg\_geometry.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00543}00543\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00544}00544\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00545}00545\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireCube(\ \textcolor{keywordtype}{double}\ size\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00546}00546\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidCube(\ \textcolor{keywordtype}{double}\ size\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00547}00547\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireSphere(\ \textcolor{keywordtype}{double}\ radius,\ GLint\ slices,\ GLint\ stacks\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00548}00548\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidSphere(\ \textcolor{keywordtype}{double}\ radius,\ GLint\ slices,\ GLint\ stacks\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00549}00549\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireCone(\ \textcolor{keywordtype}{double}\ base,\ \textcolor{keywordtype}{double}\ height,\ GLint\ slices,\ GLint\ stacks\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00550}00550\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidCone(\ \textcolor{keywordtype}{double}\ base,\ \textcolor{keywordtype}{double}\ height,\ GLint\ slices,\ GLint\ stacks\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00551}00551\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireTorus(\ \textcolor{keywordtype}{double}\ innerRadius,\ \textcolor{keywordtype}{double}\ outerRadius,\ GLint\ sides,\ GLint\ rings\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00552}00552\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidTorus(\ \textcolor{keywordtype}{double}\ innerRadius,\ \textcolor{keywordtype}{double}\ outerRadius,\ GLint\ sides,\ GLint\ rings\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00553}00553\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireDodecahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00554}00554\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidDodecahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00555}00555\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireOctahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00556}00556\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidOctahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00557}00557\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireTetrahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00558}00558\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidTetrahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00559}00559\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireIcosahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00560}00560\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidIcosahedron(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00561}00561\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00562}00562\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00563}00563\ \textcolor{comment}{\ *\ Teapot\ rendering\ functions,\ found\ in\ fg\_teapot.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00564}00564\ \textcolor{comment}{\ *\ NB:\ front\ facing\ polygons\ have\ clockwise\ winding,\ not\ counter\ clockwise}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00565}00565\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00566}00566\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutWireTeapot(\ \textcolor{keywordtype}{double}\ size\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00567}00567\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSolidTeapot(\ \textcolor{keywordtype}{double}\ size\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00568}00568\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00569}00569\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00570}00570\ \textcolor{comment}{\ *\ Game\ mode\ functions,\ see\ fg\_gamemode.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00571}00571\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00572}00572\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutGameModeString(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \textcolor{keywordtype}{string}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00573}00573\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutEnterGameMode(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00574}00574\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutLeaveGameMode(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00575}00575\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutGameModeGet(\ GLenum\ query\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00576}00576\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00577}00577\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00578}00578\ \textcolor{comment}{\ *\ Video\ resize\ functions,\ see\ fg\_videoresize.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00579}00579\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00580}00580\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutVideoResizeGet(\ GLenum\ query\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00581}00581\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetupVideoResizing(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00582}00582\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutStopVideoResizing(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00583}00583\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutVideoResize(\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00584}00584\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutVideoPan(\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00586}00586\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00587}00587\ \textcolor{comment}{\ *\ Colormap\ functions,\ see\ fg\_misc.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00588}00588\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00589}00589\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetColor(\ \textcolor{keywordtype}{int}\ color,\ GLfloat\ red,\ GLfloat\ green,\ GLfloat\ blue\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00590}00590\ FGAPI\ GLfloat\ FGAPIENTRY\ glutGetColor(\ \textcolor{keywordtype}{int}\ color,\ \textcolor{keywordtype}{int}\ component\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00591}00591\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutCopyColormap(\ \textcolor{keywordtype}{int}\ window\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00592}00592\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00593}00593\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00594}00594\ \textcolor{comment}{\ *\ Misc\ keyboard\ and\ joystick\ functions,\ see\ fg\_misc.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00595}00595\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00596}00596\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutIgnoreKeyRepeat(\ \textcolor{keywordtype}{int}\ ignore\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00597}00597\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutSetKeyRepeat(\ \textcolor{keywordtype}{int}\ repeatMode\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00598}00598\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutForceJoystickFunc(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00599}00599\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00600}00600\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00601}00601\ \textcolor{comment}{\ *\ Misc\ functions,\ see\ fg\_misc.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00602}00602\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00603}00603\ FGAPI\ \textcolor{keywordtype}{int}\ \ \ \ \ FGAPIENTRY\ glutExtensionSupported(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ extension\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00604}00604\ FGAPI\ \textcolor{keywordtype}{void}\ \ \ \ FGAPIENTRY\ glutReportErrors(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00605}00605\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00606}00606\ \textcolor{comment}{/*\ Comment\ from\ glut.h\ of\ classic\ GLUT:}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00607}00607\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00608}00608\ \textcolor{comment}{\ \ \ Win32\ has\ an\ annoying\ issue\ where\ there\ are\ multiple\ C\ run-\/time}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00609}00609\ \textcolor{comment}{\ \ \ libraries\ (CRTs).\ \ If\ the\ executable\ is\ linked\ with\ a\ different\ CRT}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00610}00610\ \textcolor{comment}{\ \ \ from\ the\ GLUT\ DLL,\ the\ GLUT\ DLL\ will\ not\ share\ the\ same\ CRT\ static}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00611}00611\ \textcolor{comment}{\ \ \ data\ seen\ by\ the\ executable.\ \ In\ particular,\ atexit\ callbacks\ registered}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00612}00612\ \textcolor{comment}{\ \ \ in\ the\ executable\ will\ not\ be\ called\ if\ GLUT\ calls\ its\ (different)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00613}00613\ \textcolor{comment}{\ \ \ exit\ routine).\ \ GLUT\ is\ typically\ built\ with\ the}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00614}00614\ \textcolor{comment}{\ \ \ "{}/MD"{}\ option\ (the\ CRT\ with\ multithreading\ DLL\ support),\ but\ the\ Visual}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00615}00615\ \textcolor{comment}{\ \ \ C++\ linker\ default\ is\ "{}/ML"{}\ (the\ single\ threaded\ CRT).}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00616}00616\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00617}00617\ \textcolor{comment}{\ \ \ One\ workaround\ to\ this\ issue\ is\ requiring\ users\ to\ always\ link\ with}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00618}00618\ \textcolor{comment}{\ \ \ the\ same\ CRT\ as\ GLUT\ is\ compiled\ with.\ \ That\ requires\ users\ supply\ a}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00619}00619\ \textcolor{comment}{\ \ \ non-\/standard\ option.\ \ GLUT\ 3.7\ has\ its\ own\ built-\/in\ workaround\ where}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00620}00620\ \textcolor{comment}{\ \ \ the\ executable's\ "{}exit"{}\ function\ pointer\ is\ covertly\ passed\ to\ GLUT.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00621}00621\ \textcolor{comment}{\ \ \ GLUT\ then\ calls\ the\ executable's\ exit\ function\ pointer\ to\ ensure\ that}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00622}00622\ \textcolor{comment}{\ \ \ any\ "{}atexit"{}\ calls\ registered\ by\ the\ application\ are\ called\ if\ GLUT}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00623}00623\ \textcolor{comment}{\ \ \ needs\ to\ exit.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00624}00624\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00625}00625\ \textcolor{comment}{\ \ \ Note\ that\ the\ \_\_glut*WithExit\ routines\ should\ NEVER\ be\ called\ directly.}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00626}00626\ \textcolor{comment}{\ \ \ To\ avoid\ the\ atexit\ workaround,\ \#define\ GLUT\_DISABLE\_ATEXIT\_HACK.\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00627}00627\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00628}00628\ \textcolor{comment}{/*\ to\ get\ the\ prototype\ for\ exit()\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00629}00629\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00630}00630\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00631}00631\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ \&\&\ !defined(GLUT\_DISABLE\_ATEXIT\_HACK)\ \&\&\ !defined(\_\_WATCOMC\_\_)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00632}00632\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ \_\_glutInitWithExit(\textcolor{keywordtype}{int}\ *argcp,\ \textcolor{keywordtype}{char}\ **argv,\ \textcolor{keywordtype}{void}\ (\_\_cdecl\ *exitfunc)(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00633}00633\ FGAPI\ \textcolor{keywordtype}{int}\ FGAPIENTRY\ \_\_glutCreateWindowWithExit(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *title,\ \textcolor{keywordtype}{void}\ (\_\_cdecl\ *exitfunc)(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00634}00634\ FGAPI\ \textcolor{keywordtype}{int}\ FGAPIENTRY\ \_\_glutCreateMenuWithExit(\textcolor{keywordtype}{void}\ (*\ func)(\textcolor{keywordtype}{int}),\ \textcolor{keywordtype}{void}\ (\_\_cdecl\ *exitfunc)(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00635}00635\ \textcolor{preprocessor}{\#ifndef\ FREEGLUT\_BUILDING\_LIB}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00636}00636\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00637}00637\ \textcolor{preprocessor}{\#define\ FGUNUSED\ \_\_attribute\_\_((unused))}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00638}00638\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00639}00639\ \textcolor{preprocessor}{\#define\ FGUNUSED}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00640}00640\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00641}00641\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ FGUNUSED\ glutInit\_ATEXIT\_HACK(\textcolor{keywordtype}{int}\ *argcp,\ \textcolor{keywordtype}{char}\ **argv)\ \{\ \_\_glutInitWithExit(argcp,\ argv,\ exit);\ \}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00642}00642\ \textcolor{preprocessor}{\#define\ glutInit\ glutInit\_ATEXIT\_HACK}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00643}00643\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ FGAPIENTRY\ FGUNUSED\ glutCreateWindow\_ATEXIT\_HACK(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *title)\ \{\ \textcolor{keywordflow}{return}\ \_\_glutCreateWindowWithExit(title,\ exit);\ \}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00644}00644\ \textcolor{preprocessor}{\#define\ glutCreateWindow\ glutCreateWindow\_ATEXIT\_HACK}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00645}00645\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ FGAPIENTRY\ FGUNUSED\ glutCreateMenu\_ATEXIT\_HACK(\textcolor{keywordtype}{void}\ (*\ func)(\textcolor{keywordtype}{int}))\ \{\ \textcolor{keywordflow}{return}\ \_\_glutCreateMenuWithExit(func,\ exit);\ \}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00646}00646\ \textcolor{preprocessor}{\#define\ glutCreateMenu\ glutCreateMenu\_ATEXIT\_HACK}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00647}00647\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00648}00648\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00649}00649\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00650}00650\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00651}00651\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00652}00652\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00654}00654\ \textcolor{comment}{/***\ END\ OF\ FILE\ ***/}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00655}00655\ }
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00656}00656\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_FREEGLUT\_STD\_H\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__std_8h_source_l00657}00657\ }
+
+\end{DoxyCode}

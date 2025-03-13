@@ -1,0 +1,168 @@
+\doxysection{func\+\_\+geometric\+\_\+simd.\+inl}
+\hypertarget{func__geometric__simd_8inl_source}{}\label{func__geometric__simd_8inl_source}\index{dependencies/glm/include/glm/detail/func\_geometric\_simd.inl@{dependencies/glm/include/glm/detail/func\_geometric\_simd.inl}}
+\mbox{\hyperlink{func__geometric__simd_8inl}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{geometric_8h}{../simd/geometric.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00006}00006\ \textcolor{preprocessor}{\#if\ GLM\_ARCH\ \&\ GLM\_ARCH\_SSE2\_BIT}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00009}00009\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_length<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00014}00014\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mm\_cvtss\_f32(glm\_vec4\_length(v.data));}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00018}00018\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_distance<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00023}00023\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ p0,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ p1)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mm\_cvtss\_f32(glm\_vec4\_distance(p0.data,\ p1.data));}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00027}00027\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_dot<vec<4,\ float,\ Q>,\ float,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00032}00032\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00033}00033\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mm\_cvtss\_f32(glm\_vec1\_dot(x.data,\ y.data));}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00036}00036\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_cross<float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00041}00041\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ vec<3,\ float,\ Q>\ call(vec<3,\ float,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<3,\ float,\ Q>\ \textcolor{keyword}{const}\&\ b)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_m128\ \textcolor{keyword}{const}\ set0\ =\ \_mm\_set\_ps(0.0f,\ a.z,\ a.y,\ a.x);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_m128\ \textcolor{keyword}{const}\ set1\ =\ \_mm\_set\_ps(0.0f,\ b.z,\ b.y,\ b.x);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \_\_m128\ \textcolor{keyword}{const}\ xpd0\ =\ glm\_vec4\_cross(set0,\ set1);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ vec<4,\ float,\ Q>\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ Result.data\ =\ xpd0;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vec<3,\ float,\ Q>(Result);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00051}00051\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_normalize<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00056}00056\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ vec<4,\ float,\ Q>\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00057}00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ vec<4,\ float,\ Q>\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ Result.data\ =\ glm\_vec4\_normalize(v.data);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00062}00062\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_faceforward<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00067}00067\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ vec<4,\ float,\ Q>\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ N,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ I,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ Nref)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00068}00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ vec<4,\ float,\ Q>\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ Result.data\ =\ glm\_vec4\_faceforward(N.data,\ I.data,\ Nref.data);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00073}00073\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_reflect<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00078}00078\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ vec<4,\ float,\ Q>\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ I,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ N)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00079}00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ vec<4,\ float,\ Q>\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ Result.data\ =\ glm\_vec4\_reflect(I.data,\ N.data);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00084}00084\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_refract<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00088}00088\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00089}00089\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ vec<4,\ float,\ Q>\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ I,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ N,\ \textcolor{keywordtype}{float}\ eta)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00090}00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ vec<4,\ float,\ Q>\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ Result.data\ =\ glm\_vec4\_refract(I.data,\ N.data,\ \_mm\_set1\_ps(eta));}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00095}00095\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00096}00096\ \}\textcolor{comment}{//namespace\ detail}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00097}00097\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00099}00099\ \textcolor{preprocessor}{\#elif\ GLM\_ARCH\ \&\ GLM\_ARCH\_NEON\_BIT}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00100}00100\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00101}00101\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00102}00102\ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00104}00104\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_length<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00105}00105\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00106}00106\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00107}00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__exponential_ga1f904e09827e939a56e4158f45ca8ede}{sqrt}}(compute\_dot<vec<4,\ float,\ Q>,\ \textcolor{keywordtype}{float},\ \textcolor{keyword}{true}>::call(v,\ v));}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00109}00109\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00110}00110\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00113}00113\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_distance<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00114}00114\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00115}00115\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ p0,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ p1)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00116}00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ compute\_length<4,\ float,\ Q,\ true>::call(p1\ -\/\ p0);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00118}00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00119}00119\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00122}00122\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00123}00123\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_dot<vec<4,\ float,\ Q>,\ float,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00124}00124\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00125}00125\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{float}\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00126}00126\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00127}00127\ \textcolor{preprocessor}{\#if\ GLM\_ARCH\ \&\ GLM\_ARCH\_ARMV8\_BIT}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ float32x4\_t\ v\ =\ vmulq\_f32(x.data,\ y.data);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vaddvq\_f32(v);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00130}00130\ \textcolor{preprocessor}{\#else\ \ }\textcolor{comment}{//\ Armv7a\ with\ Neon}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ float32x4\_t\ p\ =\ vmulq\_f32(x.data,\ y.data);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ float32x2\_t\ v\ =\ vpadd\_f32(vget\_low\_f32(p),\ vget\_high\_f32(p));}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ vpadd\_f32(v,\ v);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vget\_lane\_f32(v,\ 0);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00135}00135\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00136}00136\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00137}00137\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{template}<qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00140}00140\ \ \ \ \ \textcolor{keyword}{struct\ }compute\_normalize<4,\ float,\ Q,\ true>}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00141}00141\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00142}00142\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ vec<4,\ float,\ Q>\ call(vec<4,\ float,\ Q>\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00143}00143\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ float32x4\_t\ p\ =\ vmulq\_f32(v.data,\ v.data);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00145}00145\ \textcolor{preprocessor}{\#if\ GLM\_ARCH\ \&\ GLM\_ARCH\_ARMV8\_BIT}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ p\ =\ vpaddq\_f32(p,\ p);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ p\ =\ vpaddq\_f32(p,\ p);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00148}00148\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ float32x2\_t\ t\ =\ vpadd\_f32(vget\_low\_f32(p),\ vget\_high\_f32(p));}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ t\ =\ vpadd\_f32(t,\ t);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ p\ =\ vcombine\_f32(t,\ t);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00152}00152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ float32x4\_t\ vd\ =\ vrsqrteq\_f32(p);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ vec<4,\ float,\ Q>\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ Result.data\ =\ vmulq\_f32(v.data,\ vd);}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00158}00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00159}00159\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00160}00160\ \}\textcolor{comment}{//namespace\ detail}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00161}00161\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{func__geometric__simd_8inl_source_l00163}00163\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//GLM\_ARCH\ \&\ GLM\_ARCH\_SSE2\_BIT}}
+
+\end{DoxyCode}

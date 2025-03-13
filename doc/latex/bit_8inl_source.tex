@@ -1,0 +1,93 @@
+\doxysection{bit.\+inl}
+\hypertarget{bit_8inl_source}{}\label{bit_8inl_source}\index{dependencies/glm/include/glm/gtx/bit.inl@{dependencies/glm/include/glm/gtx/bit.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//\ highestBitValue}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00009}\mbox{\hyperlink{group__gtx__bit_ga0dcc8fe7c3d3ad60dea409281efa3d05}{00009}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genIUType\ \mbox{\hyperlink{group__gtx__bit_ga0dcc8fe7c3d3ad60dea409281efa3d05}{highestBitValue}}(genIUType\ Value)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00011}00011\ \ \ \ \ \ \ \ \ genIUType\ tmp\ =\ Value;}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00012}00012\ \ \ \ \ \ \ \ \ genIUType\ result\ =\ genIUType(0);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(tmp)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00014}00014\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ (tmp\ \&\ (\string~tmp\ +\ 1));\ \textcolor{comment}{//\ grab\ lowest\ bit}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ tmp\ \&=\ \string~result;\ \textcolor{comment}{//\ clear\ lowest\ bit}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00017}00017\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00022}\mbox{\hyperlink{group__gtx__bit_gad9bf719d4374c5264e051f18dca0d660}{00022}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__bit_ga0dcc8fe7c3d3ad60dea409281efa3d05}{highestBitValue}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1detail_1_1functor1}{detail::functor1<vec,\ L,\ T,\ T,\ Q>::call}}(highestBitValue,\ v);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//\ lowestBitValue}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00031}\mbox{\hyperlink{group__gtx__bit_ga2ff6568089f3a9b67f5c30918855fc6f}{00031}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genIUType\ \mbox{\hyperlink{group__gtx__bit_ga2ff6568089f3a9b67f5c30918855fc6f}{lowestBitValue}}(genIUType\ Value)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (Value\ \&\ (\string~Value\ +\ 1));}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00037}00037\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__bit_ga2ff6568089f3a9b67f5c30918855fc6f}{lowestBitValue}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::functor1<vec,\ L,\ T,\ T,\ Q>::call(lowestBitValue,\ v);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ powerOfTwoAbove}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00046}00046\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__gtx__bit_ga8cda2459871f574a0aecbe702ac93291}{powerOfTwoAbove}}(genType\ value)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__ext__scalar__integer_gadf491730354aa7da67fbe23d4d688763}{isPowerOfTwo}}(value)\ ?\ value\ :\ \mbox{\hyperlink{group__gtx__bit_ga0dcc8fe7c3d3ad60dea409281efa3d05}{highestBitValue}}(value)\ <<\ 1;}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00052}\mbox{\hyperlink{group__gtx__bit_gad26991a3aead0f1c7f55749ee6bbc2c8}{00052}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__bit_ga8cda2459871f574a0aecbe702ac93291}{powerOfTwoAbove}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1detail_1_1functor1}{detail::functor1<vec,\ L,\ T,\ T,\ Q>::call}}(powerOfTwoAbove,\ v);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ powerOfTwoBelow}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00061}00061\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__gtx__bit_ga3de7df63c589325101a2817a56f8e29d}{powerOfTwoBelow}}(genType\ value)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__ext__scalar__integer_gadf491730354aa7da67fbe23d4d688763}{isPowerOfTwo}}(value)\ ?\ value\ :\ \mbox{\hyperlink{group__gtx__bit_ga0dcc8fe7c3d3ad60dea409281efa3d05}{highestBitValue}}(value);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00067}\mbox{\hyperlink{group__gtx__bit_gaa7467f2caf7797c2e60a381622e0e7f7}{00067}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__bit_ga3de7df63c589325101a2817a56f8e29d}{powerOfTwoBelow}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1detail_1_1functor1}{detail::functor1<vec,\ L,\ T,\ T,\ Q>::call}}(powerOfTwoBelow,\ v);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ powerOfTwoNearest}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00076}00076\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__gtx__bit_ga5f65973a5d2ea38c719e6a663149ead9}{powerOfTwoNearest}}(genType\ value)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{group__ext__scalar__integer_gadf491730354aa7da67fbe23d4d688763}{isPowerOfTwo}}(value))}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00081}00081\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\ prev\ =\ \mbox{\hyperlink{group__gtx__bit_ga0dcc8fe7c3d3ad60dea409281efa3d05}{highestBitValue}}(value);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00082}00082\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\ next\ =\ prev\ <<\ 1;}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (next\ -\/\ value)\ <\ (value\ -\/\ prev)\ ?\ next\ :\ prev;}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00087}\mbox{\hyperlink{group__gtx__bit_ga53446682159c70ca9a80e1db89cdb424}{00087}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__gtx__bit_ga5f65973a5d2ea38c719e6a663149ead9}{powerOfTwoNearest}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00088}00088\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1detail_1_1functor1}{detail::functor1<vec,\ L,\ T,\ T,\ Q>::call}}(powerOfTwoNearest,\ v);}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{bit_8inl_source_l00092}00092\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

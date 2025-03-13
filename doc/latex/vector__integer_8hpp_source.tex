@@ -1,0 +1,58 @@
+\doxysection{vector\+\_\+integer.\+hpp}
+\hypertarget{vector__integer_8hpp_source}{}\label{vector__integer_8hpp_source}\index{dependencies/glm/include/glm/ext/vector\_integer.hpp@{dependencies/glm/include/glm/ext/vector\_integer.hpp}}
+\mbox{\hyperlink{vector__integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00012}00012\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00014}00014\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}../detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}../detail/\_vectorize.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__relational_8hpp}{../vector\_relational.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8hpp}{../common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_vector\_integer\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00026}00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00039}00039\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ bool,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gadf491730354aa7da67fbe23d4d688763}{isPowerOfTwo}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00050}00050\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_ga3a37c2f2fd347886c9af6a3ca3db04dc}{nextPowerOfTwo}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00061}00061\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gab21902a0e7e5a8451a7ad80333618727}{prevPowerOfTwo}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00071}00071\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ bool,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gaec593d33956a8fe43f78fccc63ddde9a}{isMultiple}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ T\ Multiple);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00081}00081\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ bool,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gaec593d33956a8fe43f78fccc63ddde9a}{isMultiple}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Multiple);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00094}00094\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gab770a3835c44c8a6fd225be4f4e6b317}{nextMultiple}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ T\ Multiple);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00107}00107\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gab770a3835c44c8a6fd225be4f4e6b317}{nextMultiple}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Multiple);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00119}00119\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00120}00120\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gada3bdd871ffe31f2d484aa668362f636}{prevMultiple}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ T\ Multiple);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00132}00132\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00133}00133\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_gada3bdd871ffe31f2d484aa668362f636}{prevMultiple}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Multiple);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00144}00144\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ int,\ Q>\ \mbox{\hyperlink{group__ext__scalar__integer_ga2777901e41ad6e1e9d0ad6cc855d1075}{findNSB}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Source,\ vec<L,\ int,\ Q>\ SignificantBitCount);}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00147}00147\ \}\ \textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{vector__integer_8hpp_source_l00149}00149\ \textcolor{preprocessor}{\#include\ "{}vector\_integer.inl"{}}}
+
+\end{DoxyCode}

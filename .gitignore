@@ -1,0 +1,11 @@
+*.o
+*.so
+*.a
+*.vs
+.vs
+obj
+bin
+/x64
+/client/x64
+/engine/x64
+/test/x64

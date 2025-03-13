@@ -1,0 +1,93 @@
+\doxysection{func\+\_\+vector\+\_\+relational.\+inl}
+\hypertarget{func__vector__relational_8inl_source}{}\label{func__vector__relational_8inl_source}\index{dependencies/glm/include/glm/detail/func\_vector\_relational.inl@{dependencies/glm/include/glm/detail/func\_vector\_relational.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00001}00001\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00002}00002\ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00003}00003\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00004}\mbox{\hyperlink{group__core__func__vector__relational_gaedc3a837f960109afe22ea3f267b9a19}{00004}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__vector__relational_gaedc3a837f960109afe22ea3f267b9a19}{lessThan}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00005}00005\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00006}00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ Result(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00007}00007\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ x[i]\ <\ y[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00009}00009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00013}\mbox{\hyperlink{group__core__func__vector__relational_gae4adee3ccfca4f66ff5b0ce3686399c2}{00013}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__vector__relational_gae4adee3ccfca4f66ff5b0ce3686399c2}{lessThanEqual}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00015}00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ Result(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ x[i]\ <=\ y[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00022}\mbox{\hyperlink{group__core__func__vector__relational_ga9987ddebd3528e92f84e23d995320861}{00022}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__vector__relational_ga9987ddebd3528e92f84e23d995320861}{greaterThan}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ Result(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ x[i]\ >\ y[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00031}\mbox{\hyperlink{group__core__func__vector__relational_ga932c94a34799d65dfe36762158a58d90}{00031}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__vector__relational_ga932c94a34799d65dfe36762158a58d90}{greaterThanEqual}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ Result(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ x[i]\ >=\ y[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00040}\mbox{\hyperlink{group__core__func__vector__relational_gaf539cf490630ba648dfd6e36aef910a1}{00040}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__vector__relational_gaf539cf490630ba648dfd6e36aef910a1}{equal}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ Result(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ x[i]\ ==\ y[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00049}\mbox{\hyperlink{group__core__func__vector__relational_ga72957353fbfdfef1eef742d997a5b32a}{00049}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__vector__relational_ga72957353fbfdfef1eef742d997a5b32a}{notEqual}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ Result(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ x[i]\ !=\ y[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00058}\mbox{\hyperlink{group__core__func__vector__relational_ga911b3f8e41459dd551ccb6d385d91061}{00058}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__core__func__vector__relational_ga911b3f8e41459dd551ccb6d385d91061}{any}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Result\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ Result\ =\ Result\ ||\ v[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00067}\mbox{\hyperlink{group__core__func__vector__relational_ga87e53f50b679f5f95c5cb4780311b3dd}{00067}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__core__func__vector__relational_ga87e53f50b679f5f95c5cb4780311b3dd}{all}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ Result\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ Result\ =\ Result\ \&\&\ v[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00076}\mbox{\hyperlink{group__core__func__vector__relational_ga152b41ff0ce1f74822e98e9a0384a645}{00076}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__vector__relational_ga152b41ff0ce1f74822e98e9a0384a645}{not\_}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \textcolor{keyword}{const}\&\ v)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ Result(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(length\_t\ i\ =\ 0;\ i\ <\ L;\ ++i)}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ Result[i]\ =\ !v[i];}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00083}00083\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00085}00085\ \textcolor{preprocessor}{\#if\ GLM\_CONFIG\_SIMD\ ==\ GLM\_ENABLE}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00086}00086\ \textcolor{preprocessor}{\#\ \ \ include\ "{}func\_vector\_relational\_simd.inl"{}}}
+\DoxyCodeLine{\Hypertarget{func__vector__relational_8inl_source_l00087}00087\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

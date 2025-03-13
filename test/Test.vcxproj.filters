@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="lightTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="listTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="materialTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="nodeTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="meshTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="cameraTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="directionalLightTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="pointLightTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="shadowTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="spotLightTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="textureTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="vertexTest.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>TestFolder</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="utils.h">
+      <Filter>Header File</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="TestFolder">
+      <UniqueIdentifier>{36f7cc4d-5db7-455b-ae8c-0e7a9aac34be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header File">
+      <UniqueIdentifier>{c0a14065-00fb-419d-bfac-f9ccd7dcb14f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

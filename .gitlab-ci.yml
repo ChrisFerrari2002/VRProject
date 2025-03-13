@@ -1,0 +1,110 @@
+# build computer graphics project
+
+variables:
+  # `showDateTime` will show the passed time in milliseconds. You need to specify `--batch-mode` to make this work.
+
+stages:
+  - structure
+  - engine
+  - test
+  - client
+  - package
+
+image: gitlab-edu.supsi.ch:5050/dti-isin/labingsw/common:ubuntu2404-cg
+
+
+structure:
+  stage: structure
+
+  script:
+#    - '[ -d dependencies ] || exit 1'
+    - '[ -d engine ] || exit 1'
+    - '[ -d test ] || exit 1'
+    - '[ -d client ] || exit 1'
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
+
+engine:
+  stage: engine
+
+  before_script:
+    - 'cd engine'
+
+  script:
+    - 'make clean'
+    - 'make'
+
+  after_script:
+    - 'cd ..'
+
+  artifacts:
+    paths:
+      - engine/bin/Release/libengine.so
+      - engine/bin/Debug/libengine.so
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
+test:
+  stage: test
+
+  before_script:
+    - 'cd test'
+
+  script:
+    - 'make clean'
+    - 'make'
+
+  after_script:
+    - 'cd ..'
+
+  artifacts:
+    paths:
+      - engine/bin/Debug/*
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
+
+client:
+  stage: client
+
+  before_script:
+    - 'cd client'
+
+  script:
+    - 'make clean'
+    - 'make'
+
+  after_script:
+    - 'cd ..'
+
+  artifacts:
+    paths:
+      - client/bin/Release/*
+      - client/bin/Debug/*
+
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"
+
+package:
+  stage: package
+
+  before_script:
+    - 'cd client'
+
+  script:
+    - 'make package'
+   
+  after_script:
+        - 'cd ..'
+
+  artifacts:
+    paths:
+      - release/*
+
+  rules:
+    - if: $CI_COMMIT_BRANCH == "dev"

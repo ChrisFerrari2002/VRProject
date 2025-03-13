@@ -1,0 +1,41 @@
+\doxysection{matrix\+\_\+decompose.\+hpp}
+\hypertarget{matrix__decompose_8hpp_source}{}\label{matrix__decompose_8hpp_source}\index{dependencies/glm/include/glm/gtx/matrix\_decompose.hpp@{dependencies/glm/include/glm/gtx/matrix\_decompose.hpp}}
+\mbox{\hyperlink{matrix__decompose_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00015}00015\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mat4x4_8hpp}{../mat4x4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec3_8hpp}{../vec3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vec4_8hpp}{../vec4.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{geometric_8hpp}{../geometric.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gtc_2quaternion_8hpp}{../gtc/quaternion.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gtc_2matrix__transform_8hpp}{../gtc/matrix\_transform.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_matrix\_decompose\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00026}00026\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_matrix\_decompose\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00027}00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00029}00029\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00037}00037\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__decompose_gabd7878e1b23aab583bc01040c5ed2b71}{decompose}}(}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ mat<4,\ 4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ modelMatrix,}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ vec<3,\ T,\ Q>\ \&\ scale,\ qua<T,\ Q>\ \&\ orientation,\ vec<3,\ T,\ Q>\ \&\ translation,\ vec<3,\ T,\ Q>\ \&\ skew,\ vec<4,\ T,\ Q>\ \&\ perspective);}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Recomposes\ a\ model\ matrix\ from\ a\ previously-\/decomposed\ matrix}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00043}00043\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ mat<4,\ 4,\ T,\ Q>\ recompose(}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ scale,\ qua<T,\ Q>\ \textcolor{keyword}{const}\&\ orientation,\ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ translation,}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ skew,\ vec<4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ perspective);}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00048}00048\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{matrix__decompose_8hpp_source_l00050}00050\ \textcolor{preprocessor}{\#include\ "{}matrix\_decompose.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,61 @@
+\doxysection{light.\+h}
+\hypertarget{light_8h_source}{}\label{light_8h_source}\index{engine/light.h@{engine/light.h}}
+\mbox{\hyperlink{light_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ LIGHT\_H}}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00020}00020\ \textcolor{preprocessor}{\#define\ LIGHT\_H}}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00029}\mbox{\hyperlink{class_light}{00029}}\ \textcolor{keyword}{class\ }ENG\_API\ \mbox{\hyperlink{class_light}{Light}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}\ \{}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00042}\mbox{\hyperlink{class_light_a32249e4288af2ff645eb625abc986b64}{00042}}\ \ \ \ \ \mbox{\hyperlink{class_light_a32249e4288af2ff645eb625abc986b64}{Light}}(\textcolor{keyword}{const}\ std::string\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ lightNumber,}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ambient,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ diffuse,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ specular);}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00050}\mbox{\hyperlink{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{00050}}\ \ \ \ \ \mbox{\hyperlink{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{\string~Light}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00057}\mbox{\hyperlink{class_light_a7f659b7e2d8e59ea62ca3023dc7a0e30}{00057}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_light_a7f659b7e2d8e59ea62ca3023dc7a0e30}{getLightNumber}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00062}\mbox{\hyperlink{class_light_aa0cc18ee7ed2722617d1973459b53ca7}{00062}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_light_aa0cc18ee7ed2722617d1973459b53ca7}{setPosition}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00069}\mbox{\hyperlink{class_light_a589aeaae4691f87565b3377808194c18}{00069}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_light_a589aeaae4691f87565b3377808194c18}{setPosition}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ pos);}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00076}\mbox{\hyperlink{class_light_a1adb137688bc9a8f6a0ef25ad326ae53}{00076}}\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ \mbox{\hyperlink{class_light_a1adb137688bc9a8f6a0ef25ad326ae53}{getPosition}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00083}\mbox{\hyperlink{class_light_aa9de75c23f9f063a546340b422a5fa1e}{00083}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_light_aa9de75c23f9f063a546340b422a5fa1e}{getConstantAttenuation}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00090}\mbox{\hyperlink{class_light_a7435f2024c32532f44c3e9979e4071d3}{00090}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_light_a7435f2024c32532f44c3e9979e4071d3}{getLinearAttenuation}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00097}\mbox{\hyperlink{class_light_a624db659ae6ee57e4ac28ae8292a847d}{00097}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_light_a624db659ae6ee57e4ac28ae8292a847d}{getQuadraticAttenuation}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00104}\mbox{\hyperlink{class_light_a5caf909aed80098a62f1c770630972a8}{00104}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_light_a5caf909aed80098a62f1c770630972a8}{setConstantAttenuation}}(\textcolor{keywordtype}{float}\ constantAttenuation);}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00111}\mbox{\hyperlink{class_light_ab9647c2eaaa8a4d84a39dbb8d4958f4d}{00111}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_light_ab9647c2eaaa8a4d84a39dbb8d4958f4d}{setLinearAttenuation}}(\textcolor{keywordtype}{float}\ linearAttenuation);}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00118}\mbox{\hyperlink{class_light_a6353db1df57f494232e7c04f65228b65}{00118}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_light_a6353db1df57f494232e7c04f65228b65}{setQuadraticAttenuation}}(\textcolor{keywordtype}{float}\ quadraticAttenuation);}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00125}\mbox{\hyperlink{class_light_aef588141d6c5185b4ce25cf58669ed2b}{00125}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_light_aef588141d6c5185b4ce25cf58669ed2b}{setIntensity}}(\textcolor{keywordtype}{float}\ intensity);}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00132}\mbox{\hyperlink{class_light_a01a7393aa7e65770931e226a844d406b}{00132}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_light_a01a7393aa7e65770931e226a844d406b}{getNextLightNumber}}();}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00143}\mbox{\hyperlink{class_light_a75f6308ba94b57fd94d384284c2d60cb}{00143}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_light_a75f6308ba94b57fd94d384284c2d60cb}{render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform,\ \textcolor{keywordtype}{void}*\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00152}\mbox{\hyperlink{class_light_ad19d60d490c1aae195a263ea1fbed577}{00152}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_light_ad19d60d490c1aae195a263ea1fbed577}{setTransform}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00154}00154\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ nextNumber;\ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00156}00156\ \ \ \ \ \textcolor{keywordtype}{int}\ lightNumber;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00157}00157\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ambient;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00158}00158\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ diffuse;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ specular;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00160}00160\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ position\{\ 0.0f,\ 0.0f,\ 0.0f,\ 1.0f\ \};\ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00162}00162\ \ \ \ \ \textcolor{keywordtype}{float}\ constantAttenuation\ =\ 1.0f;\ \ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00163}00163\ \ \ \ \ \textcolor{keywordtype}{float}\ linearAttenuation\ =\ 0.0f;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00164}00164\ \ \ \ \ \textcolor{keywordtype}{float}\ quadraticAttenuation\ =\ 0.0f;\ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00165}00165\ \ \ \ \ \textcolor{keywordtype}{float}\ intensity\ =\ 7.0f;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00166}00166\ \};}
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{light_8h_source_l00168}00168\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LIGHT\_H}}
+
+\end{DoxyCode}

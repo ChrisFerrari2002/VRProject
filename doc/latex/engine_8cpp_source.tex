@@ -1,0 +1,381 @@
+\doxysection{engine.\+cpp}
+\hypertarget{engine_8cpp_source}{}\label{engine_8cpp_source}\index{engine/engine.cpp@{engine/engine.cpp}}
+\mbox{\hyperlink{engine_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00019}00019\ \ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00021}00021\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00022}00022\ \textcolor{comment}{//\ Main\ include:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00025}00025\ \textcolor{comment}{//\ FreeGLUT:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00026}00026\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00028}00028\ \textcolor{comment}{//\ FreeImage:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00029}00029\ \textcolor{preprocessor}{\#include\ <FreeImage.h>}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00031}00031\ \textcolor{comment}{//\ C/C++:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00032}00032\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00035}00035\ \textcolor{comment}{//\ STATIC\ //}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00038}00038\ \textcolor{keywordtype}{bool}\ Eng::Base::useZBuffer\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00039}00039\ \textcolor{keywordtype}{bool}\ Eng::Base::mainLoopRunning\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00040}00040\ \textcolor{keywordtype}{float}\ Eng::Base::bgR\ =\ 0.0f;\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00041}00041\ \textcolor{keywordtype}{float}\ Eng::Base::bgG\ =\ 0.0f;\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00042}00042\ \textcolor{keywordtype}{float}\ Eng::Base::bgB\ =\ 0.0f;\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00043}00043\ \textcolor{keywordtype}{float}\ Eng::Base::bgA\ =\ 0.0f;\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00044}00044\ std::vector<Eng::Camera*>\ Eng::Base::cameras\ =\ std::vector<Camera*>();\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00045}00045\ \textcolor{keywordtype}{int}\ Eng::Base::activeCamera\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00047}00047\ \mbox{\hyperlink{class_eng_1_1_ovo_reader}{Eng::OvoReader}}\ Eng::Base::reader\ =\ \mbox{\hyperlink{class_ovo_reader}{OvoReader}}();\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00048}00048\ \mbox{\hyperlink{class_eng_1_1_list}{Eng::List}}\ Eng::Base::list;\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00050}\mbox{\hyperlink{engine_8cpp_a5e91aba899c5faf5b91dea68698a21d7}{00050}}\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{engine_8cpp_a5e91aba899c5faf5b91dea68698a21d7}{perspective}};\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00051}\mbox{\hyperlink{engine_8cpp_a69f9adf691a71dc1c725b083481c63f5}{00051}}\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{engine_8cpp_a69f9adf691a71dc1c725b083481c63f5}{ortho}};\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00054}00054\ \textcolor{comment}{//\ RESERVED\ STRUCTURES\ //}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00062}\mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved}{00062}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved}{Eng::Base::Reserved}}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ Flags:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00065}\mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved_a0c566c4c75e7ee7d668436f942dc9ec8}{00065}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved_a0c566c4c75e7ee7d668436f942dc9ec8}{initFlag}};\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00072}\mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved_a23a63ad2e2bb27c78351c21dd08e6ae1}{00072}}\ \ \ \ \ \mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved_a23a63ad2e2bb27c78351c21dd08e6ae1}{Reserved}}()\ :\ \mbox{\hyperlink{struct_eng_1_1_base_1_1_reserved_a0c566c4c75e7ee7d668436f942dc9ec8}{initFlag}}\{\ false\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00078}00078\ \textcolor{comment}{//\ BODY\ OF\ CLASS\ Base\ //}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00087}00087\ ENG\_API\ Eng::Base::Base()\ :\ reserved(std::make\_unique<Eng::\mbox{\hyperlink{class_eng_1_1_base}{Base}}::Reserved>())}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00088}00088\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ Sistema\ di\ Logging}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00090}00090\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG\ \ \ }}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00091}00091\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[+]\ "{}}\ <<\ std::source\_location::current().function\_name()\ <<\ \textcolor{stringliteral}{"{}\ invoked"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00092}00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00102}\mbox{\hyperlink{class_eng_1_1_base_ae0700f06fa814dd024290dcd2b1a3157}{00102}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_ae0700f06fa814dd024290dcd2b1a3157}{Eng::Base::\string~Base}}()}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00103}00103\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00104}00104\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00105}00105\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[-\/]\ "{}}\ <<\ std::source\_location::current().function\_name()\ <<\ \textcolor{stringliteral}{"{}\ invoked"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00106}00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00114}\mbox{\hyperlink{class_eng_1_1_base_a3c21bcd7bace09d5913ced6de5b15518}{00114}}\ \mbox{\hyperlink{class_eng_1_1_base}{Eng::Base}}\ ENG\_API\&\ \mbox{\hyperlink{class_eng_1_1_base_a3c21bcd7bace09d5913ced6de5b15518}{Eng::Base::getInstance}}()}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00115}00115\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_eng_1_1_base}{Base}}\ instance;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00131}\mbox{\hyperlink{class_eng_1_1_base_a962ceb7a1c8f73e0dd01344fea410754}{00131}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_a962ceb7a1c8f73e0dd01344fea410754}{Eng::Base::init}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[],\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00132}00132\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{comment}{//\ Already\ initialized?}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{if}\ (reserved-\/>initFlag)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00135}00135\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ engine\ already\ initialized"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{comment}{//\ Here\ you\ can\ initialize\ most\ of\ the\ graphics\ engine's\ dependencies\ and\ default\ settings...}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{if}\ (!reserved-\/>initFlag)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ FreeImage\_Initialise();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Init\ context:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (useZBuffer)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ glutInitDisplayMode(GLUT\_RGBA\ |\ GLUT\_DOUBLE\ |\ GLUT\_DEPTH);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ glutInitDisplayMode(GLUT\_RGBA\ |\ GLUT\_DOUBLE);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ glutInitWindowPosition(100,\ 100);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ glutInitWindowSize(width,\ height);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ FreeGLUT\ can\ parse\ command-\/line\ params,\ in\ case:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ glutInit(\&argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ some\ optional\ flags:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ glutSetOption(GLUT\_ACTION\_ON\_WINDOW\_CLOSE,\ GLUT\_ACTION\_GLUTMAINLOOP\_RETURNS);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Enable\ Z\ buffer\ if\ it's\ required}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (useZBuffer)\ execZBufferSetup();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Create\ window}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ windowId\ =\ glutCreateWindow(title);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ callback\ functions}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ glutDisplayFunc(displayCallback);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enable\ Z-\/Buffer}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enable\ face\ culling}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ glEnable(GL\_CULL\_FACE);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Enable\ smooth\ shading}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ glShadeModel(GL\_SMOOTH);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{comment}{//enable\ texture}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ glEnable(GL\_TEXTURE\_2D);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ glEnable(GL\_NORMALIZE);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{comment}{//\ Done:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00179}00179\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[>]\ "{}}\ <<\ \mbox{\hyperlink{engine_8h_a6e43beaa714b1bf01ce2271440786e38}{LIB\_NAME}}\ <<\ \textcolor{stringliteral}{"{}\ initialized"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00180}00180\ \ \ \ \ reserved-\/>initFlag\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{return}\ reserved-\/>initFlag;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00182}00182\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00189}\mbox{\hyperlink{class_eng_1_1_base_afd7e1923deb411907695c0b27114f62a}{00189}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_afd7e1923deb411907695c0b27114f62a}{Eng::Base::free}}()}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00190}00190\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{comment}{//\ Not\ initialized?}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{if}\ (!reserved-\/>initFlag)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00193}00193\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ERROR:\ engine\ not\ initialized"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00198}00198\ \ \ \ \ \textcolor{comment}{//\ Here\ you\ can\ properly\ dispose\ of\ any\ allocated\ resource\ (including\ third-\/party\ dependencies)...}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{comment}{//\ Close\ open\ connections\ or\ free\ allocated\ memory}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00200}00200\ \ \ \ \ mainLoopRunning\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{comment}{//\ Release\ bitmap\ and\ FreeImage:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00203}00203\ \ \ \ \ FreeImage\_DeInitialise();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{comment}{//\ Done:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00206}00206\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[<]\ "{}}\ <<\ \mbox{\hyperlink{engine_8h_a6e43beaa714b1bf01ce2271440786e38}{LIB\_NAME}}\ <<\ \textcolor{stringliteral}{"{}\ deinitialized"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00207}00207\ \ \ \ \ reserved-\/>initFlag\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00209}00209\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00216}\mbox{\hyperlink{class_eng_1_1_base_a926d11bf0da5398db5dcfec36d43049d}{00216}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_a926d11bf0da5398db5dcfec36d43049d}{Eng::Base::reshapeCallback}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00217}00217\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00218}00218\ \ \ \ \ glViewport(0,\ 0,\ width,\ height);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00219}00219\ \ \ \ \ glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00220}00220\ \ \ \ \ \textcolor{comment}{//create\ a\ perspective\ matrix\ with\ a\ 45\ degree\ field\ of\ view\ and\ a\ near\ and\ far\ plane}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00221}00221\ \ \ \ \ perspective\ =\ \mbox{\hyperlink{group__ext__matrix__clip__space_ga9e13be491fd69a438c8fda440cf0156e}{glm::perspective}}(glm::radians(80.0f),\ (\textcolor{keywordtype}{float})width\ /\ (\textcolor{keywordtype}{float})height,\ 1.0f,\ 1000.0f);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00222}00222\ \ \ \ \ ortho\ =\ \mbox{\hyperlink{group__ext__matrix__clip__space_gaa8568ef1d14d6654becb860ed6163817}{glm::ortho}}(0.0f,\ (\textcolor{keywordtype}{float})width,\ 0.0f,\ (\textcolor{keywordtype}{float})height,\ 1.0f,\ -\/1.0f);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00223}00223\ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(perspective));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00224}00224\ \ \ \ \ glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00225}00225\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00230}00230\ \textcolor{keywordtype}{void}\ ENG\_API\ Eng::Base::displayCallback()}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00231}00231\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00232}00232\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_base_ad8d5485a8642815afca82af3bcc16507}{Eng::Base::clearWindow}}();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00234}00234\ \ \ \ \ \textcolor{comment}{//\ 3D:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00236}00236\ \ \ \ \ \textcolor{comment}{//\ Set\ perspective\ matrix:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00237}00237\ \ \ \ \ glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00238}00238\ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(perspective));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00239}00239\ \ \ \ \ glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{comment}{//\ Enable\ Z\ buffer\ if\ it's\ required}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{keywordflow}{if}\ (useZBuffer)\ execZBufferSetup();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00244}00244\ \ \ \ \ \textcolor{comment}{//disable\ texturing}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00245}00245\ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(cameras.at(activeCamera)-\/>getInverseCameraMat()));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00246}00246\ \ \ \ \ list.\mbox{\hyperlink{class_eng_1_1_list_a509b5cf5b88f6c85a2cafaf2a19588f7}{render}}(cameras.at(activeCamera)-\/>getInverseCameraMat(),\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00247}00247\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00253}\mbox{\hyperlink{class_eng_1_1_base_a6d04cce0e8a065fd54b61f225407177b}{00253}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_a6d04cce0e8a065fd54b61f225407177b}{Eng::Base::addCamera}}(\mbox{\hyperlink{class_eng_1_1_camera}{Camera}}*\ camera)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00254}00254\ \ \ \ \ cameras.push\_back(camera);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00255}00255\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00262}\mbox{\hyperlink{class_eng_1_1_base_a1b08c1ccca8a272ee327958d625f7db2}{00262}}\ std::list<Eng::Node*>\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_a1b08c1ccca8a272ee327958d625f7db2}{Eng::Base::loadScene}}(std::string\ pathName)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00263}00263\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00264}00264\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ root\ =\ reader.\mbox{\hyperlink{class_eng_1_1_ovo_reader_a6eb4872f57cf4ebb9d7f3644d5eb410c}{readFile}}(pathName.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00265}00265\ \ \ \ \ list.\mbox{\hyperlink{class_eng_1_1_list_afa0983c651ba5afe22dae132b61a7dd2}{addEntry}}(root);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{return}\ list.\mbox{\hyperlink{class_eng_1_1_list_ae0cdbc7bcfa4665e1f2848ee82c767f7}{getObjectList}}();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00267}00267\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00273}\mbox{\hyperlink{class_eng_1_1_base_a66a01c40aa0c57bffc3f48cb280de2ee}{00273}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_a66a01c40aa0c57bffc3f48cb280de2ee}{Eng::Base::setActiveCamera}}(\textcolor{keywordtype}{int}\ num)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00274}00274\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00275}00275\ \ \ \ \ activeCamera\ =\ num;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00276}00276\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00283}\mbox{\hyperlink{class_eng_1_1_base_af9942db86a1d78d8a928717f5bd8d7dd}{00283}}\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_af9942db86a1d78d8a928717f5bd8d7dd}{Eng::Base::loadNode}}(std::string\ pathName)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00284}00284\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00285}00285\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ \_car\ =\ reader.\mbox{\hyperlink{class_eng_1_1_ovo_reader_a6eb4872f57cf4ebb9d7f3644d5eb410c}{readFile}}(pathName.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00286}00286\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node}{Node}}\ car\ =\ *\_car;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00287}00287\ \ \ \ \ \textcolor{keywordflow}{return}\ car;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00288}00288\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00294}\mbox{\hyperlink{class_eng_1_1_base_aa07c0c7acb684dd7ddd5f47d8cc31760}{00294}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_aa07c0c7acb684dd7ddd5f47d8cc31760}{Eng::Base::addNode}}(\mbox{\hyperlink{class_eng_1_1_node}{Node}}\ node)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00295}00295\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00296}00296\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ \_node\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_eng_1_1_node}{Node}}(node);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00297}00297\ \ \ \ \ list.\mbox{\hyperlink{class_eng_1_1_list_afa0983c651ba5afe22dae132b61a7dd2}{addEntry}}(\_node);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00298}00298\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00307}\mbox{\hyperlink{class_eng_1_1_base_a4d48d7d54ae7c1beaf47d0b2db55b1b2}{00307}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_a4d48d7d54ae7c1beaf47d0b2db55b1b2}{Eng::Base::writeOnScreen}}(std::string\ text,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}\ color,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec2}}\ coord,\ \textcolor{keywordtype}{int}\ textType)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00308}00308\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00309}00309\ \ \ \ \ \textcolor{comment}{//\ 2D}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00310}00310\ \ \ \ \ \textcolor{comment}{//\ Set\ orthographic\ projection:}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00311}00311\ \ \ \ \ glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00312}00312\ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(ortho));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00313}00313\ \ \ \ \ glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00314}00314\ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}(1.0f)));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00316}00316\ \ \ \ \ \textcolor{comment}{//\ Write\ 2D\ text}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00317}00317\ \ \ \ \ glDisable(GL\_LIGHTING);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00318}00318\ \ \ \ \ glColor3f(color.x,\ color.y,\ color.z);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00319}00319\ \ \ \ \ glRasterPos2f(coord.x,\ coord.y);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00320}00320\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordflow}{switch}\ (textType)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ glutBitmapString(GLUT\_BITMAP\_8\_BY\_13,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)text.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00325}00325\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ glutBitmapString(GLUT\_BITMAP\_9\_BY\_15,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)text.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00328}00328\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ glutBitmapString(GLUT\_BITMAP\_TIMES\_ROMAN\_10,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)text.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00331}00331\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ glutBitmapString(GLUT\_BITMAP\_TIMES\_ROMAN\_24,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)text.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00334}00334\ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ glutBitmapString(GLUT\_BITMAP\_HELVETICA\_10,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)text.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00337}00337\ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ glutBitmapString(GLUT\_BITMAP\_HELVETICA\_12,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)text.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00340}00340\ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ glutBitmapString(GLUT\_BITMAP\_HELVETICA\_18,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)text.c\_str());}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00343}00343\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00344}00344\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00345}00345\ \ \ \ \ \textcolor{comment}{//\ Re-\/enable\ lighting}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00346}00346\ \ \ \ \ glEnable(GL\_LIGHTING);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00347}00347\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00354}\mbox{\hyperlink{class_eng_1_1_base_a88949acf85d254434b513ca8b48d5bfa}{00354}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_base_a88949acf85d254434b513ca8b48d5bfa}{Eng::Base::startTimer}}(\textcolor{keywordtype}{void}(*func)(\textcolor{keywordtype}{int}),\ \textcolor{keywordtype}{int}\ time)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00355}00355\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00356}00356\ \ \ \ \ glutTimerFunc(time,\ func,\ 0);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00357}00357\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00363}\mbox{\hyperlink{class_eng_1_1_base_af6dc5365bb8bdfe6c68dfb52ad175ca5}{00363}}\ \mbox{\hyperlink{class_eng_1_1_list}{Eng::List}}*\ \mbox{\hyperlink{class_eng_1_1_base_af6dc5365bb8bdfe6c68dfb52ad175ca5}{Eng::Base::getList}}()}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00364}00364\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00365}00365\ \ \ \ \ \textcolor{keywordflow}{return}\ \&list;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00366}00366\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00372}\mbox{\hyperlink{class_eng_1_1_base_a7511d3c02ed50ea4ac9b399360a7ca0b}{00372}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_eng_1_1_base_a7511d3c02ed50ea4ac9b399360a7ca0b}{Eng::Base::clearList}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00373}00373\ \ \ \ \ list.\mbox{\hyperlink{class_eng_1_1_list_a3fad6292bd5126eeb437317383338cea}{clear}}();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00374}00374\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00375}00375\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00376}00376\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00381}\mbox{\hyperlink{class_eng_1_1_base_a99c9da48b32ffac8f6810b0274b1b03f}{00381}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a99c9da48b32ffac8f6810b0274b1b03f}{Eng::Base::setKeyboardCallback}}(\textcolor{keywordtype}{void}\ (*func)(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ key,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y))\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00382}00382\ \ \ \ \ glutKeyboardFunc(func);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00383}00383\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00388}\mbox{\hyperlink{class_eng_1_1_base_a8e7a3c92af4a946e012dcf76b073c287}{00388}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a8e7a3c92af4a946e012dcf76b073c287}{Eng::Base::removeObjectPickedCallback}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00389}00389\ \ \ \ \ \textcolor{comment}{//\ Disables\ the\ generation\ of\ mouse\ callbacks}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00390}00390\ \ \ \ \ glutMouseFunc(NULL);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00391}00391\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00392}00392\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00397}\mbox{\hyperlink{class_eng_1_1_base_a626e6a5a1243db09f40383306b318c5d}{00397}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a626e6a5a1243db09f40383306b318c5d}{Eng::Base::setObjectPickedCallback}}(\textcolor{keywordtype}{void}\ (*func)(\mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ n,\ \textcolor{keywordtype}{bool}\ mousePressed))\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00398}00398\ \ \ \ \ \textcolor{keyword}{static}\ std::function<void(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int})>\ lambdaWrapper\ =\ [func](\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ ==\ -\/1\ \&\&\ y\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ func(\textcolor{keyword}{nullptr},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ glDisable(GL\_LIGHTING);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ glDisable(GL\_TEXTURE\_2D);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ glViewport(0,\ 0,\ glutGet(GLUT\_WINDOW\_WIDTH),\ glutGet(GLUT\_WINDOW\_HEIGHT));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ glMatrixMode(GL\_PROJECTION);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(perspective));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ glMatrixMode(GL\_MODELVIEW);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(cameras.at(activeCamera)-\/>getInverseCameraMat()));}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ list.\mbox{\hyperlink{class_eng_1_1_list_a509b5cf5b88f6c85a2cafaf2a19588f7}{render}}(cameras.at(activeCamera)-\/>getInverseCameraMat(),\ (\textcolor{keywordtype}{void}*)\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00412}00412\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pixel[4];}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ glReadPixels(x,\ glutGet(GLUT\_WINDOW\_HEIGHT)\ -\/\ y,\ 1,\ 1,\ GL\_RGBA,\ GL\_UNSIGNED\_BYTE,\ pixel);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ glEnable(GL\_LIGHTING);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ glEnable(GL\_TEXTURE\_2D);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00419}00419\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ (pixel[0]\ <<\ 16)\ |\ (pixel[1]\ <<\ 8)\ |\ (pixel[2]\ <<\ 0);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ n\ =\ list.\mbox{\hyperlink{class_eng_1_1_list_aa35eaddba1360adeb25387262d31d74e}{getObjectById}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00422}00422\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (n\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ func(n,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00425}00425\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ func(\textcolor{keyword}{nullptr},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00428}00428\ \ \ \ \ \textcolor{comment}{//call\ lambdaWrapper\ when\ mouse\ left\ button\ is\ pressed}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00429}00429\ \ \ \ \ glutMouseFunc([](\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ state,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (button\ ==\ GLUT\_LEFT\_BUTTON\ \&\&\ state\ ==\ GLUT\_DOWN)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_base_ad8d5485a8642815afca82af3bcc16507}{Eng::Base::clearWindow}}();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ lambdaWrapper(x,\ y);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (button\ ==\ GLUT\_LEFT\_BUTTON\ \&\&\ state\ ==\ GLUT\_UP)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ lambdaWrapper(-\/1,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00436}00436\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00437}00437\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00438}00438\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00439}00439\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00444}\mbox{\hyperlink{class_eng_1_1_base_a1ee954d83cc23c77c1e7bf1a5560bee0}{00444}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a1ee954d83cc23c77c1e7bf1a5560bee0}{Eng::Base::setSpecialCallback}}(\textcolor{keywordtype}{void}\ (*func)(\textcolor{keywordtype}{int}\ key,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y))\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00445}00445\ \ \ \ \ glutSpecialFunc(func);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00446}00446\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00447}00447\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00455}\mbox{\hyperlink{class_eng_1_1_base_acb6d8612415080db042947905a9c31c1}{00455}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_acb6d8612415080db042947905a9c31c1}{Eng::Base::setBackgroundColor}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ a)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00456}00456\ \ \ \ \ bgR\ =\ r;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00457}00457\ \ \ \ \ bgG\ =\ g;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00458}00458\ \ \ \ \ bgB\ =\ b;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00459}00459\ \ \ \ \ bgA\ =\ a;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00460}00460\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00461}00461\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00466}\mbox{\hyperlink{class_eng_1_1_base_a79b89e39c92917ebc0017427a1505e30}{00466}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a79b89e39c92917ebc0017427a1505e30}{Eng::Base::setWindowResizeHandler}}(\textcolor{keywordtype}{void}(*func)(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int}))}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00467}00467\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00468}00468\ \ \ \ \ glutReshapeFunc(func);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00469}00469\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00470}00470\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00475}\mbox{\hyperlink{class_eng_1_1_base_a9a5818b1d0a0190631115ee2b5fa36a6}{00475}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_eng_1_1_base_a9a5818b1d0a0190631115ee2b5fa36a6}{Eng::Base::isRunning}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00476}00476\ \ \ \ \ \textcolor{keywordflow}{return}\ mainLoopRunning;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00477}00477\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00482}\mbox{\hyperlink{class_eng_1_1_base_ad8d5485a8642815afca82af3bcc16507}{00482}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_ad8d5485a8642815afca82af3bcc16507}{Eng::Base::clearWindow}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00483}00483\ \ \ \ \ \textcolor{comment}{//\ RGBA\ components}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00484}00484\ \ \ \ \ glClearColor(bgR,\ bgG,\ bgB,\ bgA);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00485}00485\ \ \ \ \ \textcolor{keywordflow}{if}\ (useZBuffer)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT\ |\ GL\_DEPTH\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00487}00487\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00488}00488\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ glClear(GL\_COLOR\_BUFFER\_BIT);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00490}00490\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00491}00491\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00492}00492\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00496}\mbox{\hyperlink{class_eng_1_1_base_aad15cd6c7c134bedb57f3a6438f14af3}{00496}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_aad15cd6c7c134bedb57f3a6438f14af3}{Eng::Base::swapBuffers}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00497}00497\ \ \ \ \ glutSwapBuffers();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00498}00498\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00499}00499\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00504}\mbox{\hyperlink{class_eng_1_1_base_a134ea21e555922464497c88f63d5f66d}{00504}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a134ea21e555922464497c88f63d5f66d}{Eng::Base::setZBufferUsage}}(\textcolor{keywordtype}{bool}\ status)\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00505}00505\ \ \ \ \ useZBuffer\ =\ status;}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00506}00506\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00507}00507\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00511}\mbox{\hyperlink{class_eng_1_1_base_a8ebf1e6cb3da56fc18640d160136536d}{00511}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a8ebf1e6cb3da56fc18640d160136536d}{Eng::Base::start}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00512}00512\ \ \ \ \ mainLoopRunning\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00513}00513\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00518}\mbox{\hyperlink{class_eng_1_1_base_a3bb8e344a6ae349b1a8004dc96dfe8fa}{00518}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a3bb8e344a6ae349b1a8004dc96dfe8fa}{Eng::Base::postWindowRedisplay}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00519}00519\ \ \ \ \ \textcolor{comment}{//\ Force\ rendering\ refresh}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00520}00520\ \ \ \ \ glutPostWindowRedisplay(windowId);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00521}00521\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00527}00527\ \textcolor{keywordtype}{void}\ Eng::Base::execZBufferSetup()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00528}00528\ \ \ \ \ glEnable(GL\_DEPTH\_TEST);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00529}00529\ \ \ \ \ glClearDepth(1.0f);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00530}00530\ \ \ \ \ glDepthFunc(GL\_LESS);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00531}00531\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00532}00532\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00534}00534\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00537}\mbox{\hyperlink{class_eng_1_1_base_abf576aaed1567dca950265659304da81}{00537}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_abf576aaed1567dca950265659304da81}{Eng::Base::update}}()\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00538}00538\ \ \ \ \ glutMainLoopEvent();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00539}00539\ \}}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00544}\mbox{\hyperlink{class_eng_1_1_base_a0bae43de6e7dea90feac7205a70f0076}{00544}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_base_a0bae43de6e7dea90feac7205a70f0076}{Eng::Base::refreshAndSwapBuffers}}()}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00545}00545\ \{}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00546}00546\ \ \ \ \ glutPostWindowRedisplay(windowId);}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00547}00547\ \ \ \ \ glutSwapBuffers();}
+\DoxyCodeLine{\Hypertarget{engine_8cpp_source_l00548}00548\ \}}
+
+\end{DoxyCode}

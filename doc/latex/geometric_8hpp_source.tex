@@ -1,0 +1,50 @@
+\doxysection{geometric.\+hpp}
+\hypertarget{geometric_8hpp_source}{}\label{geometric_8hpp_source}\index{dependencies/glm/include/glm/geometric.hpp@{dependencies/glm/include/glm/geometric.hpp}}
+\mbox{\hyperlink{geometric_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type__vec3_8hpp}{detail/type\_vec3.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00017}00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00030}00030\ \ \ \ \ GLM\_FUNC\_DECL\ T\ length(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00040}00040\ \ \ \ \ GLM\_FUNC\_DECL\ T\ distance(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ p0,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ p1);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00050}00050\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ T\ dot(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00059}00059\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<3,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__geometric_ga1882f52ee88a161ed86dea9905a6da91}{cross}}(vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00070}00070\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__geometric_ga5c6c1379961d4589035a390856f2d66c}{normalize}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00080}00080\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ faceforward(}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ N,}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ I,}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Nref);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00094}00094\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ reflect(}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ I,}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00096}00096\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ N);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00107}00107\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00108}00108\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ refract(}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ I,}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ N,}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ T\ eta);}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00114}00114\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{geometric_8hpp_source_l00116}00116\ \textcolor{preprocessor}{\#include\ "{}detail/func\_geometric.inl"{}}}
+
+\end{DoxyCode}

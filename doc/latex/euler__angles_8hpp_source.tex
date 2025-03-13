@@ -1,0 +1,241 @@
+\doxysection{euler\+\_\+angles.\+hpp}
+\hypertarget{euler__angles_8hpp_source}{}\label{euler__angles_8hpp_source}\index{dependencies/glm/include/glm/gtx/euler\_angles.hpp@{dependencies/glm/include/glm/gtx/euler\_angles.hpp}}
+\mbox{\hyperlink{euler__angles_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00018}00018\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{glm_8hpp}{../glm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_euler\_angles\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_euler\_angles\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00025}00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00027}00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00035}00035\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga6ddd62c69c42f6e0fb22260c59e11764}{eulerAngleX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleX);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00041}00041\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga0a88d64e714bb232fd6a3722f17751a3}{eulerAngleY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleY);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00047}00047\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga8466b03295c03fe68d012b19373e1935}{eulerAngleZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleZ);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00053}00053\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gadd3e9cdc380b20bc36ec98ac3c56e9e5}{derivedEulerAngleX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ angleX,\ T\ \textcolor{keyword}{const}\ \&\ angularVelocityX);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00059}00059\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga3b075c479274a16e2614eef3c550e8ec}{derivedEulerAngleY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ angleY,\ T\ \textcolor{keyword}{const}\ \&\ angularVelocityY);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00065}00065\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gadeaadd11e26da6de2cdf60b967bf86d9}{derivedEulerAngleZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ angleZ,\ T\ \textcolor{keyword}{const}\ \&\ angularVelocityZ);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00071}00071\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga215b970822b20b63611e0ad4f61e4afd}{eulerAngleXY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleX,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00073}00073\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleY);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00078}00078\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gaebd29b1894276d6632fc299bbe7f081e}{eulerAngleYX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleY,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00080}00080\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleX);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00084}00084\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00085}00085\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gaae63ce27584867e3f9d8889631060846}{eulerAngleXZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00086}00086\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleX,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00087}00087\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleZ);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00092}00092\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gaf7edd0bc96e86e0cf78a5369dbad1514}{eulerAngleZX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angle,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleX);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00099}00099\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga3d58cfed58182afcf60a1bb54e9adb8e}{eulerAngleYZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00100}00100\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleY,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00101}00101\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleZ);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00106}00106\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gad9660d363649bd15ae8b24e04bea8a1a}{eulerAngleZY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleZ,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ angleY);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00113}00113\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga45b31c18b6459f6f0946f3fdd6af41af}{eulerAngleXYZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00120}00120\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00121}00121\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga3f6cc50ed7cea176ec4ef73a88d19b30}{eulerAngleYXZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ yaw,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ pitch,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ roll);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00128}00128\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00129}00129\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gae938f6896c15f5df1c2f042f60dd0337}{eulerAngleXZX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00130}00130\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00131}00131\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00132}00132\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00136}00136\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00137}00137\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga539cca54c48ac87c1d47da4ef708bb48}{eulerAngleXYX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00138}00138\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00139}00139\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00140}00140\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00144}00144\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00145}00145\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga44844028683298b23f65c82501c171c9}{eulerAngleYXY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00147}00147\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00152}00152\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00153}00153\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga5c0cb5d7b3c0ea1b908b63682b6b58d4}{eulerAngleYZY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00160}00160\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00161}00161\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga5824c8c72d7092aec88d3ab741802bdf}{eulerAngleZYZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00162}00162\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00163}00163\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00164}00164\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00168}00168\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00169}00169\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gab72fd85973e419db4230e14fcc64e4a5}{eulerAngleZXZ}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00170}00170\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00171}00171\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00172}00172\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00176}00176\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00177}00177\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_ga6150d65975f440c7027f19c255884d9b}{eulerAngleXZY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00178}00178\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00179}00179\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00180}00180\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00184}00184\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00185}00185\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gac85e15f08046feefcf2c609e453c32a5}{eulerAngleYZX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00186}00186\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00187}00187\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00188}00188\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00192}00192\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00193}00193\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gab1fdbd50b5477074bc04fac99728ac9e}{eulerAngleZYX}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00194}00194\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00195}00195\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00196}00196\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00200}00200\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00201}00201\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gac2a9506c526671e93f3c01c437f20c42}{eulerAngleZXY}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00202}00202\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00203}00203\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00204}00204\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00208}00208\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00209}00209\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gaf9483e883509aad2888188699f9c63ed}{yawPitchRoll}}(}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00210}00210\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ yaw,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00211}00211\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ pitch,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00212}00212\ \ \ \ \ \ \ \ \ T\ \textcolor{keyword}{const}\&\ roll);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00216}00216\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00217}00217\ \ \ \ \ GLM\_FUNC\_DECL\ mat<2,\ 2,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gad7884bdb6fc591ad8c7080c112121b7d}{orientate2}}(T\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00221}00221\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00222}00222\ \ \ \ \ GLM\_FUNC\_DECL\ mat<3,\ 3,\ T,\ defaultp>\ \mbox{\hyperlink{group__gtx__euler__angles_gad93945eb388f8647269adc60b7a9731c}{orientate3}}(T\ \textcolor{keyword}{const}\&\ angle);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00226}00226\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00227}00227\ \ \ \ \ GLM\_FUNC\_DECL\ mat<3,\ 3,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__euler__angles_gad93945eb388f8647269adc60b7a9731c}{orientate3}}(vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angles);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00228}00228\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00231}00231\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00232}00232\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__euler__angles_gaf833e7060d90ba20ae9b54e9d8cd7aad}{orientate4}}(vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ angles);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00236}00236\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00237}00237\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_ga866e1524edc5daaeee54cc9e11ec892e}{extractEulerAngleXYZ}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00244}00244\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00245}00245\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_ga8dd77fb7274dd8916a98749b8ccb033a}{extractEulerAngleYXZ}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00252}00252\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00253}00253\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_gaf58030785bc2cde1dcd95a04d50d64ff}{extractEulerAngleXZX}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00257}00257\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00260}00260\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00261}00261\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_gadec3152f46d46dcd32974f0a2c0a7735}{extractEulerAngleXYX}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00268}00268\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00269}00269\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_gae14dd2c752ed179325171f45f464c6d7}{extractEulerAngleYXY}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00276}00276\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00277}00277\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_gabe88a80471a85be2561430194009393a}{extractEulerAngleYZY}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00284}00284\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00285}00285\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_ga6009526e30e85db3a40a2bb63b6c9442}{extractEulerAngleZYZ}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00292}00292\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00293}00293\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_ga698604d09198fa41207abc7f1a6ae6c1}{extractEulerAngleZXZ}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00300}00300\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00301}00301\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_gaffe92a3c19724f523678cb67144fd569}{extractEulerAngleXZY}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00308}00308\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00309}00309\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_gadb39c3a164364100eff69e7db2a3269d}{extractEulerAngleYZX}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00316}00316\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00317}00317\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_ga25c33ad5744c43d9601dc1c44a4b2696}{extractEulerAngleZYX}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00324}00324\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00325}00325\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__euler__angles_ga5ed7760c1140ff8ff8f8c444b8bb0612}{extractEulerAngleZXY}}(mat<4,\ 4,\ T,\ defaultp>\ \textcolor{keyword}{const}\ \&\ M,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t1,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t2,}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ T\ \&\ t3);}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00331}00331\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00332}00332\ }
+\DoxyCodeLine{\Hypertarget{euler__angles_8hpp_source_l00333}00333\ \textcolor{preprocessor}{\#include\ "{}euler\_angles.inl"{}}}
+
+\end{DoxyCode}

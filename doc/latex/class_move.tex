@@ -1,0 +1,258 @@
+\doxysection{Move Class Reference}
+\hypertarget{class_move}{}\label{class_move}\index{Move@{Move}}
+
+
+\doxylink{class_move}{Move} class.  
+
+
+
+
+{\ttfamily \#include $<$move.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_aa4007170f27a5ebd9752d5d29430974d}{Move}} (\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}moved\+Piece)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_move_a4b130addcb63c2c56b88d8d4bf17cc44}{get\+Moved\+Piece}} () const
+\begin{DoxyCompactList}\small\item\em Get the moved piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_move_ac91390159c85c4973e718a93ee2e5045}{get\+Start\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Get the start row. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_move_ae47faf83bfacb75daee960097b744937}{get\+Start\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Get the start column. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_move_a80c98aae55b879a0223243cb4e298502}{get\+End\+Row}} () const
+\begin{DoxyCompactList}\small\item\em Get the end row. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_move_a84e0f30a0a97586821e2ad2e10d65fad}{get\+End\+Col}} () const
+\begin{DoxyCompactList}\small\item\em Get the end column. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_move_a4fc2453623b698a56acb10112d1e5a0c}{get\+Is\+Eliminated}} () const
+\begin{DoxyCompactList}\small\item\em Get whether the piece was eliminated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_move_a53b0039c8275470f3ec96a2fa85569b0}{get\+Start\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the start transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_move_a0efcae59abb620af134d1c95986ded49}{get\+End\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the end transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_move_a163c8e71de2fbc6b0b940cab2ef6a07b}{set\+End\+Position}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em Set the end position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_move_a3df62af72715ec01c05411addace9413}{set\+Eliminated}} (bool eliminated)
+\begin{DoxyCompactList}\small\item\em Set whether the piece was eliminated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_move}{Move} class. 
+
+The \doxylink{class_move}{Move} class represents a move made on the chessboard, storing the piece moved, the start and end positions, and whether the piece was captured. 
+
+Definition at line \mbox{\hyperlink{move_8h_source_l00030}{30}} of file \mbox{\hyperlink{move_8h_source}{move.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_move_aa4007170f27a5ebd9752d5d29430974d}\index{Move@{Move}!Move@{Move}}
+\index{Move@{Move}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_move_aa4007170f27a5ebd9752d5d29430974d} 
+Move\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*}}]{moved\+Piece}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Initializes a move with the given piece.
+
+
+\begin{DoxyParams}{Parameters}
+{\em moved\+Piece} & The piece that was moved. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_move_a84e0f30a0a97586821e2ad2e10d65fad}\index{Move@{Move}!getEndCol@{getEndCol}}
+\index{getEndCol@{getEndCol}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getEndCol()}{getEndCol()}}
+{\footnotesize\ttfamily \label{class_move_a84e0f30a0a97586821e2ad2e10d65fad} 
+int Move\+::get\+End\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the end column. 
+
+\begin{DoxyReturn}{Returns}
+The ending column of the move. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_a80c98aae55b879a0223243cb4e298502}\index{Move@{Move}!getEndRow@{getEndRow}}
+\index{getEndRow@{getEndRow}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getEndRow()}{getEndRow()}}
+{\footnotesize\ttfamily \label{class_move_a80c98aae55b879a0223243cb4e298502} 
+int Move\+::get\+End\+Row (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the end row. 
+
+\begin{DoxyReturn}{Returns}
+The ending row of the move. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_a0efcae59abb620af134d1c95986ded49}\index{Move@{Move}!getEndTransform@{getEndTransform}}
+\index{getEndTransform@{getEndTransform}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getEndTransform()}{getEndTransform()}}
+{\footnotesize\ttfamily \label{class_move_a0efcae59abb620af134d1c95986ded49} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} Move\+::get\+End\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the end transform. 
+
+\begin{DoxyReturn}{Returns}
+The ending transform matrix of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00129}{129}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_a4fc2453623b698a56acb10112d1e5a0c}\index{Move@{Move}!getIsEliminated@{getIsEliminated}}
+\index{getIsEliminated@{getIsEliminated}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getIsEliminated()}{getIsEliminated()}}
+{\footnotesize\ttfamily \label{class_move_a4fc2453623b698a56acb10112d1e5a0c} 
+bool Move\+::get\+Is\+Eliminated (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get whether the piece was eliminated. 
+
+\begin{DoxyReturn}{Returns}
+True if the piece was captured, false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_a4b130addcb63c2c56b88d8d4bf17cc44}\index{Move@{Move}!getMovedPiece@{getMovedPiece}}
+\index{getMovedPiece@{getMovedPiece}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getMovedPiece()}{getMovedPiece()}}
+{\footnotesize\ttfamily \label{class_move_a4b130addcb63c2c56b88d8d4bf17cc44} 
+\mbox{\hyperlink{class_piece}{Piece}} \texorpdfstring{$\ast$}{*} Move\+::get\+Moved\+Piece (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the moved piece. 
+
+\begin{DoxyReturn}{Returns}
+The piece that was moved. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_ae47faf83bfacb75daee960097b744937}\index{Move@{Move}!getStartCol@{getStartCol}}
+\index{getStartCol@{getStartCol}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getStartCol()}{getStartCol()}}
+{\footnotesize\ttfamily \label{class_move_ae47faf83bfacb75daee960097b744937} 
+int Move\+::get\+Start\+Col (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the start column. 
+
+\begin{DoxyReturn}{Returns}
+The starting column of the move. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_ac91390159c85c4973e718a93ee2e5045}\index{Move@{Move}!getStartRow@{getStartRow}}
+\index{getStartRow@{getStartRow}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getStartRow()}{getStartRow()}}
+{\footnotesize\ttfamily \label{class_move_ac91390159c85c4973e718a93ee2e5045} 
+int Move\+::get\+Start\+Row (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the start row. 
+
+\begin{DoxyReturn}{Returns}
+The starting row of the move. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_a53b0039c8275470f3ec96a2fa85569b0}\index{Move@{Move}!getStartTransform@{getStartTransform}}
+\index{getStartTransform@{getStartTransform}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{getStartTransform()}{getStartTransform()}}
+{\footnotesize\ttfamily \label{class_move_a53b0039c8275470f3ec96a2fa85569b0} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} Move\+::get\+Start\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the start transform. 
+
+\begin{DoxyReturn}{Returns}
+The starting transform matrix of the piece. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_a3df62af72715ec01c05411addace9413}\index{Move@{Move}!setEliminated@{setEliminated}}
+\index{setEliminated@{setEliminated}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{setEliminated()}{setEliminated()}}
+{\footnotesize\ttfamily \label{class_move_a3df62af72715ec01c05411addace9413} 
+void Move\+::set\+Eliminated (\begin{DoxyParamCaption}\item[{bool}]{eliminated}{}\end{DoxyParamCaption})}
+
+
+
+Set whether the piece was eliminated. 
+
+Sets whether the piece was captured.
+
+
+\begin{DoxyParams}{Parameters}
+{\em eliminated} & True if the piece was captured, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+\Hypertarget{class_move_a163c8e71de2fbc6b0b940cab2ef6a07b}\index{Move@{Move}!setEndPosition@{setEndPosition}}
+\index{setEndPosition@{setEndPosition}!Move@{Move}}
+\doxysubsubsection{\texorpdfstring{setEndPosition()}{setEndPosition()}}
+{\footnotesize\ttfamily \label{class_move_a163c8e71de2fbc6b0b940cab2ef6a07b} 
+void Move\+::set\+End\+Position (\begin{DoxyParamCaption}\item[{int}]{row}{, }\item[{int}]{col}{}\end{DoxyParamCaption})}
+
+
+
+Set the end position. 
+
+Sets the ending position of the move.
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The ending row of the move. \\
+\hline
+{\em col} & The ending column of the move. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{move_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{move_8cpp_source}{move.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+client/\mbox{\hyperlink{move_8h}{move.\+h}}\item 
+client/\mbox{\hyperlink{move_8cpp}{move.\+cpp}}\end{DoxyCompactItemize}

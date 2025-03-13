@@ -1,0 +1,157 @@
+\doxysection{common.\+hpp}
+\hypertarget{common_8hpp_source}{}\label{common_8hpp_source}\index{dependencies/glm/include/glm/common.hpp@{dependencies/glm/include/glm/common.hpp}}
+\mbox{\hyperlink{common_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}detail/\_fixes.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00020}\mbox{\hyperlink{namespaceglm}{00020}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00032}\mbox{\hyperlink{group__core__func__common_ga439e60a72eadecfeda2df5449c613a64}{00032}}\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ genType\ \mbox{\hyperlink{group__core__func__common_ga439e60a72eadecfeda2df5449c613a64}{abs}}(genType\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00043}00043\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga439e60a72eadecfeda2df5449c613a64}{abs}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00054}00054\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga53d6ba17a541c5d5b451e5de287d8baa}{sign}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00065}00065\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_gac433646923ab80af6d9964f1570855d5}{floor}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00077}00077\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga3147679b4cd5f249c74f03906c2eb4d1}{trunc}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00092}00092\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_gaa81940d45558cd2ae07fe135e653bcfa}{round}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00106}00106\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga5e8e73db4ae54bae5292dbd8bd14e75c}{roundEven}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00117}00117\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00118}00118\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga7a508730e49e5cec65af435d92ee4baf}{ceil}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00127}00127\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__core__func__common_ga8ba89e40e55ae5cdf228548f9b7639c7}{fract}}(genType\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00138}00138\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga8ba89e40e55ae5cdf228548f9b7639c7}{fract}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00140}00140\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00141}00141\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ mod(genType\ x,\ genType\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00143}00143\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00144}00144\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ mod(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ T\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00155}00155\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00156}00156\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ mod(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00167}00167\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00168}00168\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__core__func__common_ga85e33f139b8db1b39b590a5713b9e679}{modf}}(genType\ x,\ genType\&\ i);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00176}00176\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00177}00177\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ genType\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(genType\ x,\ genType\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00187}00187\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00188}00188\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ T\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00198}00198\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00199}00199\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00207}00207\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00208}00208\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ genType\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(genType\ x,\ genType\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00218}00218\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00219}00219\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ T\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00229}00229\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00230}00230\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00239}00239\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00240}00240\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ genType\ \mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(genType\ x,\ genType\ minVal,\ genType\ maxVal);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00251}00251\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00252}00252\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ T\ minVal,\ T\ maxVal);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00263}00263\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00264}00264\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ minVal,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ maxVal);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00308}00308\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genTypeT,\ \textcolor{keyword}{typename}\ genTypeU>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00309}00309\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ genTypeT\ \mbox{\hyperlink{group__core__func__common_ga6b6e0c7ecb4a5b78f929566355bb7416}{mix}}(genTypeT\ x,\ genTypeT\ y,\ genTypeU\ a);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00310}00310\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00311}00311\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00312}00312\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga6b6e0c7ecb4a5b78f929566355bb7416}{mix}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ a);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00314}00314\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00315}00315\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga6b6e0c7ecb4a5b78f929566355bb7416}{mix}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ y,\ U\ a);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00321}00321\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00322}00322\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ step(genType\ edge,\ genType\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00332}00332\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00333}00333\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ step(T\ edge,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00343}00343\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00344}00344\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ step(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ edge,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00360}00360\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00361}00361\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__core__func__common_ga562edf7eca082cc5b7a0aaf180436daf}{smoothstep}}(genType\ edge0,\ genType\ edge1,\ genType\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00363}00363\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00364}00364\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga562edf7eca082cc5b7a0aaf180436daf}{smoothstep}}(T\ edge0,\ T\ edge1,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00366}00366\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00367}00367\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga562edf7eca082cc5b7a0aaf180436daf}{smoothstep}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ edge0,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ edge1,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00383}00383\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00384}00384\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga81f85e3c56f1f559034422b357c37e21}{isnan}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00385}00385\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00398}00398\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00399}00399\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga6dfda49bcedffb43ffe5d85307d732fa}{isinf}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00407}00407\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__core__func__common_gaa1d88c3add475fa8f3a5163e19c6baf8}{floatBitsToInt}}(\textcolor{keywordtype}{float}\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00418}00418\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00419}00419\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_gaa1d88c3add475fa8f3a5163e19c6baf8}{floatBitsToInt}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ float,\ Q>}}\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00420}00420\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00427}00427\ \ \ \ \ GLM\_FUNC\_DECL\ uint\ \mbox{\hyperlink{group__core__func__common_ga1b01fa18fd2b3450f18ff43f98dfbe8b}{floatBitsToUint}}(\textcolor{keywordtype}{float}\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00438}00438\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00439}00439\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ uint,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga1b01fa18fd2b3450f18ff43f98dfbe8b}{floatBitsToUint}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ float,\ Q>}}\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00440}00440\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00449}00449\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__core__func__common_ga5b7b33f0eb5a41f3bf47003bbbdc5128}{intBitsToFloat}}(\textcolor{keywordtype}{int}\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00450}00450\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00462}00462\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00463}00463\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ float,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga5b7b33f0eb5a41f3bf47003bbbdc5128}{intBitsToFloat}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00464}00464\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00473}00473\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group__core__func__common_ga774bbb16abffb1644dea6a4cf0f08dac}{uintBitsToFloat}}(uint\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00486}00486\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00487}00487\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ float,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_ga774bbb16abffb1644dea6a4cf0f08dac}{uintBitsToFloat}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ uint,\ Q>}}\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00495}00495\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00496}00496\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__core__func__common_gad0f444d4b81cc53c3b6edf5aa25078c2}{fma}}(genType\ \textcolor{keyword}{const}\&\ a,\ genType\ \textcolor{keyword}{const}\&\ b,\ genType\ \textcolor{keyword}{const}\&\ c);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00497}00497\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00512}00512\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00513}00513\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__core__func__common_gaddf5ef73283c171730e0bcc11833fa81}{frexp}}(genType\ x,\ \textcolor{keywordtype}{int}\&\ exp);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00514}00514\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00515}00515\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00516}00516\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_gaddf5ef73283c171730e0bcc11833fa81}{frexp}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\&\ exp);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00517}00517\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00529}00529\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00530}00530\ \ \ \ \ GLM\_FUNC\_DECL\ genType\ \mbox{\hyperlink{group__core__func__common_gac3010e0a0c35a1b514540f2fb579c58c}{ldexp}}(genType\ \textcolor{keyword}{const}\&\ x,\ \textcolor{keywordtype}{int}\ \textcolor{keyword}{const}\&\ exp);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00531}00531\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00532}00532\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00533}00533\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \mbox{\hyperlink{group__core__func__common_gac3010e0a0c35a1b514540f2fb579c58c}{ldexp}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\ \textcolor{keyword}{const}\&\ exp);}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00534}00534\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00536}00536\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00537}00537\ }
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00538}00538\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{func__common_8inl}{detail/func\_common.inl}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8hpp_source_l00539}00539\ }
+
+\end{DoxyCode}

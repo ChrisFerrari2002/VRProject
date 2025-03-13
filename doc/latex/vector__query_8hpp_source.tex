@@ -1,0 +1,45 @@
+\doxysection{vector\+\_\+query.\+hpp}
+\hypertarget{vector__query_8hpp_source}{}\label{vector__query_8hpp_source}\index{dependencies/glm/include/glm/gtx/vector\_query.hpp@{dependencies/glm/include/glm/gtx/vector\_query.hpp}}
+\mbox{\hyperlink{vector__query_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00015}00015\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{glm_8hpp}{../glm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <cfloat>}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_vector\_query\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_vector\_query\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00026}00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00034}00034\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__vector__query_ga13da4a787a2ff70e95d561fb19ff91b4}{areCollinear}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v0,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v1,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00039}00039\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__vector__query_gac7b95b3f798e3c293262b2bdaad47c57}{areOrthogonal}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v0,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v1,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00044}00044\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_gae785af56f47ce220a1609f7f84aa077a}{isNormalized}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00049}00049\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__matrix__query_ga9790ec222ce948c0ff0d8ce927340dba}{isNull}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00054}00054\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ bool,\ Q>\ \mbox{\hyperlink{group__gtx__vector__query_gaeb0122462e1f1396b28fed4c78ada959}{isCompNull}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00059}00059\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__vector__query_ga1b091c3d7f9ee3b0708311c001c293e3}{areOrthonormal}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v0,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v1,\ T\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00062}00062\ \}\textcolor{comment}{//\ namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{vector__query_8hpp_source_l00064}00064\ \textcolor{preprocessor}{\#include\ "{}vector\_query.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,59 @@
+\doxysection{scalar\+\_\+uint\+\_\+sized.\+hpp}
+\hypertarget{scalar__uint__sized_8hpp_source}{}\label{scalar__uint__sized_8hpp_source}\index{dependencies/glm/include/glm/ext/scalar\_uint\_sized.hpp@{dependencies/glm/include/glm/ext/scalar\_uint\_sized.hpp}}
+\mbox{\hyperlink{scalar__uint__sized_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00013}00013\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_scalar\_uint\_sized\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00021}00021\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00022}00022\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#\ \ \ if\ GLM\_HAS\_EXTENDED\_INTEGER\_TYPE}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::uint8\_t\ \ \ \ \ \ \ \ uint8;}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::uint16\_t\ \ \ \ \ \ \ uint16;}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ std::uint32\_t\ \ \ \ \ \ \ uint32;}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00028}00028\ \textcolor{preprocessor}{\#\ \ \ else}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ uint8;}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \ \ \ \ \ uint16;}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ uint32;}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00032}00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00035}\mbox{\hyperlink{structglm_1_1detail_1_1is__int_3_01uint8_01_4}{00035}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1is__int}{is\_int}}<uint8>}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ test\ \{value\ =\ \string~0\};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00038}00038\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00041}\mbox{\hyperlink{structglm_1_1detail_1_1is__int_3_01uint16_01_4}{00041}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1is__int}{is\_int}}<uint16>}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ test\ \{value\ =\ \string~0\};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00044}00044\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{template}<>}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00047}\mbox{\hyperlink{structglm_1_1detail_1_1is__int_3_01uint64_01_4}{00047}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1is__int}{is\_int}}<uint64>}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ test\ \{value\ =\ \string~0\};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00050}00050\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00051}00051\ \}\textcolor{comment}{//namespace\ detail}}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00058}\mbox{\hyperlink{group__ext__scalar__uint__sized_ga536143d82147bb78849bfccffece8bff}{00058}}\ \ \ \ \ \textcolor{keyword}{typedef}\ detail::uint8\ \ \ \ \ \ \ \mbox{\hyperlink{group__ext__scalar__uint__sized_ga536143d82147bb78849bfccffece8bff}{uint8}};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00061}\mbox{\hyperlink{group__ext__scalar__uint__sized_ga6201f5c504a50620708b19bae303c32a}{00061}}\ \ \ \ \ \textcolor{keyword}{typedef}\ detail::uint16\ \ \ \ \ \ \mbox{\hyperlink{group__ext__scalar__uint__sized_ga6201f5c504a50620708b19bae303c32a}{uint16}};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00064}\mbox{\hyperlink{group__ext__scalar__uint__sized_ga22033ef3f73efe1da8e437410adda3be}{00064}}\ \ \ \ \ \textcolor{keyword}{typedef}\ detail::uint32\ \ \ \ \ \ \mbox{\hyperlink{group__ext__scalar__uint__sized_ga22033ef3f73efe1da8e437410adda3be}{uint32}};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00067}\mbox{\hyperlink{group__ext__scalar__uint__sized_gae3632bf9b37da66233d78930dd06378a}{00067}}\ \ \ \ \ \textcolor{keyword}{typedef}\ detail::uint64\ \ \ \ \ \ \mbox{\hyperlink{group__ext__scalar__uint__sized_gae3632bf9b37da66233d78930dd06378a}{uint64}};}
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{scalar__uint__sized_8hpp_source_l00070}00070\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

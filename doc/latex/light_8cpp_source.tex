@@ -1,0 +1,93 @@
+\doxysection{light.\+cpp}
+\hypertarget{light_8cpp_source}{}\label{light_8cpp_source}\index{engine/light.cpp@{engine/light.cpp}}
+\mbox{\hyperlink{light_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00035}\mbox{\hyperlink{class_eng_1_1_light_a5b4d58e301209664d4c38b3138cd5178}{00035}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a5b4d58e301209664d4c38b3138cd5178}{Eng::Light::Light}}(\textcolor{keyword}{const}\ std::string\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ lightNumber,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ambient,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ diffuse,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ specular)\ :\ \mbox{\hyperlink{class_eng_1_1_node}{Node}}(name)\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00036}00036\ \ \ \ \ this-\/>lightNumber\ =\ lightNumber;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00037}00037\ \ \ \ \ this-\/>ambient\ =\ ambient;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00038}00038\ \ \ \ \ this-\/>diffuse\ =\ diffuse;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00039}00039\ \ \ \ \ this-\/>specular\ =\ specular;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00040}00040\ \ \ \ \ glEnable(GL\_LIGHTING);}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00041}00041\ \ \ \ \ glEnable(lightNumber);}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00042}00042\ \ \ \ \ glLightModelf(GL\_LIGHT\_MODEL\_LOCAL\_VIEWER,\ 1.0f);}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00050}\mbox{\hyperlink{class_eng_1_1_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{00050}}\ \mbox{\hyperlink{class_eng_1_1_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{Eng::Light::\string~Light}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00051}00051\ \ \ \ \ Light::nextNumber-\/-\/;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00057}\mbox{\hyperlink{class_eng_1_1_light_aa0cc18ee7ed2722617d1973459b53ca7}{00057}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_light_aa0cc18ee7ed2722617d1973459b53ca7}{Eng::Light::setPosition}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ finalMatrix\ =\ getFinalMatrix();}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ finalPosition\ =\ finalMatrix[3];}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00060}00060\ \ \ \ \ position\ =\ finalPosition;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00061}00061\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00068}\mbox{\hyperlink{class_eng_1_1_light_a82c472b53db9159bf2473bd84960bece}{00068}}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a82c472b53db9159bf2473bd84960bece}{Eng::Light::getPosition}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ position;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00079}\mbox{\hyperlink{class_eng_1_1_light_a3bebe6d4a236e88b52721a7e896bd938}{00079}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a3bebe6d4a236e88b52721a7e896bd938}{Eng::Light::setTransform}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform)\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node_a0046f89439ceffffae05ab6144827337}{Node::setTransform}}(transform);}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00082}00082\ \ \ \ \ setPosition();}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00083}00083\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00085}00085\ \textcolor{keywordtype}{int}\ Eng::Light::nextNumber\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00094}\mbox{\hyperlink{class_eng_1_1_light_aa4140a85ffb1f9827bd4e3a9c65eeb49}{00094}}\ \textcolor{keywordtype}{int}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_aa4140a85ffb1f9827bd4e3a9c65eeb49}{Eng::Light::getNextLightNumber}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{return}\ GL\_LIGHT0\ +\ Light::nextNumber++;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00103}\mbox{\hyperlink{class_eng_1_1_light_a7f659b7e2d8e59ea62ca3023dc7a0e30}{00103}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_eng_1_1_light_a7f659b7e2d8e59ea62ca3023dc7a0e30}{Eng::Light::getLightNumber}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ lightNumber;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00112}\mbox{\hyperlink{class_eng_1_1_light_a774e8e2c460e0785f8e40b753b7e0042}{00112}}\ \textcolor{keywordtype}{float}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a774e8e2c460e0785f8e40b753b7e0042}{Eng::Light::getConstantAttenuation}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{return}\ constantAttenuation;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00121}\mbox{\hyperlink{class_eng_1_1_light_adc00e1dc6aab137bfb101eaf017827ee}{00121}}\ \textcolor{keywordtype}{float}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_adc00e1dc6aab137bfb101eaf017827ee}{Eng::Light::getLinearAttenuation}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{return}\ linearAttenuation;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00130}\mbox{\hyperlink{class_eng_1_1_light_a9a8d26c1eb03d82b2aae70915a190a79}{00130}}\ \textcolor{keywordtype}{float}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a9a8d26c1eb03d82b2aae70915a190a79}{Eng::Light::getQuadraticAttenuation}}()\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{return}\ quadraticAttenuation;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00139}\mbox{\hyperlink{class_eng_1_1_light_aca4c2a84b40482f6aaf8e90808e39de7}{00139}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_aca4c2a84b40482f6aaf8e90808e39de7}{Eng::Light::setConstantAttenuation}}(\textcolor{keywordtype}{float}\ constantAttenuation)\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00140}00140\ \ \ \ \ this-\/>constantAttenuation\ =\ constantAttenuation;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00148}\mbox{\hyperlink{class_eng_1_1_light_ae52673638e43aedfa61f82d010f54e62}{00148}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_ae52673638e43aedfa61f82d010f54e62}{Eng::Light::setLinearAttenuation}}(\textcolor{keywordtype}{float}\ linearAttenuation)\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00149}00149\ \ \ \ \ this-\/>linearAttenuation\ =\ linearAttenuation;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00157}\mbox{\hyperlink{class_eng_1_1_light_a75988c6e4e1561b20f9df5b1ae81e434}{00157}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a75988c6e4e1561b20f9df5b1ae81e434}{Eng::Light::setQuadraticAttenuation}}(\textcolor{keywordtype}{float}\ quadraticAttenuation)\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00158}00158\ \ \ \ \ this-\/>quadraticAttenuation\ =\ quadraticAttenuation;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00159}00159\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00166}\mbox{\hyperlink{class_eng_1_1_light_a43c82fed9661071c242fdbcde7ea8ec8}{00166}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a43c82fed9661071c242fdbcde7ea8ec8}{Eng::Light::setIntensity}}(\textcolor{keywordtype}{float}\ intensity)\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00167}00167\ \ \ \ \ this-\/>intensity\ =\ intensity;}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00168}00168\ \}}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00179}\mbox{\hyperlink{class_eng_1_1_light_a538a0971c7a5e7bd5253892f74b8b1ef}{00179}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_light_a538a0971c7a5e7bd5253892f74b8b1ef}{Eng::Light::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ matrix,\ \textcolor{keywordtype}{void}*\ ptr)\ \{}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00180}00180\ \ \ \ \ glLoadMatrixf(\mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(matrix\ *\ getFinalMatrix()));}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00182}00182\ \ \ \ \ glLightfv(lightNumber,\ GL\_AMBIENT,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(ambient));}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00183}00183\ \ \ \ \ glLightfv(lightNumber,\ GL\_DIFFUSE,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(diffuse\ *\ intensity));}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00184}00184\ \ \ \ \ glLightfv(lightNumber,\ GL\_SPECULAR,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(specular));}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00186}00186\ \ \ \ \ glLightfv(lightNumber,\ GL\_CONSTANT\_ATTENUATION,\ \&constantAttenuation);}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00187}00187\ \ \ \ \ glLightfv(lightNumber,\ GL\_LINEAR\_ATTENUATION,\ \&linearAttenuation);}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00188}00188\ \ \ \ \ glLightfv(lightNumber,\ GL\_QUADRATIC\_ATTENUATION,\ \&quadraticAttenuation);}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00190}00190\ \ \ \ \ glLightfv(lightNumber,\ GL\_POSITION,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0f,\ 0.0f,\ 0.0f,\ position.w)));}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{light_8cpp_source_l00193}00193\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,80 @@
+\doxysection{integer.\+hpp}
+\hypertarget{integer_8hpp_source}{}\label{integer_8hpp_source}\index{dependencies/glm/include/glm/integer.hpp@{dependencies/glm/include/glm/integer.hpp}}
+\mbox{\hyperlink{integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8hpp}{common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__relational_8hpp}{vector\_relational.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00023}00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00037}00037\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ uint,\ Q>\ uaddCarry(}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \&\ carry);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00051}00051\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ uint,\ Q>\ usubBorrow(}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \&\ borrow);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00065}00065\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ umulExtended(}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \&\ msb,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ vec<L,\ uint,\ Q>\ \&\ lsb);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00080}00080\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ imulExtended(}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ vec<L,\ int,\ Q>\ \textcolor{keyword}{const}\&\ x,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ vec<L,\ int,\ Q>\ \textcolor{keyword}{const}\&\ y,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00083}00083\ \ \ \ \ \ \ \ \ vec<L,\ int,\ Q>\ \&\ msb,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ vec<L,\ int,\ Q>\ \&\ lsb);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00103}00103\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ bitfieldExtract(}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00104}00104\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Value,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Offset,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Bits);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00123}00123\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00124}00124\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ bitfieldInsert(}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Base,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00126}00126\ \ \ \ \ \ \ \ \ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Insert,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Offset,}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ Bits);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00139}00139\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00140}00140\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ bitfieldReverse(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00149}\mbox{\hyperlink{group__core__func__integer_ga44abfe3379e11cbd29425a843420d0d6}{00149}}\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ bitCount(genType\ v);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00159}00159\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\ bitCount(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00169}00169\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00170}00170\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__core__func__integer_gaf74c4d969fa34ab8acb9d390f5ca5274}{findLSB}}(genIUType\ x);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00181}00181\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00182}00182\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\ \mbox{\hyperlink{group__core__func__integer_gaf74c4d969fa34ab8acb9d390f5ca5274}{findLSB}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00193}00193\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00194}00194\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__core__func__integer_ga7e4a794d766861c70bc961630f8ef621}{findMSB}}(genIUType\ x);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00206}00206\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00207}00207\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\ \mbox{\hyperlink{group__core__func__integer_ga7e4a794d766861c70bc961630f8ef621}{findMSB}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ v);}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00210}00210\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{integer_8hpp_source_l00212}00212\ \textcolor{preprocessor}{\#include\ "{}detail/func\_integer.inl"{}}}
+
+\end{DoxyCode}

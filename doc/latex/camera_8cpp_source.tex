@@ -1,0 +1,26 @@
+\doxysection{camera.\+cpp}
+\hypertarget{camera_8cpp_source}{}\label{camera_8cpp_source}\index{engine/camera.cpp@{engine/camera.cpp}}
+\mbox{\hyperlink{camera_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00029}\mbox{\hyperlink{class_eng_1_1_camera_ad1897942d0ccf91052386388a497349f}{00029}}\ \mbox{\hyperlink{class_eng_1_1_camera_ad1897942d0ccf91052386388a497349f}{Eng::Camera::\string~Camera}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00036}\mbox{\hyperlink{class_eng_1_1_camera_a084442e98f9ca362ae8f3edaf2f21ea5}{00036}}\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_camera_a084442e98f9ca362ae8f3edaf2f21ea5}{Eng::Camera::getInverseCameraMat}}()\ \{}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{glm::inverse}}(getTransform());}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00053}\mbox{\hyperlink{class_eng_1_1_camera_a1e681d1be0d660219a1047f17c1f9112}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_camera_a1e681d1be0d660219a1047f17c1f9112}{Eng::Camera::setUserTransform}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z,\ \textcolor{keywordtype}{float}\ rx,\ \textcolor{keywordtype}{float}\ ry,\ \textcolor{keywordtype}{float}\ rz)\ \{}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ t\ =\ \mbox{\hyperlink{group__ext__matrix__transform_gad5bff66dd884b2e004188dd9a9cd590e}{glm::translate}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}(1.0f),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(x,\ y,\ z));}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00055}00055\ \ \ \ \ t\ =\ \mbox{\hyperlink{group__ext__matrix__transform_ga42613eb0c7deb5f5188fc159df6c8950}{glm::rotate}}(t,\ glm::radians(rx),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(1.0f,\ 0.0f,\ 0.0f));}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00056}00056\ \ \ \ \ t\ =\ \mbox{\hyperlink{group__ext__matrix__transform_ga42613eb0c7deb5f5188fc159df6c8950}{glm::rotate}}(t,\ glm::radians(ry),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(0.0f,\ 1.0f,\ 0.0f));}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00057}00057\ \ \ \ \ t\ =\ \mbox{\hyperlink{group__ext__matrix__transform_ga42613eb0c7deb5f5188fc159df6c8950}{glm::rotate}}(t,\ glm::radians(rz),\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec3}}(0.0f,\ 0.0f,\ 1.0f));}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00058}00058\ \ \ \ \ setTransform(t);}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00069}\mbox{\hyperlink{class_eng_1_1_camera_a33175f63fb0b326b6429cade620bf927}{00069}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_camera_a33175f63fb0b326b6429cade620bf927}{Eng::Camera::setTransformCamera}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ viewMatrix)\ \{}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00070}00070\ \ \ \ \ setTransform(viewMatrix);}
+\DoxyCodeLine{\Hypertarget{camera_8cpp_source_l00071}00071\ \}}
+
+\end{DoxyCode}

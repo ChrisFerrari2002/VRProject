@@ -1,0 +1,31 @@
+\doxysection{object.\+cpp}
+\hypertarget{object_8cpp_source}{}\label{object_8cpp_source}\index{engine/object.cpp@{engine/object.cpp}}
+\mbox{\hyperlink{object_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00018}00018\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00022}00022\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_eng_1_1_object_aef73d4aae8379ab0accf5f9077f1b9ff}{Eng::Object::idCounter}}\ =\ 1;\ }
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00029}\mbox{\hyperlink{class_eng_1_1_object_a18bd04a6f1024040a6477fe8517095e6}{00029}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_eng_1_1_object_a18bd04a6f1024040a6477fe8517095e6}{Eng::Object::getId}}()\ \{}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00039}\mbox{\hyperlink{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}{Eng::Object::setId}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ newId)\ \{}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{id}\ =\ newId;}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00048}\mbox{\hyperlink{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0}{00048}}\ std::string\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0}{Eng::Object::getName}}()\ \{}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ name;}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00058}\mbox{\hyperlink{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}{00058}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}{Eng::Object::setName}}(std::string\ newName)\ \{}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00059}00059\ \ \ \ \ name\ =\ newName;}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00067}\mbox{\hyperlink{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}{00067}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}{Eng::Object::getNextId}}()\ \{}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00068}00068\ \ \ \ \ idCounter++;}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ idCounter;}
+\DoxyCodeLine{\Hypertarget{object_8cpp_source_l00070}00070\ \}}
+
+\end{DoxyCode}

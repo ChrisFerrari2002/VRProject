@@ -1,0 +1,53 @@
+\doxysection{matrix\+\_\+relational.\+hpp}
+\hypertarget{matrix__relational_8hpp_source}{}\label{matrix__relational_8hpp_source}\index{dependencies/glm/include/glm/ext/matrix\_relational.hpp@{dependencies/glm/include/glm/ext/matrix\_relational.hpp}}
+\mbox{\hyperlink{matrix__relational_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00017}00017\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}../detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_matrix\_relational\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00024}00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00037}00037\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_gaf539cf490630ba648dfd6e36aef910a1}{equal}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00047}00047\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_ga72957353fbfdfef1eef742d997a5b32a}{notEqual}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00057}00057\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_gaf539cf490630ba648dfd6e36aef910a1}{equal}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ T\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00067}00067\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_gaf539cf490630ba648dfd6e36aef910a1}{equal}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ vec<C,\ T,\ Q>\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00077}00077\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_ga72957353fbfdfef1eef742d997a5b32a}{notEqual}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ T\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00087}00087\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_ga72957353fbfdfef1eef742d997a5b32a}{notEqual}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ vec<C,\ T,\ Q>\ \textcolor{keyword}{const}\&\ epsilon);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00097}00097\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_gaf539cf490630ba648dfd6e36aef910a1}{equal}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ \textcolor{keywordtype}{int}\ ULPs);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00107}00107\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_gaf539cf490630ba648dfd6e36aef910a1}{equal}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ vec<C,\ int,\ Q>\ \textcolor{keyword}{const}\&\ ULPs);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00116}00116\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00117}00117\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_ga72957353fbfdfef1eef742d997a5b32a}{notEqual}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ \textcolor{keywordtype}{int}\ ULPs);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ C,\ length\_t\ R,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00127}00127\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<C,\ bool,\ Q>\ \mbox{\hyperlink{group__core__func__vector__relational_ga72957353fbfdfef1eef742d997a5b32a}{notEqual}}(mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ mat<C,\ R,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ vec<C,\ int,\ Q>\ \textcolor{keyword}{const}\&\ ULPs);}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00130}00130\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{matrix__relational_8hpp_source_l00132}00132\ \textcolor{preprocessor}{\#include\ "{}matrix\_relational.inl"{}}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{mesh.\+h}
+\hypertarget{mesh_8h_source}{}\label{mesh_8h_source}\index{engine/mesh.h@{engine/mesh.h}}
+\mbox{\hyperlink{mesh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ MESH\_H}}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00019}00019\ \textcolor{preprocessor}{\#define\ MESH\_H}}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00024}00024\ \textcolor{comment}{//\ FORWARD\ DECLARATION\ //}}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00030}00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_node}{Node}};}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00037}\mbox{\hyperlink{class_mesh}{00037}}\ \textcolor{keyword}{class\ }ENG\_API\ \mbox{\hyperlink{class_mesh}{Mesh}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}\ \{}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00038}00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00047}\mbox{\hyperlink{class_mesh_ab0ac37fe0509517c9044ec400766256a}{00047}}\ \ \ \ \ \mbox{\hyperlink{class_mesh_ab0ac37fe0509517c9044ec400766256a}{Mesh}}(\textcolor{keyword}{const}\ std::string\ name,\ \mbox{\hyperlink{class_eng_1_1_material}{Eng::Material}}\ material);}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00054}\mbox{\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{00054}}\ \ \ \ \ \mbox{\hyperlink{class_mesh_a5efe4da1a4c0971cfb037bd70304c303}{\string~Mesh}}();}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00064}\mbox{\hyperlink{class_mesh_a3aaf7561254214e0a3dce91bcd715a80}{00064}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_a3aaf7561254214e0a3dce91bcd715a80}{addVertex}}(\mbox{\hyperlink{class_eng_1_1_vertex}{Eng::Vertex}}*\ v,\ \textcolor{keywordtype}{int}\ lod);}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00074}\mbox{\hyperlink{class_mesh_a8bf90e773f1ec3e45fb905404f9bc313}{00074}}\ \ \ \ \ std::vector<Eng::Vertex*>\ \mbox{\hyperlink{class_mesh_a8bf90e773f1ec3e45fb905404f9bc313}{getVertices}}(\textcolor{keywordtype}{int}\ lod);}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00085}\mbox{\hyperlink{class_mesh_a9b2f280cbfa2a8145419e451b850b368}{00085}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mesh_a9b2f280cbfa2a8145419e451b850b368}{render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform,\ \textcolor{keywordtype}{void}*\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00092}\mbox{\hyperlink{class_mesh_aa2b2c79ee4f1db04f0b97844eec1038f}{00092}}\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_material}{Eng::Material}}*\ \mbox{\hyperlink{class_mesh_aa2b2c79ee4f1db04f0b97844eec1038f}{getMaterial}}();}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00102}\mbox{\hyperlink{class_mesh_a9d5a608537bc3867d28ba3b6b1dff312}{00102}}\ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ \mbox{\hyperlink{class_mesh_a9d5a608537bc3867d28ba3b6b1dff312}{getColorBasedOnId}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00104}00104\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00105}\mbox{\hyperlink{class_mesh_a93d7754c2402cba26e522f2be3c0d66c}{00105}}\ \ \ \ \ \textcolor{keywordtype}{int}\ lod\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00107}00107\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_material}{Eng::Material}}\ material;\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00109}00109\ \ \ \ \ std::vector<std::vector<Eng::Vertex*>>\ vertices;\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00110}00110\ \};}
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{mesh_8h_source_l00112}00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MESH\_H}}
+
+\end{DoxyCode}

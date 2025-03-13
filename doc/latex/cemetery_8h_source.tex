@@ -1,0 +1,45 @@
+\doxysection{cemetery.\+h}
+\hypertarget{cemetery_8h_source}{}\label{cemetery_8h_source}\index{client/cemetery.h@{client/cemetery.h}}
+\mbox{\hyperlink{cemetery_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00017}00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00020}00020\ \textcolor{comment}{//\ \#INCLUDE\ //}}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{piece_8h}{piece.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00029}\mbox{\hyperlink{class_cemetery}{00029}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cemetery}{Cemetery}}\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00039}\mbox{\hyperlink{class_cemetery_ae8cafdf523c983ee8b9ab647f507d0e4}{00039}}\ \ \ \ \ \mbox{\hyperlink{class_cemetery_ae8cafdf523c983ee8b9ab647f507d0e4}{Cemetery}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ blackCemeteryPos,\ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ whiteCemeteryPos)}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ :\ blackCemeteryPos(blackCemeteryPos),\ whiteCemeteryPos(whiteCemeteryPos)\ \{}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_a967a69d77bff994b6b3b53730a3f159f}{addPieceToDeleted}}(\mbox{\hyperlink{class_piece}{Piece}}*\ piece);}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_aef6ec50304491729274012d0e2c3f446}{removePieceFromDeleted}}(\mbox{\hyperlink{class_piece}{Piece}}*\ piece);}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00067}00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cemetery_a68b0dc9fbe9b1cab40cc75e9555a13ba}{getBlackPiecesEliminated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_cemetery_a653dbb3e1c07c35404bf303d33db3f36}{getWhitePiecesEliminated}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00081}00081\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_cemetery_a50e46d01d5c752f3dbb8583341d2dc24}{getBlackCemeteryPos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ \mbox{\hyperlink{class_cemetery_a111f03d53b05b881b0c9baf2a016b44c}{getWhiteCemeteryPos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00095}00095\ \ \ \ \ std::vector<Piece*>\ \mbox{\hyperlink{class_cemetery_a16c52e14f724e7517dbbb62521de1593}{getDeletedPieces}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_a28f3d025bde337f7bfd1d3bc0bab2057}{setBlackPiecesEliminated}}(\textcolor{keywordtype}{int}\ newValue);}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cemetery_aa3b7133d446016c29bd990e65300e006}{setWhitePiecesEliminated}}(\textcolor{keywordtype}{int}\ newValue);}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00111}00111\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{int}\ blackPiecesEliminated\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{int}\ whitePiecesEliminated\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ whiteCemeteryPos;\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ blackCemeteryPos;\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00118}00118\ \ \ \ \ std::vector<Piece*>\ deletedPieces;\ }
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00119}00119\ \};}
+\DoxyCodeLine{\Hypertarget{cemetery_8h_source_l00120}00120\ }
+
+\end{DoxyCode}

@@ -1,0 +1,447 @@
+\doxysection{Eng\+::Node Class Reference}
+\hypertarget{class_eng_1_1_node}{}\label{class_eng_1_1_node}\index{Eng::Node@{Eng::Node}}
+
+
+\doxylink{class_eng_1_1_node}{Node} class.  
+
+
+
+
+{\ttfamily \#include $<$engine.\+h$>$}
+
+Inheritance diagram for Eng\+::Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_eng_1_1_node}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_eng_1_1_node_a7841d77ae58a6cc471c74bcd75a6543c}{Node}} (const std\+::string name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eng_1_1_node_aa0840c3cb5c7159be6d992adecd2097c}{\texorpdfstring{$\sim$}{\string~}\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_eng_1_1_node_abc01f84709abff891e4e8328b6175bb3}{get\+Transform}} () const
+\begin{DoxyCompactList}\small\item\em Get the node transform. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_eng_1_1_node_a0046f89439ceffffae05ab6144827337}{set\+Transform}} (\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} transform)
+\begin{DoxyCompactList}\small\item\em Set the node transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} \mbox{\hyperlink{class_eng_1_1_node_ac834ce5ba6cff3c02665adb3237a3f82}{get\+Final\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Get the node final matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_eng_1_1_node_afba840a7eef76653059b4295ba767954}{get\+Child\+At}} (int index)
+\begin{DoxyCompactList}\small\item\em Get the node child at an index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm\+::vec3}} \mbox{\hyperlink{class_eng_1_1_node_aef4e8718663888a7895593d1bac7aa2b}{get\+World\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the node world position. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_eng_1_1_node_ad0c982f7ebefade4af64456a5dc7129f}{set\+World\+Position}} (\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm\+::vec3}} position)
+\begin{DoxyCompactList}\small\item\em Set the node world position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_eng_1_1_node_ac07caba908e76ccc2bc8b99e117b1838}{add\+Child}} (\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}child)
+\begin{DoxyCompactList}\small\item\em Add a child to the node. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_eng_1_1_node_ae1f9c6b1c9ca75b64f6512c641478b59}{remove\+Child}} (\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}child)
+\begin{DoxyCompactList}\small\item\em Remove a child from the node. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_eng_1_1_node_aa0d2a64c6febe68c018106775ee884d5}{get\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of children of the node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_node_ac811cbba4b3f0a70ed31c4197e01906c}{set\+Children}} (std\+::vector$<$ \mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} $>$ children)
+\begin{DoxyCompactList}\small\item\em Set the list of children of the node. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_eng_1_1_node_ae5aae3b373c1770c8de8bc35e6cf6713}{get\+Number\+Of\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of children of the node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_eng_1_1_node_af6ac78f1da4dbeae095cc8067dc7a5e0}{get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the parent of the node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_node_aeeb73e804bf64c943f764173d5b1f90a}{set\+Parent}} (\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}parent)
+\begin{DoxyCompactList}\small\item\em Set the parent of the node. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_eng_1_1_node_a2a24a6399a5a54a81b0cc90320a8fe6d}{render}} (\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} transform, void \texorpdfstring{$\ast$}{*}data) override
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_node}{Node} render method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_node_a76cb060d5fd64de2341ad12095b92b46}{set\+Scale}} (float scale)
+\begin{DoxyCompactList}\small\item\em Set the node scale. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_eng_1_1_node_ac9926440d4edab1020d348a2b950307c}{get\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Get the node scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_eng_1_1_object}{Eng\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_eng_1_1_object_a18bd04a6f1024040a6477fe8517095e6}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the object Id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}{set\+Id}} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em Set the object Id. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_eng_1_1_object_a57040380e5da332b4db237274a84b5c0}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the object name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the object name. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}{get\+Next\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Get the next available Id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_eng_1_1_object}{Eng\+::\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{class_eng_1_1_object_aef73d4aae8379ab0accf5f9077f1b9ff}{id\+Counter}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_eng_1_1_node}{Node} class. 
+
+The class define a node. 
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00029}{29}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_eng_1_1_node_a7841d77ae58a6cc471c74bcd75a6543c}\index{Eng::Node@{Eng::Node}!Node@{Node}}
+\index{Node@{Node}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_a7841d77ae58a6cc471c74bcd75a6543c} 
+Node\+::\+Node (\begin{DoxyParamCaption}\item[{const std\+::string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Initializes the \doxylink{class_eng_1_1_node}{Node}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The node name \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_aa0840c3cb5c7159be6d992adecd2097c}\index{Eng::Node@{Eng::Node}!````~Node@{\texorpdfstring{$\sim$}{\string~}Node}}
+\index{````~Node@{\texorpdfstring{$\sim$}{\string~}Node}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Node()}{\string~Node()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_aa0840c3cb5c7159be6d992adecd2097c} 
+Node\+::\texorpdfstring{$\sim$}{\string~}\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Deinitialize the \doxylink{class_eng_1_1_node}{Node}. 
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_eng_1_1_node_ac07caba908e76ccc2bc8b99e117b1838}\index{Eng::Node@{Eng::Node}!addChild@{addChild}}
+\index{addChild@{addChild}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{addChild()}{addChild()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_ac07caba908e76ccc2bc8b99e117b1838} 
+bool ENG\+\_\+\+API Node\+::add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node\+To\+Add}{}\end{DoxyParamCaption})}
+
+
+
+Add a child to the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The node to add as a child.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the node is added. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_afba840a7eef76653059b4295ba767954}\index{Eng::Node@{Eng::Node}!getChildAt@{getChildAt}}
+\index{getChildAt@{getChildAt}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getChildAt()}{getChildAt()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_afba840a7eef76653059b4295ba767954} 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} Node\+::get\+Child\+At (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Get the node child at an index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The child index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The node child at the index. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00228}{228}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_aa0d2a64c6febe68c018106775ee884d5}\index{Eng::Node@{Eng::Node}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_aa0d2a64c6febe68c018106775ee884d5} 
+std\+::vector$<$ \mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} $>$ ENG\+\_\+\+API Node\+::get\+Children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the list of children of the node. 
+
+\begin{DoxyReturn}{Returns}
+The list of children. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_ac834ce5ba6cff3c02665adb3237a3f82}\index{Eng::Node@{Eng::Node}!getFinalMatrix@{getFinalMatrix}}
+\index{getFinalMatrix@{getFinalMatrix}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getFinalMatrix()}{getFinalMatrix()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_ac834ce5ba6cff3c02665adb3237a3f82} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} ENG\+\_\+\+API Node\+::get\+Final\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the node final matrix. 
+
+\begin{DoxyReturn}{Returns}
+The node final matrix. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00174}{174}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_ae5aae3b373c1770c8de8bc35e6cf6713}\index{Eng::Node@{Eng::Node}!getNumberOfChildren@{getNumberOfChildren}}
+\index{getNumberOfChildren@{getNumberOfChildren}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getNumberOfChildren()}{getNumberOfChildren()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_ae5aae3b373c1770c8de8bc35e6cf6713} 
+unsigned int ENG\+\_\+\+API Node\+::get\+Number\+Of\+Children (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the number of children of the node. 
+
+\begin{DoxyReturn}{Returns}
+The number of children. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_af6ac78f1da4dbeae095cc8067dc7a5e0}\index{Eng::Node@{Eng::Node}!getParent@{getParent}}
+\index{getParent@{getParent}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getParent()}{getParent()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_af6ac78f1da4dbeae095cc8067dc7a5e0} 
+\mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}} \texorpdfstring{$\ast$}{*} Node\+::get\+Parent (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Get the parent of the node. 
+
+\begin{DoxyReturn}{Returns}
+The parent. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_ac9926440d4edab1020d348a2b950307c}\index{Eng::Node@{Eng::Node}!getScale@{getScale}}
+\index{getScale@{getScale}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getScale()}{getScale()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_ac9926440d4edab1020d348a2b950307c} 
+float Node\+::get\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the node scale. 
+
+\begin{DoxyReturn}{Returns}
+The scale. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_abc01f84709abff891e4e8328b6175bb3}\index{Eng::Node@{Eng::Node}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_abc01f84709abff891e4e8328b6175bb3} 
+\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}} ENG\+\_\+\+API Node\+::get\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the node transform. 
+
+\begin{DoxyReturn}{Returns}
+The node transform. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_aef4e8718663888a7895593d1bac7aa2b}\index{Eng::Node@{Eng::Node}!getWorldPosition@{getWorldPosition}}
+\index{getWorldPosition@{getWorldPosition}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{getWorldPosition()}{getWorldPosition()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_aef4e8718663888a7895593d1bac7aa2b} 
+\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm\+::vec3}} ENG\+\_\+\+API Node\+::get\+World\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Get the node world position. 
+
+\begin{DoxyReturn}{Returns}
+The node world position. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_ae1f9c6b1c9ca75b64f6512c641478b59}\index{Eng::Node@{Eng::Node}!removeChild@{removeChild}}
+\index{removeChild@{removeChild}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{removeChild()}{removeChild()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_ae1f9c6b1c9ca75b64f6512c641478b59} 
+bool ENG\+\_\+\+API Node\+::remove\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node\+To\+Remove}{}\end{DoxyParamCaption})}
+
+
+
+Remove a child from the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & The node to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the node is removed. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_a2a24a6399a5a54a81b0cc90320a8fe6d}\index{Eng::Node@{Eng::Node}!render@{render}}
+\index{render@{render}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_a2a24a6399a5a54a81b0cc90320a8fe6d} 
+bool ENG\+\_\+\+API Node\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{mat}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{attr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\doxylink{class_eng_1_1_node}{Node} render method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & The transform matrix. \\
+\hline
+{\em data} & Other data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the render is succesful. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_eng_1_1_object_a422f511a6e43a3e9fa064705d64f5a91}{Eng\+::\+Object}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_directional_light_a46e8417d08732113d55f075d1e95416c}{Directional\+Light}}, \mbox{\hyperlink{class_eng_1_1_directional_light_a03e3dc224eee7b6c0b7941f6c9c84f80}{Eng\+::\+Directional\+Light}}, \mbox{\hyperlink{class_eng_1_1_light_a538a0971c7a5e7bd5253892f74b8b1ef}{Eng\+::\+Light}}, \mbox{\hyperlink{class_eng_1_1_mesh_acd9713b31b6dc6ed29f3526e81cdd2ea}{Eng\+::\+Mesh}}, \mbox{\hyperlink{class_eng_1_1_point_light_a0117837585c67719c198a4624258616e}{Eng\+::\+Point\+Light}}, \mbox{\hyperlink{class_eng_1_1_shadow_a3b9988d1e5862073fa46f163f56daa01}{Eng\+::\+Shadow}}, \mbox{\hyperlink{class_eng_1_1_spot_light_adb4c3fe4b49e6332bfd6a2c398f77e29}{Eng\+::\+Spot\+Light}}, \mbox{\hyperlink{class_light_a75f6308ba94b57fd94d384284c2d60cb}{Light}}, \mbox{\hyperlink{class_mesh_a9b2f280cbfa2a8145419e451b850b368}{Mesh}}, \mbox{\hyperlink{class_point_light_a7fdbaeb73026cd0aea7b5410b97b7cea}{Point\+Light}}, \mbox{\hyperlink{class_shadow_a3a3274a75af594c9a63420bcae932462}{Shadow}}, and \mbox{\hyperlink{class_spot_light_a6eddc0b17ce9dc76dd9543d48eaa04b5}{Spot\+Light}}.
+
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_ac811cbba4b3f0a70ed31c4197e01906c}\index{Eng::Node@{Eng::Node}!setChildren@{setChildren}}
+\index{setChildren@{setChildren}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{setChildren()}{setChildren()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_ac811cbba4b3f0a70ed31c4197e01906c} 
+void ENG\+\_\+\+API Node\+::set\+Children (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*} $>$}]{new\+Children}{}\end{DoxyParamCaption})}
+
+
+
+Set the list of children of the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & list of children. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_aeeb73e804bf64c943f764173d5b1f90a}\index{Eng::Node@{Eng::Node}!setParent@{setParent}}
+\index{setParent@{setParent}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_aeeb73e804bf64c943f764173d5b1f90a} 
+void ENG\+\_\+\+API Node\+::set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_eng_1_1_node}{Node}} \texorpdfstring{$\ast$}{*}}]{new\+Parent}{}\end{DoxyParamCaption})}
+
+
+
+Set the parent of the node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & parent. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_a76cb060d5fd64de2341ad12095b92b46}\index{Eng::Node@{Eng::Node}!setScale@{setScale}}
+\index{setScale@{setScale}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{setScale()}{setScale()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_a76cb060d5fd64de2341ad12095b92b46} 
+void ENG\+\_\+\+API Node\+::set\+Scale (\begin{DoxyParamCaption}\item[{float}]{scale}{}\end{DoxyParamCaption})}
+
+
+
+Set the node scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & scale. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00133}{133}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_a0046f89439ceffffae05ab6144827337}\index{Eng::Node@{Eng::Node}!setTransform@{setTransform}}
+\index{setTransform@{setTransform}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{setTransform()}{setTransform()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_a0046f89439ceffffae05ab6144827337} 
+void ENG\+\_\+\+API Node\+::set\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__matrix_gac54cbc572f1349a255fe476ca6a42a7b}{glm\+::mat4}}}]{transform}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the node transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & The node transform. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_directional_light_aa266558d1e22c05c684bd7cc04e17cbb}{Directional\+Light}}, \mbox{\hyperlink{class_eng_1_1_directional_light_a74f3a5dd9bfe20aa6e8ed8620a0b261c}{Eng\+::\+Directional\+Light}}, \mbox{\hyperlink{class_eng_1_1_light_a3bebe6d4a236e88b52721a7e896bd938}{Eng\+::\+Light}}, and \mbox{\hyperlink{class_light_ad19d60d490c1aae195a263ea1fbed577}{Light}}.
+
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+\Hypertarget{class_eng_1_1_node_ad0c982f7ebefade4af64456a5dc7129f}\index{Eng::Node@{Eng::Node}!setWorldPosition@{setWorldPosition}}
+\index{setWorldPosition@{setWorldPosition}!Eng::Node@{Eng::Node}}
+\doxysubsubsection{\texorpdfstring{setWorldPosition()}{setWorldPosition()}}
+{\footnotesize\ttfamily \label{class_eng_1_1_node_ad0c982f7ebefade4af64456a5dc7129f} 
+void ENG\+\_\+\+API Node\+::set\+World\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core__vector_ga4320b87e41013b7e875f845f439fc498}{glm\+::vec3}}}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the node world position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & node world position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{node_8cpp_source_l00207}{207}} of file \mbox{\hyperlink{node_8cpp_source}{node.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+engine/\mbox{\hyperlink{engine_8h}{engine.\+h}}\item 
+engine/\mbox{\hyperlink{node_8cpp}{node.\+cpp}}\end{DoxyCompactItemize}

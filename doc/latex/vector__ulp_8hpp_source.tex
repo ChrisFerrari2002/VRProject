@@ -1,0 +1,47 @@
+\doxysection{vector\+\_\+ulp.\+hpp}
+\hypertarget{vector__ulp_8hpp_source}{}\label{vector__ulp_8hpp_source}\index{dependencies/glm/include/glm/ext/vector\_ulp.hpp@{dependencies/glm/include/glm/ext/vector\_ulp.hpp}}
+\mbox{\hyperlink{vector__ulp_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00019}00019\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scalar__ulp_8hpp}{../ext/scalar\_ulp.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_vector\_ulp\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00026}00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00039}00039\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__ulp_ga30bc0280e7cefd159867b1aa5050b94a}{nextFloat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00049}00049\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__ulp_ga30bc0280e7cefd159867b1aa5050b94a}{nextFloat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ \textcolor{keywordtype}{int}\ ULPs);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00059}00059\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__ulp_ga30bc0280e7cefd159867b1aa5050b94a}{nextFloat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ int,\ Q>\ \textcolor{keyword}{const}\&\ ULPs);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00069}00069\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__ulp_ga25320ace5b3e239405077912eb4e7bf9}{prevFloat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00079}00079\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__ulp_ga25320ace5b3e239405077912eb4e7bf9}{prevFloat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ \textcolor{keywordtype}{int}\ ULPs);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00089}00089\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__ulp_ga25320ace5b3e239405077912eb4e7bf9}{prevFloat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ int,\ Q>\ \textcolor{keyword}{const}\&\ ULPs);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00098}\mbox{\hyperlink{group__ext__vector__ulp_ga189e2a76c8fe9dc3b9b25dc88742e2cd}{00098}}\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int,\ Q>}}\ \mbox{\hyperlink{group__ext__scalar__ulp_ga9f531d81a978cdffac7c8257d513f59b}{floatDistance}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ float,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ float,\ Q>}}\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00106}00106\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00107}\mbox{\hyperlink{group__ext__vector__ulp_ga8a6460f991092db3ded8b59d7286df2e}{00107}}\ \ \ \ \ GLM\_FUNC\_DECL\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ int64,\ Q>}}\ \mbox{\hyperlink{group__ext__scalar__ulp_ga9f531d81a978cdffac7c8257d513f59b}{floatDistance}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ double,\ Q>}}\ \textcolor{keyword}{const}\&\ x,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ double,\ Q>}}\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00110}00110\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{vector__ulp_8hpp_source_l00112}00112\ \textcolor{preprocessor}{\#include\ "{}vector\_ulp.inl"{}}}
+
+\end{DoxyCode}

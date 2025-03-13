@@ -1,0 +1,112 @@
+\doxysection{matrix\+\_\+projection.\+inl}
+\hypertarget{matrix__projection_8inl_source}{}\label{matrix__projection_8inl_source}\index{dependencies/glm/include/glm/ext/matrix\_projection.inl@{dependencies/glm/include/glm/ext/matrix\_projection.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00001}00001\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00002}00002\ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00003}00003\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00004}\mbox{\hyperlink{group__ext__matrix__projection_gaf98ec0fecd3a5d07592e01750927599f}{00004}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__projection_gaf98ec0fecd3a5d07592e01750927599f}{projectZO}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ obj,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ model,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ proj,\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ viewport)}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00005}00005\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00006}00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}\ tmp\ =\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}(obj,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00007}00007\ \ \ \ \ \ \ \ \ tmp\ =\ model\ *\ tmp;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00008}00008\ \ \ \ \ \ \ \ \ tmp\ =\ proj\ *\ tmp;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00010}00010\ \ \ \ \ \ \ \ \ tmp\ /=\ tmp.w;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00011}00011\ \ \ \ \ \ \ \ \ tmp.x\ =\ tmp.x\ *\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5)\ +\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00012}00012\ \ \ \ \ \ \ \ \ tmp.y\ =\ tmp.y\ *\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5)\ +\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00014}00014\ \ \ \ \ \ \ \ \ tmp[0]\ =\ tmp[0]\ *\ T(viewport[2])\ +\ T(viewport[0]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00015}00015\ \ \ \ \ \ \ \ \ tmp[1]\ =\ tmp[1]\ *\ T(viewport[3])\ +\ T(viewport[1]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}(tmp);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00021}\mbox{\hyperlink{group__ext__matrix__projection_ga7f81da150745ac8f4af75d6ce29ab81d}{00021}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__projection_ga7f81da150745ac8f4af75d6ce29ab81d}{projectNO}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ obj,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ model,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ proj,\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ viewport)}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}\ tmp\ =\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}(obj,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ tmp\ =\ model\ *\ tmp;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00025}00025\ \ \ \ \ \ \ \ \ tmp\ =\ proj\ *\ tmp;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00027}00027\ \ \ \ \ \ \ \ \ tmp\ /=\ tmp.w;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00028}00028\ \ \ \ \ \ \ \ \ tmp\ =\ tmp\ *\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5)\ +\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0.5);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00029}00029\ \ \ \ \ \ \ \ \ tmp[0]\ =\ tmp[0]\ *\ T(viewport[2])\ +\ T(viewport[0]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00030}00030\ \ \ \ \ \ \ \ \ tmp[1]\ =\ tmp[1]\ *\ T(viewport[3])\ +\ T(viewport[1]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}(tmp);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00036}\mbox{\hyperlink{group__ext__matrix__projection_ga478b351626e39c8e33e042ea8d1f418e}{00036}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__projection_ga478b351626e39c8e33e042ea8d1f418e}{project}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ obj,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ model,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ proj,\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ viewport)}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00038}00038\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ GLM\_CONFIG\_CLIP\_CONTROL\ \&\ GLM\_CLIP\_CONTROL\_ZO\_BIT}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__ext__matrix__projection_gaf98ec0fecd3a5d07592e01750927599f}{projectZO}}(obj,\ model,\ proj,\ viewport);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00040}00040\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__ext__matrix__projection_ga7f81da150745ac8f4af75d6ce29ab81d}{projectNO}}(obj,\ model,\ proj,\ viewport);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00042}00042\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00046}\mbox{\hyperlink{group__ext__matrix__projection_ga9b3ec0d9aeea52bbcc8c1fc3fc9830e3}{00046}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__projection_ga9b3ec0d9aeea52bbcc8c1fc3fc9830e3}{unProjectZO}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ win,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ model,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ proj,\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ viewport)}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ Inverse\ =\ \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{inverse}}(proj\ *\ model);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}\ tmp\ =\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}(win,\ T(1));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00051}00051\ \ \ \ \ \ \ \ \ tmp.x\ =\ (tmp.x\ -\/\ T(viewport[0]))\ /\ T(viewport[2]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00052}00052\ \ \ \ \ \ \ \ \ tmp.y\ =\ (tmp.y\ -\/\ T(viewport[1]))\ /\ T(viewport[3]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00053}00053\ \ \ \ \ \ \ \ \ tmp.x\ =\ tmp.x\ *\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00054}00054\ \ \ \ \ \ \ \ \ tmp.y\ =\ tmp.y\ *\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}\ obj\ =\ Inverse\ *\ tmp;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00057}00057\ \ \ \ \ \ \ \ \ obj\ /=\ obj.w;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}(obj);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00063}\mbox{\hyperlink{group__ext__matrix__projection_ga6214935f32f38e1dc13ba66135eb5784}{00063}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__projection_ga6214935f32f38e1dc13ba66135eb5784}{unProjectNO}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ win,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ model,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ proj,\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ viewport)}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00064}00064\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00065}00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ Inverse\ =\ \mbox{\hyperlink{group__core__func__matrix_gace61e11fc177491beeca0c6971e2f3fc}{inverse}}(proj\ *\ model);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}\ tmp\ =\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}(win,\ T(1));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00068}00068\ \ \ \ \ \ \ \ \ tmp.x\ =\ (tmp.x\ -\/\ T(viewport[0]))\ /\ T(viewport[2]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00069}00069\ \ \ \ \ \ \ \ \ tmp.y\ =\ (tmp.y\ -\/\ T(viewport[1]))\ /\ T(viewport[3]);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00070}00070\ \ \ \ \ \ \ \ \ tmp\ =\ tmp\ *\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ T,\ Q>}}\ obj\ =\ Inverse\ *\ tmp;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00073}00073\ \ \ \ \ \ \ \ \ obj\ /=\ obj.w;}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}(obj);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}\ U,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00079}\mbox{\hyperlink{group__ext__matrix__projection_gaefa35b1dbf52941052a5a3aadc298106}{00079}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__projection_gaefa35b1dbf52941052a5a3aadc298106}{unProject}}(\mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ win,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ model,\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ proj,\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ viewport)}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00081}00081\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ GLM\_CONFIG\_CLIP\_CONTROL\ \&\ GLM\_CLIP\_CONTROL\_ZO\_BIT}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__ext__matrix__projection_ga9b3ec0d9aeea52bbcc8c1fc3fc9830e3}{unProjectZO}}(win,\ model,\ proj,\ viewport);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00083}00083\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__ext__matrix__projection_ga6214935f32f38e1dc13ba66135eb5784}{unProjectNO}}(win,\ model,\ proj,\ viewport);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00085}00085\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q,\ \textcolor{keyword}{typename}\ U>}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00089}\mbox{\hyperlink{group__ext__matrix__projection_ga0f93e1b7ea6887f31b643ce5099b1173}{00089}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ \mbox{\hyperlink{group__ext__matrix__projection_ga0f93e1b7ea6887f31b643ce5099b1173}{pickMatrix}}(\mbox{\hyperlink{structglm_1_1vec}{vec<2,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ center,\ \mbox{\hyperlink{structglm_1_1vec}{vec<2,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ delta,\ \mbox{\hyperlink{structglm_1_1vec}{vec<4,\ U,\ Q>}}\ \textcolor{keyword}{const}\&\ viewport)}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00091}00091\ \ \ \ \ \ \ \ \ assert(delta.x\ >\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0)\ \&\&\ delta.y\ >\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1mat}{mat<4,\ 4,\ T,\ Q>}}\ Result(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!(delta.x\ >\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0)\ \&\&\ delta.y\ >\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0)))}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Result;\ \textcolor{comment}{//\ Error}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}\ Temp(}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(viewport[2])\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ (center.x\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(viewport[0])))\ /\ delta.x,}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(viewport[3])\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(2)\ *\ (center.y\ -\/\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(viewport[1])))\ /\ delta.y,}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Translate\ and\ scale\ the\ picked\ region\ to\ the\ entire\ window}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00103}00103\ \ \ \ \ \ \ \ \ Result\ =\ \mbox{\hyperlink{group__ext__matrix__transform_gad5bff66dd884b2e004188dd9a9cd590e}{translate}}(Result,\ Temp);}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__ext__matrix__transform_gaae2f8b2080622b24b85e1096748599b6}{scale}}(Result,\ \mbox{\hyperlink{structglm_1_1vec}{vec<3,\ T,\ Q>}}(\textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(viewport[2])\ /\ delta.x,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(viewport[3])\ /\ delta.y,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1)));}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{matrix__projection_8inl_source_l00106}00106\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

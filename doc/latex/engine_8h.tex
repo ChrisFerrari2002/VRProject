@@ -1,0 +1,326 @@
+\doxysection{engine/engine.h File Reference}
+\hypertarget{engine_8h}{}\label{engine_8h}\index{engine/engine.h@{engine/engine.h}}
+
+
+Graphics engine main include file.  
+
+
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/type\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtx/string\+\_\+cast.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$source\+\_\+location$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include "{}object.\+h"{}}\newline
+{\ttfamily \#include "{}node.\+h"{}}\newline
+{\ttfamily \#include "{}texture.\+h"{}}\newline
+{\ttfamily \#include "{}material.\+h"{}}\newline
+{\ttfamily \#include "{}camera.\+h"{}}\newline
+{\ttfamily \#include "{}vertex.\+h"{}}\newline
+{\ttfamily \#include "{}mesh.\+h"{}}\newline
+{\ttfamily \#include "{}light.\+h"{}}\newline
+{\ttfamily \#include "{}directional\+Light.\+h"{}}\newline
+{\ttfamily \#include "{}point\+Light.\+h"{}}\newline
+{\ttfamily \#include "{}spot\+Light.\+h"{}}\newline
+{\ttfamily \#include "{}list.\+h"{}}\newline
+{\ttfamily \#include "{}shadow.\+h"{}}\newline
+{\ttfamily \#include "{}ovoreader.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_eng_1_1_object}{Eng\+::\+Object}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_object}{Object} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_node}{Eng\+::\+Node}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_node}{Node} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_texture}{Eng\+::\+Texture}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_texture}{Texture} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_material}{Eng\+::\+Material}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_material}{Material} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_camera}{Eng\+::\+Camera}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_camera}{Camera} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_vertex}{Eng\+::\+Vertex}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_vertex}{Vertex} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_mesh}{Eng\+::\+Mesh}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_mesh}{Mesh} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_light}{Eng\+::\+Light}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_light}{Light} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_directional_light}{Eng\+::\+Directional\+Light}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_directional_light}{Directional\+Light} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_point_light}{Eng\+::\+Point\+Light}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_point_light}{Point\+Light} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_spot_light}{Eng\+::\+Spot\+Light}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_spot_light}{Spot\+Light} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_list}{Eng\+::\+List}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_list}{List} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_shadow}{Eng\+::\+Shadow}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_shadow}{Shadow} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_ovo_reader}{Eng\+::\+Ovo\+Reader}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_ovo_reader}{Ovo\+Reader} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_eng_1_1_base}{Eng\+::\+Base}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_eng_1_1_base}{Base} engine main class. This class is a singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{engine_8h_abd75661fe7969e19439052a5f69ba5d1}{GLM\+\_\+\+ENABLE\+\_\+\+EXPERIMENTAL}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a6e43beaa714b1bf01ce2271440786e38}{LIB\+\_\+\+NAME}}~"{}My Graphics Engine v0.\+1a"{}
+\begin{DoxyCompactList}\small\item\em Library credits. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{engine_8h_a1418b909446cf0c11d3f26ef91d8e850}{LIB\+\_\+\+VERSION}}~10
+\begin{DoxyCompactList}\small\item\em Library version (divide by 10) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{engine_8h_a2ef14742296b6d1fdaf5e70dfdd60996}{ENG\+\_\+\+API}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_aa8010467994983b5e7d22edee6ab6806}{OBJECT\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a5b11c96723c6f2c10f762846740858c2}{NODE\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a86253796ec054f08fa171da00ca0c4cb}{TEXTURE\+\_\+H}}
+\item 
+\Hypertarget{engine_8h_a00b65957cb070504d8e364031b176737}\label{engine_8h_a00b65957cb070504d8e364031b176737} 
+\#define {\bfseries GL\+\_\+\+TEXTURE\+\_\+\+MAX\+\_\+\+ANISOTROPY\+\_\+\+EXT}~0x84\+FE
+\item 
+\Hypertarget{engine_8h_ad1cf646d8224fdedcce963d095f71c1b}\label{engine_8h_ad1cf646d8224fdedcce963d095f71c1b} 
+\#define {\bfseries GL\+\_\+\+MAX\+\_\+\+TEXTURE\+\_\+\+MAX\+\_\+\+ANISOTROPY\+\_\+\+EXT}~0x84\+FF
+\item 
+\#define \mbox{\hyperlink{engine_8h_a0b033bfd2f483374c8188676ea0de398}{MATERIAL\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_ad1e8009af56472a7a1972883b0cca62a}{CAMERA\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_ae07cbab90525c5082e1bf64da4fe90e6}{VERTEX\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_af70b7d747f3a41e1503b6ac69179d42f}{MESH\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a7fbfbb954c027f1f2927473380e63148}{LIGHT\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a8c33bb342be242cfbdd43923c1abeea6}{DIRECTIONAL\+\_\+\+LIGHT}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a67c0f98568552ff44b7b0461fb3fdb39}{POINT\+\_\+\+LIGHT}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a3acee99f6b06f7270f6ccdc0f7628582}{SPOT\+\_\+\+LIGHT}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_af6381825ddcaef499d49dc4bd06aa4d3}{LIST\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_a19a39fc503fc870b9614b02f4255bfb2}{SHADOW\+\_\+H}}
+\item 
+\#define \mbox{\hyperlink{engine_8h_ab8ca76a7f43f4f45a7d77031e45d1fb4}{OVOREADER\+\_\+H}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Graphics engine main include file. 
+
+This file contains the main include file for the graphics engine, including the definition of the Base class.
+
+\begin{DoxyDate}{Date}
+2025
+\end{DoxyDate}
+The Base class is the main class of the graphics engine and is implemented as a singleton. \begin{DoxySeeAlso}{See also}
+\doxylink{class_eng_1_1_node}{Eng\+::\+Node}, \doxylink{class_eng_1_1_camera}{Eng\+::\+Camera}, \doxylink{class_eng_1_1_light}{Eng\+::\+Light}, \doxylink{class_eng_1_1_mesh}{Eng\+::\+Mesh}, \doxylink{class_eng_1_1_texture}{Eng\+::\+Texture}, \doxylink{class_eng_1_1_material}{Eng\+::\+Material}, \doxylink{class_eng_1_1_list}{Eng\+::\+List}, \doxylink{class_eng_1_1_ovo_reader}{Eng\+::\+Ovo\+Reader}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Sara Bressan \mbox{[}\href{mailto:sara.bressan@student.supsi.ch}{\texttt{ sara.\+bressan@student.\+supsi.\+ch}}\mbox{]}
+\item Chris Ferrari \mbox{[}\href{mailto:chris.ferrari@student.supsi.ch}{\texttt{ chris.\+ferrari@student.\+supsi.\+ch}}\mbox{]}
+\item Alessandro Formato \mbox{[}\href{mailto:alessandro.formato@student.supsi.ch}{\texttt{ alessandro.\+formato@student.\+supsi.\+ch}}\mbox{]} 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{engine_8h_ad1e8009af56472a7a1972883b0cca62a}\index{engine.h@{engine.h}!CAMERA\_H@{CAMERA\_H}}
+\index{CAMERA\_H@{CAMERA\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{CAMERA\_H}{CAMERA\_H}}
+{\footnotesize\ttfamily \label{engine_8h_ad1e8009af56472a7a1972883b0cca62a} 
+\#define CAMERA\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00020}{20}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a8c33bb342be242cfbdd43923c1abeea6}\index{engine.h@{engine.h}!DIRECTIONAL\_LIGHT@{DIRECTIONAL\_LIGHT}}
+\index{DIRECTIONAL\_LIGHT@{DIRECTIONAL\_LIGHT}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTIONAL\_LIGHT}{DIRECTIONAL\_LIGHT}}
+{\footnotesize\ttfamily \label{engine_8h_a8c33bb342be242cfbdd43923c1abeea6} 
+\#define DIRECTIONAL\+\_\+\+LIGHT}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00019}{19}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a2ef14742296b6d1fdaf5e70dfdd60996}\index{engine.h@{engine.h}!ENG\_API@{ENG\_API}}
+\index{ENG\_API@{ENG\_API}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{ENG\_API}{ENG\_API}}
+{\footnotesize\ttfamily \label{engine_8h_a2ef14742296b6d1fdaf5e70dfdd60996} 
+\#define ENG\+\_\+\+API}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00061}{61}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_abd75661fe7969e19439052a5f69ba5d1}\index{engine.h@{engine.h}!GLM\_ENABLE\_EXPERIMENTAL@{GLM\_ENABLE\_EXPERIMENTAL}}
+\index{GLM\_ENABLE\_EXPERIMENTAL@{GLM\_ENABLE\_EXPERIMENTAL}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{GLM\_ENABLE\_EXPERIMENTAL}{GLM\_ENABLE\_EXPERIMENTAL}}
+{\footnotesize\ttfamily \label{engine_8h_abd75661fe7969e19439052a5f69ba5d1} 
+\#define GLM\+\_\+\+ENABLE\+\_\+\+EXPERIMENTAL}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00027}{27}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a6e43beaa714b1bf01ce2271440786e38}\index{engine.h@{engine.h}!LIB\_NAME@{LIB\_NAME}}
+\index{LIB\_NAME@{LIB\_NAME}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{LIB\_NAME}{LIB\_NAME}}
+{\footnotesize\ttfamily \label{engine_8h_a6e43beaa714b1bf01ce2271440786e38} 
+\#define LIB\+\_\+\+NAME~"{}My Graphics Engine v0.\+1a"{}}
+
+
+
+Library credits. 
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00045}{45}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a1418b909446cf0c11d3f26ef91d8e850}\index{engine.h@{engine.h}!LIB\_VERSION@{LIB\_VERSION}}
+\index{LIB\_VERSION@{LIB\_VERSION}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{LIB\_VERSION}{LIB\_VERSION}}
+{\footnotesize\ttfamily \label{engine_8h_a1418b909446cf0c11d3f26ef91d8e850} 
+\#define LIB\+\_\+\+VERSION~10}
+
+
+
+Library version (divide by 10) 
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00047}{47}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a7fbfbb954c027f1f2927473380e63148}\index{engine.h@{engine.h}!LIGHT\_H@{LIGHT\_H}}
+\index{LIGHT\_H@{LIGHT\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_H}{LIGHT\_H}}
+{\footnotesize\ttfamily \label{engine_8h_a7fbfbb954c027f1f2927473380e63148} 
+\#define LIGHT\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_af6381825ddcaef499d49dc4bd06aa4d3}\index{engine.h@{engine.h}!LIST\_H@{LIST\_H}}
+\index{LIST\_H@{LIST\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{LIST\_H}{LIST\_H}}
+{\footnotesize\ttfamily \label{engine_8h_af6381825ddcaef499d49dc4bd06aa4d3} 
+\#define LIST\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00020}{20}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a0b033bfd2f483374c8188676ea0de398}\index{engine.h@{engine.h}!MATERIAL\_H@{MATERIAL\_H}}
+\index{MATERIAL\_H@{MATERIAL\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{MATERIAL\_H}{MATERIAL\_H}}
+{\footnotesize\ttfamily \label{engine_8h_a0b033bfd2f483374c8188676ea0de398} 
+\#define MATERIAL\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00020}{20}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_af70b7d747f3a41e1503b6ac69179d42f}\index{engine.h@{engine.h}!MESH\_H@{MESH\_H}}
+\index{MESH\_H@{MESH\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{MESH\_H}{MESH\_H}}
+{\footnotesize\ttfamily \label{engine_8h_af70b7d747f3a41e1503b6ac69179d42f} 
+\#define MESH\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00020}{20}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a5b11c96723c6f2c10f762846740858c2}\index{engine.h@{engine.h}!NODE\_H@{NODE\_H}}
+\index{NODE\_H@{NODE\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{NODE\_H}{NODE\_H}}
+{\footnotesize\ttfamily \label{engine_8h_a5b11c96723c6f2c10f762846740858c2} 
+\#define NODE\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_aa8010467994983b5e7d22edee6ab6806}\index{engine.h@{engine.h}!OBJECT\_H@{OBJECT\_H}}
+\index{OBJECT\_H@{OBJECT\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{OBJECT\_H}{OBJECT\_H}}
+{\footnotesize\ttfamily \label{engine_8h_aa8010467994983b5e7d22edee6ab6806} 
+\#define OBJECT\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00020}{20}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_ab8ca76a7f43f4f45a7d77031e45d1fb4}\index{engine.h@{engine.h}!OVOREADER\_H@{OVOREADER\_H}}
+\index{OVOREADER\_H@{OVOREADER\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{OVOREADER\_H}{OVOREADER\_H}}
+{\footnotesize\ttfamily \label{engine_8h_ab8ca76a7f43f4f45a7d77031e45d1fb4} 
+\#define OVOREADER\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a67c0f98568552ff44b7b0461fb3fdb39}\index{engine.h@{engine.h}!POINT\_LIGHT@{POINT\_LIGHT}}
+\index{POINT\_LIGHT@{POINT\_LIGHT}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{POINT\_LIGHT}{POINT\_LIGHT}}
+{\footnotesize\ttfamily \label{engine_8h_a67c0f98568552ff44b7b0461fb3fdb39} 
+\#define POINT\+\_\+\+LIGHT}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a19a39fc503fc870b9614b02f4255bfb2}\index{engine.h@{engine.h}!SHADOW\_H@{SHADOW\_H}}
+\index{SHADOW\_H@{SHADOW\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{SHADOW\_H}{SHADOW\_H}}
+{\footnotesize\ttfamily \label{engine_8h_a19a39fc503fc870b9614b02f4255bfb2} 
+\#define SHADOW\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a3acee99f6b06f7270f6ccdc0f7628582}\index{engine.h@{engine.h}!SPOT\_LIGHT@{SPOT\_LIGHT}}
+\index{SPOT\_LIGHT@{SPOT\_LIGHT}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{SPOT\_LIGHT}{SPOT\_LIGHT}}
+{\footnotesize\ttfamily \label{engine_8h_a3acee99f6b06f7270f6ccdc0f7628582} 
+\#define SPOT\+\_\+\+LIGHT}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_a86253796ec054f08fa171da00ca0c4cb}\index{engine.h@{engine.h}!TEXTURE\_H@{TEXTURE\_H}}
+\index{TEXTURE\_H@{TEXTURE\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{TEXTURE\_H}{TEXTURE\_H}}
+{\footnotesize\ttfamily \label{engine_8h_a86253796ec054f08fa171da00ca0c4cb} 
+\#define TEXTURE\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00021}{21}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+
+\Hypertarget{engine_8h_ae07cbab90525c5082e1bf64da4fe90e6}\index{engine.h@{engine.h}!VERTEX\_H@{VERTEX\_H}}
+\index{VERTEX\_H@{VERTEX\_H}!engine.h@{engine.h}}
+\doxysubsubsection{\texorpdfstring{VERTEX\_H}{VERTEX\_H}}
+{\footnotesize\ttfamily \label{engine_8h_ae07cbab90525c5082e1bf64da4fe90e6} 
+\#define VERTEX\+\_\+H}
+
+
+
+Definition at line \mbox{\hyperlink{engine_8h_source_l00020}{20}} of file \mbox{\hyperlink{engine_8h_source}{engine.\+h}}.
+

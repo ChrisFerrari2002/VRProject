@@ -1,0 +1,33 @@
+\doxysection{object.\+h}
+\hypertarget{object_8h_source}{}\label{object_8h_source}\index{engine/object.h@{engine/object.h}}
+\mbox{\hyperlink{object_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00018}00018\ \textcolor{preprocessor}{\#ifndef\ OBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00019}00019\ \textcolor{preprocessor}{\#define\ OBJECT\_H}}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00027}\mbox{\hyperlink{class_object}{00027}}\ \textcolor{keyword}{class\ }ENG\_API\ \mbox{\hyperlink{class_object}{Object}}\ \{}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00028}00028\ \textcolor{comment}{//\ Public\ methods}}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00030}\mbox{\hyperlink{class_object_aef73d4aae8379ab0accf5f9077f1b9ff}{00030}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_object_aef73d4aae8379ab0accf5f9077f1b9ff}{idCounter}};\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00036}\mbox{\hyperlink{class_object_a18bd04a6f1024040a6477fe8517095e6}{00036}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_object_a18bd04a6f1024040a6477fe8517095e6}{getId}}();}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00044}\mbox{\hyperlink{class_object_ada156b53e7362783f31205616fc8efd9}{00044}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_ada156b53e7362783f31205616fc8efd9}{setId}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00051}\mbox{\hyperlink{class_object_ae2e7f745c015b67a580c735609cba5b8}{00051}}\ \ \ \ \ std::string\ \mbox{\hyperlink{class_object_ae2e7f745c015b67a580c735609cba5b8}{getName}}();}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00059}\mbox{\hyperlink{class_object_ae30fea75683c2d149b6b6d17c09ecd0c}{00059}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_object_ae30fea75683c2d149b6b6d17c09ecd0c}{setName}}(std::string\ name);}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00069}\mbox{\hyperlink{class_object_a1204b43ddce80707db1d6721e6cf8004}{00069}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_object_a1204b43ddce80707db1d6721e6cf8004}{render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform,\ \textcolor{keywordtype}{void}*\ data)\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00076}\mbox{\hyperlink{class_object_a3a5b3a4ae646a3cb2d9090deb36f5e44}{00076}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_object_a3a5b3a4ae646a3cb2d9090deb36f5e44}{getNextId}}();}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00078}00078\ \textcolor{comment}{//\ Private\ methods\ and\ fields}}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00079}00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ id;\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00081}00081\ \ \ \ \ std::string\ name;\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00082}00082\ \};}
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{object_8h_source_l00084}00084\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OBJECT\_H}}
+
+\end{DoxyCode}

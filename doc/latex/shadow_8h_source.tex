@@ -1,0 +1,35 @@
+\doxysection{shadow.\+h}
+\hypertarget{shadow_8h_source}{}\label{shadow_8h_source}\index{engine/shadow.h@{engine/shadow.h}}
+\mbox{\hyperlink{shadow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ SHADOW\_H}}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00020}00020\ \textcolor{preprocessor}{\#define\ SHADOW\_H}}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00023}00023\ \textcolor{comment}{//\ FORWARD\ DECLARATION\ //}}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00025}00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_node}{Node}};}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00033}\mbox{\hyperlink{class_shadow}{00033}}\ \textcolor{keyword}{class\ }ENG\_API\ \mbox{\hyperlink{class_shadow}{Shadow}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00035}00035\ \textcolor{comment}{//\ Public\ methods}}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00036}00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00044}\mbox{\hyperlink{class_shadow_ac8c310dd939c3e0159f561359bcb0444}{00044}}\ \ \ \ \mbox{\hyperlink{class_shadow_ac8c310dd939c3e0159f561359bcb0444}{Shadow}}(\mbox{\hyperlink{class_eng_1_1_mesh}{Eng::Mesh}}*\ mesh);}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00051}\mbox{\hyperlink{class_shadow_a6fed128929e13ea3d3de6e64da074b8a}{00051}}\ \ \ \ \mbox{\hyperlink{class_shadow_a6fed128929e13ea3d3de6e64da074b8a}{\string~Shadow}}();}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00059}\mbox{\hyperlink{class_shadow_a5ee66b95dac03176b9a454530d25ed7e}{00059}}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_shadow_a5ee66b95dac03176b9a454530d25ed7e}{addVertex}}(\mbox{\hyperlink{class_eng_1_1_vertex}{Eng::Vertex}}*\ v);}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00066}\mbox{\hyperlink{class_shadow_a76b5c87cf4d525741da0a327c21c6afd}{00066}}\ \ \ \ std::vector<Eng::Vertex*>\ \mbox{\hyperlink{class_shadow_a76b5c87cf4d525741da0a327c21c6afd}{getVertices}}();}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00076}\mbox{\hyperlink{class_shadow_a3a3274a75af594c9a63420bcae932462}{00076}}\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_shadow_a3a3274a75af594c9a63420bcae932462}{render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform,\ \textcolor{keywordtype}{void}*\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00078}00078\ \textcolor{comment}{//\ Private\ methods\ and\ fields}}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00079}00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00085}00085\ \ \ \ \textcolor{keywordtype}{float}\ getDeepestPoint();}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00086}00086\ \ \ \ \mbox{\hyperlink{class_eng_1_1_mesh}{Eng::Mesh}}*\ meshToShadow;\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00087}00087\ \ \ \ std::vector<Eng::Vertex*>\ vertices;\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00088}00088\ \};}
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{shadow_8h_source_l00090}00090\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

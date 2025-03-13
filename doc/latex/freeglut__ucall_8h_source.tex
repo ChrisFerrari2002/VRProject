@@ -1,0 +1,119 @@
+\doxysection{freeglut\+\_\+ucall.\+h}
+\hypertarget{freeglut__ucall_8h_source}{}\label{freeglut__ucall_8h_source}\index{dependencies/freeglut/include/GL/freeglut\_ucall.h@{dependencies/freeglut/include/GL/freeglut\_ucall.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ \ \_\_FREEGLUT\_UCALL\_H\_\_}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ \ \_\_FREEGLUT\_UCALL\_H\_\_}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00004}00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00005}00005\ \textcolor{comment}{\ *\ freeglut\_ucall.h}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00006}00006\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00007}00007\ \textcolor{comment}{\ *\ Callbacks\ with\ user\ data\ arguments.}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00009}00009\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00010}00010\ \textcolor{comment}{\ *\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00011}00011\ \textcolor{comment}{\ *\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ \ IN\ NO\ EVENT\ SHALL}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00012}00012\ \textcolor{comment}{\ *\ PAWEL\ W.\ OLSZTA\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00013}00013\ \textcolor{comment}{\ *\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,\ OUT\ OF\ OR\ IN}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00014}00014\ \textcolor{comment}{\ *\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00015}00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00017}00017\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00019}00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00021}00021\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00022}00022\ \textcolor{comment}{\ *\ Menu\ stuff,\ see\ fg\_menu.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00023}00023\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00024}00024\ FGAPI\ \textcolor{keywordtype}{int}\ \ FGAPIENTRY\ glutCreateMenuUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int}\ menu,\ \textcolor{keywordtype}{void}*\ user\_data\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00026}00026\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00027}00027\ \textcolor{comment}{\ *\ Global\ callback\ functions,\ see\ fg\_callbacks.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00028}00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00029}00029\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutTimerFuncUcall(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ time,\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{int}\ value,\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00030}00030\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutIdleFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00032}00032\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00033}00033\ \textcolor{comment}{\ *\ Window-\/specific\ callback\ functions,\ see\ fg\_callbacks.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00034}00034\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00035}00035\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutKeyboardFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00036}00036\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutSpecialFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00037}00037\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutReshapeFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00038}00038\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutVisibilityFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00039}00039\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutDisplayFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00040}00040\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMouseFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00041}00041\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMotionFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00042}00042\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutPassiveMotionFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00043}00043\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutEntryFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00045}00045\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutKeyboardUpFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00046}00046\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutSpecialUpFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00047}00047\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutJoystickFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{int}\ pollInterval,\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00048}00048\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMenuStatusFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00049}00049\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutOverlayDisplayFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00050}00050\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutWindowStatusFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00052}00052\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutSpaceballMotionFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00053}00053\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutSpaceballRotateFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00054}00054\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutSpaceballButtonFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00055}00055\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutButtonBoxFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00056}00056\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutDialsFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00057}00057\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutTabletMotionFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00058}00058\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutTabletButtonFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00060}00060\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMouseWheelFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00061}00061\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutPositionFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00062}00062\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutCloseFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00063}00063\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutWMCloseFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00064}00064\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMenuDestroyFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00066}00066\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00067}00067\ \textcolor{comment}{\ *\ Multi-\/touch/multi-\/pointer\ extensions}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00068}00068\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00069}00069\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMultiEntryFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00070}00070\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMultiButtonFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00071}00071\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMultiMotionFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00072}00072\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutMultiPassiveFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00074}00074\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00075}00075\ \textcolor{comment}{\ *\ Initialization\ functions,\ see\ fg\_init.c}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00076}00076\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00077}00077\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00078}00078\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutInitErrorFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt,\ va\_list\ ap,\ \textcolor{keywordtype}{void}*\ user\_data\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00079}00079\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutInitWarningFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt,\ va\_list\ ap,\ \textcolor{keywordtype}{void}*\ user\_data\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00081}00081\ \textcolor{comment}{/*\ Mobile\ platforms\ lifecycle\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00082}00082\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutInitContextFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00083}00083\ FGAPI\ \textcolor{keywordtype}{void}\ FGAPIENTRY\ glutAppStatusFuncUcall(\ \textcolor{keywordtype}{void}\ (*\ callback)(\ \textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*\ ),\ \textcolor{keywordtype}{void}*\ user\_data\ );}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00085}00085\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00086}00086\ \textcolor{comment}{\ *\ Continued\ "{}hack"{}\ from\ GLUT\ applied\ to\ Ucall\ functions.}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00087}00087\ \textcolor{comment}{\ *\ For\ more\ info,\ see\ bottom\ of\ freeglut\_std.h}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00088}00088\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00090}00090\ \textcolor{comment}{/*\ to\ get\ the\ prototype\ for\ exit()\ */}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00091}00091\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00093}00093\ \textcolor{preprocessor}{\#if\ defined(\_WIN32)\ \&\&\ !defined(GLUT\_DISABLE\_ATEXIT\_HACK)\ \&\&\ !defined(\_\_WATCOMC\_\_)}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00094}00094\ FGAPI\ \textcolor{keywordtype}{int}\ FGAPIENTRY\ \_\_glutCreateMenuUcallWithExit(\textcolor{keywordtype}{void}(*func)(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*),\ \textcolor{keywordtype}{void}(\_\_cdecl\ *exitfunc)(\textcolor{keywordtype}{int}),\ \textcolor{keywordtype}{void}*\ user\_data);}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00095}00095\ \textcolor{preprocessor}{\#ifndef\ FREEGLUT\_BUILDING\_LIB}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00096}00096\ \textcolor{preprocessor}{\#if\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00097}00097\ \textcolor{preprocessor}{\#define\ FGUNUSED\ \_\_attribute\_\_((unused))}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00098}00098\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00099}00099\ \textcolor{preprocessor}{\#define\ FGUNUSED}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00100}00100\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00101}00101\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ FGAPIENTRY\ FGUNUSED\ glutCreateMenuUcall\_ATEXIT\_HACK(\textcolor{keywordtype}{void}(*func)(\textcolor{keywordtype}{int},\ \textcolor{keywordtype}{void}*),\ \textcolor{keywordtype}{void}*\ user\_data)\ \{\ \textcolor{keywordflow}{return}\ \_\_glutCreateMenuUcallWithExit(func,\ exit,\ user\_data);\ \}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00102}00102\ \textcolor{preprocessor}{\#define\ glutCreateMenuUcall\ glutCreateMenuUcall\_ATEXIT\_HACK}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00103}00103\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00104}00104\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00106}00106\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00108}00108\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00110}00110\ \textcolor{comment}{/***\ END\ OF\ FILE\ ***/}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00112}00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_FREEGLUT\_UCALL\_H\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{freeglut__ucall_8h_source_l00113}00113\ }
+
+\end{DoxyCode}

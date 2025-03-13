@@ -1,0 +1,103 @@
+\doxysection{list.\+cpp}
+\hypertarget{list_8cpp_source}{}\label{list_8cpp_source}\index{engine/list.cpp@{engine/list.cpp}}
+\mbox{\hyperlink{list_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00032}\mbox{\hyperlink{class_eng_1_1_list_afa0983c651ba5afe22dae132b61a7dd2}{00032}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_list_afa0983c651ba5afe22dae132b61a7dd2}{Eng::List::addEntry}}(\mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ root)\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//don't\ get\ the\ root}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_node}{Node}}*\ node\ =\ root-\/>\mbox{\hyperlink{class_eng_1_1_node_afba840a7eef76653059b4295ba767954}{getChildAt}}(0);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{int}\ children\ =\ root-\/>\mbox{\hyperlink{class_eng_1_1_node_ae5aae3b373c1770c8de8bc35e6cf6713}{getNumberOfChildren}}();}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//insert\ nodes\ to\ list}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ children;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Add\ node}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_light}{Light}}*\ v;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((v\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_eng_1_1_light}{Light}}*\textcolor{keyword}{>}(node)))\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v-\/>\mbox{\hyperlink{class_eng_1_1_light_a7f659b7e2d8e59ea62ca3023dc7a0e30}{getLightNumber}}()\ <=\ GL\_LIGHT7)}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ objectsList.push\_front(node);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ objectsList.push\_back(node);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Add\ children\ of\ children}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ !=\ NULL\ \&\&\ node-\/>\mbox{\hyperlink{class_eng_1_1_node_ae5aae3b373c1770c8de8bc35e6cf6713}{getNumberOfChildren}}()\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_list_afa0983c651ba5afe22dae132b61a7dd2}{addEntry}}(node);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ node\ =\ root-\/>\mbox{\hyperlink{class_eng_1_1_node_afba840a7eef76653059b4295ba767954}{getChildAt}}(i);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00061}\mbox{\hyperlink{class_eng_1_1_list_aafbc25b9f61bdd83079e8ebd8839db16}{00061}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_list_aafbc25b9f61bdd83079e8ebd8839db16}{Eng::List::popEntry}}()\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00062}00062\ \ \ \ \ objectsList.pop\_back();}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00074}\mbox{\hyperlink{class_eng_1_1_list_a509b5cf5b88f6c85a2cafaf2a19588f7}{00074}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_eng_1_1_list_a509b5cf5b88f6c85a2cafaf2a19588f7}{Eng::List::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ cameraMatrix,\ \textcolor{keywordtype}{void}*\ ptr)\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00075}00075\ \ \ \ \ std::list<Node*>::iterator\ it;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{comment}{//Render\ each\ list\ element}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ objectsList.begin();\ it\ !=\ objectsList.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_eng_1_1_directional_light}{DirectionalLight}}*\ v\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_eng_1_1_directional_light}{DirectionalLight}}*\textcolor{keyword}{>}(*it))}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ v-\/>render(cameraMatrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_eng_1_1_point_light}{PointLight}}*\ v\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_eng_1_1_point_light}{PointLight}}*\textcolor{keyword}{>}(*it))}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ v-\/>render(cameraMatrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_eng_1_1_spot_light}{SpotLight}}*\ v\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_eng_1_1_spot_light}{SpotLight}}*\textcolor{keyword}{>}(*it))}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ v-\/>render(cameraMatrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ (*it)-\/>render(cameraMatrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00098}\mbox{\hyperlink{class_eng_1_1_list_a3fad6292bd5126eeb437317383338cea}{00098}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_eng_1_1_list_a3fad6292bd5126eeb437317383338cea}{Eng::List::clear}}()}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00099}00099\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00100}00100\ \ \ \ \ std::list<Node*>::iterator\ it;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{comment}{//Render\ each\ list\ element}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ objectsList.begin();\ it\ !=\ objectsList.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_light}{Light}}*\ v;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((v\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_eng_1_1_light}{Light}}*\textcolor{keyword}{>}(*it)))}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ (\mbox{\hyperlink{class_eng_1_1_light}{Light}}*)(*it);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ (*it);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00111}00111\ \ \ \ \ objectsList.clear();}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00122}\mbox{\hyperlink{class_eng_1_1_list_aa9a0bc6ab1905664b4e4e8e873e91e02}{00122}}\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}\ ENG\_API*\ \mbox{\hyperlink{class_eng_1_1_list_aa9a0bc6ab1905664b4e4e8e873e91e02}{Eng::List::getObject}}(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00123}00123\ \ \ \ \ std::list<Node*>::iterator\ it;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{int}\ counter\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{comment}{//Render\ each\ list\ element}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ objectsList.begin();\ it\ !=\ objectsList.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00127}00127\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (counter\ ==\ i)}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*it);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ counter++;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00142}\mbox{\hyperlink{class_eng_1_1_list_a2ad85d293ef639f28d18e1d1f6c72f6d}{00142}}\ \textcolor{keywordtype}{int}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_list_a2ad85d293ef639f28d18e1d1f6c72f6d}{Eng::List::size}}()\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{return}\ objectsList.size();}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00154}\mbox{\hyperlink{class_eng_1_1_list_aa35eaddba1360adeb25387262d31d74e}{00154}}\ \mbox{\hyperlink{class_eng_1_1_node}{Eng::Node}}\ ENG\_API*\ \mbox{\hyperlink{class_eng_1_1_list_aa35eaddba1360adeb25387262d31d74e}{Eng::List::getObjectById}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00155}00155\ \ \ \ \ std::list<Node*>::iterator\ it;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{for}\ (it\ =\ objectsList.begin();\ it\ !=\ objectsList.end();\ it++)}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00157}00157\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*it)-\/>getId()\ ==\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*it);}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00160}00160\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00171}\mbox{\hyperlink{class_eng_1_1_list_ae0cdbc7bcfa4665e1f2848ee82c767f7}{00171}}\ std::list<Eng::Node*>\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_list_ae0cdbc7bcfa4665e1f2848ee82c767f7}{Eng::List::getObjectList}}()\ \{}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>objectsList;}
+\DoxyCodeLine{\Hypertarget{list_8cpp_source_l00173}00173\ \}}
+
+\end{DoxyCode}

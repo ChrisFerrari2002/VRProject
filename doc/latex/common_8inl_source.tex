@@ -1,0 +1,131 @@
+\doxysection{common.\+inl}
+\hypertarget{common_8inl_source}{}\label{common_8inl_source}\index{dependencies/glm/include/glm/gtx/common.inl@{dependencies/glm/include/glm/gtx/common.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{epsilon_8hpp}{../gtc/epsilon.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8hpp}{../gtc/constants.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}\{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00008}00008\ \textcolor{keyword}{namespace\ }detail}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q,\ \textcolor{keywordtype}{bool}\ isFloat\ =\ true>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00011}\mbox{\hyperlink{structglm_1_1detail_1_1compute__fmod}{00011}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1compute__fmod}{compute\_fmod}}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ call(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ a,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ b)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00014}00014\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structglm_1_1detail_1_1functor2}{detail::functor2<vec,\ L,\ T,\ Q>::call}}(std::fmod,\ a,\ b);}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00016}00016\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00017}00017\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00020}\mbox{\hyperlink{structglm_1_1detail_1_1compute__fmod_3_01_l_00_01_t_00_01_q_00_01false_01_4}{00020}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structglm_1_1detail_1_1compute__fmod}{compute\_fmod}}<L,\ T,\ Q,\ false>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00022}00022\ \ \ \ \ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{static}\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ call(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ a,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ b)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\ \%\ b;}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00025}00025\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00026}00026\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00027}00027\ \}\textcolor{comment}{//namespace\ detail}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00030}00030\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}(T\ \textcolor{keyword}{const}\&\ x)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00032}00032\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'isdenormal'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00034}00034\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ if\ GLM\_HAS\_CXX11\_STL}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::fpclassify(x)\ ==\ FP\_SUBNORMAL;}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00036}00036\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__gtc__epsilon_ga5a19d270e1912843d95f476fe2d3882d}{epsilonNotEqual}}(x,\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(0),\ epsilon<T>())\ \&\&\ std::fabs(x)\ <\ std::numeric\_limits<T>::min();}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00038}00038\ \textcolor{preprocessor}{\#\ \ \ \ \ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00042}00042\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{typename}\ vec<1,\ T,\ Q>::bool\_type\ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00043}00043\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00044}00044\ \ \ \ \ \ \ \ \ vec<1,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00045}00045\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00046}00046\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00047}00047\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'isdenormal'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{typename}\ vec<1,\ T,\ Q>::bool\_type(}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}(x.x));}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00054}00054\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{typename}\ vec<2,\ T,\ Q>::bool\_type\ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00055}00055\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00056}00056\ \ \ \ \ \ \ \ \ vec<2,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00057}00057\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00059}00059\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'isdenormal'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{typename}\ vec<2,\ T,\ Q>::bool\_type(}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}(x.x),}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ isdenormal(x.y));}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00067}00067\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{typename}\ vec<3,\ T,\ Q>::bool\_type\ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00068}00068\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00069}00069\ \ \ \ \ \ \ \ \ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00070}00070\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00072}00072\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'isdenormal'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{typename}\ vec<3,\ T,\ Q>::bool\_type(}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}(x.x),}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ isdenormal(x.y),}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ isdenormal(x.z));}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00081}00081\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \textcolor{keyword}{typename}\ vec<4,\ T,\ Q>::bool\_type\ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00082}00082\ \ \ \ \ (}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00083}00083\ \ \ \ \ \ \ \ \ vec<4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00084}00084\ \ \ \ \ )}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00086}00086\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<T>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'isdenormal'\ only\ accept\ floating-\/point\ inputs"{}});}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{typename}\ vec<4,\ T,\ Q>::bool\_type(}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gtx__common_ga74aa7c7462245d83bd5a9edf9c6c2d91}{isdenormal}}(x.x),}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ isdenormal(x.y),}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ isdenormal(x.z),}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ isdenormal(x.w));}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//\ fmod}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00096}00096\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00097}00097\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__gtx__common_ga22feecd4248d9ef34b079a091f273281}{fmod}}(genType\ x,\ genType\ y)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00098}00098\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__gtx__common_ga22feecd4248d9ef34b079a091f273281}{fmod}}(vec<1,\ genType>(x),\ y).x;}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00103}00103\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__common_ga22feecd4248d9ef34b079a091f273281}{fmod}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ T\ y)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::compute\_fmod<L,\ T,\ Q,\ std::numeric\_limits<T>::is\_iec559>::call(x,\ vec<L,\ T,\ Q>(y));}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00108}00108\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00109}00109\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__common_ga22feecd4248d9ef34b079a091f273281}{fmod}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00110}00110\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ detail::compute\_fmod<L,\ T,\ Q,\ std::numeric\_limits<T>::is\_iec559>::call(x,\ y);}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00112}00112\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00114}00114\ \ \ \ \ \textcolor{keyword}{template}\ <length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00115}\mbox{\hyperlink{group__gtx__common_ga57a2d78fae57ab5483d49060044340f2}{00115}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__gtx__common_ga57a2d78fae57ab5483d49060044340f2}{openBounded}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ Value,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ Min,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ Max)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00116}00116\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__vector__relational_ga9987ddebd3528e92f84e23d995320861}{greaterThan}}(Value,\ Min)\ \&\&\ \mbox{\hyperlink{group__core__func__vector__relational_gaedc3a837f960109afe22ea3f267b9a19}{lessThan}}(Value,\ Max);}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00120}00120\ \ \ \ \ \textcolor{keyword}{template}\ <length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00121}\mbox{\hyperlink{group__gtx__common_ga90a5085f6b83d4a519b80cf977ed952a}{00121}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ bool,\ Q>}}\ \mbox{\hyperlink{group__gtx__common_ga90a5085f6b83d4a519b80cf977ed952a}{closeBounded}}(\mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ Value,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ Min,\ \mbox{\hyperlink{structglm_1_1vec}{vec<L,\ T,\ Q>}}\ \textcolor{keyword}{const}\&\ Max)}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00122}00122\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__vector__relational_ga932c94a34799d65dfe36762158a58d90}{greaterThanEqual}}(Value,\ Min)\ \&\&\ \mbox{\hyperlink{group__core__func__vector__relational_gae4adee3ccfca4f66ff5b0ce3686399c2}{lessThanEqual}}(Value,\ Max);}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00124}00124\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{common_8inl_source_l00125}00125\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

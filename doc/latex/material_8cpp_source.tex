@@ -1,0 +1,93 @@
+\doxysection{material.\+cpp}
+\hypertarget{material_8cpp_source}{}\label{material_8cpp_source}\index{engine/material.cpp@{engine/material.cpp}}
+\mbox{\hyperlink{material_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{engine_8h}{engine.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00028}\mbox{\hyperlink{class_eng_1_1_material_a137e987401b63eb7c6c27c3e38bc74b5}{00028}}\ \mbox{\hyperlink{class_eng_1_1_material_a137e987401b63eb7c6c27c3e38bc74b5}{Eng::Material::Material}}()}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}{Object::setId}}(\mbox{\hyperlink{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}{Object::getNextId}}());}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}{Object::setName}}(\textcolor{stringliteral}{"{}default"{}});}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00032}00032\ \ \ \ \ this-\/>\mbox{\hyperlink{class_eng_1_1_material_a398debfbb1976a7d788fda86f35661c8}{setEmission}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00033}00033\ \ \ \ \ this-\/>\mbox{\hyperlink{class_eng_1_1_material_a58078641d461a8f3f96c72a346f4269e}{setAmbient}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00034}00034\ \ \ \ \ this-\/>\mbox{\hyperlink{class_eng_1_1_material_a13d7099870328d8ebdfcc7176cfce5ef}{setDiffuse}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00035}00035\ \ \ \ \ this-\/>\mbox{\hyperlink{class_eng_1_1_material_ad957ed73d4a21cdeab64827f595b0d1b}{setSpecular}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}(0.0));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00036}00036\ \ \ \ \ this-\/>\mbox{\hyperlink{class_eng_1_1_material_a9cd5355c9b9ce7e279f6292683a25265}{setShininess}}(0.0);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00051}\mbox{\hyperlink{class_eng_1_1_material_a550c78c035998d8606aea5245ff31ee3}{00051}}\ \mbox{\hyperlink{class_eng_1_1_material_a137e987401b63eb7c6c27c3e38bc74b5}{Eng::Material::Material}}(\textcolor{keyword}{const}\ std::string\ name,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ \_emission,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ \_ambient,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ \_diffuse,\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ \_specular,\ \textcolor{keywordtype}{float}\ \_shininess)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_object_ada156b53e7362783f31205616fc8efd9}{Object::setId}}(\mbox{\hyperlink{class_eng_1_1_object_a34da20b958b6b7323a11a34ba7d2cd7d}{Object::getNextId}}());}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{class_eng_1_1_object_ac7c49d3327114f752e132a6379a9d346}{Object::setName}}(name);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00054}00054\ \ \ \ \ this-\/>setEmission(\_emission);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00055}00055\ \ \ \ \ this-\/>setAmbient(\_ambient);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00056}00056\ \ \ \ \ this-\/>setDiffuse(\_diffuse);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00057}00057\ \ \ \ \ this-\/>setSpecular(\_specular);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00058}00058\ \ \ \ \ this-\/>setShininess(\_shininess);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00066}\mbox{\hyperlink{class_eng_1_1_material_a2c19452d71f54075df8f5405b03129f4}{00066}}\ \mbox{\hyperlink{class_eng_1_1_material_a2c19452d71f54075df8f5405b03129f4}{Eng::Material::\string~Material}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00073}\mbox{\hyperlink{class_eng_1_1_material_aae18d40ca9a4a1605326a30155722541}{00073}}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_aae18d40ca9a4a1605326a30155722541}{Eng::Material::getEmission}}()\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ emission;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00082}\mbox{\hyperlink{class_eng_1_1_material_a58cf6f48400d5882e119117ba2efe3b4}{00082}}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a58cf6f48400d5882e119117ba2efe3b4}{Eng::Material::getAmbient}}()\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{return}\ ambient;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00091}\mbox{\hyperlink{class_eng_1_1_material_a89f1335edc4f2cff424fe270ec38dec1}{00091}}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a89f1335edc4f2cff424fe270ec38dec1}{Eng::Material::getDiffuse}}()\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ diffuse;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00100}\mbox{\hyperlink{class_eng_1_1_material_a1ed020da7e7b8d37873900a1b277ebf1}{00100}}\ \mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a1ed020da7e7b8d37873900a1b277ebf1}{Eng::Material::getSpecular}}()\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{return}\ specular;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00109}\mbox{\hyperlink{class_eng_1_1_material_a7dbb191d9352a86a59eae152cf97579a}{00109}}\ \textcolor{keywordtype}{float}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a7dbb191d9352a86a59eae152cf97579a}{Eng::Material::getShininess}}()\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{return}\ shininess;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00118}\mbox{\hyperlink{class_eng_1_1_material_a8463061a10c193e8b967834d585ce086}{00118}}\ \mbox{\hyperlink{class_eng_1_1_texture}{Eng::Texture}}*\ \mbox{\hyperlink{class_eng_1_1_material_a8463061a10c193e8b967834d585ce086}{Eng::Material::getTexture}}()\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{return}\ texture;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00127}\mbox{\hyperlink{class_eng_1_1_material_a398debfbb1976a7d788fda86f35661c8}{00127}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a398debfbb1976a7d788fda86f35661c8}{Eng::Material::setEmission}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ emission)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00128}00128\ \ \ \ \ this-\/>emission\ =\ emission;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00136}\mbox{\hyperlink{class_eng_1_1_material_a58078641d461a8f3f96c72a346f4269e}{00136}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a58078641d461a8f3f96c72a346f4269e}{Eng::Material::setAmbient}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ ambient)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00137}00137\ \ \ \ \ this-\/>ambient\ =\ ambient;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00145}\mbox{\hyperlink{class_eng_1_1_material_a13d7099870328d8ebdfcc7176cfce5ef}{00145}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a13d7099870328d8ebdfcc7176cfce5ef}{Eng::Material::setDiffuse}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ diffuse)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00146}00146\ \ \ \ \ this-\/>diffuse\ =\ diffuse;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00147}00147\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00154}\mbox{\hyperlink{class_eng_1_1_material_ad957ed73d4a21cdeab64827f595b0d1b}{00154}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_ad957ed73d4a21cdeab64827f595b0d1b}{Eng::Material::setSpecular}}(\mbox{\hyperlink{structglm_1_1vec}{glm::vec4}}\ specular)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00155}00155\ \ \ \ \ this-\/>specular\ =\ specular;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00163}\mbox{\hyperlink{class_eng_1_1_material_a9cd5355c9b9ce7e279f6292683a25265}{00163}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a9cd5355c9b9ce7e279f6292683a25265}{Eng::Material::setShininess}}(\textcolor{keywordtype}{float}\ shininess)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00164}00164\ \ \ \ \ this-\/>shininess\ =\ shininess;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00172}\mbox{\hyperlink{class_eng_1_1_material_a92f9697a8531f590a829997e4e20ce45}{00172}}\ \textcolor{keywordtype}{void}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a92f9697a8531f590a829997e4e20ce45}{Eng::Material::setTexture}}(\mbox{\hyperlink{class_eng_1_1_texture}{Eng::Texture}}*\ texture)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00173}00173\ \ \ \ \ this-\/>texture\ =\ texture;}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00174}00174\ \}}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00183}\mbox{\hyperlink{class_eng_1_1_material_a0bf08f7b458b6164f1f9bae85996e92c}{00183}}\ \textcolor{keywordtype}{bool}\ ENG\_API\ \mbox{\hyperlink{class_eng_1_1_material_a0bf08f7b458b6164f1f9bae85996e92c}{Eng::Material::render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ matrix,\ \textcolor{keywordtype}{void}*\ ptr)\ \{}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{if}\ (texture\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ texture-\/>render(matrix,\ ptr);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00188}00188\ \ \ \ \ glMaterialf(GL\_FRONT\_AND\_BACK,\ GL\_SHININESS,\ shininess);}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00189}00189\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_AMBIENT,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(ambient));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00190}00190\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_EMISSION,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(emission));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00191}00191\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_DIFFUSE,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(diffuse));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00192}00192\ \ \ \ \ glMaterialfv(GL\_FRONT\_AND\_BACK,\ GL\_SPECULAR,\ \mbox{\hyperlink{group__gtc__type__ptr_gaada83809aefafd7c3264772e6b24b685}{glm::value\_ptr}}(specular));}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00193}00193\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{material_8cpp_source_l00194}00194\ \}}
+
+\end{DoxyCode}

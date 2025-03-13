@@ -1,0 +1,44 @@
+\doxysection{texture.\+h}
+\hypertarget{texture_8h_source}{}\label{texture_8h_source}\index{engine/texture.h@{engine/texture.h}}
+\mbox{\hyperlink{texture_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ TEXTURE\_H}}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00020}00020\ \textcolor{preprocessor}{\#define\ TEXTURE\_H}}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00022}00022\ \textcolor{preprocessor}{\#define\ GL\_TEXTURE\_MAX\_ANISOTROPY\_EXT\ \ \ \ \ \ \ \ 0x84FE}}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00023}00023\ \textcolor{preprocessor}{\#define\ GL\_MAX\_TEXTURE\_MAX\_ANISOTROPY\_EXT\ \ \ \ 0x84FF}}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00032}\mbox{\hyperlink{class_texture}{00032}}\ \textcolor{keyword}{class\ }ENG\_API\ \mbox{\hyperlink{class_texture}{Texture}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_eng_1_1_object}{Eng::Object}}\ \{}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00033}00033\ \textcolor{comment}{//\ Public\ methods}}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00034}00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00042}\mbox{\hyperlink{class_texture_a23a5db9257ff41b2a4f47f83d232a2c5}{00042}}\ \ \ \ \mbox{\hyperlink{class_texture_a23a5db9257ff41b2a4f47f83d232a2c5}{Texture}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00049}\mbox{\hyperlink{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{00049}}\ \ \ \ \mbox{\hyperlink{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{\string~Texture}}();}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00058}\mbox{\hyperlink{class_texture_aa7c11bd1de04316ca1bff30f2ea9795e}{00058}}\ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_aa7c11bd1de04316ca1bff30f2ea9795e}{loadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ filePath);}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00066}\mbox{\hyperlink{class_texture_aa3e1c397d9a3162cb789b33977fb9f64}{00066}}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_aa3e1c397d9a3162cb789b33977fb9f64}{setTextureSettings}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00073}\mbox{\hyperlink{class_texture_a6d0f8f5ac4889c9bee8c7493f7a98cbb}{00073}}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a6d0f8f5ac4889c9bee8c7493f7a98cbb}{setTextureId}}(std::string\ textureId);}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00083}\mbox{\hyperlink{class_texture_ada123cbfe1012199090fb0abeb62e362}{00083}}\ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_texture_ada123cbfe1012199090fb0abeb62e362}{render}}(\mbox{\hyperlink{structglm_1_1mat}{glm::mat4}}\ transform,\ \textcolor{keywordtype}{void}*\ data)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00090}\mbox{\hyperlink{class_texture_a91a6fd3355bc870194851514194daaab}{00090}}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_texture_a91a6fd3355bc870194851514194daaab}{getWidth}}();}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00097}\mbox{\hyperlink{class_texture_a80e143905655b173df5994300088ce35}{00097}}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_texture_a80e143905655b173df5994300088ce35}{getHeight}}();}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00100}00100\ \textcolor{comment}{//\ Private\ methods\ and\ fields}}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00101}00101\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00102}00102\ \ \ \ std::string\ filePath;\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00103}00103\ \ \ \ \textcolor{keywordtype}{int}\ width;\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00104}00104\ \ \ \ \textcolor{keywordtype}{int}\ height;\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00105}00105\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ texId\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00106}00106\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*\ bitmap\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}[256\ *\ 256\ *\ 3];\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00107}00107\ \};}
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{texture_8h_source_l00109}00109\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

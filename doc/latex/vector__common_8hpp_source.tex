@@ -1,0 +1,84 @@
+\doxysection{vector\+\_\+common.\+hpp}
+\hypertarget{vector__common_8hpp_source}{}\label{vector__common_8hpp_source}\index{dependencies/glm/include/glm/ext/vector\_common.hpp@{dependencies/glm/include/glm/ext/vector\_common.hpp}}
+\mbox{\hyperlink{vector__common_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00016}00016\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scalar__common_8hpp}{../ext/scalar\_common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8hpp}{../common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_vector\_common\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00024}00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00025}00025\ \{}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00035}00035\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ b,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ c);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00043}00043\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__common_ga6cf8098827054a270ee36b18e30d471d}{min}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ b,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ c,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ d);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00051}00051\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ z);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00059}00059\ \ \ \ \ GLM\_FUNC\_DECL\ GLM\_CONSTEXPR\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__common_gae02d42887fc5570451f880e3c624b9ac}{max}}(\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ z,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ w);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00068}00068\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00069}00069\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga7b2b438a765e2a62098c79eb212f28f0}{fmin}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ T\ y);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00079}00079\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga7b2b438a765e2a62098c79eb212f28f0}{fmin}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ y);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00089}00089\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga7b2b438a765e2a62098c79eb212f28f0}{fmin}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ b,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ c);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00099}00099\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga7b2b438a765e2a62098c79eb212f28f0}{fmin}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ b,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ c,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ d);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00108}00108\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00109}00109\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga36920478565cf608e93064283ce06421}{fmax}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ T\ b);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00118}00118\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00119}00119\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga36920478565cf608e93064283ce06421}{fmax}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ b);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00128}00128\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00129}00129\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga36920478565cf608e93064283ce06421}{fmax}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ b,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ c);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00138}00138\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00139}00139\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga36920478565cf608e93064283ce06421}{fmax}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ a,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ b,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ c,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ d);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00148}00148\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00149}00149\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga1e28539d3a46965ed9ef92ec7cb3b18a}{fclamp}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ T\ minVal,\ T\ maxVal);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00158}00158\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00159}00159\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga1e28539d3a46965ed9ef92ec7cb3b18a}{fclamp}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ minVal,\ vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ maxVal);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00168}00168\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00169}00169\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__core__func__common_ga7cd77683da6361e297c56443fc70806d}{clamp}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Texcoord);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00178}00178\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00179}00179\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga809650c6310ea7c42666e918c117fb6f}{repeat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Texcoord);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00188}00188\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00189}00189\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_gaa6856a0a048d2749252848da35e10c8b}{mirrorClamp}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Texcoord);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00198}00198\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00199}00199\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ T,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga16a89b0661b60d5bea85137bbae74d73}{mirrorRepeat}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Texcoord);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00210}00210\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00211}00211\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ int,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_gaa45ff5782fde5182afa7ab211f9758a3}{iround}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00222}00222\ \ \ \ \ \textcolor{keyword}{template}<length\_t\ L,\ \textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00223}00223\ \ \ \ \ GLM\_FUNC\_DECL\ vec<L,\ uint,\ Q>\ \mbox{\hyperlink{group__ext__scalar__common_ga9d915647ec33c4110946665f914d3abb}{uround}}(vec<L,\ T,\ Q>\ \textcolor{keyword}{const}\&\ x);}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00226}00226\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{vector__common_8hpp_source_l00228}00228\ \textcolor{preprocessor}{\#include\ "{}vector\_common.inl"{}}}
+
+\end{DoxyCode}

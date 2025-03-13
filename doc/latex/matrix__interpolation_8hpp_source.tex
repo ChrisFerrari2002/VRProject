@@ -1,0 +1,41 @@
+\doxysection{matrix\+\_\+interpolation.\+hpp}
+\hypertarget{matrix__interpolation_8hpp_source}{}\label{matrix__interpolation_8hpp_source}\index{dependencies/glm/include/glm/gtx/matrix\_interpolation.hpp@{dependencies/glm/include/glm/gtx/matrix\_interpolation.hpp}}
+\mbox{\hyperlink{matrix__interpolation_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00016}00016\ \textcolor{comment}{//\ Dependency:}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{glm_8hpp}{../glm.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#ifndef\ GLM\_ENABLE\_EXPERIMENTAL}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#\ \ \ error\ "{}GLM:\ GLM\_GTX\_matrix\_interpolation\ is\ an\ experimental\ extension\ and\ may\ change\ in\ the\ future.\ Use\ \#define\ GLM\_ENABLE\_EXPERIMENTAL\ before\ including\ it,\ if\ you\ really\ want\ to\ use\ it."{}}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00021}00021\ \textcolor{preprocessor}{\#elif\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_GTX\_matrix\_interpolation\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00025}00025\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00033}00033\ \ \ \ \ GLM\_FUNC\_DISCARD\_DECL\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gtx__matrix__interpolation_ga75220364722b0e367df98af61de4c3e5}{axisAngle}}(}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ mat<4,\ 4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Mat,\ vec<3,\ T,\ Q>\ \&\ Axis,\ T\ \&\ Angle);}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00039}00039\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__matrix__interpolation_ga32e12a4b569ab8742ca2eb37969a8701}{axisAngleMatrix}}(}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ vec<3,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Axis,\ T\ \textcolor{keyword}{const}\ Angle);}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00045}00045\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__matrix__interpolation_ga805f6d5601e84d4dfe5405a9f33e46c1}{extractMatrixRotation}}(}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00046}00046\ \ \ \ \ \ \ \ \ mat<4,\ 4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ Mat);}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ qualifier\ Q>}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00052}00052\ \ \ \ \ GLM\_FUNC\_DECL\ mat<4,\ 4,\ T,\ Q>\ \mbox{\hyperlink{group__gtx__matrix__interpolation_ga95fb9868c6106bc8f47b2d195f5667b3}{interpolate}}(}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ mat<4,\ 4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m1,\ mat<4,\ 4,\ T,\ Q>\ \textcolor{keyword}{const}\&\ m2,\ T\ \textcolor{keyword}{const}\ Delta);}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00056}00056\ \}\textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{matrix__interpolation_8hpp_source_l00058}00058\ \textcolor{preprocessor}{\#include\ "{}matrix\_interpolation.inl"{}}}
+
+\end{DoxyCode}

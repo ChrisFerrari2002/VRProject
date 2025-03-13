@@ -1,0 +1,113 @@
+\doxysection{scalar\+\_\+reciprocal.\+inl}
+\hypertarget{scalar__reciprocal_8inl_source}{}\label{scalar__reciprocal_8inl_source}\index{dependencies/glm/include/glm/ext/scalar\_reciprocal.inl@{dependencies/glm/include/glm/ext/scalar\_reciprocal.inl}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{trigonometric_8hpp}{../trigonometric.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00008}00008\ \ \ \ \ \textcolor{comment}{//\ sec}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00010}\mbox{\hyperlink{group__ext__scalar__reciprocal_gae4bcbebee670c5ea155f0777b3acbd84}{00010}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gae4bcbebee670c5ea155f0777b3acbd84}{sec}}(genType\ angle)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00012}00012\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'sec'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ genType(1)\ /\ \mbox{\hyperlink{group__core__func__trigonometric_ga54745147add8b4fa05642f5c71f6833e}{glm::cos}}(angle);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ csc}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00018}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga59dd0005b6474eea48af743b4f14ebbb}{00018}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga59dd0005b6474eea48af743b4f14ebbb}{csc}}(genType\ angle)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00020}00020\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'csc'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ genType(1)\ /\ \mbox{\hyperlink{group__core__func__trigonometric_ga3fcdcfa2d2ac38de9ba1885cd1c79414}{glm::sin}}(angle);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ cot}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00026}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga3a7b517a95bbd3ad74da3aea87a66314}{00026}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga3a7b517a95bbd3ad74da3aea87a66314}{cot}}(genType\ angle)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00028}00028\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'cot'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00030}00030\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\ pi\_over\_2\ =\ genType(3.1415926535897932384626433832795\ /\ 2.0);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__trigonometric_gae5727eacf7692c197af6298b6d4ad922}{glm::tan}}(pi\_over\_2\ -\/\ angle);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ asec}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00036}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga2c5b7f962c2c9ff684e6d2de48db1f10}{00036}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga2c5b7f962c2c9ff684e6d2de48db1f10}{asec}}(genType\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00038}00038\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'asec'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__trigonometric_gaf621a212fa21c1009344895a52e9c82c}{acos}}(genType(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ acsc}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00044}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga1b4bed91476b9b915e76b4a30236d330}{00044}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga1b4bed91476b9b915e76b4a30236d330}{acsc}}(genType\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00046}00046\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acsc'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__trigonometric_gad3628b879437a75d1941f965b2893db7}{asin}}(genType(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//\ acot}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00052}\mbox{\hyperlink{group__ext__scalar__reciprocal_gaeadfb9c9d71093f7865b2ba2ca8d104d}{00052}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gaeadfb9c9d71093f7865b2ba2ca8d104d}{acot}}(genType\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00054}00054\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acot'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00056}00056\ \ \ \ \ \ \ \ \ genType\ \textcolor{keyword}{const}\ pi\_over\_2\ =\ genType(3.1415926535897932384626433832795\ /\ 2.0);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pi\_over\_2\ -\/\ atan(x);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ sech}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00062}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga9a5cfd1e7170104a7b33863b1b75e5ae}{00062}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga9a5cfd1e7170104a7b33863b1b75e5ae}{sech}}(genType\ angle)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00064}00064\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'sech'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ genType(1)\ /\ \mbox{\hyperlink{group__core__func__trigonometric_gadc7baaf1f2e79f0883c7ead8abb3040e}{glm::cosh}}(angle);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ csch}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00070}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga6d95843ff3ca6472ab399ba171d290a0}{00070}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga6d95843ff3ca6472ab399ba171d290a0}{csch}}(genType\ angle)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00072}00072\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'csch'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ genType(1)\ /\ \mbox{\hyperlink{group__core__func__trigonometric_ga6fa8d0d5565c424ca5149aeed90368e9}{glm::sinh}}(angle);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ coth}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00078}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga6b8b770eb7198e4dea59d52e6db81442}{00078}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga6b8b770eb7198e4dea59d52e6db81442}{coth}}(genType\ angle)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00080}00080\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'coth'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__core__func__trigonometric_gadc7baaf1f2e79f0883c7ead8abb3040e}{glm::cosh}}(angle)\ /\ \mbox{\hyperlink{group__core__func__trigonometric_ga6fa8d0d5565c424ca5149aeed90368e9}{glm::sinh}}(angle);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ asech}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00085}00085\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00086}\mbox{\hyperlink{group__ext__scalar__reciprocal_gaec7586dccfe431f850d006f3824b8ca6}{00086}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gaec7586dccfe431f850d006f3824b8ca6}{asech}}(genType\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00087}00087\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00088}00088\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'asech'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ acosh(genType(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ acsch}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00094}\mbox{\hyperlink{group__ext__scalar__reciprocal_ga4b50aa5e5afc7e19ec113ab91596c576}{00094}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_ga4b50aa5e5afc7e19ec113ab91596c576}{acsch}}(genType\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00095}00095\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00096}00096\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acsch'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ asinh(genType(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00100}00100\ \ \ \ \ \textcolor{comment}{//\ acoth}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00101}00101\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genType>}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00102}\mbox{\hyperlink{group__ext__scalar__reciprocal_gafaca98a7100170db8841f446282debfa}{00102}}\ \ \ \ \ GLM\_FUNC\_QUALIFIER\ genType\ \mbox{\hyperlink{group__ext__scalar__reciprocal_gafaca98a7100170db8841f446282debfa}{acoth}}(genType\ x)}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00103}00103\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00104}00104\ \ \ \ \ \ \ \ \ GLM\_STATIC\_ASSERT(std::numeric\_limits<genType>::is\_iec559\ ||\ GLM\_CONFIG\_UNRESTRICTED\_FLOAT,\ \textcolor{stringliteral}{"{}'acoth'\ only\ accept\ floating-\/point\ values"{}});}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ atanh(genType(1)\ /\ x);}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{scalar__reciprocal_8inl_source_l00107}00107\ \}\textcolor{comment}{//namespace\ glm}}
+
+\end{DoxyCode}

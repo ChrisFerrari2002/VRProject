@@ -1,0 +1,1144 @@
+\doxysection{Free\+Image.\+h}
+\hypertarget{_free_image_8h_source}{}\label{_free_image_8h_source}\index{dependencies/freeimage/include/FreeImage.h@{dependencies/freeimage/include/FreeImage.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00001}00001\ \textcolor{comment}{//\ ==========================================================}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00002}00002\ \textcolor{comment}{//\ FreeImage\ 3}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00004}00004\ \textcolor{comment}{//\ Design\ and\ implementation\ by}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00005}00005\ \textcolor{comment}{//\ -\/\ Floris\ van\ den\ Berg\ (flvdberg@wxs.nl)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00006}00006\ \textcolor{comment}{//\ -\/\ Hervé Drolon\ (drolon@infonie.fr)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00007}00007\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00008}00008\ \textcolor{comment}{//\ Contributors:}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00009}00009\ \textcolor{comment}{//\ -\/\ see\ changes\ log\ named\ 'Whatsnew.txt',\ see\ header\ of\ each\ .h\ and\ .cpp\ file}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00011}00011\ \textcolor{comment}{//\ This\ file\ is\ part\ of\ FreeImage\ 3}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00012}00012\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00013}00013\ \textcolor{comment}{//\ COVERED\ CODE\ IS\ PROVIDED\ UNDER\ THIS\ LICENSE\ ON\ AN\ "{}AS\ IS"{}\ BASIS,\ WITHOUT\ WARRANTY}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00014}00014\ \textcolor{comment}{//\ OF\ ANY\ KIND,\ EITHER\ EXPRESSED\ OR\ IMPLIED,\ INCLUDING,\ WITHOUT\ LIMITATION,\ WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00015}00015\ \textcolor{comment}{//\ THAT\ THE\ COVERED\ CODE\ IS\ FREE\ OF\ DEFECTS,\ MERCHANTABLE,\ FIT\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00016}00016\ \textcolor{comment}{//\ OR\ NON-\/INFRINGING.\ THE\ ENTIRE\ RISK\ AS\ TO\ THE\ QUALITY\ AND\ PERFORMANCE\ OF\ THE\ COVERED}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00017}00017\ \textcolor{comment}{//\ CODE\ IS\ WITH\ YOU.\ SHOULD\ ANY\ COVERED\ CODE\ PROVE\ DEFECTIVE\ IN\ ANY\ RESPECT,\ YOU\ (NOT}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00018}00018\ \textcolor{comment}{//\ THE\ INITIAL\ DEVELOPER\ OR\ ANY\ OTHER\ CONTRIBUTOR)\ ASSUME\ THE\ COST\ OF\ ANY\ NECESSARY}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00019}00019\ \textcolor{comment}{//\ SERVICING,\ REPAIR\ OR\ CORRECTION.\ THIS\ DISCLAIMER\ OF\ WARRANTY\ CONSTITUTES\ AN\ ESSENTIAL}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00020}00020\ \textcolor{comment}{//\ PART\ OF\ THIS\ LICENSE.\ NO\ USE\ OF\ ANY\ COVERED\ CODE\ IS\ AUTHORIZED\ HEREUNDER\ EXCEPT\ UNDER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00021}00021\ \textcolor{comment}{//\ THIS\ DISCLAIMER.}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00022}00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00023}00023\ \textcolor{comment}{//\ Use\ at\ your\ own\ risk!}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00024}00024\ \textcolor{comment}{//\ ==========================================================}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00026}00026\ \textcolor{preprocessor}{\#ifndef\ FREEIMAGE\_H}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00027}00027\ \textcolor{preprocessor}{\#define\ FREEIMAGE\_H}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00029}00029\ \textcolor{comment}{//\ Version\ information\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00031}00031\ \textcolor{preprocessor}{\#define\ FREEIMAGE\_MAJOR\_VERSION\ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00032}00032\ \textcolor{preprocessor}{\#define\ FREEIMAGE\_MINOR\_VERSION\ \ \ 19}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00033}00033\ \textcolor{preprocessor}{\#define\ FREEIMAGE\_RELEASE\_SERIAL\ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00035}00035\ \textcolor{comment}{//\ Compiler\ options\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <wchar.h>}\ \ \textcolor{comment}{//\ needed\ for\ UNICODE\ functions}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00039}00039\ \textcolor{preprocessor}{\#if\ defined(FREEIMAGE\_LIB)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00040}00040\ \textcolor{preprocessor}{\ \ \ \ \#define\ DLL\_API}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00041}00041\ \textcolor{preprocessor}{\ \ \ \ \#define\ DLL\_CALLCONV}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00042}00042\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00043}00043\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00044}00044\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ DLL\_CALLCONV\ \_\_stdcall}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ following\ ifdef\ block\ is\ the\ standard\ way\ of\ creating\ macros\ which\ make\ exporting\ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ from\ a\ DLL\ simpler.\ All\ files\ within\ this\ DLL\ are\ compiled\ with\ the\ FREEIMAGE\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ symbol\ defined\ on\ the\ command\ line.\ this\ symbol\ should\ not\ be\ defined\ on\ any\ project}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ that\ uses\ this\ DLL.\ This\ way\ any\ other\ project\ whose\ source\ files\ include\ this\ file\ see\ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DLL\_API\ functions\ as\ being\ imported\ from\ a\ DLL,\ wheras\ this\ DLL\ sees\ symbols}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ defined\ with\ this\ macro\ as\ being\ exported.}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00051}00051\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#ifdef\ FREEIMAGE\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00052}00052\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ DLL\_API\ \_\_declspec(dllexport)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00053}00053\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00054}00054\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ DLL\_API\ \_\_declspec(dllimport)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00055}00055\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif\ }\textcolor{comment}{//\ FREEIMAGE\_EXPORTS}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00056}00056\ \textcolor{preprocessor}{\ \ \ \ \#else\ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ try\ the\ gcc\ visibility\ support\ (see\ http://gcc.gnu.org/wiki/Visibility)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00058}00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ defined(\_\_GNUC\_\_)\ \&\&\ ((\_\_GNUC\_\_\ >=\ 4)\ ||\ (\_\_GNUC\_\_\ ==\ 3\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 4))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00059}00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#ifndef\ GCC\_HASCLASSVISIBILITY}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00060}00060\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#define\ GCC\_HASCLASSVISIBILITY}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00061}00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00062}00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif\ }\textcolor{comment}{//\ \_\_GNUC\_\_}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ DLL\_CALLCONV}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00064}00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#if\ defined(GCC\_HASCLASSVISIBILITY)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ DLL\_API\ \_\_attribute\_\_\ ((visibility("{}default"{})))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00066}00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00067}00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#define\ DLL\_API}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00068}00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#endif\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00069}00069\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ WIN32\ /\ !WIN32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00070}00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_LIB}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00072}00072\ \textcolor{comment}{//\ Endianness:}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00073}00073\ \textcolor{comment}{//\ Some\ versions\ of\ gcc\ may\ have\ BYTE\_ORDER\ or\ \_\_BYTE\_ORDER\ defined.}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00074}00074\ \textcolor{comment}{//\ If\ your\ big\ endian\ system\ isn't\ being\ detected,\ add\ an\ OS\ specific\ check}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00075}00075\ \textcolor{comment}{//\ or\ define\ any\ of\ FREEIMAGE\_BIGENDIAN\ and\ FREEIMAGE\_LITTLEENDIAN\ directly}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00076}00076\ \textcolor{comment}{//\ to\ specify\ the\ desired\ endianness.}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00077}00077\ \textcolor{preprocessor}{\#if\ (!defined(FREEIMAGE\_BIGENDIAN)\ \&\&\ !defined(FREEIMAGE\_LITTLEENDIAN))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00078}00078\ \textcolor{preprocessor}{\#if\ (defined(BYTE\_ORDER)\ \&\&\ BYTE\_ORDER==BIG\_ENDIAN)\ ||\ (defined(\_\_BYTE\_ORDER)\ \&\&\ \_\_BYTE\_ORDER==\_\_BIG\_ENDIAN)\ ||\ (defined(\_\_BYTE\_ORDER)\ \&\&\ \_\_BYTE\_ORDER==\_\_ORDER\_BIG\_ENDIAN\_\_)\ ||\ defined(\_\_BIG\_ENDIAN\_\_)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00079}00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ FREEIMAGE\_BIGENDIAN}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00080}00080\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ BYTE\_ORDER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00081}00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !FREEIMAGE\_[BIG|LITTLE]ENDIAN}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00083}00083\ \textcolor{comment}{//\ Color-\/Order:}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00084}00084\ \textcolor{comment}{//\ The\ specified\ order\ of\ color\ components\ red,\ green\ and\ blue\ affects\ 24-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00085}00085\ \textcolor{comment}{//\ and\ 32-\/bit\ images\ of\ type\ FIT\_BITMAP\ as\ well\ as\ the\ colors\ that\ are\ part}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00086}00086\ \textcolor{comment}{//\ of\ a\ color\ palette.\ All\ other\ images\ always\ use\ RGB\ order.\ By\ default,}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00087}00087\ \textcolor{comment}{//\ color\ order\ is\ coupled\ to\ endianness:}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00088}00088\ \textcolor{comment}{//\ little-\/endian\ -\/>\ BGR}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00089}00089\ \textcolor{comment}{//\ big-\/endian\ \ \ \ -\/>\ RGB}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00090}00090\ \textcolor{comment}{//\ However,\ you\ can\ always\ define\ FREEIMAGE\_COLORORDER\ to\ any\ of\ the\ known}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00091}00091\ \textcolor{comment}{//\ orders\ FREEIMAGE\_COLORORDER\_BGR\ (0)\ and\ FREEIMAGE\_COLORORDER\_RGB\ (1)\ to}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00092}00092\ \textcolor{comment}{//\ specify\ your\ preferred\ color\ order.}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00093}00093\ \textcolor{preprocessor}{\#define\ FREEIMAGE\_COLORORDER\_BGR\ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00094}00094\ \textcolor{preprocessor}{\#define\ FREEIMAGE\_COLORORDER\_RGB\ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00095}00095\ \textcolor{preprocessor}{\#if\ (!defined(FREEIMAGE\_COLORORDER))\ ||\ ((FREEIMAGE\_COLORORDER\ !=\ FREEIMAGE\_COLORORDER\_BGR)\ \&\&\ (FREEIMAGE\_COLORORDER\ !=\ FREEIMAGE\_COLORORDER\_RGB))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00096}00096\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(FREEIMAGE\_BIGENDIAN)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00097}00097\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ FREEIMAGE\_COLORORDER\ FREEIMAGE\_COLORORDER\_RGB}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00098}00098\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00099}00099\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ FREEIMAGE\_COLORORDER\ FREEIMAGE\_COLORORDER\_BGR}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00100}00100\ \textcolor{preprocessor}{\ \ \ \ \#endif\ }\textcolor{comment}{//\ FREEIMAGE\_BIGENDIAN}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00101}00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_COLORORDER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00103}00103\ \textcolor{comment}{//\ Ensure\ 4-\/byte\ enums\ if\ we're\ using\ Borland\ C++\ compilers}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00104}00104\ \textcolor{preprocessor}{\#if\ defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00105}00105\ \textcolor{preprocessor}{\#pragma\ option\ push\ -\/b}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00106}00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00108}00108\ \textcolor{comment}{//\ For\ C\ compatibility\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00110}00110\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00111}00111\ \textcolor{preprocessor}{\#define\ FI\_DEFAULT(x)\ \ \ =\ x}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00112}00112\ \textcolor{preprocessor}{\#define\ FI\_ENUM(x)\ \ \ \ \ \ enum\ x}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00113}00113\ \textcolor{preprocessor}{\#define\ FI\_STRUCT(x)\ \ \ \ struct\ x}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00114}00114\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00115}00115\ \textcolor{preprocessor}{\#define\ FI\_DEFAULT(x)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00116}00116\ \textcolor{preprocessor}{\#define\ FI\_ENUM(x)\ \ \ \ \ \ typedef\ int\ x;\ enum\ x}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00117}00117\ \textcolor{preprocessor}{\#define\ FI\_STRUCT(x)\ \ \ \ typedef\ struct\ x\ x;\ struct\ x}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00118}00118\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00120}00120\ \textcolor{comment}{//\ Bitmap\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00122}00122\ FI\_STRUCT\ (FIBITMAP)\ \{\ \textcolor{keywordtype}{void}\ *data;\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00123}00123\ FI\_STRUCT\ (FIMULTIBITMAP)\ \{\ \textcolor{keywordtype}{void}\ *data;\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00125}00125\ \textcolor{comment}{//\ Types\ used\ in\ the\ library\ (directly\ copied\ from\ Windows)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00127}00127\ \textcolor{preprocessor}{\#if\ defined(\_\_MINGW32\_\_)\ \&\&\ defined(\_WINDOWS\_H)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00128}00128\ \textcolor{preprocessor}{\#define\ \_WINDOWS\_\ \ \ }\textcolor{comment}{//\ prevent\ a\ bug\ in\ MinGW32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00129}00129\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_MINGW32\_\_}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00131}00131\ \textcolor{preprocessor}{\#ifndef\ \_WINDOWS\_}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00132}00132\ \textcolor{preprocessor}{\#define\ \_WINDOWS\_}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00134}00134\ \textcolor{preprocessor}{\#ifndef\ FALSE}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00135}00135\ \textcolor{preprocessor}{\#define\ FALSE\ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00136}00136\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00137}00137\ \textcolor{preprocessor}{\#ifndef\ TRUE}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00138}00138\ \textcolor{preprocessor}{\#define\ TRUE\ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00139}00139\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00140}00140\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00141}00141\ \textcolor{preprocessor}{\#define\ NULL\ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00142}00142\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00144}00144\ \textcolor{preprocessor}{\#ifndef\ SEEK\_SET}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00145}00145\ \textcolor{preprocessor}{\#define\ SEEK\_SET\ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00146}00146\ \textcolor{preprocessor}{\#define\ SEEK\_CUR\ \ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00147}00147\ \textcolor{preprocessor}{\#define\ SEEK\_END\ \ 2}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00148}00148\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00150}00150\ \textcolor{preprocessor}{\#ifndef\ \_MSC\_VER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00151}00151\ \ \ \ \ \textcolor{comment}{//\ define\ portable\ types\ for\ 32-\/bit\ /\ 64-\/bit\ OS}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00152}00152\ \textcolor{preprocessor}{\ \ \ \ \#include\ <inttypes.h>}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00153}00153\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ BOOL}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00154}00154\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ BOOL\ int32\_t}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00155}00155\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00156}00156\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ BYTE}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00157}00157\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ BYTE\ uint8\_t}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00158}00158\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00159}00159\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ WORD}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00160}00160\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ WORD\ uint16\_t}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00161}00161\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00162}00162\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ DWORD}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00163}00163\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ DWORD\ uint32\_t}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00164}00164\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00165}00165\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ LONG}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00166}00166\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LONG\ int32\_t}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00167}00167\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00168}00168\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ INT64}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00169}00169\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ INT64\ int64\_t}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00170}00170\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00171}00171\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ UINT64}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00172}00172\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ UINT64\ uint64\_t}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00173}00173\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00174}00174\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00175}00175\ \ \ \ \ \textcolor{comment}{//\ MS\ is\ not\ C99\ ISO\ compliant}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00176}00176\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ BOOL}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00177}00177\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ BOOL\ long}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00178}00178\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00179}00179\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ BYTE}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00180}00180\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ BYTE\ unsigned\ char}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00181}00181\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00182}00182\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ WORD}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00183}00183\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ WORD\ unsigned\ short}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00184}00184\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00185}00185\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ DWORD}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00186}00186\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ DWORD\ unsigned\ long}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00187}00187\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00188}00188\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ LONG}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00189}00189\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ LONG\ long}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00190}00190\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00191}00191\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ INT64}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00192}00192\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ INT64\ signed\ \_\_int64}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00193}00193\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00194}00194\ \textcolor{preprocessor}{\ \ \ \ \#ifndef\ UINT64}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00195}00195\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ UINT64\ unsigned\ \_\_int64}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00196}00196\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00197}00197\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_MSC\_VER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00199}00199\ \textcolor{preprocessor}{\#if\ (defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00200}00200\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00201}00201\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00202}00202\ \textcolor{preprocessor}{\#pragma\ pack(1)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00203}00203\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIN32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00205}\mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{00205}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{tagRGBQUAD}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00206}00206\ \textcolor{preprocessor}{\#if\ FREEIMAGE\_COLORORDER\ ==\ FREEIMAGE\_COLORORDER\_BGR}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00207}00207\ \ \ BYTE\ rgbBlue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00208}00208\ \ \ BYTE\ rgbGreen;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00209}00209\ \ \ BYTE\ rgbRed;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00210}00210\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00211}00211\ \ \ BYTE\ rgbRed;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00212}00212\ \ \ BYTE\ rgbGreen;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00213}00213\ \ \ BYTE\ rgbBlue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00214}00214\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_COLORORDER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00215}00215\ \ \ BYTE\ rgbReserved;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00216}00216\ \}\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00218}\mbox{\hyperlink{structtag_r_g_b_t_r_i_p_l_e}{00218}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_r_g_b_t_r_i_p_l_e}{tagRGBTRIPLE}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00219}00219\ \textcolor{preprocessor}{\#if\ FREEIMAGE\_COLORORDER\ ==\ FREEIMAGE\_COLORORDER\_BGR}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00220}00220\ \ \ BYTE\ rgbtBlue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00221}00221\ \ \ BYTE\ rgbtGreen;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00222}00222\ \ \ BYTE\ rgbtRed;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00223}00223\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00224}00224\ \ \ BYTE\ rgbtRed;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00225}00225\ \ \ BYTE\ rgbtGreen;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00226}00226\ \ \ BYTE\ rgbtBlue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00227}00227\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_COLORORDER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00228}00228\ \}\ \mbox{\hyperlink{structtag_r_g_b_t_r_i_p_l_e}{RGBTRIPLE}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00230}00230\ \textcolor{preprocessor}{\#if\ (defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00231}00231\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00232}00232\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00233}00233\ \textcolor{preprocessor}{\#pragma\ pack()}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00234}00234\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIN32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00236}\mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{00236}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{tagBITMAPINFOHEADER}}\{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00237}00237\ \ \ DWORD\ biSize;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00238}00238\ \ \ LONG\ \ biWidth;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00239}00239\ \ \ LONG\ \ biHeight;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00240}00240\ \ \ WORD\ \ biPlanes;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00241}00241\ \ \ WORD\ \ biBitCount;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00242}00242\ \ \ DWORD\ biCompression;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00243}00243\ \ \ DWORD\ biSizeImage;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00244}00244\ \ \ LONG\ \ biXPelsPerMeter;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00245}00245\ \ \ LONG\ \ biYPelsPerMeter;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00246}00246\ \ \ DWORD\ biClrUsed;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00247}00247\ \ \ DWORD\ biClrImportant;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00248}00248\ \}\ \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{BITMAPINFOHEADER}},\ *\mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{PBITMAPINFOHEADER}};\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00250}\mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o}{00250}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o}{tagBITMAPINFO}}\ \{\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00251}00251\ \ \ \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{BITMAPINFOHEADER}}\ bmiHeader;\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00252}00252\ \ \ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ \ \ \ \ \ \ \ \ \ bmiColors[1];}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00253}00253\ \}\ \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o}{BITMAPINFO}},\ *\mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o}{PBITMAPINFO}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00255}00255\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_WINDOWS\_}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00257}00257\ \textcolor{comment}{//\ Types\ used\ in\ the\ library\ (specific\ to\ FreeImage)\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00259}00259\ \textcolor{preprocessor}{\#if\ (defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00260}00260\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00261}00261\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00262}00262\ \textcolor{preprocessor}{\#pragma\ pack(1)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00263}00263\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIN32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00264}00264\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00267}\mbox{\hyperlink{structtag_f_i_r_g_b16}{00267}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_f_i_r_g_b16}{tagFIRGB16}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00268}00268\ \ \ \ \ WORD\ red;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00269}00269\ \ \ \ \ WORD\ green;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00270}00270\ \ \ \ \ WORD\ blue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00271}00271\ \}\ \mbox{\hyperlink{structtag_f_i_r_g_b16}{FIRGB16}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00275}\mbox{\hyperlink{structtag_f_i_r_g_b_a16}{00275}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_f_i_r_g_b_a16}{tagFIRGBA16}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00276}00276\ \ \ \ \ WORD\ red;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00277}00277\ \ \ \ \ WORD\ green;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00278}00278\ \ \ \ \ WORD\ blue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00279}00279\ \ \ \ \ WORD\ alpha;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00280}00280\ \}\ \mbox{\hyperlink{structtag_f_i_r_g_b_a16}{FIRGBA16}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00284}\mbox{\hyperlink{structtag_f_i_r_g_b_f}{00284}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_f_i_r_g_b_f}{tagFIRGBF}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00285}00285\ \ \ \ \ \textcolor{keywordtype}{float}\ red;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00286}00286\ \ \ \ \ \textcolor{keywordtype}{float}\ green;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00287}00287\ \ \ \ \ \textcolor{keywordtype}{float}\ blue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00288}00288\ \}\ \mbox{\hyperlink{structtag_f_i_r_g_b_f}{FIRGBF}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00292}\mbox{\hyperlink{structtag_f_i_r_g_b_a_f}{00292}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_f_i_r_g_b_a_f}{tagFIRGBAF}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00293}00293\ \ \ \ \ \textcolor{keywordtype}{float}\ red;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00294}00294\ \ \ \ \ \textcolor{keywordtype}{float}\ green;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00295}00295\ \ \ \ \ \textcolor{keywordtype}{float}\ blue;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00296}00296\ \ \ \ \ \textcolor{keywordtype}{float}\ alpha;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00297}00297\ \}\ \mbox{\hyperlink{structtag_f_i_r_g_b_a_f}{FIRGBAF}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00298}00298\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00301}\mbox{\hyperlink{structtag_f_i_c_o_m_p_l_e_x}{00301}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtag_f_i_c_o_m_p_l_e_x}{tagFICOMPLEX}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00303}\mbox{\hyperlink{structtag_f_i_c_o_m_p_l_e_x_a448818f3de56c81064bdcb1ba78a7ead}{00303}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structtag_f_i_c_o_m_p_l_e_x_a448818f3de56c81064bdcb1ba78a7ead}{r}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00305}\mbox{\hyperlink{structtag_f_i_c_o_m_p_l_e_x_ad2cc2cc6d32c1e5496f2c77e185d8218}{00305}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structtag_f_i_c_o_m_p_l_e_x_ad2cc2cc6d32c1e5496f2c77e185d8218}{i}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00306}00306\ \}\ \mbox{\hyperlink{structtag_f_i_c_o_m_p_l_e_x}{FICOMPLEX}};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00308}00308\ \textcolor{preprocessor}{\#if\ (defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00309}00309\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00310}00310\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00311}00311\ \textcolor{preprocessor}{\#pragma\ pack()}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00312}00312\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIN32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00314}00314\ \textcolor{comment}{//\ Indexes\ for\ byte\ arrays,\ masks\ and\ shifts\ for\ treating\ pixels\ as\ words\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00315}00315\ \textcolor{comment}{//\ These\ coincide\ with\ the\ order\ of\ RGBQUAD\ and\ RGBTRIPLE\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00317}00317\ \textcolor{preprocessor}{\#ifndef\ FREEIMAGE\_BIGENDIAN}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00318}00318\ \textcolor{preprocessor}{\#if\ FREEIMAGE\_COLORORDER\ ==\ FREEIMAGE\_COLORORDER\_BGR}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00319}00319\ \textcolor{comment}{//\ Little\ Endian\ (x86\ /\ MS\ Windows,\ Linux)\ :\ BGR(A)\ order}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00320}00320\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00321}00321\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00322}00322\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00323}00323\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00324}00324\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_MASK\ \ \ \ \ \ \ \ 0x00FF0000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00325}00325\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_MASK\ \ \ \ \ \ 0x0000FF00}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00326}00326\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_MASK\ \ \ \ \ \ \ 0x000000FF}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00327}00327\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_MASK\ \ \ \ \ \ 0xFF000000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00328}00328\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_SHIFT\ \ \ \ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00329}00329\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_SHIFT\ \ \ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00330}00330\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_SHIFT\ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00331}00331\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_SHIFT\ \ \ \ \ 24}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00332}00332\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00333}00333\ \textcolor{comment}{//\ Little\ Endian\ (x86\ /\ MaxOSX)\ :\ RGB(A)\ order}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00334}00334\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00335}00335\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00336}00336\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00337}00337\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00338}00338\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_MASK\ \ \ \ \ \ \ \ 0x000000FF}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00339}00339\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_MASK\ \ \ \ \ \ 0x0000FF00}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00340}00340\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_MASK\ \ \ \ \ \ \ 0x00FF0000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00341}00341\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_MASK\ \ \ \ \ \ 0xFF000000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00342}00342\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_SHIFT\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00343}00343\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_SHIFT\ \ \ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00344}00344\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_SHIFT\ \ \ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00345}00345\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_SHIFT\ \ \ \ \ 24}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00346}00346\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_COLORORDER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00347}00347\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00348}00348\ \textcolor{preprocessor}{\#if\ FREEIMAGE\_COLORORDER\ ==\ FREEIMAGE\_COLORORDER\_BGR}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00349}00349\ \textcolor{comment}{//\ Big\ Endian\ (PPC\ /\ none)\ :\ BGR(A)\ order}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00350}00350\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00351}00351\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00352}00352\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00353}00353\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00354}00354\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_MASK\ \ \ \ \ \ \ \ 0x0000FF00}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00355}00355\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_MASK\ \ \ \ \ \ 0x00FF0000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00356}00356\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_MASK\ \ \ \ \ \ \ 0xFF000000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00357}00357\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_MASK\ \ \ \ \ \ 0x000000FF}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00358}00358\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_SHIFT\ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00359}00359\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_SHIFT\ \ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00360}00360\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_SHIFT\ \ \ \ \ \ 24}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00361}00361\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_SHIFT\ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00362}00362\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00363}00363\ \textcolor{comment}{//\ Big\ Endian\ (PPC\ /\ Linux,\ MaxOSX)\ :\ RGB(A)\ order}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00364}00364\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00365}00365\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00366}00366\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00367}00367\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00368}00368\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_MASK\ \ \ \ \ \ \ \ 0xFF000000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00369}00369\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_MASK\ \ \ \ \ \ 0x00FF0000}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00370}00370\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_MASK\ \ \ \ \ \ \ 0x0000FF00}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00371}00371\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_MASK\ \ \ \ \ \ 0x000000FF}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00372}00372\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RED\_SHIFT\ \ \ \ \ \ \ 24}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00373}00373\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_GREEN\_SHIFT\ \ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00374}00374\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_BLUE\_SHIFT\ \ \ \ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00375}00375\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_ALPHA\_SHIFT\ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00376}00376\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_COLORORDER}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00377}00377\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_BIGENDIAN}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00379}00379\ \textcolor{preprocessor}{\#define\ FI\_RGBA\_RGB\_MASK\ \ \ \ \ \ \ \ (FI\_RGBA\_RED\_MASK|FI\_RGBA\_GREEN\_MASK|FI\_RGBA\_BLUE\_MASK)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00381}00381\ \textcolor{comment}{//\ The\ 16bit\ macros\ only\ include\ masks\ and\ shifts,\ since\ each\ color\ element\ is\ not\ byte\ aligned}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00382}00382\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00383}00383\ \textcolor{preprocessor}{\#define\ FI16\_555\_RED\_MASK\ \ \ \ \ \ \ 0x7C00}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00384}00384\ \textcolor{preprocessor}{\#define\ FI16\_555\_GREEN\_MASK\ \ \ \ \ 0x03E0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00385}00385\ \textcolor{preprocessor}{\#define\ FI16\_555\_BLUE\_MASK\ \ \ \ \ \ 0x001F}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00386}00386\ \textcolor{preprocessor}{\#define\ FI16\_555\_RED\_SHIFT\ \ \ \ \ \ 10}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00387}00387\ \textcolor{preprocessor}{\#define\ FI16\_555\_GREEN\_SHIFT\ \ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00388}00388\ \textcolor{preprocessor}{\#define\ FI16\_555\_BLUE\_SHIFT\ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00389}00389\ \textcolor{preprocessor}{\#define\ FI16\_565\_RED\_MASK\ \ \ \ \ \ \ 0xF800}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00390}00390\ \textcolor{preprocessor}{\#define\ FI16\_565\_GREEN\_MASK\ \ \ \ \ 0x07E0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00391}00391\ \textcolor{preprocessor}{\#define\ FI16\_565\_BLUE\_MASK\ \ \ \ \ \ 0x001F}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00392}00392\ \textcolor{preprocessor}{\#define\ FI16\_565\_RED\_SHIFT\ \ \ \ \ \ 11}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00393}00393\ \textcolor{preprocessor}{\#define\ FI16\_565\_GREEN\_SHIFT\ \ \ \ 5}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00394}00394\ \textcolor{preprocessor}{\#define\ FI16\_565\_BLUE\_SHIFT\ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00396}00396\ \textcolor{comment}{//\ ICC\ profile\ support\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00398}00398\ \textcolor{preprocessor}{\#define\ FIICC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00399}00399\ \textcolor{preprocessor}{\#define\ FIICC\_COLOR\_IS\_CMYK\ \ \ \ \ 0x01}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00401}00401\ FI\_STRUCT\ (FIICCPROFILE)\ \{\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00402}00402\ \ \ \ \ WORD\ \ \ \ flags;\ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00403}00403\ \ \ \ \ DWORD\ \ \ size;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00404}00404\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ *data;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00405}00405\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00407}00407\ \textcolor{comment}{//\ Important\ enums\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00411}00411\ FI\_ENUM(FREE\_IMAGE\_FORMAT)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00412}00412\ \ \ \ \ FIF\_UNKNOWN\ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00413}00413\ \ \ \ \ FIF\_BMP\ \ \ \ \ =\ 0,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00414}00414\ \ \ \ \ FIF\_ICO\ \ \ \ \ =\ 1,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00415}00415\ \ \ \ \ FIF\_JPEG\ \ \ \ =\ 2,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00416}00416\ \ \ \ \ FIF\_JNG\ \ \ \ \ =\ 3,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00417}00417\ \ \ \ \ FIF\_KOALA\ \ \ =\ 4,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00418}00418\ \ \ \ \ FIF\_LBM\ \ \ \ \ =\ 5,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00419}00419\ \ \ \ \ FIF\_IFF\ =\ FIF\_LBM,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00420}00420\ \ \ \ \ FIF\_MNG\ \ \ \ \ =\ 6,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00421}00421\ \ \ \ \ FIF\_PBM\ \ \ \ \ =\ 7,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00422}00422\ \ \ \ \ FIF\_PBMRAW\ \ =\ 8,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00423}00423\ \ \ \ \ FIF\_PCD\ \ \ \ \ =\ 9,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00424}00424\ \ \ \ \ FIF\_PCX\ \ \ \ \ =\ 10,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00425}00425\ \ \ \ \ FIF\_PGM\ \ \ \ \ =\ 11,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00426}00426\ \ \ \ \ FIF\_PGMRAW\ \ =\ 12,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00427}00427\ \ \ \ \ FIF\_PNG\ \ \ \ \ =\ 13,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00428}00428\ \ \ \ \ FIF\_PPM\ \ \ \ \ =\ 14,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00429}00429\ \ \ \ \ FIF\_PPMRAW\ \ =\ 15,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00430}00430\ \ \ \ \ FIF\_RAS\ \ \ \ \ =\ 16,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00431}00431\ \ \ \ \ FIF\_TARGA\ \ \ =\ 17,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00432}00432\ \ \ \ \ FIF\_TIFF\ \ \ \ =\ 18,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00433}00433\ \ \ \ \ FIF\_WBMP\ \ \ \ =\ 19,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00434}00434\ \ \ \ \ FIF\_PSD\ \ \ \ \ =\ 20,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00435}00435\ \ \ \ \ FIF\_CUT\ \ \ \ \ =\ 21,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00436}00436\ \ \ \ \ FIF\_XBM\ \ \ \ \ =\ 22,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00437}00437\ \ \ \ \ FIF\_XPM\ \ \ \ \ =\ 23,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00438}00438\ \ \ \ \ FIF\_DDS\ \ \ \ \ =\ 24,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00439}00439\ \ \ \ \ FIF\_GIF\ \ \ \ \ =\ 25,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00440}00440\ \ \ \ \ FIF\_HDR\ \ \ \ \ =\ 26,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00441}00441\ \ \ \ \ FIF\_FAXG3\ \ \ =\ 27,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00442}00442\ \ \ \ \ FIF\_SGI\ \ \ \ \ =\ 28,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00443}00443\ \ \ \ \ FIF\_EXR\ \ \ \ \ =\ 29,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00444}00444\ \ \ \ \ FIF\_J2K\ \ \ \ \ =\ 30,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00445}00445\ \ \ \ \ FIF\_JP2\ \ \ \ \ =\ 31,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00446}00446\ \ \ \ \ FIF\_PFM\ \ \ \ \ =\ 32,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00447}00447\ \ \ \ \ FIF\_PICT\ \ \ \ =\ 33,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00448}00448\ \ \ \ \ FIF\_RAW\ \ \ \ \ =\ 34,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00449}00449\ \ \ \ \ FIF\_WEBP\ \ \ \ =\ 35,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00450}00450\ \ \ \ \ FIF\_JXR\ \ \ \ \ =\ 36}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00451}00451\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00455}00455\ FI\_ENUM(FREE\_IMAGE\_TYPE)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00456}00456\ \ \ \ \ FIT\_UNKNOWN\ =\ 0,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00457}00457\ \ \ \ \ FIT\_BITMAP\ \ =\ 1,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00458}00458\ \ \ \ \ FIT\_UINT16\ \ =\ 2,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00459}00459\ \ \ \ \ FIT\_INT16\ \ \ =\ 3,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00460}00460\ \ \ \ \ FIT\_UINT32\ \ =\ 4,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00461}00461\ \ \ \ \ FIT\_INT32\ \ \ =\ 5,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00462}00462\ \ \ \ \ FIT\_FLOAT\ \ \ =\ 6,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00463}00463\ \ \ \ \ FIT\_DOUBLE\ \ =\ 7,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00464}00464\ \ \ \ \ FIT\_COMPLEX\ =\ 8,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00465}00465\ \ \ \ \ FIT\_RGB16\ \ \ =\ 9,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00466}00466\ \ \ \ \ FIT\_RGBA16\ \ =\ 10,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00467}00467\ \ \ \ \ FIT\_RGBF\ \ \ \ =\ 11,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00468}00468\ \ \ \ \ FIT\_RGBAF\ \ \ =\ 12\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00469}00469\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00470}00470\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00473}00473\ FI\_ENUM(FREE\_IMAGE\_COLOR\_TYPE)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00474}00474\ \ \ \ \ FIC\_MINISWHITE\ =\ 0,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00475}00475\ \ \ \ \ FIC\_MINISBLACK\ =\ 1,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00476}00476\ \ \ \ \ FIC\_RGB\ \ \ \ \ \ \ \ =\ 2,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00477}00477\ \ \ \ \ FIC\_PALETTE\ \ \ \ =\ 3,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00478}00478\ \ \ \ \ FIC\_RGBALPHA\ \ \ =\ 4,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00479}00479\ \ \ \ \ FIC\_CMYK\ \ \ \ \ \ \ =\ 5\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00480}00480\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00481}00481\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00485}00485\ FI\_ENUM(FREE\_IMAGE\_QUANTIZE)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00486}00486\ \ \ \ \ FIQ\_WUQUANT\ =\ 0,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00487}00487\ \ \ \ \ FIQ\_NNQUANT\ =\ 1,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00488}00488\ \ \ \ \ FIQ\_LFPQUANT\ =\ 2\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00489}00489\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00490}00490\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00494}00494\ FI\_ENUM(FREE\_IMAGE\_DITHER)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00495}00495\ \ \ \ \ FID\_FS\ \ \ \ \ \ \ \ \ \ =\ 0,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00496}00496\ \ \ \ \ FID\_BAYER4x4\ \ \ \ =\ 1,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00497}00497\ \ \ \ \ FID\_BAYER8x8\ \ \ \ =\ 2,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00498}00498\ \ \ \ \ FID\_CLUSTER6x6\ \ =\ 3,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00499}00499\ \ \ \ \ FID\_CLUSTER8x8\ \ =\ 4,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00500}00500\ \ \ \ \ FID\_CLUSTER16x16=\ 5,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00501}00501\ \ \ \ \ FID\_BAYER16x16\ \ =\ 6\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00502}00502\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00507}00507\ FI\_ENUM(FREE\_IMAGE\_JPEG\_OPERATION)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00508}00508\ \ \ \ \ FIJPEG\_OP\_NONE\ \ \ \ \ \ \ \ \ \ =\ 0,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00509}00509\ \ \ \ \ FIJPEG\_OP\_FLIP\_H\ \ \ \ \ \ \ \ =\ 1,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00510}00510\ \ \ \ \ FIJPEG\_OP\_FLIP\_V\ \ \ \ \ \ \ \ =\ 2,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00511}00511\ \ \ \ \ FIJPEG\_OP\_TRANSPOSE\ \ \ \ \ =\ 3,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00512}00512\ \ \ \ \ FIJPEG\_OP\_TRANSVERSE\ \ \ \ =\ 4,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00513}00513\ \ \ \ \ FIJPEG\_OP\_ROTATE\_90\ \ \ \ \ =\ 5,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00514}00514\ \ \ \ \ FIJPEG\_OP\_ROTATE\_180\ \ \ \ =\ 6,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00515}00515\ \ \ \ \ FIJPEG\_OP\_ROTATE\_270\ \ \ \ =\ 7\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00516}00516\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00517}00517\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00521}00521\ FI\_ENUM(FREE\_IMAGE\_TMO)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00522}00522\ \ \ \ \ FITMO\_DRAGO03\ \ \ \ =\ 0,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00523}00523\ \ \ \ \ FITMO\_REINHARD05\ =\ 1,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00524}00524\ \ \ \ \ FITMO\_FATTAL02\ \ \ =\ 2\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00525}00525\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00530}00530\ FI\_ENUM(FREE\_IMAGE\_FILTER)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00531}00531\ \ \ \ \ FILTER\_BOX\ \ \ \ \ \ \ \ =\ 0,\ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00532}00532\ \ \ \ \ FILTER\_BICUBIC\ \ \ \ =\ 1,\ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00533}00533\ \ \ \ \ FILTER\_BILINEAR\ \ \ =\ 2,\ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00534}00534\ \ \ \ \ FILTER\_BSPLINE\ \ \ \ =\ 3,\ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00535}00535\ \ \ \ \ FILTER\_CATMULLROM\ =\ 4,\ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00536}00536\ \ \ \ \ FILTER\_LANCZOS3\ \ \ =\ 5\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00537}00537\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00542}00542\ FI\_ENUM(FREE\_IMAGE\_COLOR\_CHANNEL)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00543}00543\ \ \ \ \ FICC\_RGB\ \ \ \ =\ 0,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00544}00544\ \ \ \ \ FICC\_RED\ \ \ \ =\ 1,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00545}00545\ \ \ \ \ FICC\_GREEN\ \ =\ 2,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00546}00546\ \ \ \ \ FICC\_BLUE\ \ \ =\ 3,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00547}00547\ \ \ \ \ FICC\_ALPHA\ \ =\ 4,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00548}00548\ \ \ \ \ FICC\_BLACK\ \ =\ 5,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00549}00549\ \ \ \ \ FICC\_REAL\ \ \ =\ 6,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00550}00550\ \ \ \ \ FICC\_IMAG\ \ \ =\ 7,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00551}00551\ \ \ \ \ FICC\_MAG\ \ \ \ =\ 8,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00552}00552\ \ \ \ \ FICC\_PHASE\ \ =\ 9\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00553}00553\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00554}00554\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00555}00555\ \textcolor{comment}{//\ Metadata\ support\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00556}00556\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00562}00562\ FI\_ENUM(FREE\_IMAGE\_MDTYPE)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00563}00563\ \ \ \ \ FIDT\_NOTYPE\ \ \ \ \ =\ 0,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00564}00564\ \ \ \ \ FIDT\_BYTE\ \ \ \ \ \ \ =\ 1,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00565}00565\ \ \ \ \ FIDT\_ASCII\ \ \ \ \ \ =\ 2,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00566}00566\ \ \ \ \ FIDT\_SHORT\ \ \ \ \ \ =\ 3,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00567}00567\ \ \ \ \ FIDT\_LONG\ \ \ \ \ \ \ =\ 4,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00568}00568\ \ \ \ \ FIDT\_RATIONAL\ \ \ =\ 5,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00569}00569\ \ \ \ \ FIDT\_SBYTE\ \ \ \ \ \ =\ 6,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00570}00570\ \ \ \ \ FIDT\_UNDEFINED\ \ =\ 7,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00571}00571\ \ \ \ \ FIDT\_SSHORT\ \ \ \ \ =\ 8,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00572}00572\ \ \ \ \ FIDT\_SLONG\ \ \ \ \ \ =\ 9,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00573}00573\ \ \ \ \ FIDT\_SRATIONAL\ \ =\ 10,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00574}00574\ \ \ \ \ FIDT\_FLOAT\ \ \ \ \ \ =\ 11,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00575}00575\ \ \ \ \ FIDT\_DOUBLE\ \ \ \ \ =\ 12,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00576}00576\ \ \ \ \ FIDT\_IFD\ \ \ \ \ \ \ \ =\ 13,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00577}00577\ \ \ \ \ FIDT\_PALETTE\ \ \ \ =\ 14,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00578}00578\ \ \ \ \ FIDT\_LONG8\ \ \ \ \ \ =\ 16,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00579}00579\ \ \ \ \ FIDT\_SLONG8\ \ \ \ \ =\ 17,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00580}00580\ \ \ \ \ FIDT\_IFD8\ \ \ \ \ \ \ =\ 18\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00581}00581\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00582}00582\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00586}00586\ FI\_ENUM(FREE\_IMAGE\_MDMODEL)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00587}00587\ \ \ \ \ FIMD\_NODATA\ \ \ \ \ \ \ \ \ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00588}00588\ \ \ \ \ FIMD\_COMMENTS\ \ \ \ \ \ \ =\ 0,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00589}00589\ \ \ \ \ FIMD\_EXIF\_MAIN\ \ \ \ \ \ =\ 1,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00590}00590\ \ \ \ \ FIMD\_EXIF\_EXIF\ \ \ \ \ \ =\ 2,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00591}00591\ \ \ \ \ FIMD\_EXIF\_GPS\ \ \ \ \ \ \ =\ 3,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00592}00592\ \ \ \ \ FIMD\_EXIF\_MAKERNOTE\ =\ 4,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00593}00593\ \ \ \ \ FIMD\_EXIF\_INTEROP\ \ \ =\ 5,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00594}00594\ \ \ \ \ FIMD\_IPTC\ \ \ \ \ \ \ \ \ \ \ =\ 6,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00595}00595\ \ \ \ \ FIMD\_XMP\ \ \ \ \ \ \ \ \ \ \ \ =\ 7,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00596}00596\ \ \ \ \ FIMD\_GEOTIFF\ \ \ \ \ \ \ \ =\ 8,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00597}00597\ \ \ \ \ FIMD\_ANIMATION\ \ \ \ \ \ =\ 9,\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00598}00598\ \ \ \ \ FIMD\_CUSTOM\ \ \ \ \ \ \ \ \ =\ 10,\ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00599}00599\ \ \ \ \ FIMD\_EXIF\_RAW\ \ \ \ \ \ \ =\ 11\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00600}00600\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00601}00601\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00605}00605\ FI\_STRUCT\ (FIMETADATA)\ \{\ \textcolor{keywordtype}{void}\ *data;\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00606}00606\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00610}00610\ FI\_STRUCT\ (FITAG)\ \{\ \textcolor{keywordtype}{void}\ *data;\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00611}00611\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00612}00612\ \textcolor{comment}{//\ File\ IO\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00614}00614\ \textcolor{preprocessor}{\#ifndef\ FREEIMAGE\_IO}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00615}00615\ \textcolor{preprocessor}{\#define\ FREEIMAGE\_IO}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00616}00616\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00617}00617\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}*\ fi\_handle;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00618}00618\ \textcolor{keyword}{typedef}\ unsigned\ (DLL\_CALLCONV\ *FI\_ReadProc)\ (\textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{unsigned}\ size,\ \textcolor{keywordtype}{unsigned}\ count,\ fi\_handle\ handle);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00619}00619\ \textcolor{keyword}{typedef}\ unsigned\ (DLL\_CALLCONV\ *FI\_WriteProc)\ (\textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{unsigned}\ size,\ \textcolor{keywordtype}{unsigned}\ count,\ fi\_handle\ handle);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00620}00620\ \textcolor{keyword}{typedef}\ int\ (DLL\_CALLCONV\ *FI\_SeekProc)\ (fi\_handle\ handle,\ \textcolor{keywordtype}{long}\ offset,\ \textcolor{keywordtype}{int}\ origin);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00621}00621\ \textcolor{keyword}{typedef}\ long\ (DLL\_CALLCONV\ *FI\_TellProc)\ (fi\_handle\ handle);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00622}00622\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00623}00623\ \textcolor{preprocessor}{\#if\ (defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00624}00624\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00625}00625\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00626}00626\ \textcolor{preprocessor}{\#pragma\ pack(1)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00627}00627\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIN32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00628}00628\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00629}00629\ FI\_STRUCT(FreeImageIO)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00630}00630\ \ \ \ \ FI\_ReadProc\ \ read\_proc;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00631}00631\ \ \ \ \ FI\_WriteProc\ write\_proc;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00632}00632\ \ \ \ \ FI\_SeekProc\ \ seek\_proc;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00633}00633\ \ \ \ \ FI\_TellProc\ \ tell\_proc;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00634}00634\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00635}00635\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00636}00636\ \textcolor{preprocessor}{\#if\ (defined(\_WIN32)\ ||\ defined(\_\_WIN32\_\_))}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00637}00637\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00638}00638\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00639}00639\ \textcolor{preprocessor}{\#pragma\ pack()}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00640}00640\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WIN32}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00641}00641\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00645}00645\ FI\_STRUCT\ (FIMEMORY)\ \{\ \textcolor{keywordtype}{void}\ *data;\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00646}00646\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00647}00647\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_IO}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00648}00648\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00649}00649\ \textcolor{comment}{//\ Plugin\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00650}00650\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00651}00651\ \textcolor{preprocessor}{\#ifndef\ PLUGINS}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00652}00652\ \textcolor{preprocessor}{\#define\ PLUGINS}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00654}00654\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(DLL\_CALLCONV\ *FI\_FormatProc)(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00655}00655\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(DLL\_CALLCONV\ *FI\_DescriptionProc)(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00656}00656\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(DLL\_CALLCONV\ *FI\_ExtensionListProc)(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00657}00657\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(DLL\_CALLCONV\ *FI\_RegExprProc)(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00658}00658\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{void}\ *(DLL\_CALLCONV\ *FI\_OpenProc)(FreeImageIO\ *io,\ fi\_handle\ handle,\ BOOL\ read);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00659}00659\ \textcolor{keyword}{typedef}\ void\ (DLL\_CALLCONV\ *FI\_CloseProc)(FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00660}00660\ \textcolor{keyword}{typedef}\ int\ (DLL\_CALLCONV\ *FI\_PageCountProc)(FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00661}00661\ \textcolor{keyword}{typedef}\ int\ (DLL\_CALLCONV\ *FI\_PageCapabilityProc)(FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00662}00662\ \textcolor{keyword}{typedef}\ FIBITMAP\ *(DLL\_CALLCONV\ *FI\_LoadProc)(FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{int}\ page,\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00663}00663\ \textcolor{keyword}{typedef}\ BOOL\ (DLL\_CALLCONV\ *FI\_SaveProc)(FreeImageIO\ *io,\ FIBITMAP\ *dib,\ fi\_handle\ handle,\ \textcolor{keywordtype}{int}\ page,\ \textcolor{keywordtype}{int}\ flags,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00664}00664\ \textcolor{keyword}{typedef}\ BOOL\ (DLL\_CALLCONV\ *FI\_ValidateProc)(FreeImageIO\ *io,\ fi\_handle\ handle);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00665}00665\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *(DLL\_CALLCONV\ *FI\_MimeProc)(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00666}00666\ \textcolor{keyword}{typedef}\ BOOL\ (DLL\_CALLCONV\ *FI\_SupportsExportBPPProc)(\textcolor{keywordtype}{int}\ bpp);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00667}00667\ \textcolor{keyword}{typedef}\ BOOL\ (DLL\_CALLCONV\ *FI\_SupportsExportTypeProc)(FREE\_IMAGE\_TYPE\ type);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00668}00668\ \textcolor{keyword}{typedef}\ BOOL\ (DLL\_CALLCONV\ *FI\_SupportsICCProfilesProc)(void);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00669}00669\ \textcolor{keyword}{typedef}\ BOOL\ (DLL\_CALLCONV\ *FI\_SupportsNoPixelsProc)(void);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00670}00670\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00671}00671\ FI\_STRUCT\ (Plugin)\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00672}00672\ \ \ \ \ FI\_FormatProc\ format\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00673}00673\ \ \ \ \ FI\_DescriptionProc\ description\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00674}00674\ \ \ \ \ FI\_ExtensionListProc\ extension\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00675}00675\ \ \ \ \ FI\_RegExprProc\ regexpr\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00676}00676\ \ \ \ \ FI\_OpenProc\ open\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00677}00677\ \ \ \ \ FI\_CloseProc\ close\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00678}00678\ \ \ \ \ FI\_PageCountProc\ pagecount\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00679}00679\ \ \ \ \ FI\_PageCapabilityProc\ pagecapability\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00680}00680\ \ \ \ \ FI\_LoadProc\ load\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00681}00681\ \ \ \ \ FI\_SaveProc\ save\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00682}00682\ \ \ \ \ FI\_ValidateProc\ validate\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00683}00683\ \ \ \ \ FI\_MimeProc\ mime\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00684}00684\ \ \ \ \ FI\_SupportsExportBPPProc\ supports\_export\_bpp\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00685}00685\ \ \ \ \ FI\_SupportsExportTypeProc\ supports\_export\_type\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00686}00686\ \ \ \ \ FI\_SupportsICCProfilesProc\ supports\_icc\_profiles\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00687}00687\ \ \ \ \ FI\_SupportsNoPixelsProc\ supports\_no\_pixels\_proc;}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00688}00688\ \};}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00689}00689\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00690}00690\ \textcolor{keyword}{typedef}\ void\ (DLL\_CALLCONV\ *FI\_InitProc)(Plugin\ *plugin,\ \textcolor{keywordtype}{int}\ format\_id);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00691}00691\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00692}00692\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLUGINS}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00694}00694\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00695}00695\ \textcolor{comment}{//\ Load\ /\ Save\ flag\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00696}00696\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00697}00697\ \textcolor{preprocessor}{\#define\ FIF\_LOAD\_NOPIXELS\ 0x8000\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00698}00698\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00699}00699\ \textcolor{preprocessor}{\#define\ BMP\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00700}00700\ \textcolor{preprocessor}{\#define\ BMP\_SAVE\_RLE\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00701}00701\ \textcolor{preprocessor}{\#define\ CUT\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00702}00702\ \textcolor{preprocessor}{\#define\ DDS\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00703}00703\ \textcolor{preprocessor}{\#define\ EXR\_DEFAULT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00704}00704\ \textcolor{preprocessor}{\#define\ EXR\_FLOAT\ \ \ \ \ \ \ \ \ \ \ 0x0001\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00705}00705\ \textcolor{preprocessor}{\#define\ EXR\_NONE\ \ \ \ \ \ \ \ \ \ \ \ 0x0002\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00706}00706\ \textcolor{preprocessor}{\#define\ EXR\_ZIP\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0004\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00707}00707\ \textcolor{preprocessor}{\#define\ EXR\_PIZ\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0008\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00708}00708\ \textcolor{preprocessor}{\#define\ EXR\_PXR24\ \ \ \ \ \ \ \ \ \ \ 0x0010\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00709}00709\ \textcolor{preprocessor}{\#define\ EXR\_B44\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0020\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00710}00710\ \textcolor{preprocessor}{\#define\ EXR\_LC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0040\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00711}00711\ \textcolor{preprocessor}{\#define\ FAXG3\_DEFAULT\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00712}00712\ \textcolor{preprocessor}{\#define\ GIF\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00713}00713\ \textcolor{preprocessor}{\#define\ GIF\_LOAD256\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00714}00714\ \textcolor{preprocessor}{\#define\ GIF\_PLAYBACK\ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00715}00715\ \textcolor{preprocessor}{\#define\ HDR\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00716}00716\ \textcolor{preprocessor}{\#define\ ICO\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00717}00717\ \textcolor{preprocessor}{\#define\ ICO\_MAKEALPHA\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00718}00718\ \textcolor{preprocessor}{\#define\ IFF\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00719}00719\ \textcolor{preprocessor}{\#define\ J2K\_DEFAULT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00720}00720\ \textcolor{preprocessor}{\#define\ JP2\_DEFAULT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00721}00721\ \textcolor{preprocessor}{\#define\ JPEG\_DEFAULT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00722}00722\ \textcolor{preprocessor}{\#define\ JPEG\_FAST\ \ \ \ \ \ \ \ \ \ \ 0x0001\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00723}00723\ \textcolor{preprocessor}{\#define\ JPEG\_ACCURATE\ \ \ \ \ \ \ 0x0002\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00724}00724\ \textcolor{preprocessor}{\#define\ JPEG\_CMYK\ \ \ \ \ \ \ \ \ \ \ 0x0004\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00725}00725\ \textcolor{preprocessor}{\#define\ JPEG\_EXIFROTATE\ \ \ \ \ 0x0008\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00726}00726\ \textcolor{preprocessor}{\#define\ JPEG\_GREYSCALE\ \ \ \ \ \ 0x0010\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00727}00727\ \textcolor{preprocessor}{\#define\ JPEG\_QUALITYSUPERB\ \ 0x80\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00728}00728\ \textcolor{preprocessor}{\#define\ JPEG\_QUALITYGOOD\ \ \ \ 0x0100\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00729}00729\ \textcolor{preprocessor}{\#define\ JPEG\_QUALITYNORMAL\ \ 0x0200\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00730}00730\ \textcolor{preprocessor}{\#define\ JPEG\_QUALITYAVERAGE\ 0x0400\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00731}00731\ \textcolor{preprocessor}{\#define\ JPEG\_QUALITYBAD\ \ \ \ \ 0x0800\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00732}00732\ \textcolor{preprocessor}{\#define\ JPEG\_PROGRESSIVE\ \ \ \ 0x2000\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00733}00733\ \textcolor{preprocessor}{\#define\ JPEG\_SUBSAMPLING\_411\ 0x1000\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00734}00734\ \textcolor{preprocessor}{\#define\ JPEG\_SUBSAMPLING\_420\ 0x4000\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00735}00735\ \textcolor{preprocessor}{\#define\ JPEG\_SUBSAMPLING\_422\ 0x8000\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00736}00736\ \textcolor{preprocessor}{\#define\ JPEG\_SUBSAMPLING\_444\ 0x10000\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00737}00737\ \textcolor{preprocessor}{\#define\ JPEG\_OPTIMIZE\ \ \ \ \ \ \ 0x20000\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00738}00738\ \textcolor{preprocessor}{\#define\ JPEG\_BASELINE\ \ \ \ \ \ \ 0x40000\ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00739}00739\ \textcolor{preprocessor}{\#define\ KOALA\_DEFAULT\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00740}00740\ \textcolor{preprocessor}{\#define\ LBM\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00741}00741\ \textcolor{preprocessor}{\#define\ MNG\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00742}00742\ \textcolor{preprocessor}{\#define\ PCD\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00743}00743\ \textcolor{preprocessor}{\#define\ PCD\_BASE\ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00744}00744\ \textcolor{preprocessor}{\#define\ PCD\_BASEDIV4\ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00745}00745\ \textcolor{preprocessor}{\#define\ PCD\_BASEDIV16\ \ \ \ \ \ \ 3\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00746}00746\ \textcolor{preprocessor}{\#define\ PCX\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00747}00747\ \textcolor{preprocessor}{\#define\ PFM\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00748}00748\ \textcolor{preprocessor}{\#define\ PICT\_DEFAULT\ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00749}00749\ \textcolor{preprocessor}{\#define\ PNG\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00750}00750\ \textcolor{preprocessor}{\#define\ PNG\_IGNOREGAMMA\ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00751}00751\ \textcolor{preprocessor}{\#define\ PNG\_Z\_BEST\_SPEED\ \ \ \ \ \ \ \ \ \ \ \ 0x0001\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00752}00752\ \textcolor{preprocessor}{\#define\ PNG\_Z\_DEFAULT\_COMPRESSION\ \ \ 0x0006\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00753}00753\ \textcolor{preprocessor}{\#define\ PNG\_Z\_BEST\_COMPRESSION\ \ \ \ \ \ 0x0009\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00754}00754\ \textcolor{preprocessor}{\#define\ PNG\_Z\_NO\_COMPRESSION\ \ \ \ \ \ \ \ 0x0100\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00755}00755\ \textcolor{preprocessor}{\#define\ PNG\_INTERLACED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0200\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00756}00756\ \textcolor{preprocessor}{\#define\ PNM\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00757}00757\ \textcolor{preprocessor}{\#define\ PNM\_SAVE\_RAW\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00758}00758\ \textcolor{preprocessor}{\#define\ PNM\_SAVE\_ASCII\ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00759}00759\ \textcolor{preprocessor}{\#define\ PSD\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00760}00760\ \textcolor{preprocessor}{\#define\ PSD\_CMYK\ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00761}00761\ \textcolor{preprocessor}{\#define\ PSD\_LAB\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00762}00762\ \textcolor{preprocessor}{\#define\ PSD\_NONE\ \ \ \ \ \ \ \ \ \ \ \ 0x0100\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00763}00763\ \textcolor{preprocessor}{\#define\ PSD\_RLE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0200\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00764}00764\ \textcolor{preprocessor}{\#define\ PSD\_PSB\ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00765}00765\ \textcolor{preprocessor}{\#define\ RAS\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00766}00766\ \textcolor{preprocessor}{\#define\ RAW\_DEFAULT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00767}00767\ \textcolor{preprocessor}{\#define\ RAW\_PREVIEW\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00768}00768\ \textcolor{preprocessor}{\#define\ RAW\_DISPLAY\ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00769}00769\ \textcolor{preprocessor}{\#define\ RAW\_HALFSIZE\ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00770}00770\ \textcolor{preprocessor}{\#define\ RAW\_UNPROCESSED\ \ \ \ \ 8\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00771}00771\ \textcolor{preprocessor}{\#define\ SGI\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00772}00772\ \textcolor{preprocessor}{\#define\ TARGA\_DEFAULT\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00773}00773\ \textcolor{preprocessor}{\#define\ TARGA\_LOAD\_RGB888\ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00774}00774\ \textcolor{preprocessor}{\#define\ TARGA\_SAVE\_RLE\ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00775}00775\ \textcolor{preprocessor}{\#define\ TIFF\_DEFAULT\ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00776}00776\ \textcolor{preprocessor}{\#define\ TIFF\_CMYK\ \ \ \ \ \ \ \ \ \ \ 0x0001\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00777}00777\ \textcolor{preprocessor}{\#define\ TIFF\_PACKBITS\ \ \ \ \ \ \ 0x0100\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00778}00778\ \textcolor{preprocessor}{\#define\ TIFF\_DEFLATE\ \ \ \ \ \ \ \ 0x0200\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00779}00779\ \textcolor{preprocessor}{\#define\ TIFF\_ADOBE\_DEFLATE\ \ 0x0400\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00780}00780\ \textcolor{preprocessor}{\#define\ TIFF\_NONE\ \ \ \ \ \ \ \ \ \ \ 0x0800\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00781}00781\ \textcolor{preprocessor}{\#define\ TIFF\_CCITTFAX3\ \ \ \ \ \ 0x1000\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00782}00782\ \textcolor{preprocessor}{\#define\ TIFF\_CCITTFAX4\ \ \ \ \ \ 0x2000\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00783}00783\ \textcolor{preprocessor}{\#define\ TIFF\_LZW\ \ \ \ \ \ \ \ \ \ \ \ 0x4000\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00784}00784\ \textcolor{preprocessor}{\#define\ TIFF\_JPEG\ \ \ \ \ \ \ \ \ \ \ 0x8000\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00785}00785\ \textcolor{preprocessor}{\#define\ TIFF\_LOGLUV\ \ \ \ \ \ \ \ \ 0x10000\ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00786}00786\ \textcolor{preprocessor}{\#define\ WBMP\_DEFAULT\ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00787}00787\ \textcolor{preprocessor}{\#define\ XBM\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00788}00788\ \textcolor{preprocessor}{\#define\ XPM\_DEFAULT\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00789}00789\ \textcolor{preprocessor}{\#define\ WEBP\_DEFAULT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00790}00790\ \textcolor{preprocessor}{\#define\ WEBP\_LOSSLESS\ \ \ \ \ \ \ 0x100\ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00791}00791\ \textcolor{preprocessor}{\#define\ JXR\_DEFAULT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00792}00792\ \textcolor{preprocessor}{\#define\ JXR\_LOSSLESS\ \ \ \ \ \ \ \ 0x0064\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00793}00793\ \textcolor{preprocessor}{\#define\ JXR\_PROGRESSIVE\ \ \ \ \ 0x2000\ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00794}00794\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00795}00795\ \textcolor{comment}{//\ Background\ filling\ options\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00796}00796\ \textcolor{comment}{//\ Constants\ used\ in\ FreeImage\_FillBackground\ and\ FreeImage\_EnlargeCanvas}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00797}00797\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00798}00798\ \textcolor{preprocessor}{\#define\ FI\_COLOR\_IS\_RGB\_COLOR\ \ \ \ \ \ \ \ \ \ \ 0x00\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00799}00799\ \textcolor{preprocessor}{\#define\ FI\_COLOR\_IS\_RGBA\_COLOR\ \ \ \ \ \ \ \ \ \ 0x01\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00800}00800\ \textcolor{preprocessor}{\#define\ FI\_COLOR\_FIND\_EQUAL\_COLOR\ \ \ \ \ \ \ 0x02\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00801}00801\ \textcolor{preprocessor}{\#define\ FI\_COLOR\_ALPHA\_IS\_INDEX\ \ \ \ \ \ \ \ \ 0x04\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00802}00802\ \textcolor{preprocessor}{\#define\ FI\_COLOR\_PALETTE\_SEARCH\_MASK\ \ \ \ (FI\_COLOR\_FIND\_EQUAL\_COLOR\ |\ FI\_COLOR\_ALPHA\_IS\_INDEX)\ \ \ }\textcolor{comment}{//\ No\ color\ lookup\ is\ performed}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00803}00803\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00804}00804\ \textcolor{comment}{//\ RescaleEx\ options\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00805}00805\ \textcolor{comment}{//\ Constants\ used\ in\ FreeImage\_RescaleEx}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00806}00806\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00807}00807\ \textcolor{preprocessor}{\#define\ FI\_RESCALE\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00808}00808\ \textcolor{preprocessor}{\#define\ FI\_RESCALE\_TRUE\_COLOR\ \ \ \ \ \ \ 0x01\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00809}00809\ \textcolor{preprocessor}{\#define\ FI\_RESCALE\_OMIT\_METADATA\ \ \ \ 0x02\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00810}00810\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00811}00811\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00812}00812\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00813}00813\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00814}00814\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00815}00815\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00816}00816\ \textcolor{comment}{//\ Init\ /\ Error\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00817}00817\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00818}00818\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_Initialise(BOOL\ load\_local\_plugins\_only\ FI\_DEFAULT(FALSE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00819}00819\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_DeInitialise(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00820}00820\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00821}00821\ \textcolor{comment}{//\ Version\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00822}00822\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00823}00823\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetVersion(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00824}00824\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetCopyrightMessage(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00825}00825\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00826}00826\ \textcolor{comment}{//\ Message\ output\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00827}00827\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00828}00828\ \textcolor{keyword}{typedef}\ void\ (*FreeImage\_OutputMessageFunction)(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00829}00829\ \textcolor{keyword}{typedef}\ void\ (DLL\_CALLCONV\ *FreeImage\_OutputMessageFunctionStdCall)(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *msg);\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00830}00830\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00831}00831\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_SetOutputMessageStdCall(FreeImage\_OutputMessageFunctionStdCall\ omf);\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00832}00832\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_SetOutputMessage(FreeImage\_OutputMessageFunction\ omf);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00833}00833\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_OutputMessageProc(\textcolor{keywordtype}{int}\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *fmt,\ ...);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00834}00834\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00835}00835\ \textcolor{comment}{//\ Allocate\ /\ Clone\ /\ Unload\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00836}00836\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00837}00837\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Allocate(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ bpp,\ \textcolor{keywordtype}{unsigned}\ red\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ green\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ blue\_mask\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00838}00838\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_AllocateT(FREE\_IMAGE\_TYPE\ type,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ bpp\ FI\_DEFAULT(8),\ \textcolor{keywordtype}{unsigned}\ red\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ green\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ blue\_mask\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00839}00839\ DLL\_API\ FIBITMAP\ *\ DLL\_CALLCONV\ FreeImage\_Clone(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00840}00840\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_Unload(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00841}00841\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00842}00842\ \textcolor{comment}{//\ Header\ loading\ routines}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00843}00843\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_HasPixels(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00844}00844\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00845}00845\ \textcolor{comment}{//\ Load\ /\ Save\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00846}00846\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00847}00847\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Load(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00848}00848\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_LoadU(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *filename,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00849}00849\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_LoadFromHandle(FREE\_IMAGE\_FORMAT\ fif,\ FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00850}00850\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_Save(FREE\_IMAGE\_FORMAT\ fif,\ FIBITMAP\ *dib,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00851}00851\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SaveU(FREE\_IMAGE\_FORMAT\ fif,\ FIBITMAP\ *dib,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *filename,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00852}00852\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SaveToHandle(FREE\_IMAGE\_FORMAT\ fif,\ FIBITMAP\ *dib,\ FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00853}00853\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00854}00854\ \textcolor{comment}{//\ Memory\ I/O\ stream\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00855}00855\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00856}00856\ DLL\_API\ FIMEMORY\ *DLL\_CALLCONV\ FreeImage\_OpenMemory(BYTE\ *data\ FI\_DEFAULT(0),\ DWORD\ size\_in\_bytes\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00857}00857\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_CloseMemory(FIMEMORY\ *stream);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00858}00858\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_LoadFromMemory(FREE\_IMAGE\_FORMAT\ fif,\ FIMEMORY\ *stream,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00859}00859\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SaveToMemory(FREE\_IMAGE\_FORMAT\ fif,\ FIBITMAP\ *dib,\ FIMEMORY\ *stream,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00860}00860\ DLL\_API\ \textcolor{keywordtype}{long}\ DLL\_CALLCONV\ FreeImage\_TellMemory(FIMEMORY\ *stream);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00861}00861\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SeekMemory(FIMEMORY\ *stream,\ \textcolor{keywordtype}{long}\ offset,\ \textcolor{keywordtype}{int}\ origin);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00862}00862\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_AcquireMemory(FIMEMORY\ *stream,\ BYTE\ **data,\ DWORD\ *size\_in\_bytes);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00863}00863\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_ReadMemory(\textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{unsigned}\ size,\ \textcolor{keywordtype}{unsigned}\ count,\ FIMEMORY\ *stream);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00864}00864\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_WriteMemory(\textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *buffer,\ \textcolor{keywordtype}{unsigned}\ size,\ \textcolor{keywordtype}{unsigned}\ count,\ FIMEMORY\ *stream);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00865}00865\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00866}00866\ DLL\_API\ FIMULTIBITMAP\ *DLL\_CALLCONV\ FreeImage\_LoadMultiBitmapFromMemory(FREE\_IMAGE\_FORMAT\ fif,\ FIMEMORY\ *stream,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00867}00867\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SaveMultiBitmapToMemory(FREE\_IMAGE\_FORMAT\ fif,\ FIMULTIBITMAP\ *bitmap,\ FIMEMORY\ *stream,\ \textcolor{keywordtype}{int}\ flags);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00868}00868\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00869}00869\ \textcolor{comment}{//\ Plugin\ Interface\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00870}00870\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00871}00871\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_RegisterLocalPlugin(FI\_InitProc\ proc\_address,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *description\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *extension\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *regexpr\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00872}00872\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_RegisterExternalPlugin(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *path,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *description\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *extension\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *regexpr\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00873}00873\ DLL\_API\ \textcolor{keywordtype}{int}\ DLL\_CALLCONV\ FreeImage\_GetFIFCount(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00874}00874\ DLL\_API\ \textcolor{keywordtype}{int}\ DLL\_CALLCONV\ FreeImage\_SetPluginEnabled(FREE\_IMAGE\_FORMAT\ fif,\ BOOL\ enable);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00875}00875\ DLL\_API\ \textcolor{keywordtype}{int}\ DLL\_CALLCONV\ FreeImage\_IsPluginEnabled(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00876}00876\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFIFFromFormat(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00877}00877\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFIFFromMime(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *mime);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00878}00878\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetFormatFromFIF(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00879}00879\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetFIFExtensionList(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00880}00880\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetFIFDescription(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00881}00881\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetFIFRegExpr(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00882}00882\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetFIFMimeType(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00883}00883\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFIFFromFilename(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00884}00884\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFIFFromFilenameU(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *filename);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00885}00885\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FIFSupportsReading(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00886}00886\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FIFSupportsWriting(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00887}00887\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FIFSupportsExportBPP(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keywordtype}{int}\ bpp);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00888}00888\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FIFSupportsExportType(FREE\_IMAGE\_FORMAT\ fif,\ FREE\_IMAGE\_TYPE\ type);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00889}00889\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FIFSupportsICCProfiles(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00890}00890\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FIFSupportsNoPixels(FREE\_IMAGE\_FORMAT\ fif);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00891}00891\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00892}00892\ \textcolor{comment}{//\ Multipaging\ interface\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00893}00893\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00894}00894\ DLL\_API\ FIMULTIBITMAP\ *\ DLL\_CALLCONV\ FreeImage\_OpenMultiBitmap(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename,\ BOOL\ create\_new,\ BOOL\ read\_only,\ BOOL\ keep\_cache\_in\_memory\ FI\_DEFAULT(FALSE),\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00895}00895\ DLL\_API\ FIMULTIBITMAP\ *\ DLL\_CALLCONV\ FreeImage\_OpenMultiBitmapFromHandle(FREE\_IMAGE\_FORMAT\ fif,\ FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00896}00896\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SaveMultiBitmapToHandle(FREE\_IMAGE\_FORMAT\ fif,\ FIMULTIBITMAP\ *bitmap,\ FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00897}00897\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_CloseMultiBitmap(FIMULTIBITMAP\ *bitmap,\ \textcolor{keywordtype}{int}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00898}00898\ DLL\_API\ \textcolor{keywordtype}{int}\ DLL\_CALLCONV\ FreeImage\_GetPageCount(FIMULTIBITMAP\ *bitmap);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00899}00899\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_AppendPage(FIMULTIBITMAP\ *bitmap,\ FIBITMAP\ *data);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00900}00900\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_InsertPage(FIMULTIBITMAP\ *bitmap,\ \textcolor{keywordtype}{int}\ page,\ FIBITMAP\ *data);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00901}00901\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_DeletePage(FIMULTIBITMAP\ *bitmap,\ \textcolor{keywordtype}{int}\ page);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00902}00902\ DLL\_API\ FIBITMAP\ *\ DLL\_CALLCONV\ FreeImage\_LockPage(FIMULTIBITMAP\ *bitmap,\ \textcolor{keywordtype}{int}\ page);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00903}00903\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_UnlockPage(FIMULTIBITMAP\ *bitmap,\ FIBITMAP\ *data,\ BOOL\ changed);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00904}00904\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_MovePage(FIMULTIBITMAP\ *bitmap,\ \textcolor{keywordtype}{int}\ target,\ \textcolor{keywordtype}{int}\ source);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00905}00905\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_GetLockedPageNumbers(FIMULTIBITMAP\ *bitmap,\ \textcolor{keywordtype}{int}\ *pages,\ \textcolor{keywordtype}{int}\ *count);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00906}00906\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00907}00907\ \textcolor{comment}{//\ File\ type\ request\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00908}00908\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00909}00909\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFileType(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename,\ \textcolor{keywordtype}{int}\ size\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00910}00910\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFileTypeU(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *filename,\ \textcolor{keywordtype}{int}\ size\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00911}00911\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFileTypeFromHandle(FreeImageIO\ *io,\ fi\_handle\ handle,\ \textcolor{keywordtype}{int}\ size\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00912}00912\ DLL\_API\ FREE\_IMAGE\_FORMAT\ DLL\_CALLCONV\ FreeImage\_GetFileTypeFromMemory(FIMEMORY\ *stream,\ \textcolor{keywordtype}{int}\ size\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00913}00913\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00914}00914\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_Validate(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *filename);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00915}00915\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_ValidateU(FREE\_IMAGE\_FORMAT\ fif,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *filename);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00916}00916\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_ValidateFromHandle(FREE\_IMAGE\_FORMAT\ fif,\ FreeImageIO\ *io,\ fi\_handle\ handle);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00917}00917\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_ValidateFromMemory(FREE\_IMAGE\_FORMAT\ fif,\ FIMEMORY\ *stream);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00918}00918\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00919}00919\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00920}00920\ \textcolor{comment}{//\ Image\ type\ request\ routine\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00921}00921\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00922}00922\ DLL\_API\ FREE\_IMAGE\_TYPE\ DLL\_CALLCONV\ FreeImage\_GetImageType(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00923}00923\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00924}00924\ \textcolor{comment}{//\ FreeImage\ helper\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00925}00925\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00926}00926\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_IsLittleEndian(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00927}00927\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_LookupX11Color(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *szColor,\ BYTE\ *nRed,\ BYTE\ *nGreen,\ BYTE\ *nBlue);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00928}00928\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_LookupSVGColor(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *szColor,\ BYTE\ *nRed,\ BYTE\ *nGreen,\ BYTE\ *nBlue);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00929}00929\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00930}00930\ \textcolor{comment}{//\ Pixel\ access\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00931}00931\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00932}00932\ DLL\_API\ BYTE\ *DLL\_CALLCONV\ FreeImage\_GetBits(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00933}00933\ DLL\_API\ BYTE\ *DLL\_CALLCONV\ FreeImage\_GetScanLine(FIBITMAP\ *dib,\ \textcolor{keywordtype}{int}\ scanline);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00934}00934\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00935}00935\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_GetPixelIndex(FIBITMAP\ *dib,\ \textcolor{keywordtype}{unsigned}\ x,\ \textcolor{keywordtype}{unsigned}\ y,\ BYTE\ *value);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00936}00936\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_GetPixelColor(FIBITMAP\ *dib,\ \textcolor{keywordtype}{unsigned}\ x,\ \textcolor{keywordtype}{unsigned}\ y,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *value);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00937}00937\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetPixelIndex(FIBITMAP\ *dib,\ \textcolor{keywordtype}{unsigned}\ x,\ \textcolor{keywordtype}{unsigned}\ y,\ BYTE\ *value);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00938}00938\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetPixelColor(FIBITMAP\ *dib,\ \textcolor{keywordtype}{unsigned}\ x,\ \textcolor{keywordtype}{unsigned}\ y,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *value);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00939}00939\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00940}00940\ \textcolor{comment}{//\ DIB\ info\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00941}00941\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00942}00942\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetColorsUsed(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00943}00943\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetBPP(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00944}00944\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetWidth(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00945}00945\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetHeight(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00946}00946\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetLine(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00947}00947\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetPitch(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00948}00948\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetDIBSize(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00949}00949\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetMemorySize(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00950}00950\ DLL\_API\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *DLL\_CALLCONV\ FreeImage\_GetPalette(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00951}00951\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00952}00952\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetDotsPerMeterX(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00953}00953\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetDotsPerMeterY(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00954}00954\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_SetDotsPerMeterX(FIBITMAP\ *dib,\ \textcolor{keywordtype}{unsigned}\ res);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00955}00955\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_SetDotsPerMeterY(FIBITMAP\ *dib,\ \textcolor{keywordtype}{unsigned}\ res);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00956}00956\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00957}00957\ DLL\_API\ \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o_h_e_a_d_e_r}{BITMAPINFOHEADER}}\ *DLL\_CALLCONV\ FreeImage\_GetInfoHeader(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00958}00958\ DLL\_API\ \mbox{\hyperlink{structtag_b_i_t_m_a_p_i_n_f_o}{BITMAPINFO}}\ *DLL\_CALLCONV\ FreeImage\_GetInfo(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00959}00959\ DLL\_API\ FREE\_IMAGE\_COLOR\_TYPE\ DLL\_CALLCONV\ FreeImage\_GetColorType(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00960}00960\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00961}00961\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetRedMask(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00962}00962\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetGreenMask(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00963}00963\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetBlueMask(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00964}00964\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00965}00965\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetTransparencyCount(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00966}00966\ DLL\_API\ BYTE\ *\ DLL\_CALLCONV\ FreeImage\_GetTransparencyTable(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00967}00967\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_SetTransparent(FIBITMAP\ *dib,\ BOOL\ enabled);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00968}00968\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_SetTransparencyTable(FIBITMAP\ *dib,\ BYTE\ *table,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00969}00969\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_IsTransparent(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00970}00970\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_SetTransparentIndex(FIBITMAP\ *dib,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00971}00971\ DLL\_API\ \textcolor{keywordtype}{int}\ DLL\_CALLCONV\ FreeImage\_GetTransparentIndex(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00972}00972\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00973}00973\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_HasBackgroundColor(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00974}00974\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_GetBackgroundColor(FIBITMAP\ *dib,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *bkcolor);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00975}00975\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetBackgroundColor(FIBITMAP\ *dib,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *bkcolor);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00976}00976\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00977}00977\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_GetThumbnail(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00978}00978\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetThumbnail(FIBITMAP\ *dib,\ FIBITMAP\ *thumbnail);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00979}00979\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00980}00980\ \textcolor{comment}{//\ ICC\ profile\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00981}00981\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00982}00982\ DLL\_API\ FIICCPROFILE\ *DLL\_CALLCONV\ FreeImage\_GetICCProfile(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00983}00983\ DLL\_API\ FIICCPROFILE\ *DLL\_CALLCONV\ FreeImage\_CreateICCProfile(FIBITMAP\ *dib,\ \textcolor{keywordtype}{void}\ *data,\ \textcolor{keywordtype}{long}\ size);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00984}00984\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_DestroyICCProfile(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00985}00985\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00986}00986\ \textcolor{comment}{//\ Line\ conversion\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00987}00987\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00988}00988\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine1To4(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00989}00989\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine8To4(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00990}00990\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To4\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00991}00991\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To4\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00992}00992\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine24To4(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00993}00993\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine32To4(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00994}00994\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine1To8(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00995}00995\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine4To8(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00996}00996\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To8\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00997}00997\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To8\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00998}00998\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine24To8(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l00999}00999\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine32To8(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01000}01000\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine1To16\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01001}01001\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine4To16\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01002}01002\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine8To16\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01003}01003\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16\_565\_To16\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01004}01004\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine24To16\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01005}01005\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine32To16\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01006}01006\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine1To16\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01007}01007\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine4To16\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01008}01008\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine8To16\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01009}01009\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16\_555\_To16\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01010}01010\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine24To16\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01011}01011\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine32To16\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01012}01012\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine1To24(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01013}01013\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine4To24(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01014}01014\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine8To24(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01015}01015\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To24\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01016}01016\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To24\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01017}01017\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine32To24(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01018}01018\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine1To32(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01019}01019\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine1To32MapTransparency(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette,\ BYTE\ *table,\ \textcolor{keywordtype}{int}\ transparent\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01020}01020\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine4To32(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01021}01021\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine4To32MapTransparency(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette,\ BYTE\ *table,\ \textcolor{keywordtype}{int}\ transparent\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01022}01022\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine8To32(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01023}01023\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine8To32MapTransparency(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette,\ BYTE\ *table,\ \textcolor{keywordtype}{int}\ transparent\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01024}01024\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To32\_555(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01025}01025\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine16To32\_565(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01026}01026\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertLine24To32(BYTE\ *target,\ BYTE\ *source,\ \textcolor{keywordtype}{int}\ width\_in\_pixels);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01027}01027\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01028}01028\ \textcolor{comment}{//\ Smart\ conversion\ routines\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01029}01029\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01030}01030\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertTo4Bits(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01031}01031\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertTo8Bits(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01032}01032\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToGreyscale(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01033}01033\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertTo16Bits555(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01034}01034\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertTo16Bits565(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01035}01035\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertTo24Bits(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01036}01036\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertTo32Bits(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01037}01037\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ColorQuantize(FIBITMAP\ *dib,\ FREE\_IMAGE\_QUANTIZE\ quantize);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01038}01038\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ColorQuantizeEx(FIBITMAP\ *dib,\ FREE\_IMAGE\_QUANTIZE\ quantize\ FI\_DEFAULT(FIQ\_WUQUANT),\ \textcolor{keywordtype}{int}\ PaletteSize\ FI\_DEFAULT(256),\ \textcolor{keywordtype}{int}\ ReserveSize\ FI\_DEFAULT(0),\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *ReservePalette\ FI\_DEFAULT(NULL));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01039}01039\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Threshold(FIBITMAP\ *dib,\ BYTE\ T);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01040}01040\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Dither(FIBITMAP\ *dib,\ FREE\_IMAGE\_DITHER\ algorithm);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01041}01041\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01042}01042\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertFromRawBits(BYTE\ *bits,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ pitch,\ \textcolor{keywordtype}{unsigned}\ bpp,\ \textcolor{keywordtype}{unsigned}\ red\_mask,\ \textcolor{keywordtype}{unsigned}\ green\_mask,\ \textcolor{keywordtype}{unsigned}\ blue\_mask,\ BOOL\ topdown\ FI\_DEFAULT(FALSE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01043}01043\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertFromRawBitsEx(BOOL\ copySource,\ BYTE\ *bits,\ FREE\_IMAGE\_TYPE\ type,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ pitch,\ \textcolor{keywordtype}{unsigned}\ bpp,\ \textcolor{keywordtype}{unsigned}\ red\_mask,\ \textcolor{keywordtype}{unsigned}\ green\_mask,\ \textcolor{keywordtype}{unsigned}\ blue\_mask,\ BOOL\ topdown\ FI\_DEFAULT(FALSE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01044}01044\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_ConvertToRawBits(BYTE\ *bits,\ FIBITMAP\ *dib,\ \textcolor{keywordtype}{int}\ pitch,\ \textcolor{keywordtype}{unsigned}\ bpp,\ \textcolor{keywordtype}{unsigned}\ red\_mask,\ \textcolor{keywordtype}{unsigned}\ green\_mask,\ \textcolor{keywordtype}{unsigned}\ blue\_mask,\ BOOL\ topdown\ FI\_DEFAULT(FALSE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01045}01045\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01046}01046\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToFloat(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01047}01047\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToRGBF(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01048}01048\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToRGBAF(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01049}01049\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToUINT16(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01050}01050\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToRGB16(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01051}01051\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToRGBA16(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01052}01052\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01053}01053\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToStandardType(FIBITMAP\ *src,\ BOOL\ scale\_linear\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01054}01054\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ConvertToType(FIBITMAP\ *src,\ FREE\_IMAGE\_TYPE\ dst\_type,\ BOOL\ scale\_linear\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01055}01055\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01056}01056\ \textcolor{comment}{//\ Tone\ mapping\ operators\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01057}01057\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01058}01058\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_ToneMapping(FIBITMAP\ *dib,\ FREE\_IMAGE\_TMO\ tmo,\ \textcolor{keywordtype}{double}\ first\_param\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{double}\ second\_param\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01059}01059\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_TmoDrago03(FIBITMAP\ *src,\ \textcolor{keywordtype}{double}\ gamma\ FI\_DEFAULT(2.2),\ \textcolor{keywordtype}{double}\ exposure\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01060}01060\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_TmoReinhard05(FIBITMAP\ *src,\ \textcolor{keywordtype}{double}\ intensity\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{double}\ contrast\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01061}01061\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_TmoReinhard05Ex(FIBITMAP\ *src,\ \textcolor{keywordtype}{double}\ intensity\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{double}\ contrast\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{double}\ adaptation\ FI\_DEFAULT(1),\ \textcolor{keywordtype}{double}\ color\_correction\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01062}01062\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01063}01063\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_TmoFattal02(FIBITMAP\ *src,\ \textcolor{keywordtype}{double}\ color\_saturation\ FI\_DEFAULT(0.5),\ \textcolor{keywordtype}{double}\ attenuation\ FI\_DEFAULT(0.85));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01064}01064\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01065}01065\ \textcolor{comment}{//\ ZLib\ interface\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01066}01066\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01067}01067\ DLL\_API\ DWORD\ DLL\_CALLCONV\ FreeImage\_ZLibCompress(BYTE\ *target,\ DWORD\ target\_size,\ BYTE\ *source,\ DWORD\ source\_size);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01068}01068\ DLL\_API\ DWORD\ DLL\_CALLCONV\ FreeImage\_ZLibUncompress(BYTE\ *target,\ DWORD\ target\_size,\ BYTE\ *source,\ DWORD\ source\_size);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01069}01069\ DLL\_API\ DWORD\ DLL\_CALLCONV\ FreeImage\_ZLibGZip(BYTE\ *target,\ DWORD\ target\_size,\ BYTE\ *source,\ DWORD\ source\_size);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01070}01070\ DLL\_API\ DWORD\ DLL\_CALLCONV\ FreeImage\_ZLibGUnzip(BYTE\ *target,\ DWORD\ target\_size,\ BYTE\ *source,\ DWORD\ source\_size);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01071}01071\ DLL\_API\ DWORD\ DLL\_CALLCONV\ FreeImage\_ZLibCRC32(DWORD\ crc,\ BYTE\ *source,\ DWORD\ source\_size);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01072}01072\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01073}01073\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01074}01074\ \textcolor{comment}{//\ Metadata\ routines}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01075}01075\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01076}01076\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01077}01077\ \textcolor{comment}{//\ tag\ creation\ /\ destruction}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01078}01078\ DLL\_API\ FITAG\ *DLL\_CALLCONV\ FreeImage\_CreateTag(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01079}01079\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_DeleteTag(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01080}01080\ DLL\_API\ FITAG\ *DLL\_CALLCONV\ FreeImage\_CloneTag(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01081}01081\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01082}01082\ \textcolor{comment}{//\ tag\ getters\ and\ setters}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01083}01083\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetTagKey(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01084}01084\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *DLL\_CALLCONV\ FreeImage\_GetTagDescription(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01085}01085\ DLL\_API\ WORD\ DLL\_CALLCONV\ FreeImage\_GetTagID(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01086}01086\ DLL\_API\ FREE\_IMAGE\_MDTYPE\ DLL\_CALLCONV\ FreeImage\_GetTagType(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01087}01087\ DLL\_API\ DWORD\ DLL\_CALLCONV\ FreeImage\_GetTagCount(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01088}01088\ DLL\_API\ DWORD\ DLL\_CALLCONV\ FreeImage\_GetTagLength(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01089}01089\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *DLL\_CALLCONV\ FreeImage\_GetTagValue(FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01090}01090\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01091}01091\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetTagKey(FITAG\ *tag,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *key);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01092}01092\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetTagDescription(FITAG\ *tag,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *description);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01093}01093\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetTagID(FITAG\ *tag,\ WORD\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01094}01094\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetTagType(FITAG\ *tag,\ FREE\_IMAGE\_MDTYPE\ type);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01095}01095\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetTagCount(FITAG\ *tag,\ DWORD\ count);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01096}01096\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetTagLength(FITAG\ *tag,\ DWORD\ length);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01097}01097\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetTagValue(FITAG\ *tag,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *value);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01098}01098\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01099}01099\ \textcolor{comment}{//\ iterator}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01100}01100\ DLL\_API\ FIMETADATA\ *DLL\_CALLCONV\ FreeImage\_FindFirstMetadata(FREE\_IMAGE\_MDMODEL\ model,\ FIBITMAP\ *dib,\ FITAG\ **tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01101}01101\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FindNextMetadata(FIMETADATA\ *mdhandle,\ FITAG\ **tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01102}01102\ DLL\_API\ \textcolor{keywordtype}{void}\ DLL\_CALLCONV\ FreeImage\_FindCloseMetadata(FIMETADATA\ *mdhandle);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01103}01103\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01104}01104\ \textcolor{comment}{//\ metadata\ setter\ and\ getter}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01105}01105\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetMetadata(FREE\_IMAGE\_MDMODEL\ model,\ FIBITMAP\ *dib,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *key,\ FITAG\ *tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01106}01106\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_GetMetadata(FREE\_IMAGE\_MDMODEL\ model,\ FIBITMAP\ *dib,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *key,\ FITAG\ **tag);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01107}01107\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetMetadataKeyValue(FREE\_IMAGE\_MDMODEL\ model,\ FIBITMAP\ *dib,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *key,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *value);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01108}01108\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01109}01109\ \textcolor{comment}{//\ helpers}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01110}01110\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_GetMetadataCount(FREE\_IMAGE\_MDMODEL\ model,\ FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01111}01111\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_CloneMetadata(FIBITMAP\ *dst,\ FIBITMAP\ *src);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01112}01112\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01113}01113\ \textcolor{comment}{//\ tag\ to\ C\ string\ conversion}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01114}01114\ DLL\_API\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ DLL\_CALLCONV\ FreeImage\_TagToString(FREE\_IMAGE\_MDMODEL\ model,\ FITAG\ *tag,\ \textcolor{keywordtype}{char}\ *Make\ FI\_DEFAULT(NULL));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01115}01115\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01116}01116\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01117}01117\ \textcolor{comment}{//\ JPEG\ lossless\ transformation\ routines}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01118}01118\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01119}01119\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01120}01120\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGTransform(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *dst\_file,\ FREE\_IMAGE\_JPEG\_OPERATION\ operation,\ BOOL\ perfect\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01121}01121\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGTransformU(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *src\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *dst\_file,\ FREE\_IMAGE\_JPEG\_OPERATION\ operation,\ BOOL\ perfect\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01122}01122\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGCrop(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *dst\_file,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ top,\ \textcolor{keywordtype}{int}\ right,\ \textcolor{keywordtype}{int}\ bottom);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01123}01123\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGCropU(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *src\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *dst\_file,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ top,\ \textcolor{keywordtype}{int}\ right,\ \textcolor{keywordtype}{int}\ bottom);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01124}01124\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGTransformFromHandle(FreeImageIO*\ src\_io,\ fi\_handle\ src\_handle,\ FreeImageIO*\ dst\_io,\ fi\_handle\ dst\_handle,\ FREE\_IMAGE\_JPEG\_OPERATION\ operation,\ \textcolor{keywordtype}{int}*\ left,\ \textcolor{keywordtype}{int}*\ top,\ \textcolor{keywordtype}{int}*\ right,\ \textcolor{keywordtype}{int}*\ bottom,\ BOOL\ perfect\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01125}01125\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGTransformCombined(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *src\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *dst\_file,\ FREE\_IMAGE\_JPEG\_OPERATION\ operation,\ \textcolor{keywordtype}{int}*\ left,\ \textcolor{keywordtype}{int}*\ top,\ \textcolor{keywordtype}{int}*\ right,\ \textcolor{keywordtype}{int}*\ bottom,\ BOOL\ perfect\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01126}01126\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGTransformCombinedU(\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *src\_file,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}\ *dst\_file,\ FREE\_IMAGE\_JPEG\_OPERATION\ operation,\ \textcolor{keywordtype}{int}*\ left,\ \textcolor{keywordtype}{int}*\ top,\ \textcolor{keywordtype}{int}*\ right,\ \textcolor{keywordtype}{int}*\ bottom,\ BOOL\ perfect\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01127}01127\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_JPEGTransformCombinedFromMemory(FIMEMORY*\ src\_stream,\ FIMEMORY*\ dst\_stream,\ FREE\_IMAGE\_JPEG\_OPERATION\ operation,\ \textcolor{keywordtype}{int}*\ left,\ \textcolor{keywordtype}{int}*\ top,\ \textcolor{keywordtype}{int}*\ right,\ \textcolor{keywordtype}{int}*\ bottom,\ BOOL\ perfect\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01128}01128\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01129}01129\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01130}01130\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01131}01131\ \textcolor{comment}{//\ Image\ manipulation\ toolkit}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01132}01132\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01133}01133\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01134}01134\ \textcolor{comment}{//\ rotation\ and\ flipping}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01135}01135\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Rotate(FIBITMAP\ *dib,\ \textcolor{keywordtype}{double}\ angle,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *bkcolor\ FI\_DEFAULT(NULL));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01136}01136\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_RotateEx(FIBITMAP\ *dib,\ \textcolor{keywordtype}{double}\ angle,\ \textcolor{keywordtype}{double}\ x\_shift,\ \textcolor{keywordtype}{double}\ y\_shift,\ \textcolor{keywordtype}{double}\ x\_origin,\ \textcolor{keywordtype}{double}\ y\_origin,\ BOOL\ use\_mask);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01137}01137\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FlipHorizontal(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01138}01138\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FlipVertical(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01139}01139\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01140}01140\ \textcolor{comment}{//\ upsampling\ /\ downsampling}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01141}01141\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Rescale(FIBITMAP\ *dib,\ \textcolor{keywordtype}{int}\ dst\_width,\ \textcolor{keywordtype}{int}\ dst\_height,\ FREE\_IMAGE\_FILTER\ filter\ FI\_DEFAULT(FILTER\_CATMULLROM));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01142}01142\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_MakeThumbnail(FIBITMAP\ *dib,\ \textcolor{keywordtype}{int}\ max\_pixel\_size,\ BOOL\ convert\ FI\_DEFAULT(TRUE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01143}01143\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_RescaleRect(FIBITMAP\ *dib,\ \textcolor{keywordtype}{int}\ dst\_width,\ \textcolor{keywordtype}{int}\ dst\_height,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ top,\ \textcolor{keywordtype}{int}\ right,\ \textcolor{keywordtype}{int}\ bottom,\ FREE\_IMAGE\_FILTER\ filter\ FI\_DEFAULT(FILTER\_CATMULLROM),\ \textcolor{keywordtype}{unsigned}\ flags\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01144}01144\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01145}01145\ \textcolor{comment}{//\ color\ manipulation\ routines\ (point\ operations)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01146}01146\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_AdjustCurve(FIBITMAP\ *dib,\ BYTE\ *LUT,\ FREE\_IMAGE\_COLOR\_CHANNEL\ channel);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01147}01147\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_AdjustGamma(FIBITMAP\ *dib,\ \textcolor{keywordtype}{double}\ gamma);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01148}01148\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_AdjustBrightness(FIBITMAP\ *dib,\ \textcolor{keywordtype}{double}\ percentage);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01149}01149\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_AdjustContrast(FIBITMAP\ *dib,\ \textcolor{keywordtype}{double}\ percentage);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01150}01150\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_Invert(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01151}01151\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_GetHistogram(FIBITMAP\ *dib,\ DWORD\ *histo,\ FREE\_IMAGE\_COLOR\_CHANNEL\ channel\ FI\_DEFAULT(FICC\_BLACK));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01152}01152\ DLL\_API\ \textcolor{keywordtype}{int}\ DLL\_CALLCONV\ FreeImage\_GetAdjustColorsLookupTable(BYTE\ *LUT,\ \textcolor{keywordtype}{double}\ brightness,\ \textcolor{keywordtype}{double}\ contrast,\ \textcolor{keywordtype}{double}\ gamma,\ BOOL\ invert);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01153}01153\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_AdjustColors(FIBITMAP\ *dib,\ \textcolor{keywordtype}{double}\ brightness,\ \textcolor{keywordtype}{double}\ contrast,\ \textcolor{keywordtype}{double}\ gamma,\ BOOL\ invert\ FI\_DEFAULT(FALSE));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01154}01154\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_ApplyColorMapping(FIBITMAP\ *dib,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *srccolors,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *dstcolors,\ \textcolor{keywordtype}{unsigned}\ count,\ BOOL\ ignore\_alpha,\ BOOL\ swap);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01155}01155\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_SwapColors(FIBITMAP\ *dib,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *color\_a,\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *color\_b,\ BOOL\ ignore\_alpha);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01156}01156\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_ApplyPaletteIndexMapping(FIBITMAP\ *dib,\ BYTE\ *srcindices,\ \ \ BYTE\ *dstindices,\ \textcolor{keywordtype}{unsigned}\ count,\ BOOL\ swap);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01157}01157\ DLL\_API\ \textcolor{keywordtype}{unsigned}\ DLL\_CALLCONV\ FreeImage\_SwapPaletteIndices(FIBITMAP\ *dib,\ BYTE\ *index\_a,\ BYTE\ *index\_b);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01158}01158\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01159}01159\ \textcolor{comment}{//\ channel\ processing\ routines}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01160}01160\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_GetChannel(FIBITMAP\ *dib,\ FREE\_IMAGE\_COLOR\_CHANNEL\ channel);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01161}01161\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetChannel(FIBITMAP\ *dst,\ FIBITMAP\ *src,\ FREE\_IMAGE\_COLOR\_CHANNEL\ channel);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01162}01162\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_GetComplexChannel(FIBITMAP\ *src,\ FREE\_IMAGE\_COLOR\_CHANNEL\ channel);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01163}01163\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_SetComplexChannel(FIBITMAP\ *dst,\ FIBITMAP\ *src,\ FREE\_IMAGE\_COLOR\_CHANNEL\ channel);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01164}01164\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01165}01165\ \textcolor{comment}{//\ copy\ /\ paste\ /\ composite\ routines}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01166}01166\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Copy(FIBITMAP\ *dib,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ top,\ \textcolor{keywordtype}{int}\ right,\ \textcolor{keywordtype}{int}\ bottom);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01167}01167\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_Paste(FIBITMAP\ *dst,\ FIBITMAP\ *src,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ top,\ \textcolor{keywordtype}{int}\ alpha);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01168}01168\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_CreateView(FIBITMAP\ *dib,\ \textcolor{keywordtype}{unsigned}\ left,\ \textcolor{keywordtype}{unsigned}\ top,\ \textcolor{keywordtype}{unsigned}\ right,\ \textcolor{keywordtype}{unsigned}\ bottom);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01169}01169\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01170}01170\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_Composite(FIBITMAP\ *fg,\ BOOL\ useFileBkg\ FI\_DEFAULT(FALSE),\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *appBkColor\ FI\_DEFAULT(NULL),\ FIBITMAP\ *bg\ FI\_DEFAULT(NULL));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01171}01171\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_PreMultiplyWithAlpha(FIBITMAP\ *dib);}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01172}01172\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01173}01173\ \textcolor{comment}{//\ background\ filling\ routines}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01174}01174\ DLL\_API\ BOOL\ DLL\_CALLCONV\ FreeImage\_FillBackground(FIBITMAP\ *dib,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *color,\ \textcolor{keywordtype}{int}\ options\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01175}01175\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_EnlargeCanvas(FIBITMAP\ *src,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ top,\ \textcolor{keywordtype}{int}\ right,\ \textcolor{keywordtype}{int}\ bottom,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *color,\ \textcolor{keywordtype}{int}\ options\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01176}01176\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_AllocateEx(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ bpp,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *color,\ \textcolor{keywordtype}{int}\ options\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette\ FI\_DEFAULT(NULL),\ \textcolor{keywordtype}{unsigned}\ red\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ green\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ blue\_mask\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01177}01177\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_AllocateExT(FREE\_IMAGE\_TYPE\ type,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keywordtype}{int}\ bpp,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *color,\ \textcolor{keywordtype}{int}\ options\ FI\_DEFAULT(0),\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structtag_r_g_b_q_u_a_d}{RGBQUAD}}\ *palette\ FI\_DEFAULT(NULL),\ \textcolor{keywordtype}{unsigned}\ red\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ green\_mask\ FI\_DEFAULT(0),\ \textcolor{keywordtype}{unsigned}\ blue\_mask\ FI\_DEFAULT(0));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01178}01178\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01179}01179\ \textcolor{comment}{//\ miscellaneous\ algorithms}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01180}01180\ DLL\_API\ FIBITMAP\ *DLL\_CALLCONV\ FreeImage\_MultigridPoissonSolver(FIBITMAP\ *Laplacian,\ \textcolor{keywordtype}{int}\ ncycle\ FI\_DEFAULT(3));}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01181}01181\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01182}01182\ \textcolor{comment}{//\ restore\ the\ borland-\/specific\ enum\ size\ option}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01183}01183\ \textcolor{preprocessor}{\#if\ defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01184}01184\ \textcolor{preprocessor}{\#pragma\ option\ pop}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01185}01185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01186}01186\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01187}01187\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01188}01188\ \}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01189}01189\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01190}01190\ }
+\DoxyCodeLine{\Hypertarget{_free_image_8h_source_l01191}01191\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FREEIMAGE\_H}}
+
+\end{DoxyCode}

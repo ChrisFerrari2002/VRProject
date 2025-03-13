@@ -1,0 +1,50 @@
+\doxysection{scalar\+\_\+integer.\+hpp}
+\hypertarget{scalar__integer_8hpp_source}{}\label{scalar__integer_8hpp_source}\index{dependencies/glm/include/glm/ext/scalar\_integer.hpp@{dependencies/glm/include/glm/ext/scalar\_integer.hpp}}
+\mbox{\hyperlink{scalar__integer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00011}00011\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00013}00013\ \textcolor{comment}{//\ Dependencies}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}../detail/setup.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}../detail/qualifier.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}../detail/\_vectorize.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}../detail/type\_float.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vector__relational_8hpp}{../vector\_relational.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8hpp}{../common.hpp}}"{}}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <limits>}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00022}00022\ \textcolor{preprocessor}{\#if\ GLM\_MESSAGES\ ==\ GLM\_ENABLE\ \&\&\ !defined(GLM\_EXT\_INCLUDED)}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00023}00023\ \textcolor{preprocessor}{\#\ \ \ pragma\ message("{}GLM:\ GLM\_EXT\_scalar\_integer\ extension\ included"{})}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00024}00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00026}00026\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceglm}{glm}}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00035}00035\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__ext__scalar__integer_gadf491730354aa7da67fbe23d4d688763}{isPowerOfTwo}}(genIUType\ v);}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00042}00042\ \ \ \ \ GLM\_FUNC\_DECL\ genIUType\ \mbox{\hyperlink{group__ext__scalar__integer_ga3a37c2f2fd347886c9af6a3ca3db04dc}{nextPowerOfTwo}}(genIUType\ v);}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00049}00049\ \ \ \ \ GLM\_FUNC\_DECL\ genIUType\ \mbox{\hyperlink{group__ext__scalar__integer_gab21902a0e7e5a8451a7ad80333618727}{prevPowerOfTwo}}(genIUType\ v);}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00055}00055\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__ext__scalar__integer_gaec593d33956a8fe43f78fccc63ddde9a}{isMultiple}}(genIUType\ v,\ genIUType\ Multiple);}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00066}00066\ \ \ \ \ GLM\_FUNC\_DECL\ genIUType\ \mbox{\hyperlink{group__ext__scalar__integer_gab770a3835c44c8a6fd225be4f4e6b317}{nextMultiple}}(genIUType\ v,\ genIUType\ Multiple);}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00077}00077\ \ \ \ \ GLM\_FUNC\_DECL\ genIUType\ \mbox{\hyperlink{group__ext__scalar__integer_gada3bdd871ffe31f2d484aa668362f636}{prevMultiple}}(genIUType\ v,\ genIUType\ Multiple);}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00086}00086\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ genIUType>}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00087}00087\ \ \ \ \ GLM\_FUNC\_DECL\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__ext__scalar__integer_ga2777901e41ad6e1e9d0ad6cc855d1075}{findNSB}}(genIUType\ x,\ \textcolor{keywordtype}{int}\ significantBitCount);}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00090}00090\ \}\ \textcolor{comment}{//namespace\ glm}}
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{scalar__integer_8hpp_source_l00092}00092\ \textcolor{preprocessor}{\#include\ "{}scalar\_integer.inl"{}}}
+
+\end{DoxyCode}
