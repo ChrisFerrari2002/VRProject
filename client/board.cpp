@@ -79,34 +79,6 @@ std::pair<int, int> Board::getPosition(const std::string& nodeName) {
 }
 
 /**
-* @brief Fill the chessboard with the pieces
-*
-* @param nodes A list of nodes representing the pieces to be placed on the board.
-*/
-void Board::fillChessboard(const std::list<Eng::Node*>& nodes) {
-    for (Eng::Node* node : nodes) {
-        if (node == nullptr) continue;
-
-        const std::string& name = node->getName();
-
-        std::pair<int, int> position = getPosition(name);
-        int row = position.first;
-        int col = position.second;
-        if (row >= 0 && row < CHESSBOARD_SIZE && col >= 0 && col < CHESSBOARD_SIZE) {
-            int color = (name.find("white") != std::string::npos) ? 0 : 1;
-            Piece* piece = new Piece(node, color, row, col);
-            table[row][col] = piece;
-            pieces.push_back(piece);
-        }
-    }
-
-    glm::mat4 blackCemeteryPos = glm::translate(table[0][0]->getNode()->getTransform(), glm::vec3(-2 * BLOCK_SIZE, 0.0f, 2 * BLOCK_SIZE));
-    glm::mat4 whiteCemeteryPos = glm::translate(table[7][0]->getNode()->getTransform(), glm::vec3(-2 * BLOCK_SIZE, 0.0f, 0.0f));
-
-    cemetery = new Cemetery(blackCemeteryPos, whiteCemeteryPos);
-}
-
-/**
 * @brief Print the entire chessboard in the current state
 *
 * Prints the current state of the chessboard to the console.

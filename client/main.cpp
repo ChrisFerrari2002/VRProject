@@ -38,6 +38,7 @@ int fps;
 
 #define CHESSBOARD_SIZE 8
 #define BLOCK_SIZE 0.0835f
+#define FILE_NAME "TestScene.ovo"
 
 // Matrixes
 std::pair<int, unsigned int> matrix[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
@@ -59,7 +60,7 @@ glm::mat4 initialTransform;
 bool moveConfirmed = false;
 
 // Other vars
-Eng::Camera* cameras[3];
+Eng::Camera* cameras[4];
 bool lightOn = true;
 
 /**
@@ -191,7 +192,6 @@ void updateFPS(int value) {
  */
 void loadScene(std::string pathName) {
     list = eng.loadScene(pathName);
-    chessboard.fillChessboard(list);
 }
 
 /**
@@ -219,13 +219,17 @@ void loadCameras() {
     c2->setUserTransform(0.0f, 20.0f, 15.0f, -50.0f, 0.0f, 0.0f);
     Eng::Camera* c3 = new Eng::Camera("camera3");
     c3->setUserTransform(0.0f, 20.0f, -15.0f, -130.0f, 0.0f, 180.0f);
+    Eng::Camera* c4 = new Eng::Camera("camera4");
+    c4->setUserTransform(80.0f, 20.0f, -100.0f, 15.0f, 180.0f, 0.0f);
     eng.addCamera(c1);
     eng.addCamera(c2);
     eng.addCamera(c3);
+    eng.addCamera(c4);
 
     cameras[0] = c1;
     cameras[1] = c2;
     cameras[2] = c3;
+    cameras[3] = c4;
 
     eng.setActiveCamera(2);
 }
@@ -278,6 +282,9 @@ void keyboardCallback(unsigned char key, int x, int y) {
     case '3':
         eng.setActiveCamera(2);
         break;
+    case '4':
+       eng.setActiveCamera(3);
+       break;
     case 13:
         moveConfirmed = true;
         chessboard.confirmMovement();
@@ -309,7 +316,7 @@ void init(int argc, char* argv[])
     eng.setZBufferUsage(true);
     loadCameras();
     std::cout << std::filesystem::current_path() << std::endl;
-    loadScene(".." + getSeparator() + "scene" + getSeparator() + "chessboard.ovo");
+    loadScene(".." + getSeparator() + "scene" + getSeparator() + FILE_NAME);
     eng.setWindowResizeHandler(handleWindowResize);
     eng.setKeyboardCallback(keyboardCallback);
     eng.setBackgroundColor(0.01f, 0.01f, 0.3f, 1.0f);
