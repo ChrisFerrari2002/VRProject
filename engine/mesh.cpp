@@ -62,8 +62,10 @@ Eng::Mesh::~Mesh() {
 */
 bool ENG_API Eng::Mesh::render(glm::mat4 matrix, void* ptr) { 
    material.render(matrix, ptr);
-   Node::render(matrix, ptr);
-   
+   //glMatrixMode(GL_MODELVIEW);
+   //glLoadMatrixf(glm::value_ptr(mat));
+   Shader::getCurrentShader()->setMatrix("modelview", matrix);
+   Shader::getCurrentShader()->setMatrix3("normalMatrix", glm::inverseTranspose(glm::mat3(matrix)));
    glBindVertexArray(vao);
    glDrawElements(GL_TRIANGLES, facesCount, GL_UNSIGNED_INT, nullptr);
 
@@ -111,10 +113,14 @@ void Eng::Mesh::setupMesh() {
    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), nullptr);
    glEnableVertexAttribArray(0);
 
+   Shader* shader = Shader::getCurrentShader();
+   shader->bind(0, "in_Position");
+
    glBindBuffer(GL_ARRAY_BUFFER, normalsVBO);
    glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), normals.data(), GL_STATIC_DRAW);
    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), nullptr);
    glEnableVertexAttribArray(1);
+   shader->bind(1, "in_Normal");
 
    glBindBuffer(GL_ARRAY_BUFFER, texCoordVBO);
    glBufferData(GL_ARRAY_BUFFER, texCoords.size() * sizeof(glm::vec2), texCoords.data(), GL_STATIC_DRAW);

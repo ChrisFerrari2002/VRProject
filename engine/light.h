@@ -40,7 +40,7 @@ public:
     * @param specular The specular color of the light.
     */
     Light(const std::string name, const int lightNumber,
-        const glm::vec4 ambient, const glm::vec4 diffuse, const glm::vec4 specular);
+        const glm::vec3 ambient, const glm::vec3 diffuse, const glm::vec3 specular);
 
     /**
     * @brief Destructor
@@ -149,21 +149,21 @@ public:
     *
     * @return The light ambient.
     */
-    glm::vec4 getAmbient() const;
+    glm::vec3 getAmbient() const;
 
     /**
     * @brief Get the light diffuse
     *
     * @return The light diffuse.
     */
-    glm::vec4 getDiffuse() const;
+    glm::vec3 getDiffuse() const;
 
     /**
     * @brief Get the light specular
     *
     * @return The light specular.
     */
-    glm::vec4 getSpecular() const;
+    glm::vec3 getSpecular() const;
 
     /**
     * @brief Get the light intensity
@@ -175,9 +175,9 @@ public:
 private:
     static int nextNumber;  /**< The next available light number */
     int lightNumber;        /**< The number of the light */
-    glm::vec4 ambient;      /**< The ambient color of the light */
-    glm::vec4 diffuse;      /**< The diffuse color of the light */
-    glm::vec4 specular;     /**< The specular color of the light */
+    glm::vec3 ambient;      /**< The ambient color of the light */
+    glm::vec3 diffuse;      /**< The diffuse color of the light */
+    glm::vec3 specular;     /**< The specular color of the light */
     glm::vec3 position{ 0.0f, 0.0f, 0.0f};  /**< The position of the light */
 
     float constantAttenuation = 1.0f;   /**< The constant attenuation factor */

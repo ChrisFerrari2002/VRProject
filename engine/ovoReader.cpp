@@ -151,7 +151,7 @@ Eng::Node* Eng::OvoReader::recursiveLoad(FILE* dat)
 		std::string textureName_str = std::string(textureName);
 
 		//Save material on data structure
-		Material* material = new Material(materialName_str, glm::vec4(emission, 1.0f), glm::vec4(albedo * 0.2f, 1.0f), glm::vec4(albedo * 0.6f, 1.0f), glm::vec4(albedo * 0.4f, 1.0f), (1 - sqrt(roughness)) * 128);
+		Material* material = new Material(materialName_str, glm::vec3(emission), glm::vec3(albedo * 0.2f), glm::vec3(albedo * 0.6f), glm::vec3(albedo * 0.4f), (1 - sqrt(roughness)) * 128);
 		materials.insert(std::pair<std::string, Material*>(material->getName(), material));
 
 		Texture* texture = new Texture(textureName_str);
@@ -474,7 +474,7 @@ Eng::Node* Eng::OvoReader::recursiveLoad(FILE* dat)
 		}break;
 		case OvLight::Subtype::OMNI:
 		{
-			thisLight = new PointLight(nodeName_str, nextLightPointer, glm::vec4(glm::vec3(color.x), 1.0f), glm::vec4(glm::vec3(color.y), 1.0f), glm::vec4(glm::vec3(color.z), 1.0f), cutoff);
+			thisLight = new PointLight(nodeName_str, nextLightPointer, glm::vec3(color.x), glm::vec3(color.y), glm::vec3(color.z), cutoff);
 		}break;
 		case OvLight::Subtype::SPOT:
 		{

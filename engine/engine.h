@@ -24,6 +24,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/matrix_inverse.hpp>
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/string_cast.hpp>
 #include <iostream>
@@ -188,20 +189,6 @@ namespace Eng {
         bool isRunning();
 
         /**
-         * @brief Clear the window
-         *
-         * Clears the window.
-         */
-        static void clearWindow();
-
-        /**
-		* @brief Swap the buffers
-        * 
-        * Swaps the buffers.
-        */
-        void swapBuffers();
-
-        /**
          * @brief Start the engine
          *
          * Starts the engine.
@@ -264,15 +251,6 @@ namespace Eng {
          * Removes the function to be called when an object is picked.
          */
         void removeObjectPickedCallback();
-
-        /**
-         * @brief Set the object picked callback
-         *
-         * Sets the function to be called when an object is picked.
-         *
-         * @param func Pointer to the object picked callback function.
-         */
-        void setObjectPickedCallback(void (*func)(Eng::Node*, bool));
 
         /**
          * @brief Load a scene from a file

@@ -123,10 +123,7 @@ void ENG_API Eng::Node::setParent(Node* newParent) {
  * @return True if the render is succesful.
  */
 bool ENG_API Eng::Node::render(glm::mat4 mat, void* attr) {
-	//glMatrixMode(GL_MODELVIEW);
-	//glLoadMatrixf(glm::value_ptr(mat));
-
-	return true;
+	return false;
 }
 
 /**

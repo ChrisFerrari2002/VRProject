@@ -40,8 +40,8 @@ public:
     * @param specular The light specular parameter.
     * @param cutOff The light cutoff parameter.
     */
-   PointLight(const std::string name, const int lightNumber, const glm::vec4 ambient,
-      const glm::vec4 diffuse, const glm::vec4 specular, const float cutOff = 180.0f);
+   PointLight(const std::string name, const int lightNumber, const glm::vec3 ambient,
+      const glm::vec3 diffuse, const glm::vec3 specular, const float cutOff = 180.0f);
 
    /**
     * @brief Destructor

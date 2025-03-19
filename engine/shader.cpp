@@ -18,6 +18,11 @@
 #include <GL/freeglut.h>
 #include "engine.h"
 
+
+Eng::Shader* Eng::Shader::currentShader = nullptr;
+
+
+
 //////////////////////////
 // BODY OF CLASS Shader //
 //////////////////////////
@@ -52,6 +57,16 @@ Eng::Shader::~Shader()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
+ * Returns the currently bound shader.
+ */
+Eng::Shader* Eng::Shader::getCurrentShader()
+{
+   return Eng::Shader::currentShader;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/**
  * Returns the param location given its variable name.
  * @param name variable name
  * @return location ID or -1 if not found
@@ -72,20 +87,84 @@ int Eng::Shader::getParamLocation(const char* name)
    return r;
 }
 
-void Eng::Shader::setMatrix(int param, const glm::mat4& mat) {
-   glUniformMatrix4fv(param, 1, GL_FALSE, glm::value_ptr(mat));
+void Eng::Shader::setMatrix(std::string param, const glm::mat4& mat) {
+   std::map<std::string, int>::iterator it = bindingMap.find(param);
+   if (it == bindingMap.end()) {
+      // Se il parametro non è presente, creiamo un nuovo binding
+      int newId = getParamLocation(param.c_str());
+      bindingMap.emplace(param, newId);
+      glUniformMatrix4fv(newId, 1, GL_FALSE, glm::value_ptr(mat));
+   }
+   else {
+      // Se il parametro esiste già, usiamo l'ID associato
+      glUniformMatrix4fv(it->second, 1, GL_FALSE, glm::value_ptr(mat));
+   }
 }
-void Eng::Shader::setFloat(int param, float value) {
-   glUniform1f(param, value);
+void Eng::Shader::setMatrix3(std::string param, const glm::mat3& mat) {
+   std::map<std::string, int>::iterator it = bindingMap.find(param);
+   if (it == bindingMap.end()) {
+      // Se il parametro non è presente, creiamo un nuovo binding
+      int newId = getParamLocation(param.c_str());
+      bindingMap.emplace(param, newId);
+      glUniformMatrix3fv(newId, 1, GL_FALSE, glm::value_ptr(mat));
+   }
+   else {
+      // Se il parametro esiste già, usiamo l'ID associato
+      glUniformMatrix3fv(it->second, 1, GL_FALSE, glm::value_ptr(mat));
+   }
 }
-void Eng::Shader::setInt(int param, int value) {
-   glUniform1i(param, value);
+
+void Eng::Shader::setFloat(std::string param, float value) {
+   std::map<std::string, int>::iterator it = bindingMap.find(param);
+   if (it == bindingMap.end()) {
+      // Se il parametro non è presente, creiamo un nuovo binding
+      int newId = getParamLocation(param.c_str());
+      bindingMap.emplace(param, newId);
+      glUniform1f(newId, value);
+   }
+   else {
+      // Se il parametro esiste già, usiamo l'ID associato
+      glUniform1f(it->second, value);
+   }
 }
-void Eng::Shader::setVec3(int param, const glm::vec3& vect) {
-   glUniform3fv(param, 1, glm::value_ptr(vect));
+void Eng::Shader::setInt(std::string param, int value) {
+   std::map<std::string, int>::iterator it = bindingMap.find(param);
+   if (it == bindingMap.end()) {
+      // Se il parametro non è presente, creiamo un nuovo binding
+      int newId = getParamLocation(param.c_str());
+      bindingMap.emplace(param, newId);
+      glUniform1f(newId, value);
+   }
+   else {
+      // Se il parametro esiste già, usiamo l'ID associato
+      glUniform1f(it->second, value);
+   }
 }
-void Eng::Shader::setVec4(int param, const glm::vec4& vect) {
-   glUniform4fv(param, 1, glm::value_ptr(vect));
+void Eng::Shader::setVec3(std::string param, const glm::vec3& vect) {
+   std::map<std::string, int>::iterator it = bindingMap.find(param);
+   if (it == bindingMap.end()) {
+      // Se il parametro non è presente, creiamo un nuovo binding
+      int newId = getParamLocation(param.c_str());
+      bindingMap.emplace(param, newId);
+      glUniform3fv(newId, 1, glm::value_ptr(vect));
+   }
+   else {
+      // Se il parametro esiste già, usiamo l'ID associato
+      glUniform3fv(it->second, 1, glm::value_ptr(vect));
+   }   
+}
+void Eng::Shader::setVec4(std::string param, const glm::vec4& vect) {
+   std::map<std::string, int>::iterator it = bindingMap.find(param);
+   if (it == bindingMap.end()) {
+      // Se il parametro non è presente, creiamo un nuovo binding
+      int newId = getParamLocation(param.c_str());
+      bindingMap.emplace(param, newId);
+      glUniform4fv(newId, 1, glm::value_ptr(vect));
+   }
+   else {
+      // Se il parametro esiste già, usiamo l'ID associato
+      glUniform4fv(it->second, 1, glm::value_ptr(vect));
+   }
 }
 
 void Eng::Shader::bind(int location, const char* attribName) {
@@ -321,6 +400,7 @@ bool Eng::Shader::render(void* data)
    }
 
    // Done:
+   currentShader = this;
    return true;
 }
 

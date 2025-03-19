@@ -34,8 +34,8 @@
  * @param specular The light specular parameter.
  * @param cutOff The light cutoff parameter.
  */
-ENG_API Eng::PointLight::PointLight(const std::string name, const int lightNumber, const glm::vec4 ambient,
-	const glm::vec4 diffuse, const glm::vec4 specular, const float cutOff) :
+ENG_API Eng::PointLight::PointLight(const std::string name, const int lightNumber, const glm::vec3 ambient,
+	const glm::vec3 diffuse, const glm::vec3 specular, const float cutOff) :
 	Light{ name, lightNumber, ambient, diffuse, specular }, cutOff(cutOff) {};
 
 /**
@@ -48,7 +48,11 @@ ENG_API Eng::PointLight::PointLight(const std::string name, const int lightNumbe
  */
 bool ENG_API Eng::PointLight::render(glm::mat4 matrix, void* ptr) {
 	Light::render(matrix, ptr);
-	glm::vec4 pos = glm::vec4(getPosition(), 1.0f);
+	Shader::getCurrentShader()->setVec3("lightPosition", getPosition());
+	Shader::getCurrentShader()->setVec3("lightAmbient", getAmbient());
+	Shader::getCurrentShader()->setVec3("lightDiffuse", getDiffuse());
+	Shader::getCurrentShader()->setVec3("lightSpecular", getSpecular());
+	//glm::vec4 pos = glm::vec4(getPosition(), 1.0f);
 	/*glLightfv(getLightNumber(), GL_POSITION, glm::value_ptr(pos));
 
 	glLightfv(getLightNumber(), GL_SPOT_CUTOFF, &cutOff);*/

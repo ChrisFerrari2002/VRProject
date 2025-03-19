@@ -45,7 +45,7 @@ bool positioningMatrix[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
 
 // Object blinking vars
 Eng::Node* pickedObject = nullptr;
-glm::vec4 lastObjectEmission;
+glm::vec3 lastObjectEmission;
 static float range = .5f;
 static float step = .01f;
 static float blinkStep = 0.0f;
@@ -344,20 +344,8 @@ int main(int argc, char* argv[])
     }
     init(argc, argv);
     eng.startTimer(rotateCamera, 10);
-    glm::vec3 textColor(0.0f, 0.0f, 0.0f);
     while (eng.isRunning()) {
         eng.update();
-
-        eng.writeOnScreen("Commands:", textColor, glm::vec2(10.0f, height - 15.0f), 6);
-        eng.writeOnScreen("[1]: Dynamic view", textColor, glm::vec2(20.0f, height - 30.0f), 6);
-        eng.writeOnScreen("[2]: Black view", textColor, glm::vec2(20.0f, height - 45.0f), 6);
-        eng.writeOnScreen("[3]: White view", textColor, glm::vec2(20.0f, height - 60.0f), 6);
-        eng.writeOnScreen("[Arrows]: Move selected piece", textColor, glm::vec2(20.0f, height - 75.0f), 6);
-        eng.writeOnScreen("[enter]: Confirm move", textColor, glm::vec2(20.0f, height - 90.0f), 6);
-        eng.writeOnScreen("[r]: Reset chessboard", textColor, glm::vec2(20.0f, height - 105.0f), 6);
-        eng.writeOnScreen("[u]: Undo move", textColor, glm::vec2(20.0f, height - 120.0f), 6);
-        eng.writeOnScreen("[i]: Redo move", textColor, glm::vec2(20.0f, height - 135.0f), 6);
-        eng.writeOnScreen("FPS: " + std::to_string(fps), textColor, glm::vec2(10.0f, height - 150.0f), 6);
         eng.refreshAndSwapBuffers();
         fc++;
     }

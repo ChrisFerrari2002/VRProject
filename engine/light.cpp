@@ -32,7 +32,7 @@
 * @param diffuse The diffuse color of the light.
 * @param specular The specular color of the light.
 */
-ENG_API Eng::Light::Light(const std::string name, const int lightNumber, const glm::vec4 ambient, const glm::vec4 diffuse, const glm::vec4 specular) : Node(name) {
+ENG_API Eng::Light::Light(const std::string name, const int lightNumber, const glm::vec3 ambient, const glm::vec3 diffuse, const glm::vec3 specular) : Node(name) {
     this->lightNumber = lightNumber;
     this->ambient = ambient;
     this->diffuse = diffuse;
@@ -172,7 +172,7 @@ void ENG_API Eng::Light::setIntensity(float intensity) {
     *
     * @return The light ambient.
     */
-glm::vec4 ENG_API Eng::Light::getAmbient() const {
+glm::vec3 ENG_API Eng::Light::getAmbient() const {
    return ambient;
 }
 
@@ -181,7 +181,7 @@ glm::vec4 ENG_API Eng::Light::getAmbient() const {
 *
 * @return The light diffuse.
 */
-glm::vec4 ENG_API Eng::Light::getDiffuse() const {
+glm::vec3 ENG_API Eng::Light::getDiffuse() const {
    return diffuse;
 }
 
@@ -190,7 +190,7 @@ glm::vec4 ENG_API Eng::Light::getDiffuse() const {
 *
 * @return The light specular.
 */
-glm::vec4 ENG_API Eng::Light::getSpecular() const {
+glm::vec3 ENG_API Eng::Light::getSpecular() const {
    return specular;
 }
 

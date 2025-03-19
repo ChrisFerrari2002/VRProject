@@ -53,6 +53,9 @@ Eng::List Eng::Base::list; /**< List object */
 glm::mat4 perspective; /**< Perspective projection matrix */
 glm::mat4 ortho; /**< Orthographic projection matrix */
 
+Eng::Shader* shader;
+int projLoc = -1; // -1 means 'not assigned', as 0 is a valid location
+
 /////////////////////////
 // RESERVED STRUCTURES //
 /////////////////////////
@@ -131,6 +134,76 @@ void __stdcall DebugCallback(GLenum source, GLenum type, GLuint id, GLenum sever
    std::cout << "OpenGL says: \"" << std::string(message) << "\"" << std::endl;
 }
 
+const char* vertShader = R"(
+   #version 440 core
+
+   // Uniforms:
+   uniform mat4 projection;
+   uniform mat4 modelview;
+   uniform mat3 normalMatrix;
+
+   // Attributes:
+   layout(location = 0) in vec3 in_Position;
+   layout(location = 1) in vec3 in_Normal;
+
+   // Varying:
+   out vec4 fragPosition;
+   out vec3 normal;   
+
+   void main(void)
+   {
+      fragPosition = modelview * vec4(in_Position, 1.0f);
+      gl_Position = projection * fragPosition;      
+      normal = normalMatrix * in_Normal;
+   }
+)";
+
+////////////////////////////
+const char* fragShader = R"(
+   #version 440 core
+
+   in vec4 fragPosition;
+   in vec3 normal;   
+   
+   out vec4 fragOutput;
+
+   // Material properties:
+   uniform vec3 matEmission;
+   uniform vec3 matAmbient;
+   uniform vec3 matDiffuse;
+   uniform vec3 matSpecular;
+   uniform float matShininess;
+
+   // Light properties:
+   uniform vec3 lightPosition; 
+   uniform vec3 lightAmbient; 
+   uniform vec3 lightDiffuse; 
+   uniform vec3 lightSpecular;
+
+   void main(void)
+   {      
+      // Ambient term:
+      vec3 fragColor = matEmission + matAmbient * lightAmbient;
+
+      // Diffuse term:
+      vec3 _normal = normalize(normal);
+      vec3 lightDirection = normalize(lightPosition - fragPosition.xyz);      
+      float nDotL = dot(lightDirection, _normal);   
+      if (nDotL > 0.0f)
+      {
+         fragColor += matDiffuse * nDotL * lightDiffuse;
+      
+         // Specular term:
+         vec3 halfVector = normalize(lightDirection + normalize(-fragPosition.xyz));                     
+         float nDotHV = dot(_normal, halfVector);         
+         fragColor += matSpecular * pow(nDotHV, matShininess) * lightSpecular;
+      } 
+      
+      // Final color:
+      fragOutput = vec4(fragColor, 1.0f);
+   }
+)";
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @brief Init internal components of the base class.
@@ -168,7 +241,6 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int widt
 
         glutInitWindowPosition(100, 100);
         glutInitWindowSize(width, height);
-
 
         // Set some optional flags:
         glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
@@ -228,10 +300,11 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int widt
 
         std::cout << "   GLSL . . . . :  " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
         std::cout << std::endl;
+
         // Set callback functions
         glutDisplayFunc(displayCallback);
         ////Enable Z-Buffer
-        //glEnable(GL_DEPTH_TEST);
+        glEnable(GL_DEPTH_TEST);
         ////Enable face culling
         //glEnable(GL_CULL_FACE);
         ////Enable smooth shading
@@ -239,6 +312,17 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int widt
         ////enable texture
         //glEnable(GL_TEXTURE_2D);
         //glEnable(GL_NORMALIZE);
+
+        Shader* vs = new Shader();
+        vs->loadFromMemory(Shader::TYPE_VERTEX, vertShader);
+
+        Shader* fs = new Shader();
+        fs->loadFromMemory(Shader::TYPE_FRAGMENT, fragShader);
+
+        shader = new Shader();
+        shader->build(vs, fs);
+        shader->render();
+
     }
 
     // Done:
@@ -281,13 +365,14 @@ bool ENG_API Eng::Base::free()
  */
 void ENG_API Eng::Base::reshapeCallback(int width, int height)
 {
-    //glViewport(0, 0, width, height);
+    glViewport(0, 0, width, height);
     //glMatrixMode(GL_PROJECTION);
     ////create a perspective matrix with a 45 degree field of view and a near and far plane
-    //perspective = glm::perspective(glm::radians(80.0f), (float)width / (float)height, 1.0f, 1000.0f);
+    perspective = glm::perspective(glm::radians(80.0f), (float)width / (float)height, 1.0f, 1000.0f);
     //ortho = glm::ortho(0.0f, (float)width, 0.0f, (float)height, 1.0f, -1.0f);
     //glLoadMatrixf(glm::value_ptr(perspective));
     //glMatrixMode(GL_MODELVIEW);
+    shader->setMatrix("projection", perspective);
 }
 
 /**
@@ -295,7 +380,14 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
  */
 void ENG_API Eng::Base::displayCallback()
 {
-    Eng::Base::clearWindow();
+   // RGBA components
+   glClearColor(bgR, bgG, bgB, bgA);
+   if (useZBuffer) {
+      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+   }
+   else {
+      glClear(GL_COLOR_BUFFER_BIT);
+   }
     //////
     // 3D:
 
@@ -445,53 +537,6 @@ void Eng::Base::removeObjectPickedCallback() {
 }
 
 /**
- * @brief Set the object picked callback.
- * @param func Pointer to the object picked callback function.
- */
-void Eng::Base::setObjectPickedCallback(void (*func)(Node* n, bool mousePressed)) {
-    //static std::function<void(int, int)> lambdaWrapper = [func](int x, int y) {
-    //    if (x == -1 && y == -1)
-    //        return func(nullptr, false);
-
-    //    glDisable(GL_LIGHTING);
-    //    glDisable(GL_TEXTURE_2D);
-    //    glViewport(0, 0, glutGet(GLUT_WINDOW_WIDTH), glutGet(GLUT_WINDOW_HEIGHT));
-
-    //    glMatrixMode(GL_PROJECTION);
-    //    glLoadMatrixf(glm::value_ptr(perspective));
-    //    glMatrixMode(GL_MODELVIEW);
-    //    glLoadMatrixf(glm::value_ptr(cameras.at(activeCamera)->getInverseCameraMat()));
-
-    //    list.render(cameras.at(activeCamera)->getInverseCameraMat(), (void*)true);
-
-
-    //    unsigned char pixel[4];
-    //    glReadPixels(x, glutGet(GLUT_WINDOW_HEIGHT) - y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, pixel);
-
-    //    glEnable(GL_LIGHTING);
-    //    glEnable(GL_TEXTURE_2D);
-
-    //    int id = (pixel[0] << 16) | (pixel[1] << 8) | (pixel[2] << 0);
-    //    Node* n = list.getObjectById(id);
-    //    if (n != nullptr) {
-    //        return func(n, true);
-    //    }
-    //    return func(nullptr, false);
-    //    };
-
-    ////call lambdaWrapper when mouse left button is pressed
-    //glutMouseFunc([](int button, int state, int x, int y) {
-    //    if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-    //        Eng::Base::clearWindow();
-    //        lambdaWrapper(x, y);
-    //    }
-    //    if (button == GLUT_LEFT_BUTTON && state == GLUT_UP) {
-    //        lambdaWrapper(-1, -1);
-    //    }
-    //    });
-}
-
-/**
  * @brief Set the special key callback.
  * @param func Pointer to the special key callback function.
  */
@@ -528,27 +573,6 @@ void Eng::Base::setWindowResizeHandler(void(*func)(int, int))
  */
 bool Eng::Base::isRunning() {
     return mainLoopRunning;
-}
-
-/**
- * @brief Clear the window.
- */
-void Eng::Base::clearWindow() {
-    // RGBA components
-    glClearColor(bgR, bgG, bgB, bgA);
-    if (useZBuffer) {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    }
-    else {
-        glClear(GL_COLOR_BUFFER_BIT);
-    }
-}
-
-/**
- * @brief Swap the buffers.
- */
-void Eng::Base::swapBuffers() {
-    glutSwapBuffers();
 }
 
 /**

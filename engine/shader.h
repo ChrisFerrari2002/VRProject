@@ -7,6 +7,8 @@
 #pragma once
 #include "engine.h"
 
+
+
 //////////////////
 // CLASS Shader //
 //////////////////
@@ -38,11 +40,12 @@ public: //
 
    // Get/set:
    int getParamLocation(const char* name);
-   void setMatrix(int param, const glm::mat4& mat);
-   void setFloat(int param, float value);
-   void setInt(int param, int value);
-   void setVec3(int param, const glm::vec3& vect);
-   void setVec4(int param, const glm::vec4& vect);
+   void setMatrix(std::string param, const glm::mat4& mat);
+   void setMatrix3(std::string param, const glm::mat3& mat);
+   void setFloat(std::string param, float value);
+   void setInt(std::string param, int value);
+   void setVec3(std::string param, const glm::vec3& vect);
+   void setVec4(std::string param, const glm::vec4& vect);
 
    // Accessing data:
    bool loadFromMemory(int kind, const char* data);
@@ -56,6 +59,8 @@ public: //
 
    virtual bool render(glm::mat4 transform, void* data) override;
 
+   static Shader* getCurrentShader();
+
 
    ///////////	 
 private:	//
@@ -66,4 +71,7 @@ private:	//
 
    // OGL id:
    unsigned int glId;
+
+   static Shader *currentShader;
+   std::map<std::string, int> bindingMap;
 };

@@ -99,7 +99,7 @@ private:
 
     unsigned int vao, vertexVBO, normalsVBO, texCoordVBO, facesVBO;
     unsigned int facesCount;
-    Eng::Shader* shader;
+    int mvLoc;
 };
 
 #endif // MESH_H

@@ -39,7 +39,6 @@ void ENG_API Eng::List::addEntry(Node* root) {
         //Add node
         Light* v;
         if ((v = dynamic_cast<Light*>(node))) {
-           std::cout << v->getName() << std::endl;
             if (v->getLightNumber() <= GL_LIGHT7)
                 objectsList.push_front(node);
         }

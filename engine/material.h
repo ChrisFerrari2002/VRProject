@@ -46,8 +46,8 @@ public:
     * @param _specular The specular color of the material.
     * @param _shininess The shininess of the material.
     */
-    Material(const std::string name, glm::vec4 _emission,
-        glm::vec4 _ambient, glm::vec4 _diffuse, glm::vec4 _specular, float _shininess);
+    Material(const std::string name, glm::vec3 _emission,
+        glm::vec3 _ambient, glm::vec3 _diffuse, glm::vec3 _specular, float _shininess);
 
     /**
     * @brief Destructor
@@ -68,28 +68,28 @@ public:
     *
     * @param emission The emission color to be set.
     */
-    void setEmission(glm::vec4 emission);
+    void setEmission(glm::vec3 emission);
 
     /**
     * @brief Set the ambient color of the material
     *
     * @param ambient The ambient color to be set.
     */
-    void setAmbient(glm::vec4 ambient);
+    void setAmbient(glm::vec3 ambient);
 
     /**
     * @brief Set the diffuse color of the material
     *
     * @param diffuse The diffuse color to be set.
     */
-    void setDiffuse(glm::vec4 diffuse);
+    void setDiffuse(glm::vec3 diffuse);
 
     /**
     * @brief Set the specular color of the material
     *
     * @param specular The specular color to be set.
     */
-    void setSpecular(glm::vec4 specular);
+    void setSpecular(glm::vec3 specular);
 
     /**
     * @brief Set the texture of the material
@@ -103,28 +103,28 @@ public:
     *
     * @return The emission color of the material.
     */
-    glm::vec4 getEmission();
+    glm::vec3 getEmission();
 
     /**
     * @brief Get the ambient color of the material
     *
     * @return The ambient color of the material.
     */
-    glm::vec4 getAmbient();
+    glm::vec3 getAmbient();
 
     /**
     * @brief Get the diffuse color of the material
     *
     * @return The diffuse color of the material.
     */
-    glm::vec4 getDiffuse();
+    glm::vec3 getDiffuse();
 
     /**
     * @brief Get the specular color of the material
     *
     * @return The specular color of the material.
     */
-    glm::vec4 getSpecular();
+    glm::vec3 getSpecular();
 
     /**
     * @brief Get the shininess of the material
@@ -152,10 +152,10 @@ public:
     virtual bool render(glm::mat4 transform, void* data) override;
 
 private:
-    glm::vec4 emission;     /**< The emission color of the material */
-    glm::vec4 ambient;      /**< The ambient color of the material */
-    glm::vec4 diffuse;      /**< The diffuse color of the material */
-    glm::vec4 specular;     /**< The specular color of the material */
+    glm::vec3 emission;     /**< The emission color of the material */
+    glm::vec3 ambient;      /**< The ambient color of the material */
+    glm::vec3 diffuse;      /**< The diffuse color of the material */
+    glm::vec3 specular;     /**< The specular color of the material */
     float shininess;        /**< The shininess of the material */
     Eng::Texture* texture;  /**< Pointer to the texture of the material */
 };

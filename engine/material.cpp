@@ -48,7 +48,7 @@ Eng::Material::Material()
 * @param _specular The specular color of the material.
 * @param _shininess The shininess of the material.
 */
-Eng::Material::Material(const std::string name, glm::vec4 _emission, glm::vec4 _ambient, glm::vec4 _diffuse, glm::vec4 _specular, float _shininess) {
+Eng::Material::Material(const std::string name, glm::vec3 _emission, glm::vec3 _ambient, glm::vec3 _diffuse, glm::vec3 _specular, float _shininess) {
 	Object::setId(Object::getNextId());
 	Object::setName(name);
 	this->setEmission(_emission);
@@ -70,7 +70,7 @@ Eng::Material::~Material() {}
 * 
 * @return The emission color of the material.
 */
-glm::vec4 ENG_API Eng::Material::getEmission() {
+glm::vec3 ENG_API Eng::Material::getEmission() {
 	return emission;
 }
 
@@ -79,7 +79,7 @@ glm::vec4 ENG_API Eng::Material::getEmission() {
 * 
 * @return The ambient color of the material.
 */
-glm::vec4 ENG_API Eng::Material::getAmbient() {
+glm::vec3 ENG_API Eng::Material::getAmbient() {
 	return ambient;
 }
 
@@ -88,7 +88,7 @@ glm::vec4 ENG_API Eng::Material::getAmbient() {
 * 
 * @return The diffuse color of the material.
 */
-glm::vec4 ENG_API Eng::Material::getDiffuse() {
+glm::vec3 ENG_API Eng::Material::getDiffuse() {
 	return diffuse;
 }
 
@@ -97,7 +97,7 @@ glm::vec4 ENG_API Eng::Material::getDiffuse() {
 * 
 * @return The specular color of the material.
 */
-glm::vec4 ENG_API Eng::Material::getSpecular() {
+glm::vec3 ENG_API Eng::Material::getSpecular() {
 	return specular;
 }
 
@@ -124,7 +124,7 @@ Eng::Texture* Eng::Material::getTexture() {
 * 
 * @param emission The emission color to be set.
 */
-void ENG_API Eng::Material::setEmission(glm::vec4 emission) {
+void ENG_API Eng::Material::setEmission(glm::vec3 emission) {
 	this->emission = emission;
 }
 
@@ -133,7 +133,7 @@ void ENG_API Eng::Material::setEmission(glm::vec4 emission) {
 * 
 * @param ambient The ambient color to be set.
 */
-void ENG_API Eng::Material::setAmbient(glm::vec4 ambient) {
+void ENG_API Eng::Material::setAmbient(glm::vec3 ambient) {
 	this->ambient = ambient;
 }
 
@@ -142,7 +142,7 @@ void ENG_API Eng::Material::setAmbient(glm::vec4 ambient) {
 * 
 * @param diffuse The diffuse color to be set.
 */
-void ENG_API Eng::Material::setDiffuse(glm::vec4 diffuse) {
+void ENG_API Eng::Material::setDiffuse(glm::vec3 diffuse) {
 	this->diffuse = diffuse;
 }
 
@@ -151,7 +151,7 @@ void ENG_API Eng::Material::setDiffuse(glm::vec4 diffuse) {
 * 
 * @param specular The specular color to be set.
 */
-void ENG_API Eng::Material::setSpecular(glm::vec4 specular) {
+void ENG_API Eng::Material::setSpecular(glm::vec3 specular) {
 	this->specular = specular;
 }
 
@@ -182,9 +182,13 @@ void ENG_API Eng::Material::setTexture(Eng::Texture* texture) {
 */
 bool ENG_API Eng::Material::render(glm::mat4 matrix, void* ptr) {
 
-	if (texture != nullptr)
-		texture->render(matrix, ptr);
-
+	/*if (texture != nullptr)
+		texture->render(matrix, ptr);*/
+	Shader::getCurrentShader()->setVec3("matEmission", this->emission);
+	Shader::getCurrentShader()->setVec3("matAmbient", this->ambient);
+	Shader::getCurrentShader()->setVec3("matDiffuse", this->diffuse);
+	Shader::getCurrentShader()->setVec3("matSpecular", this->specular);
+	Shader::getCurrentShader()->setFloat("matShininess", this->shininess);
 	/*glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, shininess);
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, glm::value_ptr(ambient));
 	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, glm::value_ptr(emission));
