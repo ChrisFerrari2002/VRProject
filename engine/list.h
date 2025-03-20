@@ -109,6 +109,7 @@ public:
 
 private:
     std::list<Eng::Node*> objectsList; /**< The list of nodes */
+    std::list<Eng::Node*> lightsList; /**< The list of lights */
 };
 
 #endif // LIST_H

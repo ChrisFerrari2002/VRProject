@@ -366,12 +366,9 @@ bool ENG_API Eng::Base::free()
 void ENG_API Eng::Base::reshapeCallback(int width, int height)
 {
     glViewport(0, 0, width, height);
-    //glMatrixMode(GL_PROJECTION);
-    ////create a perspective matrix with a 45 degree field of view and a near and far plane
+
     perspective = glm::perspective(glm::radians(80.0f), (float)width / (float)height, 1.0f, 1000.0f);
-    //ortho = glm::ortho(0.0f, (float)width, 0.0f, (float)height, 1.0f, -1.0f);
-    //glLoadMatrixf(glm::value_ptr(perspective));
-    //glMatrixMode(GL_MODELVIEW);
+
     shader->setMatrix("projection", perspective);
 }
 
@@ -381,7 +378,6 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
 void ENG_API Eng::Base::displayCallback()
 {
    // RGBA components
-   glClearColor(bgR, bgG, bgB, bgA);
    if (useZBuffer) {
       glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
    }
@@ -595,7 +591,7 @@ void Eng::Base::start() {
  */
 void Eng::Base::postWindowRedisplay() {
     // Force rendering refresh
-    glutPostWindowRedisplay(windowId);
+    
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

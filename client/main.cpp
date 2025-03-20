@@ -220,7 +220,7 @@ void loadCameras() {
     Eng::Camera* c3 = new Eng::Camera("camera3");
     c3->setUserTransform(0.0f, 20.0f, -15.0f, -130.0f, 0.0f, 180.0f);
     Eng::Camera* c4 = new Eng::Camera("camera4");
-    c4->setUserTransform(80.0f, 20.0f, -100.0f, 15.0f, 180.0f, 0.0f);
+    c4->setUserTransform(-60.0f, 20.0f, 0.0f, 0.0f, -90.0f, 0.0f);
     eng.addCamera(c1);
     eng.addCamera(c2);
     eng.addCamera(c3);
@@ -231,7 +231,7 @@ void loadCameras() {
     cameras[2] = c3;
     cameras[3] = c4;
 
-    eng.setActiveCamera(2);
+    eng.setActiveCamera(3);
 }
 
 /**

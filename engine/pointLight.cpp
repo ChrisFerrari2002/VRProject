@@ -46,16 +46,15 @@ ENG_API Eng::PointLight::PointLight(const std::string name, const int lightNumbe
  *
  * @return True if the render is succesful.
  */
-bool ENG_API Eng::PointLight::render(glm::mat4 matrix, void* ptr) {
-	Light::render(matrix, ptr);
-	Shader::getCurrentShader()->setVec3("lightPosition", getPosition());
+bool ENG_API Eng::PointLight::render(glm::mat4 inverseCamera, void* ptr) {
+
+	glm::vec4 worldCoordinates = glm::vec4(getPosition(), 1.0f);
+	glm::vec3 lightEyeCoordinates = inverseCamera * worldCoordinates;
+
+	Shader::getCurrentShader()->setVec3("lightPosition", lightEyeCoordinates);
 	Shader::getCurrentShader()->setVec3("lightAmbient", getAmbient());
 	Shader::getCurrentShader()->setVec3("lightDiffuse", getDiffuse());
 	Shader::getCurrentShader()->setVec3("lightSpecular", getSpecular());
-	//glm::vec4 pos = glm::vec4(getPosition(), 1.0f);
-	/*glLightfv(getLightNumber(), GL_POSITION, glm::value_ptr(pos));
-
-	glLightfv(getLightNumber(), GL_SPOT_CUTOFF, &cutOff);*/
 
 	return true;
 }
