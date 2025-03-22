@@ -39,8 +39,7 @@ void ENG_API Eng::List::addEntry(Node* root) {
         //Add node
         Light* v;
         if ((v = dynamic_cast<Light*>(node))) {
-           if (v->getLightNumber() <= GL_LIGHT7)
-              lightsList.push_back(node);
+           lightsList.push_back(node);
         }
         else {
             objectsList.push_back(node);
@@ -72,39 +71,33 @@ void ENG_API Eng::List::popEntry() {
 * @return True if the rendering was successful, false otherwise.
 */
 bool Eng::List::render(glm::mat4 inverseCameraMatrix, void* ptr) {
-    std::list<Node*>::iterator lightsIt;
-    int index = 0;
-    for (lightsIt = lightsList.begin(); lightsIt != lightsList.end(); lightsIt++, index++)
-    {
-       if (index == 0) {
-          glClear(GL_DEPTH_BUFFER_BIT);
-       }
-       else {
-          glDepthMask(GL_FALSE);
-       }
-       if (index == 1) {
-          glEnable(GL_BLEND);
-          glBlendFunc(GL_ONE, GL_ONE);
-       }
 
-       Node* node = dynamic_cast<Light*>(*lightsIt);
-       node->render(inverseCameraMatrix * node->getFinalMatrix(), ptr);
-       
-       std::list<Node*>::iterator nodesIt;
-       for (nodesIt = objectsList.begin(); nodesIt != objectsList.end(); nodesIt++)
-       {
-          Node* node = dynamic_cast<Node*>(*nodesIt);
-          node->render(inverseCameraMatrix * node->getFinalMatrix(), ptr);
-       }
-       if (index != 0) {
-          glDepthMask(GL_TRUE);
-       }
-    }
-    if (lightsList.size() > 1) {
-       glDisable(GL_BLEND);
-    }
-    
-    return true;
+   std::list<Node*>::iterator lightsIt;
+   int index = 0;
+
+   for (lightsIt = lightsList.begin(); lightsIt != lightsList.end() && index < 2; lightsIt++, index++) {
+      if (index == 1) {
+         glEnable(GL_BLEND);
+         glBlendFunc(GL_ONE, GL_ONE);
+      }
+      Node* node = dynamic_cast<Light*>(*lightsIt);
+      if (node) {
+         node->render(inverseCameraMatrix * node->getFinalMatrix(), ptr);
+      }
+
+      std::list<Node*>::iterator nodesIt;
+      for (nodesIt = objectsList.begin(); nodesIt != objectsList.end(); nodesIt++) {
+         Node* node = dynamic_cast<Node*>(*nodesIt);
+         if (node) {
+            node->render(inverseCameraMatrix * node->getFinalMatrix(), ptr);
+         }
+      }
+   }
+
+   if (lightsList.size() > 1)
+      glDisable(GL_BLEND);
+
+   return true;
 }
 
 /**

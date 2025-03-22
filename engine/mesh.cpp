@@ -62,22 +62,15 @@ Eng::Mesh::~Mesh() {
 */
 bool ENG_API Eng::Mesh::render(glm::mat4 matrix, void* ptr) { 
    material.render(matrix, ptr);
-   //glMatrixMode(GL_MODELVIEW);
-   //glLoadMatrixf(glm::value_ptr(mat));
+
    Shader::getCurrentShader()->setMatrix("modelview", matrix);
    Shader::getCurrentShader()->setMatrix3("normalMatrix", glm::inverseTranspose(glm::mat3(matrix)));
+
    glBindVertexArray(vao);
    glDrawElements(GL_TRIANGLES, facesCount, GL_UNSIGNED_INT, nullptr);
+   //glDrawArrays(GL_TRIANGLES, 0, facesCount);
+   glBindVertexArray(0);
 
-   //glBegin(GL_TRIANGLES);
-   ////render with the scale
-   //for (Vertex* v : vertices.at(lod)) {
-   //   glColor4fv(glm::value_ptr(getColorBasedOnId(getId())));
-   //   glNormal3fv(glm::value_ptr(v->getNormal() * getScale()));
-   //   glTexCoord2fv(glm::value_ptr(v->getTextureCoordinates() * getScale()));
-   //   glVertex3fv(glm::value_ptr(v->getPosition() * getScale()));
-   //}
-   //glEnd();
    return true;
 }
 
@@ -105,7 +98,6 @@ void Eng::Mesh::setFaces(std::vector<unsigned int> faces) {
 }
 
 void Eng::Mesh::setupMesh() {
-
    glBindVertexArray(vao);
 
    glBindBuffer(GL_ARRAY_BUFFER, vertexVBO);
@@ -126,6 +118,7 @@ void Eng::Mesh::setupMesh() {
    glBufferData(GL_ARRAY_BUFFER, texCoords.size() * sizeof(glm::vec2), texCoords.data(), GL_STATIC_DRAW);
    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(glm::vec2), nullptr);
    glEnableVertexAttribArray(2);
+   shader->bind(2, "inTexCoord");
 
    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, facesVBO);
    glBufferData(GL_ELEMENT_ARRAY_BUFFER, faces.size() * sizeof(unsigned int), faces.data(), GL_STATIC_DRAW);

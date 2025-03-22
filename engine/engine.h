@@ -75,6 +75,7 @@ namespace Eng {
        // You can subinclude here other headers of your engine...
 #include "object.h"
 #include "node.h"
+#include "fbo.h"
 #include "texture.h"
 #include "material.h"
 #include "camera.h"
@@ -86,6 +87,7 @@ namespace Eng {
 #include "pointLight.h"
 #include "spotLight.h"
 #include "list.h"
+#include "LODData.h"
 #include "ovoReader.h"
 
 ///////////////////////

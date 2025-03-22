@@ -85,6 +85,7 @@
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="directionalLight.cpp" />
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="fbo.cpp" />
     <ClCompile Include="light.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="material.cpp" />
@@ -102,8 +103,10 @@
     <ClInclude Include="camera.h" />
     <ClInclude Include="directionalLight.h" />
     <ClInclude Include="engine.h" />
+    <ClInclude Include="fbo.h" />
     <ClInclude Include="light.h" />
     <ClInclude Include="list.h" />
+    <ClInclude Include="LODData.h" />
     <ClInclude Include="material.h" />
     <ClInclude Include="mesh.h" />
     <ClInclude Include="node.h" />

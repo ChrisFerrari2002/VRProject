@@ -58,12 +58,14 @@ public:
 	 */
 	virtual void setTransform(glm::mat4 transform);
 
+	glm::mat4 updateFinalMatrix();
+
 	/**
 	 * @brief Get the node final matrix.
 	 *
 	 * @return The node final matrix.
 	 */
-	glm::mat4 getFinalMatrix() const;
+	glm::mat4 getFinalMatrix();
 
 	/**
 	 * @brief Get the node child at an index.
@@ -79,7 +81,7 @@ public:
 	 *
 	 * @return The node world position.
 	 */
-	glm::vec3 getWorldPosition() const;
+	glm::vec3 getWorldPosition();
 
 	/**
 	 * @brief Set the node world position.
@@ -173,10 +175,12 @@ public:
 
 // Private methods and fields
 private:
+	glm::mat4 finalMatrix = glm::mat4(1.0f);
 	glm::mat4 transform = glm::mat4(1.0f); /**< The node transform */
 	std::vector<Node*> children; /**< The list of children */
 	Node* parent; /**< The node parent. */                          
 	float scale; /**< The node scale. */   
+	bool isDirty;
 };
 
 #endif // NODE_H

@@ -1,5 +1,3 @@
-#include "engine.h"
-
 /**
  * @file		shader.cpp
  * @brief	Minimal OpenGL shader class

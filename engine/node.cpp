@@ -32,6 +32,7 @@ Eng::Node::Node(std::string name) {
 	Object::setId(Object::getNextId());
 	Object::setName(name);
 	this->setParent(nullptr);
+	this->isDirty = true;
 	scale = 1.0f;
 }
 
@@ -166,6 +167,7 @@ glm::mat4 ENG_API Eng::Node::getTransform() const
 void ENG_API Eng::Node::setTransform(glm::mat4 transform)
 {
 	Node::transform = transform;
+	isDirty = true;
 }
 
 /**
@@ -173,23 +175,24 @@ void ENG_API Eng::Node::setTransform(glm::mat4 transform)
  *
  * @return The node final matrix.
  */
-glm::mat4 ENG_API Eng::Node::getFinalMatrix() const {
+glm::mat4 ENG_API Eng::Node::getFinalMatrix() {
+	if (isDirty) {
+		Node* par = parent;
+		std::vector<Node*> parents;
+		while (par != nullptr) {
+			parents.push_back(par);
+			par = par->getParent();
+		}
 
-	Node* par = parent;
-	std::vector<Node*> parents;
-	while (par != nullptr) {
-		parents.push_back(par);
-		par = par->getParent();
+		glm::mat4 m = glm::mat4(1.0f);
+		for (int i = parents.size() - 1; i >= 0; i--) {
+			par = parents.at(i);
+			m *= par->getTransform();
+		}
+		finalMatrix = m * transform;
+		isDirty = false;
 	}
-
-	glm::mat4 m = glm::mat4(1.0f);
-	for (int i = parents.size() - 1; i >= 0; i--) {
-		par = parents.at(i);
-		m *= par->getTransform();
-	}
-	m *= transform;
-
-	return m;
+	return finalMatrix;
 }
 
 /**
@@ -197,7 +200,7 @@ glm::mat4 ENG_API Eng::Node::getFinalMatrix() const {
  *
  * @return The node world position.
  */
-glm::vec3 ENG_API Eng::Node::getWorldPosition() const {
+glm::vec3 ENG_API Eng::Node::getWorldPosition() {
 	return glm::vec3(getFinalMatrix()[3]);
 }
 

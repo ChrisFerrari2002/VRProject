@@ -221,15 +221,15 @@ Eng::Node* Eng::OvoReader::recursiveLoad(FILE* dat)
 		std::string materialName_str(materialName);
 
 		Mesh* thisMesh;
-		if (materialName_str != "[none]") {
-			Material material = *(materials.find(materialName_str)->second);
+		auto it = materials.find(materialName_str);
+		if (it != materials.end()) {
+			Material material = *(it->second);
 			thisMesh = new Mesh(nodeName_str, material);
-			thisMesh->setTransform(matrix);
 		}
 		else {
 			thisMesh = new Mesh(nodeName_str, Material());
-			thisMesh->setTransform(matrix);
 		}
+		thisMesh->setTransform(matrix);
 
 		// Mesh bounding sphere radius:
 		float radius;
@@ -308,7 +308,7 @@ Eng::Node* Eng::OvoReader::recursiveLoad(FILE* dat)
 			}
 		}
 
-
+		std::map<unsigned int, LODData> lodMapData;
 		// Nr. of LODs:
 		unsigned int LODs;
 		memcpy(&LODs, data + position, sizeof(unsigned int));
@@ -316,97 +316,84 @@ Eng::Node* Eng::OvoReader::recursiveLoad(FILE* dat)
 
 		std::cout << "\tLODs: " << LODs << std::endl;
 
-		for (unsigned int l = 0; l < LODs; l++)
-		{
+		for (unsigned int l = 0; l < LODs; l++) {
+			std::cout << "\tLOD " << l << ":" << std::endl;
 
 			// Nr. of vertices:
 			unsigned int vertices, faces;
 
 			memcpy(&vertices, data + position, sizeof(unsigned int));
 			position += sizeof(unsigned int);
-
 			std::cout << "\tNr. of vertices: " << vertices << std::endl;
-
+			
+			LODData lodData;
 
 			// ...and faces:
 			memcpy(&faces, data + position, sizeof(unsigned int));
 			position += sizeof(unsigned int);
-
 			std::cout << "\tNr. of faces: " << faces << std::endl;
 
+			// Otherwise, process the current LOD (as before):
 			// Interleaved and compressed vertex/normal/UV/tangent data:
-			for (unsigned int c = 0; c < vertices; c++)
-			{
-				// Vertex coords:
+			for (unsigned int c = 0; c < vertices; c++) {
 				glm::vec3 vertex;
 				memcpy(&vertex, data + position, sizeof(glm::vec3));
 				position += sizeof(glm::vec3);
-				verticesCoords.push_back(vertex);
+				lodData.verticesCoords.push_back(vertex);
 
-				// Vertex normal:
-				unsigned int normalData;
+				unsigned int normalData, textureData, tangentData;
 				memcpy(&normalData, data + position, sizeof(unsigned int));
 				position += sizeof(unsigned int);
-
-				// Texture coordinates:
-				unsigned int textureData;
 				memcpy(&textureData, data + position, sizeof(unsigned int));
 				position += sizeof(unsigned int);
-
-				// Tangent vector:
-				unsigned int tangentData;
 				memcpy(&tangentData, data + position, sizeof(unsigned int));
 				position += sizeof(unsigned int);
 
-
-
 				glm::vec3 normal = glm::unpackSnorm3x10_1x2(normalData);
-				normalsCoords.push_back(normal);
+				lodData.normalsCoords.push_back(normal);
 
 				glm::vec2 uv = glm::unpackHalf2x16(textureData);
-				texCoords.push_back(uv);
-
+				lodData.texCoords.push_back(uv);
 			}
 
 			// Faces:
-			for (unsigned int c = 0; c < faces; c++)
-			{
-				// Face indexes:
+			for (unsigned int c = 0; c < faces; c++) {
 				unsigned int face[3];
 				memcpy(face, data + position, sizeof(unsigned int) * 3);
 				position += sizeof(unsigned int) * 3;
-				facesArray.push_back(face[0]);
-				facesArray.push_back(face[1]);
-				facesArray.push_back(face[2]);
-
-				/*for (int i = 0; i < 3; i++)
-				{
-					thisMesh->addVertex(tempVertices.at(face[i]), l);
-				}*/
+				lodData.facesArray.push_back(face[0]);
+				lodData.facesArray.push_back(face[1]);
+				lodData.facesArray.push_back(face[2]);
 			}
+
+			lodMapData[l] = lodData;
+
+			// Clear arrays for next LOD
+			verticesCoords.clear();
+			normalsCoords.clear();
+			texCoords.clear();
+			facesArray.clear();
 		}
-		thisMesh->setVertices(verticesCoords);
-		thisMesh->setNormals(normalsCoords);
-		thisMesh->setTexCoords(texCoords);
-		thisMesh->setFaces(facesArray);
-		thisMesh->setupMesh();
 
-		verticesCoords.clear();
-		normalsCoords.clear();
-		texCoords.clear();
-		facesArray.clear();
-
-		// Go recursive when child nodes are avaialble:
+		// Go recursive when child nodes are available
 		if (nrOfChildren) {
-			while (thisMesh->getNumberOfChildren() < nrOfChildren)
-			{
+			while (thisMesh->getNumberOfChildren() < nrOfChildren) {
 				Node* childNode = recursiveLoad(dat);
 				thisMesh->addChild(childNode);
 			}
 		}
 
+		LODData lodData = lodMapData[0];
+
+		thisMesh->setVertices(lodData.verticesCoords);
+		thisMesh->setNormals(lodData.normalsCoords);
+		thisMesh->setTexCoords(lodData.texCoords);
+		thisMesh->setFaces(lodData.facesArray);
+		thisMesh->setupMesh();
+
 		// Done:
 		return thisMesh;
+
 	}
 
 	case OvObject::Type::O_LIGHT:

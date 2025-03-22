@@ -303,15 +303,6 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int widt
 
         // Set callback functions
         glutDisplayFunc(displayCallback);
-        ////Enable Z-Buffer
-        glEnable(GL_DEPTH_TEST);
-        ////Enable face culling
-        //glEnable(GL_CULL_FACE);
-        ////Enable smooth shading
-        //glShadeModel(GL_SMOOTH);
-        ////enable texture
-        //glEnable(GL_TEXTURE_2D);
-        //glEnable(GL_NORMALIZE);
 
         Shader* vs = new Shader();
         vs->loadFromMemory(Shader::TYPE_VERTEX, vertShader);
@@ -377,27 +368,10 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
  */
 void ENG_API Eng::Base::displayCallback()
 {
-   // RGBA components
-   if (useZBuffer) {
-      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-   }
-   else {
-      glClear(GL_COLOR_BUFFER_BIT);
-   }
-    //////
-    // 3D:
-
-    //// Set perspective matrix:
-    //glMatrixMode(GL_PROJECTION);
-    //glLoadMatrixf(glm::value_ptr(perspective));
-    //glMatrixMode(GL_MODELVIEW);
-
-    //// Enable Z buffer if it's required
-    //if (useZBuffer) execZBufferSetup();
-
-    ////disable texturing
-    //glLoadMatrixf(glm::value_ptr(cameras.at(activeCamera)->getInverseCameraMat()));
-    list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
+   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+   glEnable(GL_DEPTH_TEST);
+   glDepthFunc(GL_LEQUAL);
+   list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
 }
 
 /**
