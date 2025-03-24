@@ -102,7 +102,7 @@ private:
    std::string filePath; /**< The texture file path on the file system */
    int width; /**< The texture width */
    int height; /**< The texture height */
-   unsigned int texId = 0; /**< The texture id */
+   unsigned int texId = 0;
    unsigned char* bitmap = new unsigned char[256 * 256 * 3]; /**< The texture bitmap */
 };
 

@@ -15,7 +15,7 @@
 /**
  * @brief OGL Shader. Management and rendering of shaders.
  */
-class Shader : public Eng::Object
+class ENG_API Shader : public Eng::Object
 {
    //////////
 public: //

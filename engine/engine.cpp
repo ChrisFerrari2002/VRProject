@@ -53,8 +53,29 @@ Eng::List Eng::Base::list; /**< List object */
 glm::mat4 perspective; /**< Perspective projection matrix */
 glm::mat4 ortho; /**< Orthographic projection matrix */
 
-Eng::Shader* shader;
-int projLoc = -1; // -1 means 'not assigned', as 0 is a valid location
+Eng::Shader* pointLightShader;
+Eng::Shader* directionalLightShader;
+Eng::Shader* spotLightShader;
+
+// Enums:
+enum Eye
+{
+   EYE_LEFT = 0,
+   EYE_RIGHT = 1,
+
+   // Terminator:
+   EYE_LAST,
+};
+
+unsigned int fboTexId[EYE_LAST] = { 0, 0 };
+Eng::Fbo* fbo[EYE_LAST] = { nullptr, nullptr };
+
+// Window size:
+#define APP_WINDOWSIZEX   1024
+#define APP_WINDOWSIZEY   512
+#define APP_FBOSIZEX      APP_WINDOWSIZEX / 2
+#define APP_FBOSIZEY      APP_WINDOWSIZEY / 1
+
 
 /////////////////////////
 // RESERVED STRUCTURES //
@@ -145,26 +166,80 @@ const char* vertShader = R"(
    // Attributes:
    layout(location = 0) in vec3 in_Position;
    layout(location = 1) in vec3 in_Normal;
+   layout(location = 2) in vec2 in_TexCoord;
 
    // Varying:
    out vec4 fragPosition;
-   out vec3 normal;   
+   out vec3 normal;
+   out vec2 texCoord;
 
    void main(void)
    {
       fragPosition = modelview * vec4(in_Position, 1.0f);
-      gl_Position = projection * fragPosition;      
+      gl_Position = projection * fragPosition;
       normal = normalMatrix * in_Normal;
+      texCoord = in_TexCoord;
    }
 )";
 
 ////////////////////////////
-const char* fragShader = R"(
+const char *pointFragShader = R"(
    #version 440 core
 
    in vec4 fragPosition;
-   in vec3 normal;   
-   
+   in vec3 normal;
+   in vec2 texCoord;
+
+   out vec4 fragOutput;
+
+   // Material properties:
+   uniform vec3 matAmbient;
+   uniform vec3 matDiffuse;
+   uniform vec3 matSpecular;
+   uniform float matShininess;
+
+   // Light properties:
+   uniform vec3 lightPosition;
+   uniform vec3 lightAmbient;
+   uniform vec3 lightDiffuse;
+   uniform vec3 lightSpecular;
+
+   // Texture mapping:
+   layout(binding = 0) uniform sampler2D texSampler;
+
+   void main(void)
+   {
+      // Texture element:
+      vec4 texel = texture(texSampler, texCoord);
+
+      // Ambient term:
+      vec3 fragColor = matAmbient * lightAmbient;
+
+      // Diffuse term:
+      vec3 _normal = normalize(normal);
+      vec3 lightDirection = normalize(lightPosition - fragPosition.xyz);
+      float nDotL = dot(lightDirection, _normal);
+      if (nDotL > 0.0f)
+      {
+         fragColor += matDiffuse * nDotL * lightDiffuse;
+
+         // Specular term:
+         vec3 halfVector = normalize(lightDirection + normalize(-fragPosition.xyz));
+         float nDotHV = dot(_normal, halfVector);
+         fragColor += matSpecular * pow(nDotHV, matShininess) * lightSpecular;
+      }
+
+      // Final color:
+      fragOutput = texel * vec4(fragColor, 1.0f);
+   }
+)";
+
+const char* directionalFragShader = R"(
+   #version 440 core
+
+   in vec4 fragPosition;
+   in vec3 normal;
+
    out vec4 fragOutput;
 
    // Material properties:
@@ -175,32 +250,103 @@ const char* fragShader = R"(
    uniform float matShininess;
 
    // Light properties:
-   uniform vec3 lightPosition; 
-   uniform vec3 lightAmbient; 
-   uniform vec3 lightDiffuse; 
+   uniform vec3 lightDirection; // Vettore direzionale normalizzato
+   uniform vec3 lightAmbient;
+   uniform vec3 lightDiffuse;
    uniform vec3 lightSpecular;
 
    void main(void)
-   {      
-      // Ambient term:
+   {
+      // Normalizzazione delle normali
+      vec3 _normal = normalize(normal);
+
+      // ---- COMPONENTE AMBIENTE ----
       vec3 fragColor = matEmission + matAmbient * lightAmbient;
 
-      // Diffuse term:
-      vec3 _normal = normalize(normal);
-      vec3 lightDirection = normalize(lightPosition - fragPosition.xyz);      
-      float nDotL = dot(lightDirection, _normal);   
-      if (nDotL > 0.0f)
-      {
+      // ---- COMPONENTE DIFFUSA ----
+      float nDotL = dot(_normal, normalize(-lightDirection));
+      if (nDotL > 0.0) {
          fragColor += matDiffuse * nDotL * lightDiffuse;
-      
-         // Specular term:
-         vec3 halfVector = normalize(lightDirection + normalize(-fragPosition.xyz));                     
-         float nDotHV = dot(_normal, halfVector);         
-         fragColor += matSpecular * pow(nDotHV, matShininess) * lightSpecular;
-      } 
-      
-      // Final color:
-      fragOutput = vec4(fragColor, 1.0f);
+
+         // ---- COMPONENTE SPECULARE ----
+         vec3 viewDir = normalize(-fragPosition.xyz);
+         vec3 reflectDir = reflect(lightDirection, _normal);
+         float spec = pow(max(dot(viewDir, reflectDir), 0.0), matShininess);
+         fragColor += matSpecular * spec * lightSpecular;
+      }
+
+      // Output finale
+      fragOutput = vec4(fragColor, 1.0);
+   }
+)";
+
+const char* spotFragShader = R"(
+   #version 440 core
+
+   in vec4 fragPosition; // Posizione del frammento nello spazio della camera
+   in vec3 normal;       // Normale del frammento
+
+   out vec4 fragOutput;  // Colore di output
+
+   // Material properties
+   uniform vec3 matEmission;
+   uniform vec3 matAmbient;
+   uniform vec3 matDiffuse;
+   uniform vec3 matSpecular;
+   uniform float matShininess;
+
+   uniform vec3 cameraPosition;
+
+   // Light properties
+   uniform vec3 lightPosition;      // Posizione della luce
+   uniform vec3 lightDirection;     // Direzione della luce
+   uniform vec3 lightAmbient;       // Componente ambientale della luce
+   uniform vec3 lightDiffuse;       // Componente diffusa della luce
+   uniform vec3 lightSpecular;      // Componente speculare della luce
+   uniform float lightCutoff;       // Angolo di cutoff (coseno dell'angolo)
+   uniform float lightConstant;     // Attenuazione costante
+   uniform float lightLinear;       // Attenuazione lineare
+   uniform float lightQuadratic;    // Attenuazione quadratica
+
+   void main(void) {
+       // Normalizza la normale e la direzione della luce
+       vec3 _normal = normalize(normal);
+       vec3 lightDir = normalize(lightPosition - fragPosition.xyz);
+
+       // Calcola l'angolo tra la direzione della luce e la direzione del cono
+       float theta = dot(lightDir, normalize(-lightDirection));
+
+       // Controlla se il frammento è all'interno del cono di luce
+       if (theta > lightCutoff) {
+           // Attenuazione
+           float distance = length(lightPosition - fragPosition.xyz);
+           float attenuation = 1.0 / (lightConstant + lightLinear * distance + lightQuadratic * distance * distance);
+
+           // Ambient term
+           vec3 ambient = matAmbient * lightAmbient;
+
+           // Diffuse term
+           float diff = max(dot(_normal, lightDir), 0.0);
+           vec3 diffuse = matDiffuse * diff * lightDiffuse;
+
+           // Specular term
+           vec3 viewDir = normalize(cameraPosition - fragPosition.xyz);
+           vec3 reflectDir = reflect(-lightDir, _normal);
+           float spec = pow(max(dot(viewDir, reflectDir), 0.0), matShininess);
+           vec3 specular = matSpecular * spec * lightSpecular;
+
+           // Combinazione dei termini con attenuazione
+           ambient *= attenuation;
+           diffuse *= attenuation;
+           specular *= attenuation;
+
+           // Final color
+           vec3 fragColor = matEmission + ambient + diffuse + specular;
+           fragOutput = vec4(fragColor, 1.0);
+       } else {
+           // Fuori dal cono di luce: solo componente ambientale
+           fragOutput = vec4(matEmission + matAmbient * lightAmbient, 1.0);
+       }
    }
 )";
 
@@ -215,7 +361,7 @@ const char* fragShader = R"(
  * @param height Height of the window.
  * @return True if initialization was successful, false otherwise.
  */
-bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int width, int height)
+bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
 {
     // Already initialized?
     if (reserved->initFlag)
@@ -225,7 +371,7 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int widt
     }
     // Here you can initialize most of the graphics engine's dependencies and default settings...
     if (!reserved->initFlag) {
-        //FreeImage_Initialise();
+        FreeImage_Initialise();
         // FreeGLUT can parse command-line params, in case:
         glutInit(&argc, argv);
         // Init context:
@@ -240,7 +386,7 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int widt
         glutInitContextFlags(GLUT_DEBUG);
 
         glutInitWindowPosition(100, 100);
-        glutInitWindowSize(width, height);
+        glutInitWindowSize(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
 
         // Set some optional flags:
         glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
@@ -307,13 +453,41 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title, int widt
         Shader* vs = new Shader();
         vs->loadFromMemory(Shader::TYPE_VERTEX, vertShader);
 
-        Shader* fs = new Shader();
-        fs->loadFromMemory(Shader::TYPE_FRAGMENT, fragShader);
+        Shader* pfs = new Shader(); // PointLight fragment shader
+        pfs->loadFromMemory(Shader::TYPE_FRAGMENT, pointFragShader);
 
-        shader = new Shader();
-        shader->build(vs, fs);
-        shader->render();
+        Shader* sfs = new Shader();
+        sfs->loadFromMemory(Shader::TYPE_FRAGMENT, spotFragShader);
 
+        pointLightShader = new Shader();
+        pointLightShader->build(vs, pfs);
+
+        spotLightShader = new Shader();
+        spotLightShader->build(vs, sfs);
+
+        pointLightShader->render();
+
+        GLint prevViewport[4];
+        glGetIntegerv(GL_VIEWPORT, prevViewport);
+
+        for (int c = 0; c < EYE_LAST; c++)
+        {
+           glGenTextures(1, &fboTexId[c]);
+           glBindTexture(GL_TEXTURE_2D, fboTexId[c]);
+           glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, APP_FBOSIZEX, APP_FBOSIZEY, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+           glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+           glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+           fbo[c] = new Fbo();
+           fbo[c]->bindTexture(0, Fbo::BIND_COLORTEXTURE, fboTexId[c]);
+           fbo[c]->bindRenderBuffer(1, Fbo::BIND_DEPTHBUFFER, APP_FBOSIZEX, APP_FBOSIZEY);
+           if (!fbo[c]->isOk())
+              std::cout << "[ERROR] Invalid FBO" << std::endl;
+        }
+        Fbo::disable();
+        glViewport(0, 0, prevViewport[2], prevViewport[3]);
     }
 
     // Done:
@@ -358,9 +532,12 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
 {
     glViewport(0, 0, width, height);
 
-    perspective = glm::perspective(glm::radians(80.0f), (float)width / (float)height, 1.0f, 1000.0f);
+    perspective = glm::perspective(glm::radians(80.0f), (float)APP_FBOSIZEX / (float)APP_FBOSIZEY, 1.0f, 1000.0f);
 
-    shader->setMatrix("projection", perspective);
+    Shader::getCurrentShader()->setMatrix("projection", perspective);
+
+    if (width != APP_WINDOWSIZEX || height != APP_WINDOWSIZEY)
+       glutReshapeWindow(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
 }
 
 /**
@@ -369,9 +546,25 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
 void ENG_API Eng::Base::displayCallback()
 {
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-   glEnable(GL_DEPTH_TEST);
-   glDepthFunc(GL_LEQUAL);
-   list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
+   GLint prevViewport[4];
+   glGetIntegerv(GL_VIEWPORT, prevViewport);
+
+   for (int c = 0; c < EYE_LAST; c++)
+   {
+      fbo[c]->render();
+      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+      glEnable(GL_DEPTH_TEST);
+      glDepthFunc(GL_LEQUAL);
+      list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
+   }
+   Fbo::disable();
+   glViewport(0, 0, prevViewport[2], prevViewport[3]);
+
+   glBindFramebuffer(GL_READ_FRAMEBUFFER, fbo[0]->getHandle());
+   glBlitFramebuffer(0, 0, APP_FBOSIZEX, APP_FBOSIZEY, 0, 0, APP_FBOSIZEX, APP_FBOSIZEY, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+
+   glBindFramebuffer(GL_READ_FRAMEBUFFER, fbo[1]->getHandle());
+   glBlitFramebuffer(0, 0, APP_FBOSIZEX, APP_FBOSIZEY, APP_FBOSIZEX, 0, APP_WINDOWSIZEX, APP_FBOSIZEY, GL_COLOR_BUFFER_BIT, GL_NEAREST);
 }
 
 /**

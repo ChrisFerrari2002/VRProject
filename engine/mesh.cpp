@@ -104,21 +104,19 @@ void Eng::Mesh::setupMesh() {
    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(glm::vec3), vertices.data(), GL_STATIC_DRAW);
    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), nullptr);
    glEnableVertexAttribArray(0);
-
-   Shader* shader = Shader::getCurrentShader();
-   shader->bind(0, "in_Position");
+   Shader::getCurrentShader()->bind(0, "in_Position");
 
    glBindBuffer(GL_ARRAY_BUFFER, normalsVBO);
    glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), normals.data(), GL_STATIC_DRAW);
    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), nullptr);
    glEnableVertexAttribArray(1);
-   shader->bind(1, "in_Normal");
+   Shader::getCurrentShader()->bind(1, "in_Normal");
 
    glBindBuffer(GL_ARRAY_BUFFER, texCoordVBO);
    glBufferData(GL_ARRAY_BUFFER, texCoords.size() * sizeof(glm::vec2), texCoords.data(), GL_STATIC_DRAW);
    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(glm::vec2), nullptr);
    glEnableVertexAttribArray(2);
-   shader->bind(2, "inTexCoord");
+   Shader::getCurrentShader()->bind(2, "in_TexCoord");
 
    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, facesVBO);
    glBufferData(GL_ELEMENT_ARRAY_BUFFER, faces.size() * sizeof(unsigned int), faces.data(), GL_STATIC_DRAW);

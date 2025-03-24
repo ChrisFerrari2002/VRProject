@@ -29,16 +29,13 @@
 
 Eng::Base& eng = Eng::Base::getInstance();
 
-// Initial window sizes
-int width = 640;
-int height = 480;
 // Fps calculation
 int fc;
 int fps;
 
 #define CHESSBOARD_SIZE 8
 #define BLOCK_SIZE 0.0835f
-#define FILE_NAME "TestScene.ovo"
+#define FILE_NAME "chessboard.ovo"
 
 // Matrixes
 std::pair<int, unsigned int> matrix[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
@@ -169,8 +166,6 @@ void getPickedObject(Eng::Node* n, bool mousePressed) {
  * @param h The new height of the window.
  */
 void handleWindowResize(int w, int h) {
-    width = w;
-    height = h;
     eng.reshapeCallback(w, h);
 }
 
@@ -344,7 +339,7 @@ int main(int argc, char* argv[])
     std::cout << std::endl;
 
     // Initialize the engine
-    if (!eng.init(argc, argv, "Chessboard project", width, height))
+    if (!eng.init(argc, argv, "Chessboard project"))
     {
         std::cerr << "Failed to initialize the engine" << std::endl;
         return -1;

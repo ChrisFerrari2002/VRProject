@@ -37,7 +37,8 @@
     */
 ENG_API Eng::SpotLight::SpotLight(const std::string name, const int lightNumber, const glm::vec4 ambient,
 	const glm::vec4 diffuse, const glm::vec4 specular, const float cutOff, const glm::vec3 direction) :
-   Light{ name, lightNumber, ambient, diffuse, specular }, cutOff(cutOff) {};
+   Light{ name, lightNumber, ambient, diffuse, specular }, cutOff(cutOff) {
+};
 
 /**
     * @brief Render the SpotLight.
@@ -47,10 +48,19 @@ ENG_API Eng::SpotLight::SpotLight(const std::string name, const int lightNumber,
     *
     * @return True if the render is succesful.
     */
-bool ENG_API Eng::SpotLight::render(glm::mat4 matrix, void* ptr) {
-   Light::render(matrix, ptr);
-   /*glLightfv(getLightNumber(), GL_SPOT_CUTOFF, &cutOff);*/
-
+bool ENG_API Eng::SpotLight::render(glm::mat4 inverseCamera, void* ptr) {
+   glm::vec4 worldCoordinates = glm::vec4(getPosition(), 1.0f);
+   glm::vec3 lightEyeCoordinates = inverseCamera * worldCoordinates;
+   Shader::getCurrentShader()->setVec3("lightPosition", lightEyeCoordinates);
+   Shader::getCurrentShader()->setVec3("lightDirection", glm::normalize(getDirection()));
+   Shader::getCurrentShader()->setVec3("cameraPosition", lightEyeCoordinates);
+   Shader::getCurrentShader()->setVec3("lightAmbient", getAmbient());
+   Shader::getCurrentShader()->setVec3("lightDiffuse", getDiffuse());
+   Shader::getCurrentShader()->setVec3("lightSpecular", getSpecular());
+   Shader::getCurrentShader()->setFloat("lightCutoff", glm::cos(glm::radians(cutOff)));
+   Shader::getCurrentShader()->setFloat("lightConstant", getConstantAttenuation());
+   Shader::getCurrentShader()->setFloat("lightLinear", getLinearAttenuation());
+   Shader::getCurrentShader()->setFloat("lightQuadratic", getQuadraticAttenuation());
 	return true;
 }
 

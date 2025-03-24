@@ -107,9 +107,24 @@ public:
     */
     int size();
 
+    void setSpotLightShader(Eng::Shader* shader) {
+       this->spotLightShader = shader;
+    }
+
+    void setDirectionalLightShader(Eng::Shader* shader) {
+       this->directionalLightShader = shader;
+    }
+
+    void setPointLightShader(Eng::Shader* shader) {
+       this->pointLightShader = shader;
+    }
+
 private:
     std::list<Eng::Node*> objectsList; /**< The list of nodes */
     std::list<Eng::Node*> lightsList; /**< The list of lights */
+    Eng::Shader* spotLightShader;
+    Eng::Shader* directionalLightShader;
+    Eng::Shader* pointLightShader;
 };
 
 #endif // LIST_H

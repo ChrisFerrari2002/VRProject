@@ -65,6 +65,7 @@ public:
     * @param transform The transformation matrix to be set.
     */
 	void setTransform(glm::mat4 transform) override;
+
 };
 
 #endif // DIRECTIONAL_LIGHT

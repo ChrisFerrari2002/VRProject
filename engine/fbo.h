@@ -24,7 +24,7 @@
 /**
  * @brief Frame buffer class to deal with OpenGL FBOs.
  */
-class Fbo
+class ENG_API Fbo
 {
    //////////
 public: //

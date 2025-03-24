@@ -19,6 +19,7 @@
 //////////////
 // #INCLUDE //
 //////////////
+#include <GL/glew.h>
 #include "engine.h"
 #include <GL/freeglut.h>
 #include <FreeImage.h>
@@ -51,41 +52,45 @@ ENG_API Eng::Texture::~Texture() {}
  * @return True if the texture is loaded correctly.
  */
 bool ENG_API Eng::Texture::loadFromFile(const std::string& filePath) {
+   std::cout << "Loading texture from file: " << filePath << std::endl;
 
-   //std::cout << "Loading texture from file: " << filePath << std::endl;
+   // Load texture:
+   FIBITMAP* fBitmap = FreeImage_Load(FreeImage_GetFileType(filePath.c_str(), 0), filePath.c_str());
+   if (fBitmap == nullptr) {
+      std::cout << "[ERROR] Unable to load texture" << std::endl;
+      return false;
+   }
 
-   //if (texId)
-   //   glDeleteTextures(1, &texId);
-   //glGenTextures(1, &texId);
-   //glBindTexture(GL_TEXTURE_2D, texId);
-   //glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+   int intFormat = GL_RGB;
+   GLenum extFormat = GL_BGR;
 
-   //FIBITMAP* bitmap = FreeImage_Load(FreeImage_GetFileType(filePath.c_str(), 0), filePath.c_str());
+   if (FreeImage_GetBPP(fBitmap) == 32) {
+      intFormat = GL_RGBA;
+      extFormat = GL_BGRA;
+   }
 
-   //std::cout << "BPP: " << FreeImage_GetBPP(bitmap) << std::endl;
+   // Generate and fill texture content:
+   glGenTextures(1, &texId);
+   glBindTexture(GL_TEXTURE_2D, texId);
+   glTexImage2D(GL_TEXTURE_2D, 0, intFormat, 
+      FreeImage_GetWidth(fBitmap), FreeImage_GetHeight(fBitmap),
+      0, extFormat, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(fBitmap));
 
-   //// Flip texture
-   //FreeImage_FlipVertical(bitmap);
+   glGenerateMipmap(GL_TEXTURE_2D); // <-- we can use this now!
 
-   //if (FreeImage_GetBPP(bitmap) == 32) {
-   //   // 32 bits -> RGBA colors
-   //   gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA,
-   //      FreeImage_GetWidth(bitmap), FreeImage_GetHeight(bitmap),
-   //      GL_BGRA_EXT, GL_UNSIGNED_BYTE,
-   //      (void*)FreeImage_GetBits(bitmap));
-   //}
-   //else if (FreeImage_GetBPP(bitmap) == 24) {
-   //   // 24 bits -> RGB colors
-   //   gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB,
-   //      FreeImage_GetWidth(bitmap), FreeImage_GetHeight(bitmap),
-   //      GL_BGR_EXT, GL_UNSIGNED_BYTE,
-   //      (void*)FreeImage_GetBits(bitmap));
-   //}
+   // Set circular coordinates:
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-   //// Release bitmap
-   //FreeImage_Unload(bitmap);
+   // Set min/mag filters:
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+
+   // Free resources:
+   FreeImage_Unload(fBitmap);
    return true;
 }
+
 
 /**
  * @brief Get texture width.
@@ -137,15 +142,15 @@ void ENG_API Eng::Texture::setTextureId(std::string filepath) {
 bool ENG_API Eng::Texture::render(glm::mat4 matrix, void* ptr) {
 
 
-   /*glBindTexture(GL_TEXTURE_2D, texId);
+   glBindTexture(GL_TEXTURE_2D, texId);
 
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+   //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+   //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 1);
+   //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 1);
 
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);*/
+   //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+   //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
    return true;
 }

@@ -75,14 +75,21 @@ bool Eng::List::render(glm::mat4 inverseCameraMatrix, void* ptr) {
    std::list<Node*>::iterator lightsIt;
    int index = 0;
 
-   for (lightsIt = lightsList.begin(); lightsIt != lightsList.end() && index < 2; lightsIt++, index++) {
+   for (lightsIt = lightsList.begin(); lightsIt != lightsList.end(); lightsIt++, index++) {
       if (index == 1) {
          glEnable(GL_BLEND);
          glBlendFunc(GL_ONE, GL_ONE);
       }
-      Node* node = dynamic_cast<Light*>(*lightsIt);
-      if (node) {
-         node->render(inverseCameraMatrix * node->getFinalMatrix(), ptr);
+      
+      Light* light = dynamic_cast<Light*>(*lightsIt);
+      if (light) {
+         if (dynamic_cast<DirectionalLight*>(light)) {
+         }
+         else if (dynamic_cast<SpotLight*>(light)) {
+         }
+         else if (dynamic_cast<PointLight*>(light)) {
+         }
+         light->render(inverseCameraMatrix * light->getFinalMatrix(), ptr);
       }
 
       std::list<Node*>::iterator nodesIt;

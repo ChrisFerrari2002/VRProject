@@ -182,17 +182,11 @@ void ENG_API Eng::Material::setTexture(Eng::Texture* texture) {
 */
 bool ENG_API Eng::Material::render(glm::mat4 matrix, void* ptr) {
 
-	/*if (texture != nullptr)
-		texture->render(matrix, ptr);*/
-	Shader::getCurrentShader()->setVec3("matEmission", this->emission);
+	if (texture != nullptr)
+		texture->render(matrix, ptr);
 	Shader::getCurrentShader()->setVec3("matAmbient", this->ambient);
 	Shader::getCurrentShader()->setVec3("matDiffuse", this->diffuse);
 	Shader::getCurrentShader()->setVec3("matSpecular", this->specular);
 	Shader::getCurrentShader()->setFloat("matShininess", this->shininess);
-	/*glMaterialf(GL_FRONT_AND_BACK, GL_SHININESS, shininess);
-	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, glm::value_ptr(ambient));
-	glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, glm::value_ptr(emission));
-	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, glm::value_ptr(diffuse));
-	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, glm::value_ptr(specular));*/
 	return true;
 }

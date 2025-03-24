@@ -142,7 +142,7 @@ namespace Eng {
          * @param windowHeight Height of the window.
          * @return True if initialization was successful, false otherwise.
          */
-        bool init(int argc, char** argv, const char* windowTitle, int windowWidth, int windowHeight);
+        bool init(int argc, char** argv, const char* windowTitle);
 
         /**
          * @brief Free the engine resources
@@ -368,6 +368,8 @@ namespace Eng {
          * Sets up the Z-buffer.
          */
         static void execZBufferSetup();
+
+        static Shader* getShaderForLight(Light* light);
 
         // Internal vars:
 		static bool initFlag;  /**< Initialization flag */

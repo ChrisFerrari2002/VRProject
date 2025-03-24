@@ -34,7 +34,7 @@
 */
 ENG_API Eng::DirectionalLight::DirectionalLight(const std::string name, const int lightNumber, const glm::vec4 ambient, const glm::vec4 diffuse, const glm::vec4 specular) :
     Light{ name, lightNumber, ambient, diffuse, specular } {
-
+   
 }
 
 /**
