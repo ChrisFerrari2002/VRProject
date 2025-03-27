@@ -234,122 +234,6 @@ const char *pointFragShader = R"(
    }
 )";
 
-const char* directionalFragShader = R"(
-   #version 440 core
-
-   in vec4 fragPosition;
-   in vec3 normal;
-
-   out vec4 fragOutput;
-
-   // Material properties:
-   uniform vec3 matEmission;
-   uniform vec3 matAmbient;
-   uniform vec3 matDiffuse;
-   uniform vec3 matSpecular;
-   uniform float matShininess;
-
-   // Light properties:
-   uniform vec3 lightDirection; // Vettore direzionale normalizzato
-   uniform vec3 lightAmbient;
-   uniform vec3 lightDiffuse;
-   uniform vec3 lightSpecular;
-
-   void main(void)
-   {
-      // Normalizzazione delle normali
-      vec3 _normal = normalize(normal);
-
-      // ---- COMPONENTE AMBIENTE ----
-      vec3 fragColor = matEmission + matAmbient * lightAmbient;
-
-      // ---- COMPONENTE DIFFUSA ----
-      float nDotL = dot(_normal, normalize(-lightDirection));
-      if (nDotL > 0.0) {
-         fragColor += matDiffuse * nDotL * lightDiffuse;
-
-         // ---- COMPONENTE SPECULARE ----
-         vec3 viewDir = normalize(-fragPosition.xyz);
-         vec3 reflectDir = reflect(lightDirection, _normal);
-         float spec = pow(max(dot(viewDir, reflectDir), 0.0), matShininess);
-         fragColor += matSpecular * spec * lightSpecular;
-      }
-
-      // Output finale
-      fragOutput = vec4(fragColor, 1.0);
-   }
-)";
-
-const char* spotFragShader = R"(
-   #version 440 core
-
-   in vec4 fragPosition; // Posizione del frammento nello spazio della camera
-   in vec3 normal;       // Normale del frammento
-
-   out vec4 fragOutput;  // Colore di output
-
-   // Material properties
-   uniform vec3 matEmission;
-   uniform vec3 matAmbient;
-   uniform vec3 matDiffuse;
-   uniform vec3 matSpecular;
-   uniform float matShininess;
-
-   uniform vec3 cameraPosition;
-
-   // Light properties
-   uniform vec3 lightPosition;      // Posizione della luce
-   uniform vec3 lightDirection;     // Direzione della luce
-   uniform vec3 lightAmbient;       // Componente ambientale della luce
-   uniform vec3 lightDiffuse;       // Componente diffusa della luce
-   uniform vec3 lightSpecular;      // Componente speculare della luce
-   uniform float lightCutoff;       // Angolo di cutoff (coseno dell'angolo)
-   uniform float lightConstant;     // Attenuazione costante
-   uniform float lightLinear;       // Attenuazione lineare
-   uniform float lightQuadratic;    // Attenuazione quadratica
-
-   void main(void) {
-       // Normalizza la normale e la direzione della luce
-       vec3 _normal = normalize(normal);
-       vec3 lightDir = normalize(lightPosition - fragPosition.xyz);
-
-       // Calcola l'angolo tra la direzione della luce e la direzione del cono
-       float theta = dot(lightDir, normalize(-lightDirection));
-
-       // Controlla se il frammento è all'interno del cono di luce
-       if (theta > lightCutoff) {
-           // Attenuazione
-           float distance = length(lightPosition - fragPosition.xyz);
-           float attenuation = 1.0 / (lightConstant + lightLinear * distance + lightQuadratic * distance * distance);
-
-           // Ambient term
-           vec3 ambient = matAmbient * lightAmbient;
-
-           // Diffuse term
-           float diff = max(dot(_normal, lightDir), 0.0);
-           vec3 diffuse = matDiffuse * diff * lightDiffuse;
-
-           // Specular term
-           vec3 viewDir = normalize(cameraPosition - fragPosition.xyz);
-           vec3 reflectDir = reflect(-lightDir, _normal);
-           float spec = pow(max(dot(viewDir, reflectDir), 0.0), matShininess);
-           vec3 specular = matSpecular * spec * lightSpecular;
-
-           // Combinazione dei termini con attenuazione
-           ambient *= attenuation;
-           diffuse *= attenuation;
-           specular *= attenuation;
-
-           // Final color
-           vec3 fragColor = matEmission + ambient + diffuse + specular;
-           fragOutput = vec4(fragColor, 1.0);
-       } else {
-           // Fuori dal cono di luce: solo componente ambientale
-           fragOutput = vec4(matEmission + matAmbient * lightAmbient, 1.0);
-       }
-   }
-)";
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @brief Init internal components of the base class.
@@ -456,14 +340,8 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
         Shader* pfs = new Shader(); // PointLight fragment shader
         pfs->loadFromMemory(Shader::TYPE_FRAGMENT, pointFragShader);
 
-        Shader* sfs = new Shader();
-        sfs->loadFromMemory(Shader::TYPE_FRAGMENT, spotFragShader);
-
         pointLightShader = new Shader();
         pointLightShader->build(vs, pfs);
-
-        spotLightShader = new Shader();
-        spotLightShader->build(vs, sfs);
 
         pointLightShader->render();
 
