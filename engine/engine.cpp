@@ -57,6 +57,18 @@ Eng::Shader* pointLightShader;
 Eng::Shader* directionalLightShader;
 Eng::Shader* spotLightShader;
 
+enum RenderMode
+{
+   VR = 0,
+   HMD = 1,
+};
+
+RenderMode renderMode = RenderMode::VR; 
+
+Eng::OvVR* ovr = nullptr; /**< OpenVR object */
+unsigned int fboSizeX = 0;
+unsigned int fboSizeY = 0;
+
 // Enums:
 enum Eye
 {
@@ -285,7 +297,7 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
         if (error != GLEW_OK)
         {
            std::cout << "[ERROR] " << glewGetErrorString(error) << std::endl;
-           return -1;
+           return false;
         }
         else
            if (GLEW_VERSION_4_4)
@@ -331,6 +343,23 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
         std::cout << "   GLSL . . . . :  " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
         std::cout << std::endl;
 
+        if (renderMode == RenderMode::VR)
+        {
+           // Init OpenVR:   
+           ovr = new OvVR();
+           if (ovr->init() == false)
+           {
+              std::cout << "[ERROR] Unable to init OpenVR" << std::endl;
+              delete ovr;
+              return false;
+           }
+
+           // Report some info:
+           std::cout << "   Manufacturer . . :  " << ovr->getManufacturerName() << std::endl;
+           std::cout << "   Tracking system  :  " << ovr->getTrackingSysName() << std::endl;
+           std::cout << "   Model number . . :  " << ovr->getModelNumber() << std::endl;
+        }
+
         // Set callback functions
         glutDisplayFunc(displayCallback);
 
@@ -342,17 +371,28 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
 
         pointLightShader = new Shader();
         pointLightShader->build(vs, pfs);
-
+        std::cout << "Test" << std::endl;
         pointLightShader->render();
 
         GLint prevViewport[4];
         glGetIntegerv(GL_VIEWPORT, prevViewport);
 
+        if (renderMode == RenderMode::VR)
+        {
+           fboSizeX = ovr->getHmdIdealHorizRes();
+           fboSizeY = ovr->getHmdIdealVertRes();
+           std::cout << "   Ideal resolution :  " << fboSizeX << "x" << fboSizeY << std::endl;
+        }
         for (int c = 0; c < EYE_LAST; c++)
         {
            glGenTextures(1, &fboTexId[c]);
            glBindTexture(GL_TEXTURE_2D, fboTexId[c]);
-           glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, APP_FBOSIZEX, APP_FBOSIZEY, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+
+           if (renderMode == RenderMode::VR) 
+              glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, APP_FBOSIZEX, APP_FBOSIZEY, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+           else
+              glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, APP_FBOSIZEX, APP_FBOSIZEY, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+
            glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
            glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -360,7 +400,11 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
 
            fbo[c] = new Fbo();
            fbo[c]->bindTexture(0, Fbo::BIND_COLORTEXTURE, fboTexId[c]);
-           fbo[c]->bindRenderBuffer(1, Fbo::BIND_DEPTHBUFFER, APP_FBOSIZEX, APP_FBOSIZEY);
+           if (renderMode == RenderMode::VR)
+              fbo[c]->bindRenderBuffer(1, Fbo::BIND_DEPTHBUFFER, fboSizeX, fboSizeY);
+           else
+              fbo[c]->bindRenderBuffer(1, Fbo::BIND_DEPTHBUFFER, APP_FBOSIZEX, APP_FBOSIZEY);
+           
            if (!fbo[c]->isOk())
               std::cout << "[ERROR] Invalid FBO" << std::endl;
         }
@@ -408,14 +452,21 @@ bool ENG_API Eng::Base::free()
  */
 void ENG_API Eng::Base::reshapeCallback(int width, int height)
 {
-    glViewport(0, 0, width, height);
+   if (renderMode == RenderMode::VR)
+   {
+      if (width != APP_WINDOWSIZEX || height != APP_WINDOWSIZEY)
+         glutReshapeWindow(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
+   }
+   else {
+      glViewport(0, 0, width, height);
 
-    perspective = glm::perspective(glm::radians(80.0f), (float)APP_FBOSIZEX / (float)APP_FBOSIZEY, 1.0f, 1000.0f);
+      perspective = glm::perspective(glm::radians(80.0f), (float)APP_FBOSIZEX / (float)APP_FBOSIZEY, 1.0f, 1000.0f);
 
-    Shader::getCurrentShader()->setMatrix("projection", perspective);
+      Shader::getCurrentShader()->setMatrix("projection", perspective);
 
-    if (width != APP_WINDOWSIZEX || height != APP_WINDOWSIZEY)
-       glutReshapeWindow(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
+      if (width != APP_WINDOWSIZEX || height != APP_WINDOWSIZEY)
+         glutReshapeWindow(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
+   }
 }
 
 /**
@@ -426,15 +477,55 @@ void ENG_API Eng::Base::displayCallback()
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
    GLint prevViewport[4];
    glGetIntegerv(GL_VIEWPORT, prevViewport);
-
+   glm::mat4 headPos;
+   if (renderMode == RenderMode::VR)
+   {
+      ovr->update();
+      headPos = ovr->getModelviewMatrix();
+   }
    for (int c = 0; c < EYE_LAST; c++)
    {
-      fbo[c]->render();
-      glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-      glEnable(GL_DEPTH_TEST);
-      glDepthFunc(GL_LEQUAL);
-      list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
+      if (renderMode == RenderMode::VR)
+      {
+         OvVR::OvEye curEye = (OvVR::OvEye)c;
+         glm::mat4 projMat = ovr->getProjMatrix(curEye, 1.0f, 1024.0f);
+         glm::mat4 eye2Head = ovr->getEye2HeadMatrix(curEye);
+
+         // Update camera projection matrix:
+         glm::mat4 ovrProjMat = projMat * glm::inverse(eye2Head);
+#ifdef APP_VERBOSE   
+         std::cout << "Eye " << c << " proj matrix: " << glm::to_string(ovrProjMat) << std::endl;
+#endif
+
+         // Update camera modelview matrix:
+         glm::mat4 ovrModelViewMat = glm::inverse(headPos); // Inverted because this is the camera matrix
+#ifdef APP_VERBOSE   
+         std::cout << "Eye " << c << " modelview matrix: " << glm::to_string(ovrModelViewMat) << std::endl;
+#endif
+         fbo[c]->render();
+         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+         glEnable(GL_DEPTH_TEST);
+         glDepthFunc(GL_LEQUAL);
+         Shader::getCurrentShader()->setMatrix("projection", ovrProjMat);
+         list.render(ovrModelViewMat, nullptr);
+         ovr->pass(curEye, fboTexId[c]);
+      }
+      else
+      {
+         fbo[c]->render();
+         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+         glEnable(GL_DEPTH_TEST);
+         glDepthFunc(GL_LEQUAL);
+         list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
+      }
+      
    }
+
+   if (renderMode == RenderMode::VR)
+   {
+      ovr->render();
+   }
+
    Fbo::disable();
    glViewport(0, 0, prevViewport[2], prevViewport[3]);
 

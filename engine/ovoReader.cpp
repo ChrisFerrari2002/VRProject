@@ -384,7 +384,7 @@ Eng::Node* Eng::OvoReader::recursiveLoad(FILE* dat)
 		}
 
 		LODData lodData = lodMapData[0];
-
+		std::cout << thisMesh->getName() << std::endl;
 		thisMesh->setVertices(lodData.verticesCoords);
 		thisMesh->setNormals(lodData.normalsCoords);
 		thisMesh->setTexCoords(lodData.texCoords);

@@ -25,6 +25,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/matrix_inverse.hpp>
+#include <glm/gtc/packing.hpp>
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/string_cast.hpp>
 #include <iostream>
@@ -76,6 +77,7 @@ namespace Eng {
 #include "object.h"
 #include "node.h"
 #include "fbo.h"
+#include "ovVr.h"
 #include "texture.h"
 #include "material.h"
 #include "camera.h"

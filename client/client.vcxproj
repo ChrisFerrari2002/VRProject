@@ -54,7 +54,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>..\engine;..\dependencies\freeglut\include;..\dependencies\glm\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\engine;..\dependencies\freeglut\include;..\dependencies\glm\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -69,6 +69,9 @@
     <ClCompile Include="fbo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ovVR.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="engine.h">
@@ -144,6 +147,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fbo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ovVR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

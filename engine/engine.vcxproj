@@ -43,6 +43,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <PublicIncludeDirectories>
+    </PublicIncludeDirectories>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -50,14 +54,14 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;GLEW_STATIC;FREEGLUT_STATIC;_DEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;FREEIMAGE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>..\dependencies\glm\include;..\dependencies\glew\include;..\dependencies\freeglut\include;..\dependencies\freeimage\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\dependencies\openvr\include;..\dependencies\freeglut\include;..\dependencies\glew\include;..\dependencies\glm\include;..\dependencies\freeimage\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>..\dependencies\freeglut\lib\$(Platform)\$(Configuration);..\dependencies\freeimage\lib\$(Platform)\$(Configuration);..\dependencies\glew\lib\$(Platform)\$(Configuration);</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew.lib;FreeImage.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\dependencies\freeglut\lib\$(Platform)\$(Configuration);..\dependencies\freeimage\lib\$(Platform)\$(Configuration);..\dependencies\glew\lib\$(Platform)\$(Configuration);..\dependencies\openvr\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>openvr_api.lib;FreeImage.lib;glew.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -93,6 +97,7 @@
     <ClCompile Include="node.cpp" />
     <ClCompile Include="object.cpp" />
     <ClCompile Include="ovoReader.cpp" />
+    <ClCompile Include="ovVR.cpp" />
     <ClCompile Include="pointLight.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="spotLight.cpp" />
@@ -115,6 +120,7 @@
     <ClInclude Include="ovoMesh.h" />
     <ClInclude Include="ovoObject.h" />
     <ClInclude Include="ovoReader.h" />
+    <ClInclude Include="ovVR.h" />
     <ClInclude Include="pointLight.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="spotLight.h" />
