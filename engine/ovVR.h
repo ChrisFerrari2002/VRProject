@@ -14,8 +14,24 @@
 class ENG_API OvVR
 {
 public:
-   struct Controller;
+   class Controller
+   {
+   public:
+      Controller();
+      ~Controller();
 
+      glm::mat4 getMatrix();
+      glm::vec2 getAxis(unsigned int axisId, unsigned long long int& bPressed, unsigned long long int& bTouched);
+      bool isButtonPressed(unsigned long long int id, unsigned long long int mask);
+
+      unsigned int id;
+      glm::mat4 matrix;
+   private:
+      struct ControllerImp;
+      ControllerImp* cImpl;
+
+
+   };
    enum OvEye
    {
       EYE_LEFT = 0,
@@ -44,26 +60,6 @@ public:
    void setReprojection(bool flag);
    void pass(OvEye eye, unsigned int eyeTexture);
    void render();
-
-   class Controller
-   {
-   public:
-      Controller();
-      ~Controller();
-
-      glm::mat4 getMatrix();
-      glm::vec2 getAxis(unsigned int axisId, unsigned long long int& bPressed, unsigned long long int& bTouched);
-      bool isButtonPressed(unsigned long long int id, unsigned long long int mask);
-
-      unsigned int id;
-      glm::mat4 matrix;
-   private:
-      struct ControllerImp;
-      ControllerImp* cImpl;
-      
-      
-   };
-
 private:
    struct Impl;
    Impl* pImpl;

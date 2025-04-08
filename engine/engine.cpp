@@ -489,6 +489,12 @@ void ENG_API Eng::Base::displayCallback()
       {
          OvVR::OvEye curEye = (OvVR::OvEye)c;
          glm::mat4 projMat = ovr->getProjMatrix(curEye, 1.0f, 1024.0f);
+         float translationY = 30.0f;  // Ad esempio, sposta la telecamera 5 cm in alto
+
+         // Creazione della matrice di traslazione (trasla lungo l'asse Y)
+         glm::mat4 translationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, translationY, 0.0f));
+
+         // Applica la traslazione alla matrice eye2Head
          glm::mat4 eye2Head = ovr->getEye2HeadMatrix(curEye);
 
          // Update camera projection matrix:
@@ -552,6 +558,7 @@ void ENG_API Eng::Base::addCamera(Camera* camera) {
 std::list<Eng::Node*> ENG_API Eng::Base::loadScene(std::string pathName)
 {
     Node* root = reader.readFile(pathName.c_str());
+    root->setTransform(glm::scale(glm::mat4(1.0f), glm::vec3(0.002, 0.002, 0.002)));
     list.addEntry(root);
     return list.getObjectList();
 }
