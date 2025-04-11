@@ -322,27 +322,6 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
         glGetIntegerv(GL_MINOR_VERSION, &oglVersion[1]);
         std::cout << "   Version  . . :  " << glGetString(GL_VERSION) << " [" << oglVersion[0] << "." << oglVersion[1] << "]" << std::endl;
 
-        int oglContextProfile;
-        glGetIntegerv(GL_CONTEXT_PROFILE_MASK, &oglContextProfile);
-        if (oglContextProfile & GL_CONTEXT_CORE_PROFILE_BIT)
-           std::cout << "                :  " << "Core profile" << std::endl;
-        if (oglContextProfile & GL_CONTEXT_COMPATIBILITY_PROFILE_BIT)
-           std::cout << "                :  " << "Compatibility profile" << std::endl;
-
-        int oglContextFlags;
-        glGetIntegerv(GL_CONTEXT_FLAGS, &oglContextFlags);
-        if (oglContextFlags & GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT)
-           std::cout << "                :  " << "Forward compatible" << std::endl;
-        if (oglContextFlags & GL_CONTEXT_FLAG_DEBUG_BIT)
-           std::cout << "                :  " << "Debug flag" << std::endl;
-        if (oglContextFlags & GL_CONTEXT_FLAG_ROBUST_ACCESS_BIT)
-           std::cout << "                :  " << "Robust access flag" << std::endl;
-        if (oglContextFlags & GL_CONTEXT_FLAG_NO_ERROR_BIT)
-           std::cout << "                :  " << "No error flag" << std::endl;
-
-        std::cout << "   GLSL . . . . :  " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
-        std::cout << std::endl;
-
         if (renderMode == RenderMode::VR)
         {
            // Init OpenVR:   
@@ -371,7 +350,6 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
 
         pointLightShader = new Shader();
         pointLightShader->build(vs, pfs);
-        std::cout << "Test" << std::endl;
         pointLightShader->render();
 
         GLint prevViewport[4];
@@ -388,16 +366,20 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
            glGenTextures(1, &fboTexId[c]);
            glBindTexture(GL_TEXTURE_2D, fboTexId[c]);
 
-           if (renderMode == RenderMode::VR) 
-              glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, APP_FBOSIZEX, APP_FBOSIZEY, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
-           else
+           if (renderMode == RenderMode::VR) {
+              glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, fboSizeX, fboSizeY, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
+              glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+              glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+              glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+              glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+           } else {
               glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, APP_FBOSIZEX, APP_FBOSIZEY, 0, GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
-
-           glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-           glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-           glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
+              glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+              glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+              glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+              glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+           }
+              
            fbo[c] = new Fbo();
            fbo[c]->bindTexture(0, Fbo::BIND_COLORTEXTURE, fboTexId[c]);
            if (renderMode == RenderMode::VR)
@@ -454,6 +436,8 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
 {
    if (renderMode == RenderMode::VR)
    {
+      ortho = glm::ortho(0.0f, (float)APP_WINDOWSIZEX, 0.0f, (float)APP_WINDOWSIZEY, -1.0f, 1.0f);
+
       if (width != APP_WINDOWSIZEX || height != APP_WINDOWSIZEY)
          glutReshapeWindow(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
    }
@@ -488,11 +472,7 @@ void ENG_API Eng::Base::displayCallback()
       if (renderMode == RenderMode::VR)
       {
          OvVR::OvEye curEye = (OvVR::OvEye)c;
-         glm::mat4 projMat = ovr->getProjMatrix(curEye, 1.0f, 1024.0f);
-         float translationY = 30.0f;  // Ad esempio, sposta la telecamera 5 cm in alto
-
-         // Creazione della matrice di traslazione (trasla lungo l'asse Y)
-         glm::mat4 translationMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, translationY, 0.0f));
+         glm::mat4 projMat = ovr->getProjMatrix(curEye, 0.01f, 100.0f);
 
          // Applica la traslazione alla matrice eye2Head
          glm::mat4 eye2Head = ovr->getEye2HeadMatrix(curEye);
@@ -502,9 +482,9 @@ void ENG_API Eng::Base::displayCallback()
 #ifdef APP_VERBOSE   
          std::cout << "Eye " << c << " proj matrix: " << glm::to_string(ovrProjMat) << std::endl;
 #endif
-
+         glm::mat4 cameraOffset = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.3f));
          // Update camera modelview matrix:
-         glm::mat4 ovrModelViewMat = glm::inverse(headPos); // Inverted because this is the camera matrix
+         glm::mat4 ovrModelViewMat = glm::inverse(cameraOffset * headPos); // Inverted because this is the camera matrix
 #ifdef APP_VERBOSE   
          std::cout << "Eye " << c << " modelview matrix: " << glm::to_string(ovrModelViewMat) << std::endl;
 #endif
@@ -558,7 +538,6 @@ void ENG_API Eng::Base::addCamera(Camera* camera) {
 std::list<Eng::Node*> ENG_API Eng::Base::loadScene(std::string pathName)
 {
     Node* root = reader.readFile(pathName.c_str());
-    root->setTransform(glm::scale(glm::mat4(1.0f), glm::vec3(0.002, 0.002, 0.002)));
     list.addEntry(root);
     return list.getObjectList();
 }

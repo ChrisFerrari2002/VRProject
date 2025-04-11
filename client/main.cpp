@@ -35,7 +35,7 @@ int fps;
 
 #define CHESSBOARD_SIZE 8
 #define BLOCK_SIZE 0.0835f
-#define FILE_NAME "chessboard.ovo"
+#define FILE_NAME "TestScene.ovo"
 
 // Matrixes
 std::pair<int, unsigned int> matrix[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
@@ -209,13 +209,13 @@ void blinkLight() {
  */
 void loadCameras() {
     Eng::Camera* c1 = new Eng::Camera("camera1");
-    c1->setUserTransform(60.0f, 20.0f, 0.0f, 0.0f, 90.0f, 0.0f);
+    c1->setUserTransform(6.0f, 2.0f, 0.0f, 0.0f, -90.0f, 0.0f);
     Eng::Camera* c2 = new Eng::Camera("camera2");
-    c2->setUserTransform(0.0f, 20.0f, 15.0f, -50.0f, 0.0f, 0.0f);
+    c2->setUserTransform(0.0f, 2.0f, 1.5f, -50.0f, 0.0f, 0.0f);
     Eng::Camera* c3 = new Eng::Camera("camera3");
-    c3->setUserTransform(0.0f, 20.0f, -15.0f, -130.0f, 0.0f, 180.0f);
+    c3->setUserTransform(0.0f, 2.0f, -1.5f, -130.0f, 0.0f, 180.0f);
     Eng::Camera* c4 = new Eng::Camera("camera4");
-    c4->setUserTransform(-60.0f, 20.0f, 0.0f, 0.0f, -90.0f, 0.0f);
+    c4->setUserTransform(-6.0f, 2.0f, 0.0f, 0.0f, -90.0f, 0.0f);
     eng.addCamera(c1);
     eng.addCamera(c2);
     eng.addCamera(c3);
@@ -226,7 +226,7 @@ void loadCameras() {
     cameras[2] = c3;
     cameras[3] = c4;
 
-    eng.setActiveCamera(3);
+    eng.setActiveCamera(1);
 }
 
 /**
