@@ -35,7 +35,7 @@ int fps;
 
 #define CHESSBOARD_SIZE 8
 #define BLOCK_SIZE 0.0835f
-#define FILE_NAME "TestScene.ovo"
+#define FILE_NAME "newScene.ovo"
 
 // Matrixes
 std::pair<int, unsigned int> matrix[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
@@ -309,6 +309,7 @@ void keyboardCallback(unsigned char key, int x, int y) {
 void init(int argc, char* argv[])
 {
     eng.setZBufferUsage(true);
+    eng.loadSkybox("posx.jpg", "negx.jpg", "posy.jpg", "negy.jpg", "posz.jpg", "negz.jpg");
     loadCameras();
     std::cout << std::filesystem::current_path() << std::endl;
     loadScene(".." + getSeparator() + "scene" + getSeparator() + FILE_NAME);

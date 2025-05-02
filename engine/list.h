@@ -107,17 +107,8 @@ public:
     */
     int size();
 
-    void setSpotLightShader(Eng::Shader* shader) {
-       this->spotLightShader = shader;
-    }
-
-    void setDirectionalLightShader(Eng::Shader* shader) {
-       this->directionalLightShader = shader;
-    }
-
-    void setPointLightShader(Eng::Shader* shader) {
-       this->pointLightShader = shader;
-    }
+    void addSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
+       const std::string& face4, const std::string& face5, const std::string& face6);
 
 private:
     std::list<Eng::Node*> objectsList; /**< The list of nodes */

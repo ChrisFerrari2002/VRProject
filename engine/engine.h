@@ -76,6 +76,7 @@ namespace Eng {
        // You can subinclude here other headers of your engine...
 #include "object.h"
 #include "node.h"
+#include "skybox.h"
 #include "fbo.h"
 #include "ovVr.h"
 #include "texture.h"
@@ -341,6 +342,9 @@ namespace Eng {
          */
         bool clearList();
 
+        void loadSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
+           const std::string& face4, const std::string& face5, const std::string& face6);
+
     private: 
 
         // Reserved:
@@ -384,6 +388,7 @@ namespace Eng {
 
 		static Eng::OvoReader reader; /**< OvoReader object */
 		static Eng::List list; /**< List object */
+      static Eng::Skybox* skybox;
 
         // Cameras
 		static int activeCamera; /**< Active camera index */

@@ -100,6 +100,7 @@
     <ClCompile Include="ovVR.cpp" />
     <ClCompile Include="pointLight.cpp" />
     <ClCompile Include="shader.cpp" />
+    <ClCompile Include="skybox.cpp" />
     <ClCompile Include="spotLight.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="vertex.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="ovVR.h" />
     <ClInclude Include="pointLight.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="skybox.h" />
     <ClInclude Include="spotLight.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="vertex.h" />

@@ -53,6 +53,8 @@ public: //
    bool build(Shader* vertexShader, Shader* fragmentShader);
 
    void bind(int location, const char* attribName);
+   static void mapShader(const std::string& name, Shader* shader);
+   static Shader* getShader(const std::string& name);
 
    // Rendering:				
    bool render(void* data = nullptr);
@@ -74,4 +76,5 @@ private:	//
 
    static Shader *currentShader;
    std::map<std::string, int> bindingMap;
+   static std::map<std::string, Shader*> shaders;
 };

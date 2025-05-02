@@ -50,6 +50,8 @@ int Eng::Base::activeCamera = 0; /**< Active camera index */
 Eng::OvoReader Eng::Base::reader = OvoReader(); /**< OvoReader object */
 Eng::List Eng::Base::list; /**< List object */
 
+Eng::Skybox* Eng::Base::skybox;
+
 glm::mat4 perspective; /**< Perspective projection matrix */
 glm::mat4 ortho; /**< Orthographic projection matrix */
 
@@ -60,7 +62,7 @@ Eng::Shader* spotLightShader;
 enum RenderMode
 {
    VR = 0,
-   HMD = 1,
+   NORMAL = 1,
 };
 
 RenderMode renderMode = RenderMode::VR; 
@@ -246,6 +248,42 @@ const char *pointFragShader = R"(
    }
 )";
 
+//////////////////////////////////////////
+const char* skyboxVertShader = R"(
+   #version 440 core
+
+   uniform mat4 projection;
+   uniform mat4 modelview;
+
+   layout(location = 0) in vec3 in_Position;
+
+   out vec3 texCoord;
+
+   void main(void)
+   {
+      texCoord = in_Position;
+      gl_Position = projection * modelview * vec4(in_Position, 1.0f);
+      gl_Position = gl_Position.xyww;
+   }
+)";
+
+//////////////////////////////////////////
+const char* skyboxFragShader = R"(
+   #version 440 core
+
+   in vec3 texCoord;
+
+   // Texture mapping (cubemap):
+   layout(binding = 0) uniform samplerCube cubemapSampler;
+
+   out vec4 fragOutput;
+
+   void main(void)
+   {
+      fragOutput = texture(cubemapSampler, texCoord);
+   }
+)";
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * @brief Init internal components of the base class.
@@ -350,7 +388,18 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
 
         pointLightShader = new Shader();
         pointLightShader->build(vs, pfs);
-        pointLightShader->render();
+        Shader::mapShader("lightShader", pointLightShader);
+        Shader::getShader("lightShader")->render();
+        Shader* skyboxVs = new Shader();
+        skyboxVs->loadFromMemory(Shader::TYPE_VERTEX, skyboxVertShader);
+
+        Shader* skyboxFs = new Shader();
+        skyboxFs->loadFromMemory(Shader::TYPE_FRAGMENT, skyboxFragShader);
+
+        Shader* skyboxShader = new Shader();
+        skyboxShader->build(skyboxVs, skyboxFs);
+        Shader::mapShader("skyboxShader", skyboxShader);
+
 
         GLint prevViewport[4];
         glGetIntegerv(GL_VIEWPORT, prevViewport);
@@ -445,9 +494,6 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
       glViewport(0, 0, width, height);
 
       perspective = glm::perspective(glm::radians(80.0f), (float)APP_FBOSIZEX / (float)APP_FBOSIZEY, 1.0f, 1000.0f);
-
-      Shader::getCurrentShader()->setMatrix("projection", perspective);
-
       if (width != APP_WINDOWSIZEX || height != APP_WINDOWSIZEY)
          glutReshapeWindow(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
    }
@@ -492,7 +538,15 @@ void ENG_API Eng::Base::displayCallback()
          glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
          glEnable(GL_DEPTH_TEST);
          glDepthFunc(GL_LEQUAL);
+
+         Shader::getShader("skyboxShader")->render();
          Shader::getCurrentShader()->setMatrix("projection", ovrProjMat);
+         glm::mat4 skyboxView = glm::mat4(glm::mat3(ovrModelViewMat));
+         skybox->render(skyboxView, nullptr);
+
+         Shader::getShader("lightShader")->render();
+         Shader::getCurrentShader()->setMatrix("projection", ovrProjMat);
+
          list.render(ovrModelViewMat, nullptr);
          ovr->pass(curEye, fboTexId[c]);
       }
@@ -502,6 +556,15 @@ void ENG_API Eng::Base::displayCallback()
          glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
          glEnable(GL_DEPTH_TEST);
          glDepthFunc(GL_LEQUAL);
+         
+         Shader::getShader("skyboxShader")->render();
+         Shader::getCurrentShader()->setMatrix("projection", perspective);
+         glm::mat4 skyboxView = glm::mat4(glm::mat3(cameras.at(activeCamera)->getInverseCameraMat()));
+         skybox->render(skyboxView, nullptr);
+
+         Shader::getShader("lightShader")->render();
+         Shader::getCurrentShader()->setMatrix("projection", perspective);
+
          list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
       }
       
@@ -540,6 +603,16 @@ std::list<Eng::Node*> ENG_API Eng::Base::loadScene(std::string pathName)
     Node* root = reader.readFile(pathName.c_str());
     list.addEntry(root);
     return list.getObjectList();
+}
+
+void ENG_API Eng::Base::loadSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
+   const std::string& face4, const std::string& face5, const std::string& face6) {
+
+      Shader::getShader("skyboxShader")->render();
+      Skybox* skybox = new Skybox("Skybox");
+      skybox->setupSkybox(face1, face2, face3, face4, face5, face6);
+      skybox->buildCubemap();
+      this->skybox = skybox;
 }
 
 /**

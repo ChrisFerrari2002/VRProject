@@ -18,6 +18,7 @@
 
 
 Eng::Shader* Eng::Shader::currentShader = nullptr;
+std::map<std::string, Eng::Shader*> Eng::Shader::shaders;
 
 
 
@@ -377,6 +378,18 @@ bool Eng::Shader::build(Shader* vertexShader, Shader* fragmentShader)
 
    // Done:
    return true;
+}
+
+void Eng::Shader::mapShader(const std::string& name, Eng::Shader* shader) {
+   shaders[name] = shader;
+}
+
+Eng::Shader* Eng::Shader::getShader(const std::string& name) {
+   auto it = shaders.find(name);
+   if (it != shaders.end()) {
+      return it->second;
+   }
+   return nullptr;
 }
 
 
