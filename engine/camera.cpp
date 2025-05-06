@@ -51,11 +51,17 @@ glm::mat4 ENG_API Eng::Camera::getInverseCameraMat() {
 * @param rz The rotation around the z-axis.
 */
 void Eng::Camera::setUserTransform(float x, float y, float z, float rx, float ry, float rz) {
-    glm::mat4 t = glm::translate(glm::mat4(1.0f), glm::vec3(x, y, z));
-    t = glm::rotate(t, glm::radians(rx), glm::vec3(1.0f, 0.0f, 0.0f));
-    t = glm::rotate(t, glm::radians(ry), glm::vec3(0.0f, 1.0f, 0.0f));
-    t = glm::rotate(t, glm::radians(rz), glm::vec3(0.0f, 0.0f, 1.0f));
-    setTransform(t);
+   glm::mat4 t = glm::mat4(1.0f);
+
+   // Applica prima le rotazioni (nell'ordine corretto)
+   t = glm::rotate(t, glm::radians(rx), glm::vec3(1.0f, 0.0f, 0.0f));
+   t = glm::rotate(t, glm::radians(ry), glm::vec3(0.0f, 1.0f, 0.0f));
+   t = glm::rotate(t, glm::radians(rz), glm::vec3(0.0f, 0.0f, 1.0f));
+
+   // Poi applica la traslazione
+   t = glm::translate(t, glm::vec3(x, y, z));
+
+   setTransform(t); // Imposta la trasformazione del nodo camera
 }
 
 /**

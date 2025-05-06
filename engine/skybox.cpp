@@ -3,8 +3,57 @@
 #include <GL/freeglut.h>
 #include <FreeImage.h>
 
+const char* skyboxVertShader = R"(
+   #version 440 core
 
-Eng::Skybox::Skybox(const std::string& name) : Node(name) {}
+   uniform mat4 projection;
+   uniform mat4 modelview;
+
+   layout(location = 0) in vec3 in_Position;
+
+   out vec3 texCoord;
+
+   void main(void)
+   {
+      texCoord = in_Position;
+      gl_Position = projection * modelview * vec4(in_Position, 1.0f);
+      gl_Position = gl_Position.xyww;
+   }
+)";
+
+//////////////////////////////////////////
+const char* skyboxFragShader = R"(
+   #version 440 core
+
+   in vec3 texCoord;
+
+   // Texture mapping (cubemap):
+   layout(binding = 0) uniform samplerCube cubemapSampler;
+
+   out vec4 fragOutput;
+
+   void main(void)
+   {
+      fragOutput = texture(cubemapSampler, texCoord);
+   }
+)";
+
+
+Eng::Skybox::Skybox(const std::string& name) : Node(name) {
+
+   Shader* skyboxVs = new Shader();
+   skyboxVs->loadFromMemory(Shader::TYPE_VERTEX, skyboxVertShader);
+
+   Shader* skyboxFs = new Shader();
+   skyboxFs->loadFromMemory(Shader::TYPE_FRAGMENT, skyboxFragShader);
+
+   Shader* skyboxShader = new Shader();
+   skyboxShader->build(skyboxVs, skyboxFs);
+   Shader::mapShader("skyboxShader", skyboxShader);
+
+}
+
+
 
 void Eng::Skybox::setupSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
    const std::string& face4, const std::string& face5, const std::string& face6) {

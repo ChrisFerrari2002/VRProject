@@ -234,7 +234,9 @@ Eng::Node* Eng::OvoReader::recursiveLoad(FILE* dat)
 		// Mesh bounding sphere radius:
 		float radius;
 		memcpy(&radius, data + position, sizeof(float));
+		thisMesh->setSphereRadius(radius);
 		position += sizeof(float);
+
 		// Mesh bounding box minimum corner:
 		glm::vec3 bBoxMin;
 		memcpy(&bBoxMin, data + position, sizeof(glm::vec3));

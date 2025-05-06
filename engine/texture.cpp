@@ -54,40 +54,53 @@ ENG_API Eng::Texture::~Texture() {}
 bool ENG_API Eng::Texture::loadFromFile(const std::string& filePath) {
    std::cout << "Loading texture from file: " << filePath << std::endl;
 
-   // Load texture:
-   FIBITMAP* fBitmap = FreeImage_Load(FreeImage_GetFileType(filePath.c_str(), 0), filePath.c_str());
-   if (fBitmap == nullptr) {
-      std::cout << "[ERROR] Unable to load texture" << std::endl;
+   if (texId)
+      glDeleteTextures(1, &texId);
+
+   FIBITMAP* bitmap = FreeImage_Load(FreeImage_GetFileType(filePath.c_str(), 0), filePath.c_str());
+   if (!bitmap) {
+      std::cerr << "Failed to load image: " << filePath << std::endl;
       return false;
    }
 
-   int intFormat = GL_RGB;
-   GLenum extFormat = GL_BGR;
-
-   if (FreeImage_GetBPP(fBitmap) == 32) {
-      intFormat = GL_RGBA;
-      extFormat = GL_BGRA;
+   // Convert to 32bpp if needed
+   if (FreeImage_GetBPP(bitmap) != 32) {
+      FIBITMAP* temp = FreeImage_ConvertTo32Bits(bitmap);
+      FreeImage_Unload(bitmap);
+      bitmap = temp;
    }
 
-   // Generate and fill texture content:
+   FreeImage_FlipVertical(bitmap);
+
+   width = FreeImage_GetWidth(bitmap);
+   height = FreeImage_GetHeight(bitmap);
+
+   // Check for power of two dimensions
+   if ((width & (width - 1)) != 0 || (height & (height - 1)) != 0) {
+      std::cout << "Warning: Texture dimensions not power of 2 ("
+         << width << "x" << height << ")" << std::endl;
+   }
+
    glGenTextures(1, &texId);
    glBindTexture(GL_TEXTURE_2D, texId);
-   glTexImage2D(GL_TEXTURE_2D, 0, intFormat, 
-      FreeImage_GetWidth(fBitmap), FreeImage_GetHeight(fBitmap),
-      0, extFormat, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(fBitmap));
 
-   glGenerateMipmap(GL_TEXTURE_2D); // <-- we can use this now!
+   // Modern OpenGL texture loading
+   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height,
+      0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)FreeImage_GetBits(bitmap));
 
-   // Set circular coordinates:
+   glGenerateMipmap(GL_TEXTURE_2D);
+
+   // Default texture parameters
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-   // Set min/mag filters:
-   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-   // Free resources:
-   FreeImage_Unload(fBitmap);
+   FreeImage_Unload(bitmap);
+
+   std::cout << "Texture loaded successfully. ID: " << texId
+      << ", Size: " << width << "x" << height << std::endl;
+
    return true;
 }
 
@@ -107,7 +120,7 @@ int ENG_API Eng::Texture::getWidth() {
  * @retrun Texture height.
  */
 int Eng::Texture::getHeight() {
-   return width;
+   return height;
 }
 
 /**

@@ -57,8 +57,12 @@ glm::mat4 initialTransform;
 bool moveConfirmed = false;
 
 // Other vars
-Eng::Camera* cameras[4];
+Eng::Camera* cameras[1];
 bool lightOn = true;
+
+float cameraX = 0.0f;
+float cameraY = 0.0f;
+float cameraZ = 0.0f;
 
 /**
  * @brief Get the right separator depending on the OS this program runs on
@@ -105,30 +109,6 @@ void makeObjectBlink(Eng::Node* obj) {
 void updateBlinking(int value) {
     makeObjectBlink(pickedObject);
     eng.startTimer(updateBlinking, 10);
-}
-
-/**
- * @brief Rotate the camera
- *
- * @param value Timer value
- */
-void rotateCamera(int value) {
-    static bool rotationSense = false;
-    static float angle = 0.0f;
-    glm::mat4 currentTransform = cameras[0]->getTransform();
-    float rotation = (rotationSense) ? -0.002f : 0.002f;
-
-    currentTransform = glm::rotate_slow(currentTransform, rotation, glm::vec3(0.0f, 1.0f, 0.0f));
-    cameras[0]->setTransform(currentTransform);
-
-    if (angle > 0.15)
-        rotationSense = true;
-    else if (angle < -0.15f)
-        rotationSense = false;
-    angle += rotation;
-
-    // Restart timer
-    eng.startTimer(rotateCamera, 10);
 }
 
 /**
@@ -186,6 +166,7 @@ void updateFPS(int value) {
  * @param pathName The path to the scene file.
  */
 void loadScene(std::string pathName) {
+   std::cout << "Loading scene: " << pathName << std::endl;
     list = eng.loadScene(pathName);
 }
 
@@ -208,25 +189,11 @@ void blinkLight() {
  * @brief Load the cameras
  */
 void loadCameras() {
-    Eng::Camera* c1 = new Eng::Camera("camera1");
-    c1->setUserTransform(6.0f, 2.0f, 0.0f, 0.0f, -90.0f, 0.0f);
-    Eng::Camera* c2 = new Eng::Camera("camera2");
-    c2->setUserTransform(0.0f, 2.0f, 1.5f, -50.0f, 0.0f, 0.0f);
-    Eng::Camera* c3 = new Eng::Camera("camera3");
-    c3->setUserTransform(0.0f, 2.0f, -1.5f, -130.0f, 0.0f, 180.0f);
-    Eng::Camera* c4 = new Eng::Camera("camera4");
-    c4->setUserTransform(-6.0f, 2.0f, 0.0f, 0.0f, -90.0f, 0.0f);
-    eng.addCamera(c1);
-    eng.addCamera(c2);
-    eng.addCamera(c3);
-    eng.addCamera(c4);
-
-    cameras[0] = c1;
-    cameras[1] = c2;
-    cameras[2] = c3;
-    cameras[3] = c4;
-
-    eng.setActiveCamera(1);
+    Eng::Camera* camera = new Eng::Camera("camera");
+    camera->setUserTransform(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+    cameras[0] = camera;
+    eng.addCamera(camera);
+    eng.setActiveCamera(0);
 }
 
 /**
@@ -237,25 +204,34 @@ void loadCameras() {
  * @param y The y-coordinate of the mouse.
  */
 void specialCallback(int key, int x, int y) {
-    if (pickedObject == nullptr || chessboard.getSelectedPiece() == nullptr) return;
-
+    //float moveStep = 1.0f; // NORMAL
+    float moveStep = 0.01f; // VR
     switch (key)
     {
     case 100: // Left arrow
-        chessboard.getSelectedPiece()->moveLeft();
-        break;
+       cameraX -= moveStep; // Aggiorna la posizione X
+       break;
     case 102: // Right arrow
-        chessboard.getSelectedPiece()->moveRight();
-        break;
-    case 101: // Up arrow
-        chessboard.getSelectedPiece()->moveUp();
-        break;
-    case 103: // Down arrow
-        chessboard.getSelectedPiece()->moveDown();
-        break;
+       cameraX += moveStep; // Aggiorna la posizione X
+       break;
+    case 101: // Up arrow (Avanti)
+       cameraZ += moveStep; // Aggiorna la posizione Z (Avanti)
+       break;
+    case 103: // Down arrow (Indietro)
+       cameraZ -= moveStep; // Aggiorna la posizione Z (Indietro)
+       break;
+    case 104: // Page up (Alzarsi)
+       cameraY += moveStep; // Aggiorna la posizione Y (Su)
+       break;
+    case 105: // Page down (Abbassarsi)
+       cameraY -= moveStep; // Aggiorna la posizione Y (Giù)
+       break;
     default:
-        break;
+       break;
     }
+
+    // Passa la posizione aggiornata alla funzione di rendering
+    eng.updateCameraPosition(cameraX, cameraY, cameraZ);
     eng.postWindowRedisplay();
 }
 
@@ -268,18 +244,6 @@ void specialCallback(int key, int x, int y) {
  */
 void keyboardCallback(unsigned char key, int x, int y) {
     switch (key) {
-    case '1':
-        eng.setActiveCamera(0);
-        break;
-    case '2':
-        eng.setActiveCamera(1);
-        break;
-    case '3':
-        eng.setActiveCamera(2);
-        break;
-    case '4':
-       eng.setActiveCamera(3);
-       break;
     case 13:
         moveConfirmed = true;
         chessboard.confirmMovement();
@@ -315,6 +279,7 @@ void init(int argc, char* argv[])
     loadScene(".." + getSeparator() + "scene" + getSeparator() + FILE_NAME);
     eng.setWindowResizeHandler(handleWindowResize);
     eng.setKeyboardCallback(keyboardCallback);
+    eng.setSpecialCallback(specialCallback);
     eng.setBackgroundColor(0.01f, 0.01f, 0.3f, 1.0f);
     eng.start();
     eng.startTimer(updateFPS, 1000);
@@ -346,7 +311,6 @@ int main(int argc, char* argv[])
         return -1;
     }
     init(argc, argv);
-    eng.startTimer(rotateCamera, 10);
     while (eng.isRunning()) {
         eng.update();
         eng.refreshAndSwapBuffers();

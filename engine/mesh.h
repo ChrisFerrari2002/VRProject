@@ -88,6 +88,9 @@ public:
 
     void setupMesh();
 
+    void setSphereRadius(float radius) { sphereRadius = radius; }
+    float getBoundingSphereRadius() const override { return sphereRadius; };
+
 protected:
     int lod = 0; /**< The level of detail (LOD) of the mesh */
 
@@ -100,6 +103,8 @@ private:
     unsigned int vao, vertexVBO, normalsVBO, texCoordVBO, facesVBO;
     unsigned int facesCount;
     int mvLoc;
+
+    float sphereRadius = 0;
 };
 
 #endif // MESH_H

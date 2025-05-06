@@ -17,7 +17,7 @@
 * - Chris Ferrari [chris.ferrari@student.supsi.ch]
 * - Alessandro Formato [alessandro.formato@student.supsi.ch]
 */
-
+#include <GL/glew.h>
 #include <GL/freeglut.h>
 #include "engine.h"
 
@@ -42,6 +42,10 @@ void ENG_API Eng::List::addEntry(Node* root) {
            lightsList.push_back(node);
         }
         else {
+           if (node->isGrabbablee()) {
+              pickableObjectsList.push_back(node);
+           }
+           
             objectsList.push_back(node);
         }
         //Add children of children
@@ -70,7 +74,7 @@ void ENG_API Eng::List::popEntry() {
 * @param ptr A pointer to additional data.
 * @return True if the rendering was successful, false otherwise.
 */
-bool Eng::List::render(glm::mat4 inverseCameraMatrix, void* ptr) {
+bool Eng::List::render(glm::mat4 inverseCameraMatrix, glm::mat4 projectionMatrix, void* ptr) {
 
    std::list<Node*>::iterator lightsIt;
    int index = 0;
@@ -92,13 +96,26 @@ bool Eng::List::render(glm::mat4 inverseCameraMatrix, void* ptr) {
          light->render(inverseCameraMatrix * light->getFinalMatrix(), ptr);
       }
 
+      glm::mat4 vp = projectionMatrix * inverseCameraMatrix;
+      Eng::Frustum frustum = extractFrustumPlanes(vp);
+
       std::list<Node*>::iterator nodesIt;
-      for (nodesIt = objectsList.begin(); nodesIt != objectsList.end(); nodesIt++) {
-         Node* node = dynamic_cast<Node*>(*nodesIt);
-         if (node) {
-            node->render(inverseCameraMatrix * node->getFinalMatrix(), ptr);
+      for (auto& nodePtr : objectsList) {
+         Node* node = dynamic_cast<Node*>(nodePtr);
+         if (!node) {
+            continue;  // Salta se l'elemento non è un nodo
+         }
+
+         glm::vec3 worldPosition = glm::vec3(node->getFinalMatrix()[3]);
+         float radius = node->getBoundingSphereRadius();
+
+         // Controllo se la sfera del nodo è visibile nel frustum
+         if (frustum.sphereInFrustum(worldPosition, radius)) {
+            glm::mat4 nodeTransform = inverseCameraMatrix * node->getFinalMatrix();
+            node->render(nodeTransform, ptr);
          }
       }
+
    }
 
    if (lightsList.size() > 1)

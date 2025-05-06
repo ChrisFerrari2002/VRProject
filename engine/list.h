@@ -60,7 +60,7 @@ public:
     * @param data A pointer to additional data.
     * @return True if the rendering was successful, false otherwise.
     */
-    bool render(glm::mat4 transform, void* data) override;
+    bool render(glm::mat4 transform, glm::mat4 projectionMatrix, void* data);
 
     /**
     * @brief Clear the list
@@ -110,9 +110,14 @@ public:
     void addSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
        const std::string& face4, const std::string& face5, const std::string& face6);
 
+    std::list<Eng::Node*> getPickableObjectsList() { return pickableObjectsList; };
+
+    bool render(glm::mat4 transform, void* data) { return false; };
+
 private:
     std::list<Eng::Node*> objectsList; /**< The list of nodes */
     std::list<Eng::Node*> lightsList; /**< The list of lights */
+    std::list<Eng::Node*> pickableObjectsList; /**< The list of pickable objects */
     Eng::Shader* spotLightShader;
     Eng::Shader* directionalLightShader;
     Eng::Shader* pointLightShader;

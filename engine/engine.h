@@ -21,6 +21,7 @@
  //////////////
 
     // C/C++:    
+#include <LeapC.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -76,6 +77,7 @@ namespace Eng {
        // You can subinclude here other headers of your engine...
 #include "object.h"
 #include "node.h"
+#include "leap.h"
 #include "skybox.h"
 #include "fbo.h"
 #include "ovVr.h"
@@ -89,6 +91,7 @@ namespace Eng {
 #include "directionalLight.h"
 #include "pointLight.h"
 #include "spotLight.h"
+#include "frustum.h"
 #include "list.h"
 #include "LODData.h"
 #include "ovoReader.h"
@@ -285,15 +288,6 @@ namespace Eng {
          */
         void addCamera(Eng::Camera* camera);
 
-        /**
-         * @brief Load a node from a file
-         *
-         * Loads a node from the specified file.
-         *
-         * @param nodeFile Path to the node file.
-         * @return The loaded node.
-         */
-        Eng::Node loadNode(std::string nodeFile);
 
         /**
          * @brief Add a node to the engine
@@ -303,18 +297,6 @@ namespace Eng {
          * @param node The node to be added.
          */
         void addNode(Eng::Node node);
-
-        /**
-         * @brief Write text on the screen
-         *
-         * Writes the specified text on the screen at the given coordinates.
-         *
-         * @param text The text to be written.
-         * @param color The color of the text.
-         * @param coord The coordinates where the text should be written.
-         * @param textType The type of text to be written.
-         */
-        void writeOnScreen(std::string text, glm::vec3 color, glm::vec2 coord, int textType);
 
         /**
          * @brief Start a timer
@@ -345,6 +327,8 @@ namespace Eng {
         void loadSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
            const std::string& face4, const std::string& face5, const std::string& face6);
 
+        void updateCameraPosition(float posx, float posy, float posz);
+
     private: 
 
         // Reserved:
@@ -367,15 +351,6 @@ namespace Eng {
          * Callback function for display events.
          */
         static void displayCallback();
-
-        /**
-         * @brief Execute Z-buffer setup
-         *
-         * Sets up the Z-buffer.
-         */
-        static void execZBufferSetup();
-
-        static Shader* getShaderForLight(Light* light);
 
         // Internal vars:
 		static bool initFlag;  /**< Initialization flag */

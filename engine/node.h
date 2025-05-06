@@ -173,6 +173,11 @@ public:
 	 */
 	float getScale() const;
 
+	virtual float getBoundingSphereRadius() const { return 0.0f; }
+
+	bool isGrabbablee() const { return isGrabbable; }
+
+
 // Private methods and fields
 private:
 	glm::mat4 finalMatrix = glm::mat4(1.0f);
@@ -181,6 +186,8 @@ private:
 	Node* parent; /**< The node parent. */                          
 	float scale; /**< The node scale. */   
 	bool isDirty;
+	bool isGrabbable;
+	bool isGrabbed = false;
 };
 
 #endif // NODE_H

@@ -31,6 +31,9 @@ using namespace std;
 // FreeImage:
 #include <FreeImage.h>
 
+// LeapMotion:
+#include <LeapC.h>
+
 // C/C++:
 #include <functional>
 
@@ -59,6 +62,10 @@ Eng::Shader* pointLightShader;
 Eng::Shader* directionalLightShader;
 Eng::Shader* spotLightShader;
 
+Eng::Leap* leap; 
+
+
+
 enum RenderMode
 {
    VR = 0,
@@ -83,6 +90,10 @@ enum Eye
 
 unsigned int fboTexId[EYE_LAST] = { 0, 0 };
 Eng::Fbo* fbo[EYE_LAST] = { nullptr, nullptr };
+
+float posxVr = 0.0f;
+float posyVr = 0.0f;
+float poszVr = 0.0f;
 
 // Window size:
 #define APP_WINDOWSIZEX   1024
@@ -248,41 +259,6 @@ const char *pointFragShader = R"(
    }
 )";
 
-//////////////////////////////////////////
-const char* skyboxVertShader = R"(
-   #version 440 core
-
-   uniform mat4 projection;
-   uniform mat4 modelview;
-
-   layout(location = 0) in vec3 in_Position;
-
-   out vec3 texCoord;
-
-   void main(void)
-   {
-      texCoord = in_Position;
-      gl_Position = projection * modelview * vec4(in_Position, 1.0f);
-      gl_Position = gl_Position.xyww;
-   }
-)";
-
-//////////////////////////////////////////
-const char* skyboxFragShader = R"(
-   #version 440 core
-
-   in vec3 texCoord;
-
-   // Texture mapping (cubemap):
-   layout(binding = 0) uniform samplerCube cubemapSampler;
-
-   out vec4 fragOutput;
-
-   void main(void)
-   {
-      fragOutput = texture(cubemapSampler, texCoord);
-   }
-)";
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
@@ -325,9 +301,6 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
         // Set some optional flags:
         glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE, GLUT_ACTION_GLUTMAINLOOP_RETURNS);
 
-        // Enable Z buffer if it's required
-        if (useZBuffer) execZBufferSetup();
-
         // Create window
         windowId = glutCreateWindow(title);
 
@@ -360,6 +333,14 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
         glGetIntegerv(GL_MINOR_VERSION, &oglVersion[1]);
         std::cout << "   Version  . . :  " << glGetString(GL_VERSION) << " [" << oglVersion[0] << "." << oglVersion[1] << "]" << std::endl;
 
+        leap = new Leap();
+        if (!leap->init())
+        {
+           std::cout << "[ERROR] Unable to init Leap Motion" << std::endl;
+           delete leap;
+           return false;
+        }
+
         if (renderMode == RenderMode::VR)
         {
            // Init OpenVR:   
@@ -390,17 +371,7 @@ bool ENG_API Eng::Base::init(int argc, char* argv[], const char* title)
         pointLightShader->build(vs, pfs);
         Shader::mapShader("lightShader", pointLightShader);
         Shader::getShader("lightShader")->render();
-        Shader* skyboxVs = new Shader();
-        skyboxVs->loadFromMemory(Shader::TYPE_VERTEX, skyboxVertShader);
-
-        Shader* skyboxFs = new Shader();
-        skyboxFs->loadFromMemory(Shader::TYPE_FRAGMENT, skyboxFragShader);
-
-        Shader* skyboxShader = new Shader();
-        skyboxShader->build(skyboxVs, skyboxFs);
-        Shader::mapShader("skyboxShader", skyboxShader);
-
-
+        
         GLint prevViewport[4];
         glGetIntegerv(GL_VIEWPORT, prevViewport);
 
@@ -493,7 +464,7 @@ void ENG_API Eng::Base::reshapeCallback(int width, int height)
    else {
       glViewport(0, 0, width, height);
 
-      perspective = glm::perspective(glm::radians(80.0f), (float)APP_FBOSIZEX / (float)APP_FBOSIZEY, 1.0f, 1000.0f);
+      perspective = glm::perspective(glm::radians(80.0f), (float)APP_FBOSIZEX / (float)APP_FBOSIZEY, 0.01f, 1000.0f);
       if (width != APP_WINDOWSIZEX || height != APP_WINDOWSIZEY)
          glutReshapeWindow(APP_WINDOWSIZEX, APP_WINDOWSIZEY);
    }
@@ -513,6 +484,11 @@ void ENG_API Eng::Base::displayCallback()
       ovr->update();
       headPos = ovr->getModelviewMatrix();
    }
+
+   leap->update();
+   const LEAP_TRACKING_EVENT* l = leap->getCurFrame();
+
+
    for (int c = 0; c < EYE_LAST; c++)
    {
       if (renderMode == RenderMode::VR)
@@ -528,7 +504,7 @@ void ENG_API Eng::Base::displayCallback()
 #ifdef APP_VERBOSE   
          std::cout << "Eye " << c << " proj matrix: " << glm::to_string(ovrProjMat) << std::endl;
 #endif
-         glm::mat4 cameraOffset = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, 1.3f));
+         glm::mat4 cameraOffset = glm::translate(glm::mat4(1.0f), glm::vec3(posxVr, posyVr, poszVr));
          // Update camera modelview matrix:
          glm::mat4 ovrModelViewMat = glm::inverse(cameraOffset * headPos); // Inverted because this is the camera matrix
 #ifdef APP_VERBOSE   
@@ -547,7 +523,24 @@ void ENG_API Eng::Base::displayCallback()
          Shader::getShader("lightShader")->render();
          Shader::getCurrentShader()->setMatrix("projection", ovrProjMat);
 
-         list.render(ovrModelViewMat, nullptr);
+         list.render(ovrModelViewMat, ovrProjMat, nullptr);
+
+         Shader::getShader("leapShader")->render();
+
+         glm::mat4 viewMatrix = glm::inverse(cameraOffset * headPos);
+
+         // 2. Creazione della trasformazione Leap-to-World
+         glm::mat4 leapToWorld = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.6f, -0.3f));
+
+         // 3. Aggiungi l'offset della camera
+         glm::mat4 cameraMovement = glm::translate(glm::mat4(1.0f), glm::vec3(posxVr, posyVr, poszVr));
+
+         // 4. Combinazione finale con l'ordine corretto
+         glm::mat4 leapModelViewMat = viewMatrix * cameraMovement * leapToWorld;
+
+         // 5. Rendering
+         leap->renderVRHandBones(l, leapModelViewMat, ovrProjMat, cameraMovement * leapToWorld);
+         
          ovr->pass(curEye, fboTexId[c]);
       }
       else
@@ -556,18 +549,23 @@ void ENG_API Eng::Base::displayCallback()
          glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
          glEnable(GL_DEPTH_TEST);
          glDepthFunc(GL_LEQUAL);
+
+         cameras.at(activeCamera)->setUserTransform(posxVr, posyVr, poszVr, 0.0f, 0.0f, 0.0f);
          
          Shader::getShader("skyboxShader")->render();
          Shader::getCurrentShader()->setMatrix("projection", perspective);
          glm::mat4 skyboxView = glm::mat4(glm::mat3(cameras.at(activeCamera)->getInverseCameraMat()));
          skybox->render(skyboxView, nullptr);
 
+         Shader::getShader("leapShader")->render();
+
+         leap->renderNormalHandBones(l, cameras.at(activeCamera)->getInverseCameraMat(), perspective);
+
          Shader::getShader("lightShader")->render();
          Shader::getCurrentShader()->setMatrix("projection", perspective);
 
-         list.render(cameras.at(activeCamera)->getInverseCameraMat(), nullptr);
-      }
-      
+         list.render(cameras.at(activeCamera)->getTransform(), perspective, nullptr);
+      } 
    }
 
    if (renderMode == RenderMode::VR)
@@ -602,14 +600,15 @@ std::list<Eng::Node*> ENG_API Eng::Base::loadScene(std::string pathName)
 {
     Node* root = reader.readFile(pathName.c_str());
     list.addEntry(root);
-    return list.getObjectList();
+    leap->setPickableNodes(list.getPickableObjectsList());
+    return list.getObjectList(); 
 }
 
 void ENG_API Eng::Base::loadSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
    const std::string& face4, const std::string& face5, const std::string& face6) {
 
-      Shader::getShader("skyboxShader")->render();
       Skybox* skybox = new Skybox("Skybox");
+      Shader::getShader("skyboxShader")->render();
       skybox->setupSkybox(face1, face2, face3, face4, face5, face6);
       skybox->buildCubemap();
       this->skybox = skybox;
@@ -632,55 +631,6 @@ void ENG_API Eng::Base::addNode(Node node)
 {
     Node* _node = new Node(node);
     list.addEntry(_node);
-}
-
-/**
- * @brief Write text on the screen.
- * @param text The text to be written.
- * @param color The color of the text.
- * @param coord The coordinates where the text should be written.
- * @param textType The type of text to be written.
- */
-void ENG_API Eng::Base::writeOnScreen(std::string text, glm::vec3 color, glm::vec2 coord, int textType)
-{
-    //// 2D
-    //// Set orthographic projection:
-    //glMatrixMode(GL_PROJECTION);
-    //glLoadMatrixf(glm::value_ptr(ortho));
-    //glMatrixMode(GL_MODELVIEW);
-    //glLoadMatrixf(glm::value_ptr(glm::mat4(1.0f)));
-
-    //// Write 2D text
-    //glDisable(GL_LIGHTING);
-    //glColor3f(color.x, color.y, color.z);
-    //glRasterPos2f(coord.x, coord.y);
-
-    //switch (textType) {
-    //case 1:
-    //    glutBitmapString(GLUT_BITMAP_8_BY_13, (unsigned char*)text.c_str());
-    //    break;
-    //case 2:
-    //    glutBitmapString(GLUT_BITMAP_9_BY_15, (unsigned char*)text.c_str());
-    //    break;
-    //case 3:
-    //    glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_10, (unsigned char*)text.c_str());
-    //    break;
-    //case 4:
-    //    glutBitmapString(GLUT_BITMAP_TIMES_ROMAN_24, (unsigned char*)text.c_str());
-    //    break;
-    //case 5:
-    //    glutBitmapString(GLUT_BITMAP_HELVETICA_10, (unsigned char*)text.c_str());
-    //    break;
-    //case 6:
-    //    glutBitmapString(GLUT_BITMAP_HELVETICA_12, (unsigned char*)text.c_str());
-    //    break;
-    //case 7:
-    //    glutBitmapString(GLUT_BITMAP_HELVETICA_18, (unsigned char*)text.c_str());
-    //    break;
-    //}
-
-    //// Re-enable lighting
-    //glEnable(GL_LIGHTING);
 }
 
 /**
@@ -789,15 +739,6 @@ void Eng::Base::postWindowRedisplay() {
     
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
- * @brief This function sets up the z-buffer.
- */
-void Eng::Base::execZBufferSetup() {
-    //glEnable(GL_DEPTH_TEST);
-    //glClearDepth(1.0f);
-    //glDepthFunc(GL_LESS);
-}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
@@ -814,4 +755,10 @@ void Eng::Base::refreshAndSwapBuffers()
 {
     glutPostWindowRedisplay(windowId);
     glutSwapBuffers();
+}
+
+void Eng::Base::updateCameraPosition(float posx, float posy, float posz) {
+   posxVr = posx;
+   posyVr = posy;
+   poszVr = posz;
 }

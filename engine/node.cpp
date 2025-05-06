@@ -33,6 +33,8 @@ Eng::Node::Node(std::string name) {
 	Object::setName(name);
 	this->setParent(nullptr);
 	this->isDirty = true;
+	if (name.starts_with("p_"))
+		this->isGrabbable = true;
 	scale = 1.0f;
 }
 
