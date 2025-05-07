@@ -157,7 +157,7 @@ void keyboardCallback(unsigned char key, int x, int y) {
 void init(int argc, char* argv[])
 {
     eng.setZBufferUsage(true);
-    eng.loadSkybox("posx.jpg", "negx.jpg", "posy.jpg", "negy.jpg", "posz.jpg", "negz.jpg");
+    eng.loadSkybox("../skybox/posx.jpg", "../skybox/negx.jpg", "../skybox/posy.jpg", "../skybox/negy.jpg", "../skybox/posz.jpg", "../skybox/negz.jpg");
     loadCameras();
     std::cout << std::filesystem::current_path() << std::endl;
     loadScene(".." + getSeparator() + "scene" + getSeparator() + FILE_NAME);

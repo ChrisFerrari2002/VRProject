@@ -601,11 +601,6 @@ std::list<Eng::Node*> ENG_API Eng::Base::loadScene(std::string pathName)
     Node* root = reader.readFile(pathName.c_str());
     list.addEntry(root);
     leap->setPickableNodes(list.getPickableObjectsList());
-    for (auto& node : list.getPickableObjectsList())
-    {
-        std::cout << node->getName() << std::endl;
-        std::cout << glm::to_string(node->getWorldPosition()) << std::endl;
-    }
     return list.getObjectList(); 
 }
 
@@ -728,6 +723,4 @@ void Eng::Base::updateCameraPosition(float posx, float posy, float posz) {
    posxVr = posx;
    posyVr = posy;
    poszVr = posz;
-
-   std::cout << "Camera position: " << posxVr << ", " << posyVr << ", " << poszVr << std::endl;
 }
