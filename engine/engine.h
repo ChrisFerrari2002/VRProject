@@ -293,6 +293,8 @@ namespace Eng {
 
         void updateCameraPosition(float posx, float posy, float posz);
 
+        void switchPosition();
+
     private: 
 
         // Reserved:

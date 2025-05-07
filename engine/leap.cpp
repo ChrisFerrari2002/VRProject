@@ -443,7 +443,7 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
    const float cemeteryMargin = 0.03f;
    const float cemeteryXMin = xMax + cemeteryMargin;
    const float cemeteryXMax = cemeteryXMin + 0.15;
-   const float cemeteryZMin = zMin - 0.05;
+   const float cemeteryZMin = zMin + 0.05;
    const float cemeteryZMax = zMax - 0.05;
 
    auto isInCemeteryArea = [&](const glm::vec3& position) {

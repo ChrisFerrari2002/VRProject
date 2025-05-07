@@ -95,6 +95,9 @@ float posxVr = 0.0f;
 float posyVr = 0.0f;
 float poszVr = 0.0f;
 
+bool whitePosition;
+bool freeCamera;
+
 // Window size:
 #define APP_WINDOWSIZEX   1024
 #define APP_WINDOWSIZEY   512
@@ -505,6 +508,8 @@ void ENG_API Eng::Base::displayCallback()
          std::cout << "Eye " << c << " proj matrix: " << glm::to_string(ovrProjMat) << std::endl;
 #endif
          glm::mat4 cameraOffset = glm::translate(glm::mat4(1.0f), glm::vec3(posxVr, posyVr, poszVr));
+         if (whitePosition)
+            cameraOffset = glm::rotate(cameraOffset, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
          // Update camera modelview matrix:
          glm::mat4 ovrModelViewMat = glm::inverse(cameraOffset * headPos); // Inverted because this is the camera matrix
 #ifdef APP_VERBOSE   
@@ -530,8 +535,14 @@ void ENG_API Eng::Base::displayCallback()
          glm::mat4 viewMatrix = glm::inverse(cameraOffset * headPos);
 
          // 2. Creazione della trasformazione Leap-to-World
-         glm::mat4 leapToWorld = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.6f, -0.3f));
-
+         glm::mat4 leapToWorld = glm::mat4(1.0f);
+         if (whitePosition) {
+            leapToWorld = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.6f, 0.3f));
+            leapToWorld = glm::rotate(leapToWorld, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+         }
+         else {
+            leapToWorld = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.6f, -0.3f));
+         }
          // 3. Aggiungi l'offset della camera
          glm::mat4 cameraMovement = glm::translate(glm::mat4(1.0f), glm::vec3(posxVr, posyVr, poszVr));
 
@@ -720,7 +731,21 @@ void Eng::Base::refreshAndSwapBuffers()
 }
 
 void Eng::Base::updateCameraPosition(float posx, float posy, float posz) {
-   posxVr = posx;
-   posyVr = posy;
-   poszVr = posz;
+   posxVr += posx;
+   posyVr += posy;
+   poszVr += posz;
+}
+
+void Eng::Base::switchPosition() {
+   whitePosition = !whitePosition;
+   if (whitePosition) {
+      posxVr = 0.04f;
+      posyVr = -0.36f;
+      poszVr = -0.31f;
+   }
+   else {
+      posxVr = 0.04f;
+      posyVr = -0.36f;
+      poszVr = 0.31f;
+   }
 }

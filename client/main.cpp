@@ -46,10 +46,6 @@ std::list<Eng::Node*> list;
 Eng::Camera* cameras[1];
 bool lightOn = true;
 
-float cameraX = 0.0f;
-float cameraY = 0.0f;
-float cameraZ = 0.0f;
-
 /**
  * @brief Get the right separator depending on the OS this program runs on
  *
@@ -104,32 +100,35 @@ void loadCameras() {
 void specialCallback(int key, int x, int y) {
     //float moveStep = 1.0f; // NORMAL
     float moveStep = 0.01f; // VR
+    float moveStepX = 0.0f;
+    float moveStepY = 0.0f;
+    float moveStepZ = 0.0f;
     switch (key)
     {
     case 100: // Left arrow
-       cameraX -= moveStep; // Aggiorna la posizione X
+       moveStepX -= moveStep; // Aggiorna la posizione X
        break;
     case 102: // Right arrow
-       cameraX += moveStep; // Aggiorna la posizione X
+       moveStepX += moveStep; // Aggiorna la posizione X
        break;
     case 101: // Up arrow (Avanti)
-       cameraZ += moveStep; // Aggiorna la posizione Z (Avanti)
+       moveStepZ += moveStep; // Aggiorna la posizione Z (Avanti)
        break;
     case 103: // Down arrow (Indietro)
-       cameraZ -= moveStep; // Aggiorna la posizione Z (Indietro)
+       moveStepZ -= moveStep; // Aggiorna la posizione Z (Indietro)
        break;
     case 104: // Page up (Alzarsi)
-       cameraY += moveStep; // Aggiorna la posizione Y (Su)
+       moveStepY += moveStep++; // Aggiorna la posizione Y (Su)
        break;
     case 105: // Page down (Abbassarsi)
-       cameraY -= moveStep; // Aggiorna la posizione Y (Giù)
+       moveStepY -= moveStep; // Aggiorna la posizione Y (Giù)
        break;
     default:
        break;
     }
 
     // Passa la posizione aggiornata alla funzione di rendering
-    eng.updateCameraPosition(cameraX, cameraY, cameraZ);
+    eng.updateCameraPosition(moveStepX, moveStepY, moveStepZ);
     eng.postWindowRedisplay();
 }
 
@@ -143,7 +142,8 @@ void specialCallback(int key, int x, int y) {
 void keyboardCallback(unsigned char key, int x, int y) {
    switch (key) {
    case 'c':
-      eng.updateCameraPosition(0.04f, -0.36, 0.31);
+      eng.switchPosition();
+      break;
    }
     eng.postWindowRedisplay();
 }
