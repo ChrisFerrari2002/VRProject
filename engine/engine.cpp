@@ -601,6 +601,11 @@ std::list<Eng::Node*> ENG_API Eng::Base::loadScene(std::string pathName)
     Node* root = reader.readFile(pathName.c_str());
     list.addEntry(root);
     leap->setPickableNodes(list.getPickableObjectsList());
+    for (auto& node : list.getPickableObjectsList())
+    {
+        std::cout << node->getName() << std::endl;
+        std::cout << glm::to_string(node->getWorldPosition()) << std::endl;
+    }
     return list.getObjectList(); 
 }
 
@@ -621,44 +626,6 @@ void ENG_API Eng::Base::loadSkybox(const std::string& face1, const std::string& 
 void ENG_API Eng::Base::setActiveCamera(int num)
 {
     activeCamera = num;
-}
-
-/**
- * @brief Add a node to the engine.
- * @param node The node to be added.
- */
-void ENG_API Eng::Base::addNode(Node node)
-{
-    Node* _node = new Node(node);
-    list.addEntry(_node);
-}
-
-/**
- * @brief Start a timer.
- * @param func Pointer to the function to be called when the timer expires.
- * @param time Duration of the timer in milliseconds.
- */
-void ENG_API Eng::Base::startTimer(void(*func)(int), int time)
-{
-    glutTimerFunc(time, func, 0);
-}
-
-/**
- * @brief Get the list of objects in the engine.
- * @return Pointer to the list of objects in the engine.
- */
-Eng::List* Eng::Base::getList()
-{
-    return &list;
-}
-
-/**
- * @brief Clear the list of objects in the engine.
- * @return True if the list was successfully cleared, false otherwise.
- */
-bool Eng::Base::clearList() {
-    list.clear();
-    return true;
 }
 
 /**
@@ -736,7 +703,7 @@ void Eng::Base::start() {
  */
 void Eng::Base::postWindowRedisplay() {
     // Force rendering refresh
-    
+    glutPostWindowRedisplay(windowId);
 }
 
 
@@ -761,4 +728,6 @@ void Eng::Base::updateCameraPosition(float posx, float posy, float posz) {
    posxVr = posx;
    posyVr = posy;
    poszVr = posz;
+
+   std::cout << "Camera position: " << posxVr << ", " << posyVr << ", " << poszVr << std::endl;
 }

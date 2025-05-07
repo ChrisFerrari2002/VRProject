@@ -297,7 +297,7 @@ bool puntoNelRaggio(const glm::vec3& punto, const glm::vec3& centroSfera, float 
 }
 static std::vector<Eng::Node*> grabbedNodes = { nullptr, nullptr };
 static std::vector<glm::vec3> grabOffsets;
-static std::vector<float> originalHeights;
+static std::vector<glm::vec3> originalPositions;
 
 void Eng::Leap::renderNormalHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 modelViewMat, const glm::mat4 projMatrix) {
    glBindVertexArray(globalVao);
@@ -427,12 +427,35 @@ static bool firstRun = true;
 void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 modelViewMat, const glm::mat4 projMatrix, const glm::mat4 leapToWorldMatrix) {
    glBindVertexArray(globalVao);
    Shader::getCurrentShader()->setMatrix("projection", projMatrix);
+
+   const float margin = 0.10f;
+   const float xMin = -0.054846f - (0.216109f * margin);
+   const float xMax = 0.161263f + (0.216109f * margin);
+   const float zMin = -0.108148f - (0.216647f * margin);
+   const float zMax = 0.108499f + (0.216647f * margin);
+
+   // Funzione di controllo area
+   auto isInsideValidArea = [&](const glm::vec3& pos) {
+      return (pos.x >= xMin && pos.x <= xMax) &&
+         (pos.z >= zMin && pos.z <= zMax);
+      };
+
+   const float cemeteryMargin = 0.03f;
+   const float cemeteryXMin = xMax + cemeteryMargin;
+   const float cemeteryXMax = cemeteryXMin + 0.15;
+   const float cemeteryZMin = zMin - 0.05;
+   const float cemeteryZMax = zMax - 0.05;
+
+   auto isInCemeteryArea = [&](const glm::vec3& position) {
+      return (position.x >= cemeteryXMin && position.x <= cemeteryXMax) &&
+         (position.z >= cemeteryZMin && position.z <= cemeteryZMax);
+      };
   
    glm::vec3 scale = glm::vec3(0.001f);
    if (firstRun || grabbedNodes.size() != l->nHands) {
       grabbedNodes.resize(l->nHands, nullptr);
       grabOffsets.resize(l->nHands, glm::vec3(0.0f));
-      originalHeights.resize(l->nHands, 0.0f);
+      originalPositions.resize(l->nHands, glm::vec3(0.0f));
       firstRun = false;
    }
 
@@ -456,22 +479,43 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
 
       if (!isPinching && grabbedNode != nullptr) {
          glm::vec3 currentPos = grabbedNode->getWorldPosition();
-         glm::vec3 newPos = glm::vec3(currentPos.x, originalHeights[h], currentPos.z);
-         grabbedNode->setWorldPosition(newPos);
+         if (!isInsideValidArea(currentPos) && !isInCemeteryArea(currentPos)) {
+            glm::vec3 newPos = glm::vec3(originalPositions[h].x, originalPositions[h].y, originalPositions[h].z);
+            grabbedNode->setWorldPosition(newPos);
 
-         // Aggiorna la trasformazione completa
-         const glm::mat4 currentTransform = grabbedNode->getTransform();
-         const glm::vec3 currentScale(
-            glm::length(glm::vec3(currentTransform[0])),
-            glm::length(glm::vec3(currentTransform[1])),
-            glm::length(glm::vec3(currentTransform[2]))
-         );
-         const glm::mat4 newTransform = glm::translate(glm::mat4(1.0f), newPos) * glm::scale(glm::mat4(1.0f), currentScale);
-         grabbedNode->setTransform(newTransform);
+            // Aggiorna la trasformazione completa
+            const glm::mat4 currentTransform = grabbedNode->getTransform();
+            const glm::vec3 currentScale(
+               glm::length(glm::vec3(currentTransform[0])),
+               glm::length(glm::vec3(currentTransform[1])),
+               glm::length(glm::vec3(currentTransform[2]))
+            );
+            const glm::mat4 newTransform = glm::translate(glm::mat4(1.0f), newPos) * glm::scale(glm::mat4(1.0f), currentScale);
+            grabbedNode->setTransform(newTransform);
 
-         grabbedNodes[h] = nullptr;
-         grabbedNode = nullptr;
-         handIsGrabbing = false;
+            grabbedNodes[h] = nullptr;
+            grabbedNode = nullptr;
+            handIsGrabbing = false;
+         }
+         else {
+            glm::vec3 newPos = glm::vec3(currentPos.x, originalPositions[h].y, currentPos.z);
+            grabbedNode->setWorldPosition(newPos);
+
+            // Aggiorna la trasformazione completa
+            const glm::mat4 currentTransform = grabbedNode->getTransform();
+            const glm::vec3 currentScale(
+               glm::length(glm::vec3(currentTransform[0])),
+               glm::length(glm::vec3(currentTransform[1])),
+               glm::length(glm::vec3(currentTransform[2]))
+            );
+            const glm::mat4 newTransform = glm::translate(glm::mat4(1.0f), newPos) * glm::scale(glm::mat4(1.0f), currentScale);
+            grabbedNode->setTransform(newTransform);
+
+            grabbedNodes[h] = nullptr;
+            grabbedNode = nullptr;
+            handIsGrabbing = false;
+         }
+         
       }
 
       // Cerca un nodo da afferrare se non ne stai già afferrando uno
@@ -487,7 +531,7 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
             if (distance <= radius * 10.0f) {
                grabbedNode = node;
                grabOffset = pinchWorldPos - nodeCenter;
-               originalHeights[h] = nodeCenter.y;
+               originalPositions[h] = nodeCenter;
                break;
             }
          }

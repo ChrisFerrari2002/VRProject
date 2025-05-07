@@ -288,42 +288,6 @@ namespace Eng {
          */
         void addCamera(Eng::Camera* camera);
 
-
-        /**
-         * @brief Add a node to the engine
-         *
-         * Adds a node to the engine.
-         *
-         * @param node The node to be added.
-         */
-        void addNode(Eng::Node node);
-
-        /**
-         * @brief Start a timer
-         *
-         * Starts a timer with the specified duration.
-         *
-         * @param func Pointer to the function to be called when the timer expires.
-         * @param duration Duration of the timer in milliseconds.
-         */
-        void startTimer(void (*func)(int), int duration);
-
-        /**
-         * @brief Get the list of objects in the engine
-         *
-         * @return Pointer to the list of objects in the engine.
-         */
-        Eng::List* getList();
-
-        /**
-         * @brief Clear the list of objects in the engine
-         *
-         * Clears the list of objects in the engine.
-         *
-         * @return True if the list was successfully cleared, false otherwise.
-         */
-        bool clearList();
-
         void loadSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
            const std::string& face4, const std::string& face5, const std::string& face6);
 

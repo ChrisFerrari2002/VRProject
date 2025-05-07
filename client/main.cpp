@@ -25,21 +25,10 @@
 #include <filesystem>
 // Library header:
 #include "engine.h"
-#include "board.h"
 
 Eng::Base& eng = Eng::Base::getInstance();
 
-// Fps calculation
-int fc;
-int fps;
-
-#define CHESSBOARD_SIZE 8
-#define BLOCK_SIZE 0.0835f
 #define FILE_NAME "newScene.ovo"
-
-// Matrixes
-std::pair<int, unsigned int> matrix[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
-bool positioningMatrix[CHESSBOARD_SIZE][CHESSBOARD_SIZE];
 
 // Object blinking vars
 Eng::Node* pickedObject = nullptr;
@@ -52,9 +41,6 @@ bool blinkerTimerStarted = false;
 
 // List with all elements
 std::list<Eng::Node*> list;
-Board chessboard;
-glm::mat4 initialTransform;
-bool moveConfirmed = false;
 
 // Other vars
 Eng::Camera* cameras[1];
@@ -78,68 +64,6 @@ std::string getSeparator() {
 }
 
 /**
- * @brief Make an object blink (the selected piece will blink)
- *
- * @param obj The object to make blink.
- */
-void makeObjectBlink(Eng::Node* obj) {
-    if (!(obj->getName().substr(0, 1) == "p")) return;
-
-    step = 0.01f;
-
-    if (blink) {
-        blinkStep += step;
-        if (blinkStep > range)
-            blink = false;
-    }
-    else {
-        blinkStep -= step;
-        if (blinkStep < 0.0f)
-            blink = true;
-    }
-
-    ((Eng::Mesh*)obj)->getMaterial()->setEmission(glm::vec4(blinkStep * 5.0f, 0.0f, 0.0f, 1.0f));
-}
-
-/**
- * @brief Update the blinking state of the object
- *
- * @param value Timer value (state)
- */
-void updateBlinking(int value) {
-    makeObjectBlink(pickedObject);
-    eng.startTimer(updateBlinking, 10);
-}
-
-/**
- * @brief Get the picked object
- *
- * @param n The node representing the picked object.
- * @param mousePressed Whether the mouse button is pressed.
- */
-void getPickedObject(Eng::Node* n, bool mousePressed) {
-    moveConfirmed = false;
-    if (n == nullptr || n->getName().substr(0, 1) != "p") return;
-    if (mousePressed) {
-        if (pickedObject != nullptr) {
-            if (!moveConfirmed) {
-                chessboard.getSelectedPiece()->resetPosition();
-            }
-            ((Eng::Mesh*)pickedObject)->getMaterial()->setEmission(lastObjectEmission);
-        }
-        lastObjectEmission = ((Eng::Mesh*)n)->getMaterial()->getEmission();
-        pickedObject = n;
-        chessboard.setSelectedPiece(pickedObject);
-
-        // Start blinker timer if it isn't already running
-        if (!blinkerTimerStarted) {
-            eng.startTimer(updateBlinking, 10);
-            blinkerTimerStarted = true;
-        }
-    }
-}
-
-/**
  * @brief Handle window resize event
  *
  * @param w The new width of the window.
@@ -150,17 +74,6 @@ void handleWindowResize(int w, int h) {
 }
 
 /**
- * @brief Update the FPS counter
- *
- * @param value Timer value (not used).
- */
-void updateFPS(int value) {
-    fps = fc;
-    fc = 0;
-    eng.startTimer(updateFPS, 1000);
-}
-
-/**
  * @brief Load the scene from a file
  *
  * @param pathName The path to the scene file.
@@ -168,21 +81,6 @@ void updateFPS(int value) {
 void loadScene(std::string pathName) {
    std::cout << "Loading scene: " << pathName << std::endl;
     list = eng.loadScene(pathName);
-}
-
-/**
- * @brief Makes the light blinking
- *
- */
-void blinkLight() {
-    static bool blink = false;
-    static Eng::Light* light = (Eng::Light*)(eng.getList()->getObject(0));
-    if (lightOn) {
-        light->setIntensity(7.0f);
-    }
-    else {
-        light->setIntensity(0.0f);
-    }
 }
 
 /**
@@ -243,24 +141,10 @@ void specialCallback(int key, int x, int y) {
  * @param y The y-coordinate of the mouse.
  */
 void keyboardCallback(unsigned char key, int x, int y) {
-    switch (key) {
-    case 13:
-        moveConfirmed = true;
-        chessboard.confirmMovement();
-        break;
-    case 'r':
-        chessboard.resetBoard();
-        break;
-    case 'u':
-        chessboard.undo();
-        break;
-    case 'i':
-        chessboard.redo();
-        break;
-    case 'l':
-        lightOn = !lightOn;
-        blinkLight();
-    }
+   switch (key) {
+   case 'c':
+      eng.updateCameraPosition(0.04f, -0.36, 0.31);
+   }
     eng.postWindowRedisplay();
 }
 
@@ -282,7 +166,6 @@ void init(int argc, char* argv[])
     eng.setSpecialCallback(specialCallback);
     eng.setBackgroundColor(0.01f, 0.01f, 0.3f, 1.0f);
     eng.start();
-    eng.startTimer(updateFPS, 1000);
 }
 
 //////////
@@ -314,7 +197,6 @@ int main(int argc, char* argv[])
     while (eng.isRunning()) {
         eng.update();
         eng.refreshAndSwapBuffers();
-        fc++;
     }
 
     // Release engine:
