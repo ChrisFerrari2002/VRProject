@@ -62,56 +62,6 @@ lastFrameId{ 0 }
 Eng::Leap::~Leap()
 {}
 
-std::vector<glm::vec3> debugSphereVertices;
-std::vector<unsigned int> debugSphereIndices;
-GLuint debugSphereVao, debugSphereVbo, debugSphereEbo;
-
-void createDebugSphere(int slices = 16, int stacks = 16) {
-   debugSphereVertices.clear();
-   debugSphereIndices.clear();
-
-   for (int i = 0; i <= stacks; ++i) {
-      float phi = glm::pi<float>() * float(i) / float(stacks);
-      for (int j = 0; j <= slices; ++j) {
-         float theta = 2.0f * glm::pi<float>() * float(j) / float(slices);
-         float x = sin(phi) * cos(theta);
-         float y = cos(phi);
-         float z = sin(phi) * sin(theta);
-         debugSphereVertices.emplace_back(x, y, z);
-      }
-   }
-
-   for (int i = 0; i < stacks; ++i) {
-      for (int j = 0; j < slices; ++j) {
-         int first = (i * (slices + 1)) + j;
-         int second = first + slices + 1;
-
-         // Line segments
-         debugSphereIndices.push_back(first);
-         debugSphereIndices.push_back(second);
-         debugSphereIndices.push_back(first);
-         debugSphereIndices.push_back(first + 1);
-      }
-   }
-
-   glGenVertexArrays(1, &debugSphereVao);
-   glGenBuffers(1, &debugSphereVbo);
-   glGenBuffers(1, &debugSphereEbo);
-
-   glBindVertexArray(debugSphereVao);
-
-   glBindBuffer(GL_ARRAY_BUFFER, debugSphereVbo);
-   glBufferData(GL_ARRAY_BUFFER, debugSphereVertices.size() * sizeof(glm::vec3), &debugSphereVertices[0], GL_STATIC_DRAW);
-
-   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, debugSphereEbo);
-   glBufferData(GL_ELEMENT_ARRAY_BUFFER, debugSphereIndices.size() * sizeof(unsigned int), &debugSphereIndices[0], GL_STATIC_DRAW);
-
-   glEnableVertexAttribArray(0);
-   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), (void*)0);
-
-   glBindVertexArray(0);
-}
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
  * Initializes Leap Motion connection.
@@ -208,7 +158,6 @@ bool Eng::Leap::init()
    glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
    glEnableVertexAttribArray(0);
    Shader::getShader("leapShader")->bind(0, "in_Position");
-   createDebugSphere();
    // Done:
    return true;
 }
@@ -405,8 +354,8 @@ void Eng::Leap::renderNormalHandBones(const LEAP_TRACKING_EVENT* l, const glm::m
          for (unsigned int b = 0; b < 4; b++) {
             LEAP_BONE bone = finger.bones[b];
             glm::vec3 pos(bone.next_joint.x, bone.next_joint.y, bone.next_joint.z);
-            glm::mat4 t = glm::translate(glm::mat4(1.0f), pos * scaleFactor);  // Applica la scala alla posizione
-            glm::mat4 s = glm::scale(glm::mat4(1.0f), scaleFactor);  // Scala solo la geometria
+            glm::mat4 t = glm::translate(glm::mat4(1.0f), pos * scaleFactor);
+            glm::mat4 s = glm::scale(glm::mat4(1.0f), scaleFactor); 
             Shader::getCurrentShader()->setMatrix("modelview", f * t * s);
             glDrawArrays(GL_TRIANGLE_STRIP, 0, (GLsizei)vertices.size());
          }
@@ -420,7 +369,6 @@ void Eng::Leap::renderNormalHandBones(const LEAP_TRACKING_EVENT* l, const glm::m
 
 
 glm::vec3 leapToMeters(const LEAP_VECTOR& leapVec) {
-   // Leap Motion restituisce le coordinate in millimetri, quindi bisogna fare la conversione in metri.
    return glm::vec3(leapVec.x * 0.001f, leapVec.y * 0.001f, leapVec.z * 0.001f);
 }
 static bool firstRun = true;
@@ -434,7 +382,6 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
    const float zMin = -0.108148f - (0.216647f * margin);
    const float zMax = 0.108499f + (0.216647f * margin);
 
-   // Funzione di controllo area
    auto isInsideValidArea = [&](const glm::vec3& pos) {
       return (pos.x >= xMin && pos.x <= xMax) &&
          (pos.z >= zMin && pos.z <= zMax);
@@ -466,11 +413,9 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
       bool isPinching = hand.pinch_strength > 0.4f;
       bool handIsGrabbing = false;
 
-      // Converti le coordinate Leap da mm a metri
       glm::vec3 thumbTip = leapToMeters(hand.digits[0].bones[3].next_joint);
       glm::vec3 indexTip = leapToMeters(hand.digits[1].bones[3].next_joint);
 
-      // Calcola la posizione del pinch in spazio mondo
       glm::vec3 pinchPos = (thumbTip + indexTip) * 0.5f;
       glm::vec3 pinchWorldPos = glm::vec3(leapToWorldMatrix * glm::vec4(pinchPos, 1.0f));
 
@@ -483,7 +428,6 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
             glm::vec3 newPos = glm::vec3(originalPositions[h].x, originalPositions[h].y, originalPositions[h].z);
             grabbedNode->setWorldPosition(newPos);
 
-            // Aggiorna la trasformazione completa
             const glm::mat4 currentTransform = grabbedNode->getTransform();
             const glm::vec3 currentScale(
                glm::length(glm::vec3(currentTransform[0])),
@@ -501,7 +445,6 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
             glm::vec3 newPos = glm::vec3(currentPos.x, originalPositions[h].y, currentPos.z);
             grabbedNode->setWorldPosition(newPos);
 
-            // Aggiorna la trasformazione completa
             const glm::mat4 currentTransform = grabbedNode->getTransform();
             const glm::vec3 currentScale(
                glm::length(glm::vec3(currentTransform[0])),
@@ -518,7 +461,6 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
          
       }
 
-      // Cerca un nodo da afferrare se non ne stai già afferrando uno
       if (grabbedNode == nullptr && isPinching) {
          for (auto& node : pickableNodes) {
             bool alreadyGrabbed = std::find(grabbedNodes.begin(), grabbedNodes.end(), node) != grabbedNodes.end();
@@ -537,9 +479,9 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
          }
       }
 
-      // Update grabbed object position
+
       if (isPinching && grabbedNode != nullptr) {
-         Shader::getCurrentShader()->setVec3("color", glm::vec3(0.5f, 0.0f, 0.5f));  // Purple for grabbing
+         Shader::getCurrentShader()->setVec3("color", glm::vec3(0.5f, 0.0f, 0.5f)); 
 
          const glm::mat4 currentTransform = grabbedNode->getTransform();
 
@@ -563,10 +505,10 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
          grabOffsets[h] = grabOffset;
       }
       else if (isPinching) {
-         Shader::getCurrentShader()->setVec3("color", glm::vec3(1.0f, 1.0f, 0.0f));  // Yellow for pinching
+         Shader::getCurrentShader()->setVec3("color", glm::vec3(1.0f, 1.0f, 0.0f)); 
       }
       else {
-         Shader::getCurrentShader()->setVec3("color", glm::vec3((float)h, (float)(1 - h), 0.5f));  // Normal color
+         Shader::getCurrentShader()->setVec3("color", glm::vec3((float)h, (float)(1 - h), 0.5f)); 
       }
 
       glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.001f));

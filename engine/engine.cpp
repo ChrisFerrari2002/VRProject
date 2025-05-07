@@ -510,8 +510,8 @@ void ENG_API Eng::Base::displayCallback()
          glm::mat4 cameraOffset = glm::translate(glm::mat4(1.0f), glm::vec3(posxVr, posyVr, poszVr));
          if (whitePosition)
             cameraOffset = glm::rotate(cameraOffset, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-         // Update camera modelview matrix:
-         glm::mat4 ovrModelViewMat = glm::inverse(cameraOffset * headPos); // Inverted because this is the camera matrix
+
+         glm::mat4 ovrModelViewMat = glm::inverse(cameraOffset * headPos); 
 #ifdef APP_VERBOSE   
          std::cout << "Eye " << c << " modelview matrix: " << glm::to_string(ovrModelViewMat) << std::endl;
 #endif
@@ -534,7 +534,6 @@ void ENG_API Eng::Base::displayCallback()
 
          glm::mat4 viewMatrix = glm::inverse(cameraOffset * headPos);
 
-         // 2. Creazione della trasformazione Leap-to-World
          glm::mat4 leapToWorld = glm::mat4(1.0f);
          if (whitePosition) {
             leapToWorld = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.6f, 0.3f));
@@ -543,13 +542,11 @@ void ENG_API Eng::Base::displayCallback()
          else {
             leapToWorld = glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.6f, -0.3f));
          }
-         // 3. Aggiungi l'offset della camera
+
          glm::mat4 cameraMovement = glm::translate(glm::mat4(1.0f), glm::vec3(posxVr, posyVr, poszVr));
 
-         // 4. Combinazione finale con l'ordine corretto
          glm::mat4 leapModelViewMat = viewMatrix * cameraMovement * leapToWorld;
 
-         // 5. Rendering
          leap->renderVRHandBones(l, leapModelViewMat, ovrProjMat, cameraMovement * leapToWorld);
          
          ovr->pass(curEye, fboTexId[c]);
@@ -617,7 +614,10 @@ std::list<Eng::Node*> ENG_API Eng::Base::loadScene(std::string pathName)
 
 void ENG_API Eng::Base::loadSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
    const std::string& face4, const std::string& face5, const std::string& face6) {
-
+      if (skybox != nullptr) {
+         std::cout << "C'è già una skybox attiva" << std::endl;
+         return;
+      }
       Skybox* skybox = new Skybox("Skybox");
       Shader::getShader("skyboxShader")->render();
       skybox->setupSkybox(face1, face2, face3, face4, face5, face6);

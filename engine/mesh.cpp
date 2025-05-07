@@ -68,7 +68,6 @@ bool ENG_API Eng::Mesh::render(glm::mat4 matrix, void* ptr) {
 
    glBindVertexArray(vao);
    glDrawElements(GL_TRIANGLES, facesCount, GL_UNSIGNED_INT, nullptr);
-   //glDrawArrays(GL_TRIANGLES, 0, facesCount);
    glBindVertexArray(0);
 
    return true;

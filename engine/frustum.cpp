@@ -55,7 +55,6 @@ Eng::Frustum Eng::extractFrustumPlanes(const glm::mat4& m) {
       m[2][3] - m[2][2]);
    f.planes[5].d = m[3][3] - m[3][2];
 
-   // Normalizza ogni piano
    for (int i = 0; i < 6; ++i) {
       float length = glm::length(f.planes[i].normal);
       if (length > 0.0f) {

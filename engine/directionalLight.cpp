@@ -47,9 +47,6 @@ ENG_API Eng::DirectionalLight::DirectionalLight(const std::string name, const in
 * @return True if the rendering was successful, false otherwise.
 */
 bool ENG_API Eng::DirectionalLight::render(glm::mat4 matrix, void* ptr) {
-    /*Light::render(matrix, ptr);
-    glm::vec4 position = glm::vec4(getPosition(), 0.0f);
-    glLightfv(getLightNumber(), GL_POSITION, glm::value_ptr(position));*/
     return true;
 }
 

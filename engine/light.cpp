@@ -37,9 +37,6 @@ ENG_API Eng::Light::Light(const std::string name, const int lightNumber, const g
     this->ambient = ambient;
     this->diffuse = diffuse;
     this->specular = specular;
-    /*glEnable(GL_LIGHTING);
-    glEnable(lightNumber);
-    glLightModelf(GL_LIGHT_MODEL_LOCAL_VIEWER, 1.0f);*/
 }
 
 /**
@@ -213,19 +210,5 @@ float ENG_API Eng::Light::getIntensity() const {
 * @return True if the rendering was successful, false otherwise.
 */
 bool ENG_API Eng::Light::render(glm::mat4 matrix, void* ptr) {
-   /*glEnable(GL_LIGHTING);
-   glEnable(lightNumber);
-
-   glMatrixMode(GL_MODELVIEW);
-   glLoadMatrixf(glm::value_ptr(matrix));
-
-   glLightfv(lightNumber, GL_AMBIENT, glm::value_ptr(ambient));
-   glLightfv(lightNumber, GL_DIFFUSE, glm::value_ptr(diffuse * intensity));
-   glLightfv(lightNumber, GL_SPECULAR, glm::value_ptr(specular));
-
-   glLightfv(lightNumber, GL_CONSTANT_ATTENUATION, &constantAttenuation);
-   glLightfv(lightNumber, GL_LINEAR_ATTENUATION, &linearAttenuation);
-   glLightfv(lightNumber, GL_QUADRATIC_ATTENUATION, &quadraticAttenuation);*/
-
    return true;
 }
