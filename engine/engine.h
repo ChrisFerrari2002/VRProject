@@ -288,11 +288,38 @@ namespace Eng {
          */
         void addCamera(Eng::Camera* camera);
 
+        /**
+         * @brief Add a skybox to the engine
+         *
+         * Add a skybox to the engine
+         *
+         * @param face1 Path of face1.
+         * @param face2 Path of face2.
+         * @param face3 Path of face3.
+         * @param face4 Path of face4.
+         * @param face5 Path of face5.
+         * @param face6 Path of face6.
+         * 
+         */
         void loadSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
            const std::string& face4, const std::string& face5, const std::string& face6);
 
+        /**
+         * @brief Update the camera position
+         *
+         * Update the camera position
+         *
+         * @param posx X translation of the camera.
+         * @param posy Y translation of the camera.
+         * @param posz Z translation of the camera.
+         */
         void updateCameraPosition(float posx, float posy, float posz);
 
+        /**
+         * @brief Change camera visualization from black to white position
+         *
+         * Change camera visualization from black to white position
+         */
         void switchPosition();
 
     private: 
@@ -329,7 +356,7 @@ namespace Eng {
 
 		static Eng::OvoReader reader; /**< OvoReader object */
 		static Eng::List list; /**< List object */
-      static Eng::Skybox* skybox;
+      static Eng::Skybox* skybox; /**< Skybox object */
 
         // Cameras
 		static int activeCamera; /**< Active camera index */

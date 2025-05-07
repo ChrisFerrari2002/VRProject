@@ -185,9 +185,8 @@ private:
 	std::vector<Node*> children; /**< The list of children */
 	Node* parent; /**< The node parent. */                          
 	float scale; /**< The node scale. */   
-	bool isDirty;
-	bool isGrabbable;
-	bool isGrabbed = false;
+	bool isDirty; /**< The node dirty flag. */
+	bool isGrabbable; /**< The node grabbable flag. */
 };
 
 #endif // NODE_H

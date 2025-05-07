@@ -54,7 +54,7 @@ public:
     ~Mesh();
 
     /**
-    * @brief Render the mesh
+    * @brief Render the mesh.
     *
     * Renders the mesh using the given transformation matrix.
     *
@@ -65,30 +65,75 @@ public:
     virtual bool render(glm::mat4 transform, void* data) override;
 
     /**
-    * @brief Get the material of the mesh
+    * @brief Get the material of the mesh.
     *
     * @return Pointer to the material of the mesh.
     */
     Eng::Material* getMaterial();
 
-    /**
-    * @brief Get the color based on ID
-    *
-    * Gets the color of the mesh based on the specified ID.
-    *
-    * @param id The ID for which the color should be retrieved.
-    * @return The color of the mesh based on the specified ID.
-    */
-    glm::vec4 getColorBasedOnId(int id);
-
+   /**
+   * @brief Set the vertices of the mesh.
+   *
+   * Set the vertices of the mesh.
+   *
+   * @param vertices The vertices to be set.
+   * 
+   */
     void setVertices(std::vector<glm::vec3> vertices);
+
+    /**
+   * @brief Set the normals of the mesh.
+   *
+   * Set the normals of the mesh.
+   *
+   * @param normals The normals to be set.
+   *
+   */
     void setNormals(std::vector<glm::vec3> normals);
+
+    /**
+    * @brief Set the texture coordinates of the mesh.
+    *
+    * Set the texture coordinates of the mesh.
+    *
+    * @param texCoords The texture coordinates to be set.
+    *
+    */
     void setTexCoords(std::vector<glm::vec2> texCoords);
+
+    /**
+    * @brief Set the faces of the mesh.
+    *
+    * Set the faces coordinates of the mesh.
+    *
+    * @param faces The texture faces to be set.
+    *
+    */
     void setFaces(std::vector<unsigned int> faces);
 
+    /**
+    * @brief Initialize mesh buffers and context.
+    *
+    * Initialize mesh buffers and context.
+    * 
+    */
     void setupMesh();
 
+    /**
+    * @brief Set the sphere bounding radius the mesh.
+    *
+    * Set the sphere bounding radius the mesh.
+    *
+    * @param radius The radius to be set.
+    *
+    */
     void setSphereRadius(float radius) { sphereRadius = radius; }
+
+    /**
+    * @brief Get the bounding sphere radius of the mesh.
+    *
+    * @return Bounding sphere radius of the mesh.
+    */
     float getBoundingSphereRadius() const override { return sphereRadius; };
 
 protected:
@@ -96,15 +141,14 @@ protected:
 
 private:
     Eng::Material material; /**< The material of the mesh */
-    std::vector<glm::vec3> vertices, normals;
-    std::vector<glm::vec2> texCoords;
-    std::vector<unsigned int> faces;
+    std::vector<glm::vec3> vertices, normals; /**< The vertices and normals of the mesh */
+    std::vector<glm::vec2> texCoords; /**< The texture coordinates of the mesh */
+    std::vector<unsigned int> faces; /**< The faces of the mesh */
 
-    unsigned int vao, vertexVBO, normalsVBO, texCoordVBO, facesVBO;
-    unsigned int facesCount;
-    int mvLoc;
+    unsigned int vao, vertexVBO, normalsVBO, texCoordVBO, facesVBO; /**< OpenGL buffers */
+    unsigned int facesCount; /**< Number of faces in the mesh */
 
-    float sphereRadius = 0;
+    float sphereRadius = 0; /**< The radius of the bounding sphere of the mesh */
 };
 
 #endif // MESH_H

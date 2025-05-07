@@ -380,10 +380,26 @@ bool Eng::Shader::build(Shader* vertexShader, Shader* fragmentShader)
    return true;
 }
 
+/**
+    * @brief Insert a new shader into a map.
+    *
+    * Insert a new shader into a map.
+    *
+    * @param name The name of the shader.
+    * @param shader The shader to be inserted.
+    */
 void Eng::Shader::mapShader(const std::string& name, Eng::Shader* shader) {
    shaders[name] = shader;
 }
 
+/**
+    * @brief Get a shader from the map.
+    *
+    * Get a shader from the map.
+    *
+    * @param name The name of the shader.
+    * @return Pointer to the shader.
+    */
 Eng::Shader* Eng::Shader::getShader(const std::string& name) {
    auto it = shaders.find(name);
    if (it != shaders.end()) {

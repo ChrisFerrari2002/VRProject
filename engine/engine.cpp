@@ -730,12 +730,22 @@ void Eng::Base::refreshAndSwapBuffers()
     glutSwapBuffers();
 }
 
+/**
+ * @brief Update the camera position
+ * @param posx X translation of the camera.
+ * @param posy Y translation of the camera.
+ * @param posz Z translation of the camera.
+ */
 void Eng::Base::updateCameraPosition(float posx, float posy, float posz) {
    posxVr += posx;
    posyVr += posy;
    poszVr += posz;
 }
 
+/**
+ * @brief Change camera position for chessboard visualization.
+
+ */
 void Eng::Base::switchPosition() {
    whitePosition = !whitePosition;
    if (whitePosition) {

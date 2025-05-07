@@ -53,7 +53,25 @@ public: //
    bool build(Shader* vertexShader, Shader* fragmentShader);
 
    void bind(int location, const char* attribName);
+
+   /**
+    * @brief Insert a new shader into a map.
+    *
+    * Insert a new shader into a map.
+    *
+    * @param name The name of the shader.
+    * @param shader The shader to be inserted.
+    */
    static void mapShader(const std::string& name, Shader* shader);
+
+   /**
+    * @brief Get a shader from the map.
+    *
+    * Get a shader from the map.
+    *
+    * @param name The name of the shader.
+    * @return Pointer to the shader.
+    */
    static Shader* getShader(const std::string& name);
 
    // Rendering:				
@@ -61,6 +79,13 @@ public: //
 
    virtual bool render(glm::mat4 transform, void* data) override;
 
+   /**
+    * @brief Get the active shader.
+    *
+    * Get the active shader.
+    *
+    * @return The active shader.
+    */
    static Shader* getCurrentShader();
 
 
@@ -74,7 +99,7 @@ private:	//
    // OGL id:
    unsigned int glId;
 
-   static Shader *currentShader;
-   std::map<std::string, int> bindingMap;
-   static std::map<std::string, Shader*> shaders;
+   static Shader *currentShader; ///< Current shader
+   std::map<std::string, int> bindingMap; ///< Map of binding names and locations
+   static std::map<std::string, Shader*> shaders; ///< Map of shaders
 };

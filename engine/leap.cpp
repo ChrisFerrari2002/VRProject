@@ -244,10 +244,18 @@ bool puntoNelRaggio(const glm::vec3& punto, const glm::vec3& centroSfera, float 
    // Confrontare con il quadrato del raggio
    return distanzaQuadrata <= raggio * raggio;
 }
-static std::vector<Eng::Node*> grabbedNodes = { nullptr, nullptr };
-static std::vector<glm::vec3> grabOffsets;
-static std::vector<glm::vec3> originalPositions;
+static std::vector<Eng::Node*> grabbedNodes = { nullptr, nullptr }; /**< Pointers to the ojects grabbed with the 2 hands */
+static std::vector<glm::vec3> grabOffsets; /**< Offset of the center of the grabbed object from the pinch position */
+static std::vector<glm::vec3> originalPositions; /**< Original position of the objects grabbed with the 2 hands */
+static bool firstRun = true; /**< Check for first run initialization */
 
+/**
+    * @brief Render the Leap Motion hand bones in normal mode.
+    *
+    * @param l The leapmotion event.
+    * @param modelViewMat The modelViewMat.
+    * @param projMatrix The projMatrix.
+    */
 void Eng::Leap::renderNormalHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 modelViewMat, const glm::mat4 projMatrix) {
    glBindVertexArray(globalVao);
    Shader::getCurrentShader()->setMatrix("projection", projMatrix);
@@ -367,11 +375,23 @@ void Eng::Leap::renderNormalHandBones(const LEAP_TRACKING_EVENT* l, const glm::m
 
 
 
-
+/**
+    * @brief Transform Leap Motion coordinates to meters.
+    *
+    * @param leapVec The Leap Motion vector.
+    */
 glm::vec3 leapToMeters(const LEAP_VECTOR& leapVec) {
    return glm::vec3(leapVec.x * 0.001f, leapVec.y * 0.001f, leapVec.z * 0.001f);
 }
-static bool firstRun = true;
+
+/**
+    * @brief Render the Leap Motion hand bones in VR mode.
+    *
+    * @param l The leapmotion event.
+    * @param modelViewMat The modelViewMat.
+    * @param projMatrix The projMatrix.
+    * @param leapToWorldMatrix The position of the leapMotion.
+    */
 void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 modelViewMat, const glm::mat4 projMatrix, const glm::mat4 leapToWorldMatrix) {
    glBindVertexArray(globalVao);
    Shader::getCurrentShader()->setMatrix("projection", projMatrix);
@@ -541,6 +561,11 @@ void Eng::Leap::renderVRHandBones(const LEAP_TRACKING_EVENT* l, const glm::mat4 
    glBindVertexArray(0);
 }
 
+/**
+    * @brief Set the list of pickable nodes.
+    *
+    * @param pickableNodes The list of pickable nodes.
+    */
 void Eng::Leap::setPickableNodes(std::list<Node*> pickableNodes) {
    this->pickableNodes = pickableNodes;
 }

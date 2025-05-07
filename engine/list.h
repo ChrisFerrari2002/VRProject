@@ -107,9 +107,29 @@ public:
     */
     int size();
 
+    /**
+    * @brief Add a skybox to the list
+    *
+    * Add a skybox to the engine
+    *
+    * @param face1 Path of face1.
+    * @param face2 Path of face2.
+    * @param face3 Path of face3.
+    * @param face4 Path of face4.
+    * @param face5 Path of face5.
+    * @param face6 Path of face6.
+    *
+    */
     void addSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
        const std::string& face4, const std::string& face5, const std::string& face6);
 
+    /**
+    * @brief Get the list of pickable objects
+    *
+    * Get the list of pickable objects
+    *
+    * @return The list of pickable objects
+    */
     std::list<Eng::Node*> getPickableObjectsList() { return pickableObjectsList; };
 
     bool render(glm::mat4 transform, void* data) { return false; };
@@ -118,9 +138,6 @@ private:
     std::list<Eng::Node*> objectsList; /**< The list of nodes */
     std::list<Eng::Node*> lightsList; /**< The list of lights */
     std::list<Eng::Node*> pickableObjectsList; /**< The list of pickable objects */
-    Eng::Shader* spotLightShader;
-    Eng::Shader* directionalLightShader;
-    Eng::Shader* pointLightShader;
 };
 
 #endif // LIST_H

@@ -38,7 +38,11 @@ const char* skyboxFragShader = R"(
    }
 )";
 
-
+/**
+    * @brief Default constructor
+    *
+    * Initializes a skybox with default values.
+    */
 Eng::Skybox::Skybox(const std::string& name) : Node(name) {
 
    Shader* skyboxVs = new Shader();
@@ -54,7 +58,19 @@ Eng::Skybox::Skybox(const std::string& name) : Node(name) {
 }
 
 
-
+/**
+   * @brief Parameterized constructor
+   *
+   * Initializes a skybox with the given parameters.
+   *
+   * @param name The name of the skybox.
+   * @param face1 The path to the first face texture.
+   * @param face2 The path to the second face texture.
+   * @param face3 The path to the third face texture.
+   * @param face4 The path to the fourth face texture.
+   * @param face5 The path to the fifth face texture.
+   * @param face6 The path to the sixth face texture.
+   */
 void Eng::Skybox::setupSkybox(const std::string& face1, const std::string& face2, const std::string& face3,
    const std::string& face4, const std::string& face5, const std::string& face6) {
 
@@ -88,6 +104,9 @@ void Eng::Skybox::setupSkybox(const std::string& face1, const std::string& face2
    };
 }
 
+/**
+ * @brief Build the cubemap of the skybox.
+ */
 void Eng::Skybox::buildCubemap() {
    // Create and bind cubemap:
    glGenTextures(1, &cubemapId);

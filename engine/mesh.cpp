@@ -82,20 +82,61 @@ Eng::Material* Eng::Mesh::getMaterial() {
    return &material;
 }
 
+/**
+   * @brief Set the vertices of the mesh.
+   *
+   * Set the vertices of the mesh.
+   *
+   * @param vertices The vertices to be set.
+   *
+   */
 void Eng::Mesh::setVertices(std::vector<glm::vec3> vertices) {
    this->vertices = vertices;
 }
+
+/**
+   * @brief Set the normals of the mesh.
+   *
+   * Set the normals of the mesh.
+   *
+   * @param normals The normals to be set.
+   *
+   */
 void Eng::Mesh::setNormals(std::vector<glm::vec3> normals) {
    this->normals = normals;
 }
+
+/**
+    * @brief Set the texture coordinates of the mesh.
+    *
+    * Set the texture coordinates of the mesh.
+    *
+    * @param texCoords The texture coordinates to be set.
+    *
+    */
 void Eng::Mesh::setTexCoords(std::vector<glm::vec2> texCoords) {
    this->texCoords = texCoords;
 }
+
+/**
+    * @brief Set the faces of the mesh.
+    *
+    * Set the faces coordinates of the mesh.
+    *
+    * @param faces The texture faces to be set.
+    *
+    */
 void Eng::Mesh::setFaces(std::vector<unsigned int> faces) {
    this->faces = faces;
 
 }
 
+/**
+    * @brief Initialize mesh buffers and context.
+    *
+    * Initialize mesh buffers and context.
+    *
+    */
 void Eng::Mesh::setupMesh() {
    glBindVertexArray(vao);
 
