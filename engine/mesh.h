@@ -9,10 +9,11 @@
 * @details The Mesh class is a subclass of the Node class and represents a mesh in the engine.
 * @see Eng::Node, Eng::Material, Eng::Vertex
 *
-* @authors
-* - Sara Bressan [sara.bressan@student.supsi.ch]
-* - Chris Ferrari [chris.ferrari@student.supsi.ch]
-* - Alessandro Formato [alessandro.formato@student.supsi.ch]
+ * @authors
+ * - Chris Ferrari [chris.ferrari@student.supsi.ch]
+ * - Veljko Markovic [veljko.markovic@student.supsi.ch]
+ * - Marco Bernasconi [marco.bernasconi@student.supsi.ch]
+ * - Jonathan Casadei [jonathan.casadei@student.supsi.ch]
 */
 
 #ifndef MESH_H

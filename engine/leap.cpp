@@ -2,7 +2,12 @@
  * @file		leap.cpp
  * @brief	Minimal Leap Motion API wrapper
  *
- * @author	Achille Peternier (C) SUPSI [achille.peternier@supsi.ch]
+ * @authors	
+ * - Achille Peternier (C) SUPSI [achille.peternier@supsi.ch]
+ * - Chris Ferrari [chris.ferrari@student.supsi.ch]
+ * - Veljko Markovic [veljko.markovic@student.supsi.ch]
+ * - Marco Bernasconi [marco.bernasconi@student.supsi.ch]
+ * - Jonathan Casadei [jonathan.casadei@student.supsi.ch]
  */
 
 

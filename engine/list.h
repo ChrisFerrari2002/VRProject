@@ -9,10 +9,11 @@
 * @details The List class is a subclass of the Object class and represents a list of nodes in the engine.
 * @see Eng::Object, Eng::Node
 *
-* @authors
-* - Sara Bressan [sara.bressan@student.supsi.ch]
-* - Chris Ferrari [chris.ferrari@student.supsi.ch]
-* - Alessandro Formato [alessandro.formato@student.supsi.ch]
+ * @authors
+ * - Chris Ferrari [chris.ferrari@student.supsi.ch]
+ * - Veljko Markovic [veljko.markovic@student.supsi.ch]
+ * - Marco Bernasconi [marco.bernasconi@student.supsi.ch]
+ * - Jonathan Casadei [jonathan.casadei@student.supsi.ch]
 */
 
 #ifndef LIST_H

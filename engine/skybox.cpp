@@ -1,3 +1,15 @@
+/**
+ * @file		skybox.cpp
+ * @brief	skybox class
+ *
+ * @authors
+ * - Achille Peternier (C) SUPSI [achille.peternier@supsi.ch]
+ * - Chris Ferrari [chris.ferrari@student.supsi.ch]
+ * - Veljko Markovic [veljko.markovic@student.supsi.ch]
+ * - Marco Bernasconi [marco.bernasconi@student.supsi.ch]
+ * - Jonathan Casadei [jonathan.casadei@student.supsi.ch]
+ */
+
 #include "GL/glew.h"
 #include "engine.h"
 #include <GL/freeglut.h>

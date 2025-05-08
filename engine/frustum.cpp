@@ -1,3 +1,14 @@
+/**
+ * @file		frustum.cpp
+ * @brief	Basic frustum class
+ *
+ * @authors	
+ * - Chris Ferrari [chris.ferrari@student.supsi.ch]
+ * - Veljko Markovic [veljko.markovic@student.supsi.ch]
+ * - Marco Bernasconi [marco.bernasconi@student.supsi.ch]
+ * - Jonathan Casadei [jonathan.casadei@student.supsi.ch]
+ */
+
 #include "engine.h"
 
 
