@@ -185,7 +185,7 @@ void init(int argc, char* argv[])
 int main(int argc, char* argv[])
 {
     // Credits:
-    std::cout << "Chessboard Project - Group 12" << std::endl;
+    std::cout << "Chessboard VR Project - Group 4" << std::endl;
     std::cout << std::endl;
 
     // Initialize the engine
